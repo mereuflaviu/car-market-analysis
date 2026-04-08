@@ -1,0 +1,1894 @@
+,make,model,year,body_type,mileage,color,fuel_type,engine_capacity,engine_power,gearbox,transmission,pollution_standard,price
+0,BMW,X3,2015.0,SUV,194382.0,Maro,Diesel,1995.0,190.0,Automata,4x4 (automat),Euro 6,15990.0
+1,Volvo,XC 60,2015.0,SUV,122822.0,Albastru,Diesel,2400.0,181.0,Automata,4x4 (automat),Euro 5,14000.0
+2,Peugeot,508,2012.0,Sedan,212000.0,Negru,Hibrid,1997.0,163.0,Automata,4x4 (automat),Euro 6,7400.0
+3,Hyundai,Tucson,2021.0,SUV,44000.0,Gri,Hibrid Plug-In,1598.0,265.0,Automata,4x4 (automat),Euro 6,26607.9
+4,Audi,A6,2022.0,Sedan,140558.0,Alb,Hibrid Plug-In,1984.0,367.0,Automata,4x4 (automat),Euro 6,41899.88
+5,Volkswagen,Tiguan,2012.0,SUV,182000.0,Albastru,Benzina,1390.0,122.0,Manuala,Fata,Euro 5,7999.0
+6,BMW,X1,2022.0,SUV,101100.0,Gri,Hibrid Plug-In,1499.0,220.0,Automata,4x4 (automat),Euro 6,23691.8
+7,BMW,Seria 3,2021.0,Sedan,113832.0,Argint,Hibrid Plug-In,1998.0,292.0,Automata,Spate,Euro 6,24900.0
+8,Volvo,XC 90,2020.0,SUV,147688.0,Gri,Diesel,1969.0,235.0,Automata,4x4 (automat),Euro 6,39917.9
+9,Ford,Kuga,2020.0,SUV,182028.0,Gri,Diesel,1995.0,190.0,Automata,4x4 (automat),Euro 6d-Temp,16199.01
+10,Hyundai,Tucson,2021.0,SUV,145623.0,Gri,Diesel,1598.0,136.0,Automata,Fata,Euro 6,19989.2
+11,Audi,A7,2021.0,Sedan,101898.0,Albastru,Diesel,2967.0,286.0,Automata,4x4 (automat),Euro 6,52017.9
+12,Toyota,RAV4,2021.0,SUV,111266.0,Alb,Hibrid Plug-In,2487.0,306.0,Automata,4x4 (automat),Euro 6d,35999.92
+13,Mitsubishi,Outlander,2016.0,SUV,173000.0,Negru,Hibrid Plug-In,1998.0,121.0,Automata,4x4 (manual),Euro 6,13999.0
+14,MG,EHS,2023.0,SUV,66667.0,Alb,Hibrid Plug-In,1490.0,258.0,Automata,Fata,Euro 6d-Temp,19250.0
+15,Toyota,C-HR,2019.0,SUV,145000.0,Gri,Hibrid,1798.0,122.0,Automata,Fata,Euro 6,17298.16
+16,BMW,Seria 5,2021.0,Sedan,139364.0,Negru,Benzina,1998.0,184.0,Automata,Spate,Euro 6,33969.54
+17,Mercedes-Benz,Vito,2019.0,Monovolum,60000.0,Alb,Diesel,2143.0,136.0,Manuala,Spate,Euro 6c,29027.9
+18,Mercedes-Benz,E,2018.0,Coupe,140013.0,Verde,Diesel,1950.0,194.0,Automata,Spate,Euro 6,25990.0
+19,Opel,Astra,2010.0,Compacta,138000.0,Argint,Benzina,1598.0,115.0,Manuala,Fata,Euro 5,4499.0
+20,BMW,Seria 5,2022.0,Sedan,154130.0,Negru,Hibrid Plug-In,1998.0,292.0,Automata,4x4 (automat),Euro 6,29970.0
+21,Nissan,Qashqai,2024.0,SUV,87400.0,Negru,Benzina,1332.0,140.0,Manuala,Fata,Euro 6,19990.41
+22,Volkswagen,ARTEON,2022.0,Sedan,150000.0,Gri,Diesel,1968.0,150.0,Automata,Fata,Euro 6,27487.57
+23,Mercedes-Benz,C,2021.0,Sedan,124658.0,Negru,Benzina,1496.0,204.0,Automata,4x4 (automat),Euro 6,29990.0
+24,Peugeot,308,2023.0,Combi,103371.0,Negru,Benzina,1199.0,130.0,Automata,Fata,Euro 6,16790.0
+25,BMW,X7,2019.0,SUV,201255.0,Albastru,Diesel,2993.0,265.0,Automata,4x4 (automat),Euro 6,45500.0
+26,Hyundai,Santa Fe,2022.0,SUV,96700.0,Gri,Hibrid Plug-In,1598.0,252.0,Automata,4x4 (automat),Euro 6d-Temp,33988.9
+27,Volkswagen,Tiguan,2020.0,SUV,70079.0,Alb,Diesel,1968.0,150.0,Automata,4x4 (automat),Euro 6d-Temp,25990.8
+28,Mercedes-Benz,Vito,2017.0,Monovolum,289000.0,Negru,Diesel,2143.0,190.0,Automata,Spate,Euro 6,25650.0
+29,BMW,X2,2019.0,SUV,158000.0,Negru,Diesel,1995.0,190.0,Automata,4x4 (automat),Euro 6,19980.0
+30,Skoda,Fabia,2021.0,Combi,187000.0,Alb,Benzina,999.0,95.0,Manuala,Fata,Euro 6b,8445.8
+31,Audi,Q3,2016.0,SUV,234669.0,Alb,Diesel,1968.0,150.0,Automata,4x4 (automat),Euro 6,13990.0
+32,BMW,Seria 2,2020.0,Coupe,216000.0,Rosu,Benzina,1499.0,140.0,Automata,Fata,Euro 6b,20980.0
+33,Volvo,XC 60,2018.0,SUV,239900.0,Gri,Diesel,1969.0,190.0,Automata,4x4 (automat),Euro 6,19950.0
+34,Mercedes-Benz,GLC Coupe,2021.0,SUV,180100.0,Albastru,Diesel,1950.0,163.0,Automata,4x4 (automat),Euro 6,33999.0
+35,Mercedes-Benz,C,2022.0,Sedan,49000.0,Negru,Diesel,1993.0,200.0,Automata,Spate,Euro 6,33450.0
+36,BMW,Seria 5,2021.0,Sedan,227700.0,Negru,Benzina,1998.0,252.0,Automata,Spate,Euro 6b,30976.0
+37,Mercedes-Benz,GLC,2016.0,SUV,137000.0,Negru,Diesel,2143.0,204.0,Automata,4x4 (automat),Euro 6b,23980.0
+38,Mercedes-Benz,E,2020.0,Sedan,137600.0,Albastru,Hibrid Plug-In,1950.0,306.0,Automata,Spate,Euro 6,27499.0
+39,BMW,X2,2019.0,SUV,80686.0,Alb,Benzina,1499.0,140.0,Automata,Fata,Euro 6,19490.0
+40,Mercedes-Benz,A,2014.0,Compacta,222376.0,Gri,Diesel,1461.0,109.0,Automata,Fata,Euro 5,11390.0
+41,Volkswagen,Tiguan,2013.0,SUV,221000.0,Alb,Diesel,1968.0,177.0,Automata,4x4 (automat),Euro 5,13890.0
+42,Opel,Grandland X,2018.0,SUV,211000.0,Alb,Diesel,1997.0,177.0,Automata,Fata,Euro 6,12999.0
+43,BMW,X3,2021.0,SUV,120000.0,Negru,Hibrid Plug-In,1998.0,292.0,Automata,4x4 (automat),Euro 6,27950.0
+44,Renault,Megane,2019.0,Sedan,121036.0,Gri,Benzina,1332.0,140.0,Manuala,Fata,Euro 6,11450.0
+45,Hyundai,ix35,2010.0,SUV,206000.0,Gri,Diesel,1995.0,184.0,Automata,4x4 (manual),Euro 5,8499.0
+46,Volvo,XC 60,2015.0,SUV,283000.0,Alb,Diesel,1969.0,150.0,Manuala,Fata,Euro 6,11999.0
+47,Volkswagen,Golf,2017.0,Combi,184000.0,Gri,Diesel,1968.0,184.0,Automata,Fata,Euro 6,13990.0
+48,BMW,X6,2021.0,SUV,131200.0,Maro,Benzina,2998.0,333.0,Automata,4x4 (automat),Euro 6,65969.2
+49,Audi,A6,2014.0,Combi,298000.0,Argint,Diesel,2967.0,313.0,Automata,4x4 (automat),Euro 5,13500.0
+50,Renault,Megane,2019.0,Combi,160000.0,Alb,Diesel,1461.0,116.0,Automata,Fata,Euro 6,10298.31
+51,Renault,Austral,2024.0,SUV,7931.0,Negru,Benzina,1332.0,160.0,Automata,Fata,Euro 6,26700.0
+52,Renault,Austral,2024.0,SUV,15334.0,Negru,Benzina,1332.0,160.0,Automata,Fata,Euro 6,26300.0
+53,Mercedes-Benz,E,2024.0,Sedan,10006.0,Argint,Benzina,1999.0,204.0,Automata,Spate,Euro 6d,64899.56
+54,Audi,Q7,2016.0,SUV,108200.0,Negru,Diesel,2967.0,272.0,Automata,4x4 (automat),Euro 6,28990.0
+55,BMW,Seria 5,2021.0,Sedan,120015.0,Negru,Diesel,1995.0,190.0,Automata,4x4 (automat),Euro 6,35077.9
+56,Mercedes-Benz,GLE Coupe,2017.0,SUV,113600.0,Alb,Diesel,2987.0,258.0,Automata,4x4 (automat),Euro 6,43547.9
+57,Mercedes-Benz,G,2019.0,SUV,112000.0,Alb,Diesel,2925.0,285.0,Automata,4x4 (automat),Euro 6,99000.0
+58,Mercedes-Benz,GLE Coupe,2020.0,SUV,129550.0,Negru,Diesel,2925.0,330.0,Automata,4x4 (automat),Euro 6,72587.9
+59,Mercedes-Benz,CLA,2019.0,Sedan,171800.0,Negru,Benzina,1991.0,190.0,Automata,4x4 (automat),Euro 6,26600.0
+60,Volvo,XC 60,2019.0,SUV,92700.0,Negru,Hibrid Plug-In,1969.0,390.0,Automata,4x4 (automat),Euro 6b,28497.92
+61,Volkswagen,Passat CC,2013.0,Sedan,198000.0,Maro,Diesel,1968.0,143.0,Automata,Fata,Euro 5,10450.0
+62,Volvo,V60,2019.0,Combi,179000.0,Gri,Diesel,1969.0,150.0,Automata,Fata,Euro 6,17590.0
+63,BMW,X3,2012.0,SUV,220354.0,Negru,Diesel,1995.0,184.0,Automata,4x4 (automat),Euro 5,12990.0
+64,Mercedes-Benz,GLE,2016.0,SUV,147000.0,Alb,Benzina,2996.0,367.0,Automata,4x4 (automat),Euro 6,39500.0
+65,Volkswagen,Passat Alltrack,2018.0,Combi,153757.0,Alb,Diesel,1968.0,190.0,Automata,4x4 (automat),Euro 6,19500.0
+66,Cupra,Formentor,2025.0,SUV,2900.0,Verde,Benzina,1984.0,333.0,Automata,4x4 (automat),Euro 6,54950.0
+67,Volkswagen,Tiguan,2023.0,SUV,130254.0,Rosu,Diesel,1968.0,150.0,Automata,4x4 (automat),Euro 6,25900.0
+68,Volkswagen,Polo,2020.0,Compacta,100000.0,Alb,Benzina,999.0,80.0,Manuala,Fata,Euro 6,10490.0
+69,Dacia,Duster,2020.0,SUV,27663.0,Alb,Diesel,1461.0,115.0,Manuala,4x4 (automat),Euro 6,15750.0
+70,BMW,X3,2020.0,SUV,98299.0,Gri,Hibrid Plug-In,1998.0,292.0,Automata,4x4 (automat),Euro 6,31989.99
+71,Renault,Trafic,2015.0,Monovolum,217000.0,Verde,Diesel,1598.0,145.0,Manuala,Fata,Euro 6,12000.0
+72,Mercedes-Benz,GLE Coupe,2020.0,SUV,135620.0,Gri,Hibrid Plug-In,1950.0,319.0,Automata,4x4 (manual),Euro 6,56900.0
+73,Nissan,X-Trail,2014.0,SUV,153000.0,Alb,Diesel,1598.0,130.0,Manuala,4x4 (manual),Euro 5,11650.0
+74,Mercedes-Benz,E,2019.0,Sedan,105534.0,Negru,Hibrid Plug-In,1991.0,320.0,Automata,Spate,Euro 6d-Temp,31987.56
+75,BMW,X1,2012.0,SUV,149598.0,Negru,Diesel,1995.0,184.0,Automata,4x4 (manual),Euro 5,12990.0
+76,Skoda,Octavia,2019.0,Combi,173800.0,Argint,Benzina,1495.0,150.0,Automata,Fata,Euro 6,12990.0
+77,Volkswagen,Golf,2020.0,Combi,206835.0,Albastru,Benzina,1498.0,150.0,Automata,Fata,Euro 6,13689.99
+78,Mercedes-Benz,GLC Coupe,2024.0,SUV,15500.0,Alb,Diesel,1993.0,197.0,Automata,4x4 (automat),Euro 6d,60487.9
+79,BMW,X5,2023.0,SUV,42575.0,Gri,Benzina,2998.0,381.0,Automata,4x4 (automat),Euro 6,79999.15
+80,Hyundai,Tucson,2018.0,SUV,150000.0,Negru,Diesel,1685.0,141.0,Automata,Fata,Euro 6,14650.0
+81,Renault,Megane,2016.0,Combi,192000.0,Gri,Diesel,1461.0,110.0,Manuala,Fata,Euro 6d-Temp,6790.0
+82,Mercedes-Benz,CLA,2021.0,Coupe,56500.0,Negru,Hibrid Plug-In,1332.0,218.0,Automata,Fata,Euro 6,33498.85
+83,Toyota,C-HR,2017.0,SUV,189000.0,Alb,Hibrid,1798.0,122.0,Automata,Fata,Euro 6,16999.0
+84,Nissan,Qashqai,2016.0,SUV,179000.0,Gri,Diesel,1598.0,130.0,Manuala,4x4 (manual),Euro 6,9999.0
+85,Renault,Talisman,2020.0,Compacta,129709.0,Rosu,Diesel,1997.0,160.0,Automata,Fata,Euro 6d-Temp,14950.0
+86,Toyota,Corolla,2020.0,Combi,132800.0,Albastru,Hibrid,1798.0,122.0,Automata,Fata,Euro 6,17999.96
+87,Volkswagen,Golf,2010.0,Compacta,198000.0,Albastru,Benzina,1390.0,80.0,Manuala,Fata,Euro 5,2950.0
+88,Opel,Mokka,2014.0,SUV,203114.0,Rosu,Diesel,1686.0,130.0,Manuala,4x4 (automat),Euro 5,7100.0
+89,Renault,Talisman,2017.0,Combi,96492.0,Alte culori,Diesel,1598.0,160.0,Automata,Fata,Euro 6,14990.0
+90,BMW,X5,2022.0,SUV,139944.0,Negru,Hibrid Plug-In,2998.0,398.0,Automata,4x4 (automat),Euro 6,51299.99
+91,Volkswagen,Touareg,2021.0,SUV,153900.0,Gri,Hibrid Plug-In,2995.0,381.0,Automata,4x4 (automat),Euro 6,42400.0
+92,Mazda,CX-3,2018.0,SUV,179000.0,Alb,Benzina,1998.0,150.0,Automata,4x4 (automat),Euro 6,13989.0
+93,Volvo,XC 60,2015.0,SUV,237000.0,Alb,Diesel,1969.0,190.0,Manuala,Fata,Euro 6,13590.0
+94,Skoda,Scala,2020.0,Combi,165000.0,Albastru,Diesel,1598.0,115.0,Automata,Fata,Euro 6,11990.0
+95,Kia,Sportage,2021.0,SUV,62800.0,Albastru,Diesel,1598.0,136.0,Automata,4x4 (automat),Euro 6c,19490.0
+96,Ford,Kuga,2020.0,SUV,131000.0,Negru,Diesel,1996.0,190.0,Automata,4x4 (automat),Euro 6,18000.0
+97,Audi,A6,2019.0,Sedan,140000.0,Gri,Diesel,2967.0,286.0,Automata,4x4 (automat),Euro 6,46000.0
+98,BMW,Seria 4,2023.0,Coupe,31500.0,Albastru,Diesel,1995.0,190.0,Automata,Spate,Euro 6d-Temp,45980.0
+99,Volkswagen,T-Cross,2021.0,SUV,68908.0,Gri,Benzina,999.0,110.0,Automata,Fata,Euro 6,19500.01
+100,Mitsubishi,Eclipse-Cross,2022.0,SUV,92100.0,Alb,Hibrid Plug-In,2360.0,98.0,Automata,4x4 (automat),Euro 6,22900.0
+101,Mitsubishi,Eclipse-Cross,2023.0,SUV,33100.0,Gri,Hibrid Plug-In,2360.0,98.0,Automata,4x4 (automat),Euro 6,25900.0
+102,Lexus,Seria NX,2021.0,SUV,55938.0,Alb,Hibrid,2494.0,197.0,Automata,4x4 (automat),Euro 6,31989.98
+103,Ford,Focus,2018.0,Combi,197000.0,Rosu,Diesel,1499.0,120.0,Automata,Fata,Euro 6,9249.24
+104,Mercedes-Benz,A,2019.0,Sedan,156000.0,Negru,Diesel,1461.0,116.0,Automata,Fata,Euro 6,24998.6
+105,BMW,Seria 1,2010.0,Coupe,198000.0,Negru,Diesel,1995.0,143.0,Manuala,Spate,Euro 5,4900.0
+106,Renault,Arkana,2023.0,SUV,10728.0,Gri,Hibrid,1598.0,145.0,Automata,Fata,Euro 6,25773.0
+107,Renault,Arkana,2023.0,SUV,24509.0,Rosu,Benzina,1333.0,158.0,Automata,Fata,Euro 6,24200.0
+108,Audi,Q7,2018.0,SUV,149900.0,Maro,Diesel,2967.0,272.0,Automata,4x4 (automat),Euro 6b,25980.0
+109,BMW,X1,2014.0,SUV,194000.0,Gri,Diesel,1995.0,184.0,Automata,4x4 (automat),Euro 5,9990.0
+110,Hyundai,i40,2015.0,Combi,211000.0,Alb,Diesel,1685.0,141.0,Automata,Fata,Euro 6,8999.0
+111,Hyundai,KONA,2021.0,SUV,22341.0,Verde,Benzina,998.0,120.0,Manuala,Fata,Euro 6d,14200.0
+112,Toyota,C-HR,2024.0,SUV,18900.0,Alb,Hibrid,1987.0,152.0,Automata,4x4 (automat),Euro 6d-Temp,37249.85
+113,Skoda,Kodiaq,2017.0,SUV,198074.0,Gri,Diesel,1968.0,150.0,Automata,4x4 (automat),Euro 6,19990.0
+114,Audi,A4,2020.0,Combi,143096.0,Albastru,Diesel,1968.0,190.0,Automata,4x4 (automat),Euro 6,26990.01
+115,Mercedes-Benz,A,2019.0,Masina de oras,113696.0,Gri,Benzina,1332.0,136.0,Automata,Fata,Euro 6d,20812.0
+116,Renault,Trafic,2016.0,Monovolum,259000.0,Argint,Diesel,1598.0,125.0,Manuala,Fata,Euro 6,14590.0
+117,BMW,Seria 5,2021.0,Sedan,116930.0,Alb,Benzina,1998.0,252.0,Automata,Spate,Euro 6,34998.04
+118,Audi,A6,2020.0,Sedan,182717.0,Galben/Auriu,Diesel,1968.0,204.0,Automata,Fata,Euro 6,29990.0
+119,Audi,A5,2016.0,Sedan,219000.0,Negru,Diesel,1968.0,190.0,Manuala,Fata,Euro 6,14990.0
+120,Mercedes-Benz,C,2011.0,Sedan,148113.0,Alb,Benzina,1796.0,156.0,Automata,Spate,Euro 5,9950.0
+121,Audi,Q7,2018.0,SUV,250000.0,Alb,Diesel,2967.0,286.0,Automata,4x4 (automat),Euro 6,32850.0
+122,Honda,Civic,2020.0,Sedan,53000.0,Albastru,Benzina,1498.0,182.0,Automata,Fata,Euro 6,19800.0
+123,Renault,Megane,2016.0,Sedan,81489.0,Gri,Benzina,1598.0,115.0,Manuala,Fata,Euro 6,9000.0
+124,Hyundai,Grand Santa Fe,2015.0,SUV,255000.0,Alb,Diesel,2199.0,197.0,Automata,4x4 (automat),Euro 6,13990.0
+125,Volvo,XC 40,2020.0,SUV,137500.0,Alte culori,Diesel,1969.0,150.0,Automata,4x4 (automat),Euro 6,22200.0
+126,Volkswagen,Tiguan,2019.0,SUV,126000.0,Gri,Diesel,1968.0,190.0,Automata,4x4 (automat),Euro 6,18400.0
+127,BMW,X3,2019.0,SUV,182507.0,Gri,Benzina,1998.0,184.0,Automata,4x4 (automat),Euro 6,24190.01
+128,Skoda,Kodiaq,2020.0,SUV,160000.0,Albastru,Diesel,1968.0,200.0,Automata,4x4 (automat),Euro 6d,29282.0
+129,Volvo,XC 60,2015.0,SUV,245475.0,Albastru,Diesel,1969.0,181.0,Automata,Fata,Euro 6,13500.0
+130,Volvo,XC 60,2019.0,SUV,258750.0,Gri,Diesel,1969.0,190.0,Automata,Fata,Euro 6,23997.93
+131,Volkswagen,Golf,2011.0,Masina mica,181659.0,Albastru,Benzina,1390.0,122.0,Manuala,Fata,Euro 5,6499.0
+132,Porsche,Cayenne Coupe,2019.0,SUV,207000.0,Alb,Benzina,2995.0,340.0,Automata,4x4 (automat),Euro 6,41500.0
+133,Volkswagen,Golf,2020.0,Masina mica,72000.0,Alb,Benzina,1498.0,150.0,Automata,Fata,Euro 6,18899.99
+134,Skoda,Octavia,2021.0,Sedan,110751.0,Gri,Benzina,1498.0,150.0,Manuala,Fata,Euro 6,17450.0
+135,Ford,S-Max,2016.0,Monovolum,202400.0,Gri,Diesel,1998.0,210.0,Automata,Fata,Euro 5,12499.0
+136,Suzuki,Vitara,2016.0,SUV,163322.0,Alb,Diesel,1598.0,120.0,Manuala,4x4 (manual),Euro 6,11450.0
+137,Toyota,RAV4,2021.0,SUV,98630.0,Gri,Hibrid,2487.0,178.0,Automata,Fata,Euro 6d,26400.01
+138,Seat,Alhambra,2013.0,Monovolum,215391.0,Gri,Diesel,1968.0,140.0,Automata,Fata,Euro 6,11450.0
+139,Hyundai,Tucson,2016.0,SUV,166759.0,Negru,Benzina,1591.0,177.0,Manuala,4x4 (automat),Euro 6,13450.0
+140,Peugeot,308,2015.0,Combi,190549.0,Gri,Diesel,1997.0,150.0,Automata,Fata,Euro 6,10599.6
+141,Peugeot,3008,2017.0,SUV,172361.0,Gri,Benzina,1199.0,130.0,Automata,Fata,Euro 6,13699.0
+142,Volkswagen,Golf,2012.0,Combi,252000.0,Negru,Diesel,1598.0,105.0,Manuala,Fata,Euro 5,5490.0
+143,Audi,A7,2019.0,Sedan,214000.0,Albastru,Diesel,1968.0,204.0,Automata,4x4 (automat),Euro 6,32950.0
+144,Dacia,Sandero,2015.0,Masina de oras,231854.0,Rosu,Diesel,1461.0,90.0,Manuala,Fata,Euro 6,6299.0
+145,Audi,A6,2020.0,Sedan,29000.0,Albastru,Benzina,1984.0,245.0,Automata,4x4 (automat),Euro 6,37994.0
+146,Audi,Q3,2012.0,SUV,267757.0,Gri,Benzina,1984.0,170.0,Manuala,4x4 (automat),Euro 5,9998.23
+147,Renault,Megane,2023.0,Combi,197000.0,Negru,Diesel,1461.0,115.0,Automata,Fata,Euro 6,13990.0
+148,Renault,Scenic,2013.0,Monovolum,205000.0,Alte culori,Diesel,1461.0,110.0,Automata,Fata,Euro 5,5890.0
+149,BMW,Seria 3,2021.0,Sedan,174000.0,Alb,Hibrid Plug-In,1998.0,292.0,Automata,4x4 (automat),Euro 6,26983.0
+150,Mercedes-Benz,GLE,2021.0,SUV,132100.0,Alb,Hibrid Plug-In,1950.0,319.0,Automata,4x4 (automat),Euro 6d,61697.9
+151,Audi,TT,2015.0,Coupe,192782.0,Negru,Benzina,1984.0,230.0,Automata,4x4 (automat),Euro 6,17490.0
+152,Toyota,RAV4,2021.0,SUV,114548.0,Alb,Hibrid Plug-In,2487.0,306.0,Automata,4x4 (automat),Euro 6d,35999.92
+153,BMW,X6,2024.0,SUV,24900.0,Negru,Diesel,2993.0,286.0,Automata,4x4 (automat),Euro 6,84900.0
+154,BMW,X5,2023.0,SUV,22800.0,Gri,Diesel,2993.0,298.0,Automata,4x4 (automat),Euro 6d-Temp,74488.81
+155,Volvo,XC 60,2022.0,SUV,129000.0,Alb,Diesel,1969.0,197.0,Automata,Fata,Euro 6,32307.0
+156,Volkswagen,ARTEON,2022.0,Sedan,117000.0,Albastru,Diesel,1968.0,150.0,Automata,Fata,Euro 6,30976.0
+157,Renault,Kadjar,2019.0,SUV,185000.0,Negru,Benzina,1332.0,159.0,Automata,Fata,Euro 6,14990.0
+158,Toyota,Corolla,2020.0,Sedan,173577.0,Alb,Hibrid,1798.0,122.0,Automata,Fata,Euro 6,14899.94
+159,Skoda,Scala,2022.0,Combi,117134.0,Albastru,Benzina,999.0,110.0,Manuala,Fata,Euro 6,11699.49
+160,Mercedes-Benz,GLE,2024.0,SUV,20000.0,Alb,Hibrid Plug-In,1999.0,381.0,Automata,4x4 (automat),Euro 6d-Temp,96800.0
+161,Opel,Astra,2018.0,Combi,225000.0,Gri,Diesel,1598.0,136.0,Automata,Fata,Euro 6,6300.0
+162,Hyundai,Tucson,2023.0,SUV,190000.0,Alb,Hibrid Plug-In,1598.0,265.0,Automata,4x4 (automat),Euro 6,22950.0
+163,Renault,Koleos,2017.0,SUV,99005.0,Alte culori,Diesel,1995.0,177.0,Automata,4x4 (automat),Euro 6b,19000.0
+164,Volkswagen,Polo,2014.0,Masina mica,149500.0,Maro,Benzina,1198.0,60.0,Manuala,Fata,Euro 5,6499.0
+165,Peugeot,5008,2020.0,SUV,159318.0,Alb,Diesel,1499.0,130.0,Automata,Fata,Euro 6,17490.01
+166,Toyota,Corolla,2021.0,Compacta,134110.0,Alb,Hibrid,1798.0,122.0,Automata,Fata,Euro 6,19000.0
+167,Mercedes-Benz,GLC,2021.0,SUV,132880.0,Gri,Diesel,1950.0,194.0,Automata,4x4 (automat),Euro 6,33889.99
+168,Renault,Kadjar,2020.0,SUV,79000.0,Negru,Benzina,1332.0,140.0,Automata,Fata,Euro 6,14900.0
+169,Peugeot,508,2019.0,Sedan,71000.0,Negru,Benzina,1598.0,180.0,Automata,Fata,Euro 6,18990.0
+170,Audi,A3,2023.0,Compacta,25000.0,Argint,Benzina,1498.0,149.0,Manuala,Fata,Euro 6,21500.0
+171,Peugeot,2008,2019.0,SUV,177000.0,Negru,Diesel,1499.0,120.0,Manuala,Fata,Euro 6,10790.0
+172,BMW,Seria 3,2022.0,Combi,63000.0,Negru,Diesel,1995.0,150.0,Automata,Spate,Euro 6,28540.27
+173,Maserati,Levante,2018.0,SUV,73415.0,Negru,Diesel,2987.0,275.0,Automata,4x4 (manual),Euro 6,45000.0
+174,Peugeot,3008,2016.0,SUV,114900.0,Gri,Benzina,1199.0,130.0,Manuala,Fata,Euro 6,12590.0
+175,Mercedes-Benz,GLC,2025.0,SUV,13380.0,Verde,Benzina,1999.0,204.0,Automata,4x4 (automat),Euro 6,53899.45
+176,Skoda,Octavia,2023.0,Compacta,32350.0,Gri,Benzina,1498.0,149.0,Manuala,Fata,Euro 6,21900.0
+177,Audi,Q7,2021.0,SUV,158550.0,Gri,Hibrid Plug-In,2995.0,381.0,Automata,4x4 (automat),Euro 6,41987.0
+178,BMW,Seria 3,2020.0,Combi,191752.0,Alb,Diesel,1995.0,190.0,Automata,Spate,Euro 6,19380.0
+179,BMW,X3,2018.0,SUV,126000.0,Negru,Benzina,1998.0,252.0,Automata,4x4 (automat),Euro 6,28900.0
+180,SsangYong,Korando,2022.0,SUV,130025.0,Gri,Benzina,1497.0,163.0,Automata,4x4 (automat),Euro 6,17500.0
+181,BMW,Seria 4,2015.0,Sedan,262700.0,Gri,Diesel,2993.0,313.0,Automata,4x4 (manual),Euro 6,16999.0
+182,BMW,Seria 3,2013.0,Sedan,207870.0,Alb,Diesel,1995.0,183.0,Automata,Spate,Euro 6,12480.0
+183,Skoda,Octavia,2010.0,Sedan,218000.0,Negru,Benzina,1390.0,80.0,Manuala,Fata,Euro 4,3999.0
+184,Volvo,S90,2020.0,Sedan,166000.0,Argint,Diesel,1969.0,150.0,Automata,Fata,Euro 6,23232.0
+185,Volkswagen,Tiguan,2017.0,SUV,221000.0,Alb,Diesel,1968.0,150.0,Automata,4x4 (automat),Euro 6,17490.0
+186,Audi,Q2,2017.0,SUV,190000.0,Negru,Benzina,1395.0,150.0,Automata,Fata,Euro 6,15990.0
+187,Mazda,CX-5,2016.0,SUV,225000.0,Maro,Diesel,2191.0,150.0,Manuala,Fata,Euro 6,9590.0
+188,Jaguar,F-Pace,2017.0,SUV,239000.0,Negru,Diesel,1999.0,180.0,Automata,4x4 (automat),Euro 6,15300.0
+189,BMW,Seria 4,2017.0,Coupe,235295.0,Negru,Diesel,1995.0,190.0,Automata,4x4 (automat),Euro 6,15990.0
+190,Kia,Sportage,2018.0,SUV,122000.0,Albastru,Diesel,1598.0,136.0,Automata,4x4 (automat),Euro 6,17950.0
+191,BMW,X4,2019.0,SUV,165564.0,Negru,Diesel,1995.0,190.0,Automata,4x4 (automat),Euro 6d,28980.0
+192,Volkswagen,Tiguan,2019.0,SUV,198000.0,Gri,Diesel,1968.0,150.0,Automata,4x4 (automat),Euro 6,19990.0
+193,BMW,Seria 5,2016.0,Sedan,228785.0,Gri,Diesel,1995.0,218.0,Automata,Spate,Euro 6,16950.0
+194,Ford,Focus,2012.0,Combi,281235.0,Negru,Diesel,1560.0,105.0,Manuala,Fata,Euro 5,3690.0
+195,Dacia,Duster,2014.0,SUV,198500.0,Gri,Diesel,1461.0,110.0,Manuala,Fata,Euro 5,8190.0
+196,Toyota,RAV4,2020.0,SUV,96000.0,Gri,Hibrid,2487.0,228.0,Automata,4x4 (automat),Euro 6d,32670.0
+197,Audi,Q2,2020.0,Masina de oras,181327.0,Negru,Benzina,1498.0,150.0,Manuala,Fata,Euro 6,17250.0
+198,Mercedes-Benz,A,2023.0,Sedan,25000.0,Gri,Hibrid Plug-In,1332.0,163.0,Automata,Fata,Euro 6d,38720.0
+199,Peugeot,508,2021.0,Combi,134700.0,Negru,Hibrid Plug-In,1598.0,225.0,Automata,Fata,Euro 6d-Temp,16990.0
+200,Volkswagen,Golf,2011.0,Combi,252157.0,Negru,Diesel,1598.0,105.0,Manuala,Fata,Euro 5,4850.0
+201,Volvo,XC 60,2017.0,SUV,149000.0,Gri,Diesel,1969.0,190.0,Automata,4x4 (manual),Euro 6,23990.0
+202,Skoda,Octavia,2022.0,Combi,212751.0,Alb,Diesel,1968.0,115.0,Manuala,Fata,Euro 6,14700.29
+203,Volvo,XC 90,2019.0,SUV,121000.0,Albastru,Diesel,1969.0,235.0,Automata,4x4 (manual),Euro 6b,36999.0
+204,Mercedes-Benz,E,2023.0,Sedan,32479.0,Alb,Benzina,1999.0,204.0,Automata,Spate,Euro 6,48200.0
+205,Peugeot,5008,2017.0,Monovolum,164000.0,Gri,Benzina,1199.0,130.0,Manuala,Fata,Euro 6,13890.0
+206,Renault,Megane,2013.0,Combi,245000.0,Gri,Diesel,1461.0,110.0,Manuala,Fata,Euro 5,6290.0
+207,Opel,Corsa,2015.0,Masina de oras,155200.0,Maro,Benzina,1229.0,70.0,Manuala,Fata,Euro 5,3150.0
+208,Dacia,Sandero Stepway,2020.0,Compacta,34623.0,Gri,Benzina + GPL,999.0,100.0,Manuala,Fata,Euro 6,8600.0
+209,Volkswagen,Polo,2012.0,Masina de oras,153000.0,Gri,Diesel,1199.0,75.0,Manuala,Fata,Euro 5,3950.0
+210,Peugeot,207,2008.0,Masina mica,206700.0,Gri,Benzina,1397.0,95.0,Manuala,Fata,Euro 4,1500.0
+211,Dacia,Lodgy,2016.0,Monovolum,179000.0,Alb,Benzina,1598.0,102.0,Manuala,Fata,Euro 6,6100.0
+212,Nissan,Qashqai+2,2012.0,SUV,100000.0,Maro,Diesel,1461.0,110.0,Manuala,Fata,Euro 5,6990.0
+213,Opel,Corsa,2018.0,Masina de oras,29000.0,Albastru,Benzina,1398.0,90.0,Manuala,Fata,Euro 5,8300.0
+214,Volkswagen,Passat,2006.0,Combi,279300.0,Gri,Diesel,1968.0,140.0,Manuala,4x4 (manual),Euro 4,3000.0
+215,Fiat,500,2016.0,Masina mica,39200.0,Alb,Benzina,1242.0,69.0,Automata,Fata,Euro 6,11000.0
+216,Opel,Grandland X,2018.0,SUV,83500.0,Alb,Benzina,1199.0,130.0,Automata,Fata,Euro 6,11800.0
+217,Ford,Puma,2023.0,SUV,9620.0,Gri,Benzina,999.0,125.0,Automata,Fata,Euro 6,19989.2
+218,Nissan,Juke,2013.0,SUV,142000.0,Albastru,Diesel,1461.0,110.0,Manuala,Fata,Euro 5,7999.0
+219,Dacia,Duster,2021.0,SUV,138000.0,Alb,Diesel,1461.0,115.0,Manuala,4x4 (automat),Euro 6,11999.0
+220,Audi,A4,2008.0,Sedan,215319.0,Gri,Diesel,1968.0,143.0,Manuala,Fata,Euro 4,6100.0
+221,Opel,Mokka,2015.0,SUV,212000.0,Gri,Diesel,1598.0,136.0,Manuala,4x4 (automat),Euro 6,8200.0
+222,Porsche,Cayenne,2019.0,SUV,92000.0,Albastru,Benzina,2995.0,340.0,Automata,4x4 (automat),Euro 6,49300.0
+223,Mercedes-Benz,GLE,2019.0,SUV,127000.0,Negru,Benzina,2999.0,367.0,Automata,4x4 (manual),Euro 6,49990.0
+224,Toyota,C-HR,2017.0,SUV,135214.0,Negru,Hibrid,1798.0,122.0,Automata,Fata,Euro 6d,17999.0
+225,Opel,Astra,2021.0,Combi,127000.0,Alb,Diesel,1496.0,122.0,Automata,Fata,Euro 6c,9199.63
+226,Mercedes-Benz,GLA,2018.0,SUV,87000.0,Alb,Benzina,1595.0,122.0,Automata,Fata,Euro 5,17000.0
+227,Volkswagen,ARTEON,2019.0,Sedan,138457.0,Alb,Diesel,1968.0,190.0,Automata,Fata,Euro 6,23990.0
+228,Opel,Corsa,2023.0,Masina de oras,43900.0,Alb,Benzina,1199.0,100.0,Manuala,Fata,Euro 6,14224.76
+229,Maserati,Levante,2023.0,SUV,23850.0,Negru,Benzina,1995.0,330.0,Automata,4x4 (automat),Euro 6c,53000.0
+230,Mercedes-Benz,S,2017.0,Sedan,162371.0,Negru,Diesel,2987.0,258.0,Automata,4x4 (automat),Euro 6,39999.0
+231,Skoda,Octavia,2019.0,Masina de oras,38000.0,Albastru,Benzina,1395.0,149.0,Automata,Fata,Euro 6,16200.0
+232,Dacia,Logan Stepway,2020.0,Masina mica,100570.0,Gri,Benzina,898.0,90.0,Manuala,Fata,Euro 6,8500.0
+233,BMW,X3,2019.0,SUV,131000.0,Albastru,Diesel,1995.0,190.0,Automata,4x4 (automat),Euro 6d,25620.0
+234,Mercedes-Benz,GLE,2017.0,SUV,192500.0,Alb,Diesel,2987.0,258.0,Automata,4x4 (automat),Euro 6,29500.0
+235,Dacia,Sandero Stepway,2023.0,Masina de oras,68000.0,Gri,Benzina,999.0,90.0,Automata,Fata,Euro 6,13589.51
+236,Nissan,Micra,2018.0,Masina de oras,95000.0,Negru,Benzina,898.0,90.0,Manuala,Fata,Euro 6,8999.0
+237,BMW,Seria 5,2009.0,Sedan,262273.0,Negru,Diesel,1995.0,177.0,Automata,Spate,Euro 5,7290.0
+238,Opel,Astra,2018.0,Combi,119800.0,Negru,Benzina,1399.0,125.0,Manuala,Fata,Euro 6b,8890.0
+239,Renault,Kangoo,2018.0,Monovolum,144600.0,Alb,Diesel,1461.0,90.0,Manuala,Fata,Euro 6,6999.0
+240,Skoda,Octavia,2021.0,Sedan,179990.0,Alb,Diesel,1968.0,115.0,Automata,Fata,Euro 6,15988.94
+241,Audi,A4,2017.0,Sedan,148078.0,Negru,Diesel,1968.0,150.0,Manuala,Fata,Euro 6,15999.0
+242,BMW,X3,2020.0,SUV,150000.0,Negru,Diesel,2993.0,286.0,Automata,4x4 (manual),Euro 6,32900.0
+243,Dacia,Sandero,2014.0,Compacta,150000.0,Galben/Auriu,Diesel,1461.0,75.0,Manuala,Fata,Euro 5,4490.0
+244,Volvo,XC 60,2020.0,SUV,75800.0,Alb,Diesel,1969.0,197.0,Automata,Fata,Euro 6d,27270.0
+245,Mercedes-Benz,GLE,2021.0,SUV,100200.0,Gri,Diesel,2925.0,272.0,Automata,4x4 (manual),Euro 6d,72600.0
+246,Peugeot,301,2021.0,Sedan,78000.0,Gri,Diesel,1499.0,99.0,Manuala,Fata,Euro 6,7899.99
+247,BMW,Seria 2,2019.0,Compacta,215000.0,Gri,Diesel,1995.0,190.0,Automata,4x4 (automat),Euro 6,13500.0
+248,Ford,Focus,2021.0,Compacta,119150.0,Alb,Diesel,1499.0,120.0,Manuala,Fata,Euro 6,11689.81
+249,Dacia,Duster,2019.0,SUV,127254.0,Maro,Diesel,1461.0,115.0,Manuala,4x4 (automat),Euro 6,13450.0
+250,Nissan,Qashqai,2014.0,SUV,208000.0,Negru,Diesel,1598.0,130.0,Automata,Fata,Euro 5,11150.0
+251,Dacia,Duster,2010.0,SUV,150041.0,Negru,Benzina,1598.0,105.0,Manuala,4x4 (automat),Euro 5,6399.0
+252,Opel,Astra,2008.0,Cabrio,161000.0,Negru,Benzina,1598.0,116.0,Manuala,Fata,Euro 4,2180.0
+253,Toyota,RAV4,2021.0,SUV,167350.0,Gri,Hibrid,2487.0,222.0,Automata,4x4 (automat),Euro 6,24390.01
+254,BMW,Seria 3,2010.0,Sedan,234265.0,Gri,Diesel,1995.0,184.0,Automata,Spate,Euro 5,6199.0
+255,Mercedes-Benz,GLE,2017.0,SUV,124000.0,Alb,Diesel,2987.0,258.0,Automata,4x4 (automat),Euro 6,32989.44
+256,Ford,Fiesta,2015.0,Masina de oras,192000.0,Rosu,Diesel,1498.0,95.0,Manuala,Fata,Euro 6,5350.0
+257,Renault,Megane,2016.0,Sedan,52710.0,Gri,Benzina,1198.0,130.0,Manuala,Fata,Euro 6,9900.0
+258,Volkswagen,Golf,2014.0,Combi,217000.0,Negru,Diesel,1968.0,140.0,Automata,Fata,Euro 6,8450.0
+259,Mercedes-Benz,CLA,2017.0,Sedan,231000.0,Gri,Diesel,2143.0,136.0,Automata,Fata,Euro 6,15600.0
+260,Volvo,S60,2012.0,Sedan,164500.0,Bej,Diesel,1560.0,115.0,Manuala,Fata,Euro 5,6990.0
+261,SsangYong,Tivoli,2021.0,SUV,109000.0,Alb,Diesel,1597.0,136.0,Manuala,Fata,Euro 6,11997.15
+262,Audi,A5,2012.0,Sedan,258000.0,Alb,Diesel,1968.0,177.0,Manuala,Fata,Euro 5,10990.0
+263,Skoda,Fabia,2011.0,Combi,254000.0,Gri,Diesel,1199.0,75.0,Manuala,Fata,Euro 5,3650.0
+264,BMW,X3 M,2020.0,SUV,185485.0,Negru,Diesel,2993.0,326.0,Automata,4x4 (automat),Euro 6,34469.27
+265,Toyota,Avensis,2007.0,Sedan,336284.0,Rosu,Benzina,1998.0,147.0,Manuala,Fata,Euro 4,1900.0
+266,Peugeot,3008,2020.0,SUV,181000.0,Alb,Benzina,1199.0,130.0,Automata,Fata,Euro 6,14200.0
+267,Renault,Clio,2020.0,Compacta,76283.0,Alb,Benzina,898.0,90.0,Manuala,Fata,Euro 6,9446.47
+268,Dacia,Bigster,2024.0,SUV,14914.0,Gri,Hibrid,1199.0,130.0,Manuala,4x4 (manual),Euro 6,26950.0
+269,Peugeot,301,2018.0,Sedan,97894.0,Alb,Benzina,1199.0,82.0,Manuala,Fata,Euro 6,6200.0
+270,Audi,A6 Allroad,2016.0,Combi,234000.0,Negru,Diesel,2967.0,272.0,Automata,4x4 (automat),Euro 6,12790.0
+271,Opel,Astra,2020.0,Combi,123500.0,Rosu,Diesel,1496.0,122.0,Automata,Fata,Euro 6,9699.0
+272,Cupra,Formentor,2022.0,SUV,55000.0,Gri,Benzina,1984.0,310.0,Automata,4x4 (automat),Euro 6d,26450.0
+273,Dacia,Logan,2017.0,Sedan,322000.0,Alb,Diesel,1461.0,95.0,Manuala,Fata,Euro 6,4900.0
+274,BMW,X3,2023.0,SUV,85000.0,Alb,Benzina,1998.0,252.0,Automata,4x4 (automat),Euro 6,37500.0
+275,Volkswagen,Golf,2009.0,Compacta,213797.0,Gri,Benzina,1390.0,160.0,Manuala,Fata,Euro 5,4099.0
+276,Nissan,Qashqai+2,2013.0,SUV,135887.0,Alb,Diesel,1598.0,130.0,Manuala,4x4 (automat),Euro 5,8900.0
+277,Renault,Megane,2021.0,Compacta,177755.0,Negru,Diesel,1461.0,116.0,Manuala,Fata,Euro 6b,10899.99
+278,Nissan,Navara,2008.0,SUV,242000.0,Negru,Diesel,2488.0,171.0,Manuala,4x4 (automat),Euro 4,8200.0
+279,Volkswagen,Caravelle,2015.0,Monovolum,363000.0,Alb,Diesel,1968.0,114.0,Manuala,Fata,Euro 5,13300.0
+280,Ford,Kuga,2018.0,SUV,79447.0,Albastru,Diesel,1498.0,120.0,Manuala,Fata,Euro 6,13500.0
+281,Skoda,Superb,2023.0,Combi,158423.0,Albastru,Diesel,1968.0,150.0,Automata,Fata,Euro 6,20850.0
+282,Volkswagen,Transporter,2017.0,Monovolum,264800.0,Gri,Diesel,1968.0,150.0,Manuala,Fata,Euro 6,16890.0
+283,Opel,Zafira,2011.0,Monovolum,266000.0,Argint,Diesel,1686.0,125.0,Manuala,Fata,Euro 5,4400.0
+284,Ford,Fiesta,2020.0,Masina de oras,248000.0,Negru,Diesel,1498.0,85.0,Manuala,Fata,Euro 6,6800.0
+285,Opel,Crossland,2017.0,SUV,132000.0,Alb,Benzina,1199.0,110.0,Manuala,Fata,Euro 5,7650.0
+286,Volvo,V40,2016.0,Compacta,185000.0,Albastru,Diesel,1969.0,120.0,Manuala,Fata,Euro 6,8900.0
+287,Volkswagen,Golf,2013.0,Compacta,195000.0,Negru,Diesel,1598.0,105.0,Manuala,Fata,Euro 5,8999.0
+288,Volvo,V40,2015.0,Compacta,181000.0,Alb,Diesel,1969.0,120.0,Manuala,Fata,Euro 6,8490.0
+289,Mazda,CX-3,2016.0,SUV,156200.0,Negru,Benzina,1998.0,150.0,Automata,4x4 (automat),Euro 6,13990.0
+290,Mercedes-Benz,ML,2012.0,SUV,261700.0,Negru,Diesel,2987.0,258.0,Automata,4x4 (automat),Euro 6,12500.0
+291,Dacia,Duster,2014.0,SUV,199000.0,Gri,Benzina + GPL,1598.0,105.0,Manuala,Fata,Euro 5,5999.0
+292,Ford,Mondeo,2018.0,Sedan,157233.0,Gri,Diesel,1997.0,150.0,Automata,Fata,Euro 6b,14224.76
+293,Volkswagen,Tiguan,2014.0,SUV,311222.0,Alb,Diesel,1968.0,170.0,Automata,4x4 (automat),Euro 5,11300.0
+294,Ford,Edge,2016.0,SUV,143870.0,Rosu,Diesel,1997.0,210.0,Automata,4x4 (manual),Euro 5,15000.0
+295,Kia,Sportage,2021.0,SUV,90688.0,Rosu,Diesel,1598.0,136.0,Automata,4x4 (automat),Euro 6,18500.0
+296,Mitsubishi,ASX,2016.0,SUV,178000.0,Negru,Benzina,1590.0,117.0,Manuala,Fata,Euro 6,10900.0
+297,BMW,X4,2019.0,SUV,73000.0,Gri,Diesel,1995.0,190.0,Automata,Fata,Euro 6,29990.0
+298,Opel,Vivaro,2015.0,Monovolum,190000.0,Alb,Diesel,1598.0,125.0,Manuala,Fata,Euro 6,10300.0
+299,Citroën,C4 Grand Space Tourer,2020.0,Monovolum,120000.0,Rosu,Diesel,1560.0,120.0,Automata,Fata,Euro 6,13450.0
+300,BMW,Seria 7,2021.0,Sedan,104000.0,Alb,Diesel,2993.0,286.0,Automata,4x4 (manual),Euro 6,49990.0
+301,Audi,Q7,2016.0,SUV,149000.0,Maro,Diesel,2967.0,272.0,Automata,4x4 (automat),Euro 6,28500.0
+302,Renault,Megane,2018.0,Compacta,133000.0,Albastru,Benzina,1332.0,140.0,Manuala,Fata,Euro 6d-Temp,11500.0
+303,Citroën,Jumper,2010.0,Monovolum,238000.0,Gri,Diesel,2198.0,120.0,Manuala,Fata,Euro 5,10400.0
+304,Audi,A7,2012.0,Sedan,262822.0,Bej,Diesel,2967.0,313.0,Automata,4x4 (automat),Euro 5,16500.0
+305,Mercedes-Benz,E,2024.0,Sedan,51000.0,Negru,Diesel,1993.0,197.0,Automata,Spate,Euro 6,53899.99
+306,Volkswagen,Golf,2009.0,Compacta,350280.0,Negru,Diesel,1968.0,110.0,Manuala,Fata,Euro 5,3750.0
+307,BMW,X5 M,2020.0,SUV,142000.0,Alb,Diesel,2993.0,400.0,Automata,4x4 (automat),Euro 6d-Temp,49900.0
+308,Skoda,Octavia,2019.0,Combi,204353.0,Bej,Benzina,1498.0,150.0,Automata,Fata,Euro 6,12490.0
+309,Volkswagen,Taigo,2025.0,SUV,13000.0,Gri,Benzina,999.0,110.0,Automata,Fata,Euro 6d,21650.0
+310,Renault,Megane,2014.0,Compacta,270000.0,Gri,Diesel,1461.0,110.0,Manuala,Fata,Euro 5,4999.0
+311,Nissan,Qashqai,2015.0,SUV,172316.0,Maro,Diesel,1598.0,130.0,Automata,Fata,Euro 5,12290.0
+312,Skoda,Octavia,2021.0,Compacta,129566.0,Gri,Benzina,1498.0,150.0,Manuala,Fata,Euro 6,16700.0
+313,BMW,X4 M,2018.0,SUV,99200.0,Alb,Diesel,2993.0,326.0,Automata,4x4 (automat),Euro 6,36200.0
+314,Renault,Kadjar,2016.0,SUV,232000.0,Argint,Diesel,1461.0,110.0,Manuala,Fata,Euro 6,11750.0
+315,BMW,Seria 1,2010.0,Masina de oras,247452.0,Negru,Diesel,1995.0,204.0,Automata,Spate,Euro 5,6990.0
+316,BMW,Seria 5,2009.0,Sedan,366600.0,Gri,Diesel,1995.0,177.0,Manuala,Spate,Euro 5,3999.0
+317,Mercedes-Benz,A,2024.0,Compacta,10468.0,Argint,Benzina,1332.0,163.0,Automata,Fata,Euro 6,31900.0
+318,Seat,Ateca,2017.0,SUV,212300.0,Gri,Diesel,1968.0,190.0,Automata,4x4 (automat),Euro 6,15990.0
+319,Volkswagen,Tiguan,2014.0,SUV,208550.0,Alb,Diesel,1968.0,177.0,Automata,4x4 (automat),Euro 5,13370.0
+320,Skoda,Octavia,2021.0,Combi,187000.0,Argint,Diesel,1968.0,149.0,Automata,Fata,Euro 6b,16250.0
+321,Volkswagen,Polo,2023.0,Masina de oras,53230.0,Argint,Benzina,999.0,110.0,Automata,Fata,Euro 6,16490.0
+322,Peugeot,3008,2017.0,SUV,170000.0,Negru,Benzina,1199.0,130.0,Automata,Fata,Euro 6,12950.0
+323,Dacia,Duster,2018.0,SUV,188000.0,Albastru,Benzina,1199.0,125.0,Manuala,4x4 (manual),Euro 6,9690.0
+324,Toyota,C-HR,2023.0,SUV,95500.0,Negru,Hibrid,1798.0,122.0,Automata,Fata,Euro 6,22400.0
+325,Audi,A3,2011.0,Compacta,220000.0,Negru,Benzina,1390.0,125.0,Automata,Fata,Euro 5,6990.0
+326,Peugeot,308,2019.0,Compacta,133990.0,Albastru,Benzina,1199.0,110.0,Manuala,Fata,Euro 6,7990.0
+327,BMW,Seria 7,2019.0,Sedan,177260.0,Negru,Diesel,2993.0,265.0,Automata,4x4 (automat),Euro 6,45780.35
+328,Dacia,Duster,2019.0,SUV,141747.0,Alb,Diesel,1461.0,115.0,Manuala,4x4 (automat),Euro 6,12390.0
+329,Volkswagen,Tiguan,2012.0,SUV,223000.0,Maro,Diesel,1968.0,140.0,Manuala,4x4 (manual),Euro 5,10800.0
+330,DS Automobiles,DS 7 Crossback,2019.0,SUV,158488.0,Rosu,Diesel,1998.0,180.0,Automata,Fata,Euro 6,19990.0
+331,Mini,Cooper S,2021.0,Compacta,55000.0,Albastru,Benzina,1998.0,178.0,Automata,Fata,Euro 6d,23500.0
+332,Audi,A5,2012.0,Coupe,296500.0,Gri,Diesel,1968.0,177.0,Automata,Fata,Euro 5,10499.0
+333,Skoda,Octavia,2025.0,Sedan,4850.0,Gri,Diesel,1968.0,150.0,Automata,Fata,Euro 6,32499.39
+334,Renault,Talisman,2020.0,Sedan,144500.0,Alb,Diesel,1997.0,200.0,Automata,Fata,Euro 6d-Temp,19000.0
+335,Mercedes-Benz,C,2017.0,Sedan,242765.0,Negru,Diesel,2143.0,170.0,Automata,Spate,Euro 6,16990.0
+336,Audi,Q5,2020.0,SUV,119000.0,Negru,Diesel,1968.0,190.0,Automata,4x4 (automat),Euro 6,28800.0
+337,Volvo,V40,2015.0,Compacta,330000.0,Alb,Diesel,1969.0,190.0,Manuala,Fata,Euro 5,5999.0
+338,Audi,A3,2015.0,Compacta,230000.0,Gri,Diesel,1968.0,150.0,Manuala,Fata,Euro 6,10490.0
+339,Audi,Q3,2020.0,SUV,74000.0,Negru,Diesel,1968.0,150.0,Automata,4x4 (automat),Euro 6,29800.0
+340,Seat,Leon,2021.0,Combi,148061.0,Rosu,Benzina,1498.0,150.0,Manuala,Fata,Euro 6,13900.0
+341,Toyota,Auris,2013.0,Combi,229000.0,Alb,Hibrid,1798.0,99.0,Automata,Fata,Euro 5b,9400.0
+342,BMW,Seria 5,2021.0,Sedan,113320.0,Gri,Diesel,1995.0,150.0,Automata,Spate,Euro 6d,28499.13
+343,BMW,X3,2024.0,SUV,5500.0,Gri,Benzina,1998.0,245.0,Automata,4x4 (automat),Euro 6,60379.0
+344,Seat,Tarraco,2022.0,SUV,92838.0,Negru,Diesel,1968.0,150.0,Automata,Fata,Euro 6,26100.0
+345,Audi,Q5,2016.0,SUV,266000.0,Alb,Diesel,1968.0,190.0,Automata,Fata,Euro 6,14600.0
+346,Skoda,Kodiaq,2017.0,SUV,286000.0,Albastru,Diesel,1968.0,190.0,Automata,4x4 (automat),Euro 6,15800.0
+347,BMW,X1,2023.0,SUV,79500.0,Alb,Diesel,1995.0,150.0,Automata,Fata,Euro 6,32400.0
+348,BMW,Seria 5,2019.0,Combi,112604.0,Albastru,Diesel,1995.0,190.0,Automata,Spate,Euro 6d,24500.0
+349,Ford,Fiesta,2020.0,Masina de oras,86303.0,Alb,Benzina,998.0,95.0,Manuala,Fata,Euro 6,9400.0
+350,Peugeot,3008,2021.0,SUV,122000.0,Rosu,Benzina,1199.0,130.0,Automata,Fata,Euro 6c,15990.0
+351,Volkswagen,Polo,2011.0,Masina de oras,245000.0,Rosu,Benzina,1197.0,105.0,Manuala,Fata,Euro 5,4990.0
+352,Mercedes-Benz,CLA,2020.0,Sedan,53074.0,Galben/Auriu,Diesel,1461.0,116.0,Automata,Fata,Euro 6,29490.0
+353,Volkswagen,Jetta,2011.0,Sedan,128854.0,Gri,Benzina,1197.0,105.0,Manuala,Fata,Euro 5,7500.0
+354,Ford,Focus,2015.0,Compacta,100700.0,Negru,Benzina,999.0,100.0,Manuala,Fata,Euro 6,7990.0
+355,Volkswagen,Passat,2020.0,Combi,174698.0,Negru,Hibrid Plug-In,1498.0,204.0,Automata,Fata,Euro 6b,17690.0
+356,Hyundai,Tucson,2016.0,SUV,175389.0,Maro,Diesel,1995.0,136.0,Manuala,Fata,Euro 6,14990.0
+357,Peugeot,208,2020.0,Masina de oras,130586.0,Rosu,Benzina,1199.0,101.0,Manuala,Fata,Euro 6,12690.0
+358,Toyota,RAV4,2014.0,SUV,195000.0,Maro,Diesel,2231.0,150.0,Automata,4x4 (automat),Euro 5,15800.0
+359,BMW,X6,2014.0,SUV,298000.0,Alb,Diesel,2993.0,258.0,Automata,4x4 (automat),Euro 5,16980.0
+360,Skoda,Fabia,2012.0,Masina de oras,240000.0,Alb,Diesel,1598.0,90.0,Manuala,Fata,Euro 5,4490.0
+361,BMW,Seria 3,2023.0,Combi,48000.0,Gri,Diesel,1995.0,190.0,Automata,4x4 (automat),Euro 6,28490.0
+362,Hyundai,i40,2015.0,Combi,179782.0,Gri,Diesel,1685.0,136.0,Automata,Fata,Euro 5,9550.0
+363,Audi,A5,2014.0,Sedan,293418.0,Gri,Diesel,1968.0,150.0,Automata,Fata,Euro 5,11600.0
+364,Dacia,Logan,2021.0,Sedan,156000.0,Alb,Benzina + GPL,999.0,100.0,Manuala,Fata,Euro 6,10490.0
+365,Skoda,Octavia,2014.0,Sedan,260000.0,Negru,Benzina,1197.0,105.0,Manuala,Fata,Euro 5,5990.0
+366,Mercedes-Benz,Vito,2016.0,Monovolum,201687.0,Argint,Diesel,1598.0,114.0,Manuala,Fata,Euro 6,16900.0
+367,Audi,A4,2016.0,Combi,249000.0,Negru,Diesel,1968.0,190.0,Automata,4x4 (automat),Euro 6,15000.0
+368,Land Rover,Discovery,2022.0,SUV,17000.0,Maro,Diesel,2996.0,300.0,Automata,4x4 (automat),Euro 6c,78650.0
+369,Audi,A5,2010.0,Sedan,253000.0,Gri,Diesel,1968.0,170.0,Manuala,Fata,Euro 5,8950.0
+370,Volvo,V60,2014.0,Combi,250000.0,Argint,Hibrid Plug-In,1969.0,283.0,Automata,4x4 (automat),Euro 6,11700.0
+371,BMW,Seria 5,2009.0,Sedan,282500.0,Negru,Diesel,1995.0,177.0,Automata,Spate,Euro 5,7699.0
+372,Citroën,DS5,2013.0,Compacta,248950.0,Alb,Diesel,1560.0,115.0,Automata,Fata,Euro 5,9990.0
+373,Hyundai,Tucson,2016.0,SUV,256000.0,Argint,Diesel,1995.0,136.0,Manuala,4x4 (automat),Euro 6,13990.0
+374,Volkswagen,Tiguan,2013.0,SUV,293000.0,Maro,Diesel,1968.0,110.0,Manuala,Fata,Euro 5,9350.0
+375,Audi,A6 Allroad,2015.0,Combi,225000.0,Maro,Diesel,2967.0,218.0,Automata,4x4 (automat),Euro 6,17500.0
+376,Audi,A6,2015.0,Combi,283000.0,Albastru,Diesel,1968.0,150.0,Automata,Fata,Euro 6,14700.0
+377,Volvo,XC 60,2019.0,SUV,139000.0,Albastru,Hibrid Plug-In,1969.0,303.0,Automata,4x4 (automat),Euro 6,27989.72
+378,Mercedes-Benz,S,2021.0,Sedan,79151.0,Alb,Benzina,2999.0,367.0,Automata,4x4 (automat),Euro 6,78899.26
+379,Audi,Q2,2018.0,SUV,160000.0,Negru,Benzina,1395.0,150.0,Automata,Fata,Euro 6,16990.0
+380,BMW,X1,2021.0,SUV,124500.0,Gri,Hibrid Plug-In,1499.0,220.0,Automata,4x4 (manual),Euro 6d-Temp,19450.0
+381,Hyundai,Tucson,2016.0,SUV,154000.0,Negru,Diesel,1995.0,136.0,Manuala,4x4 (automat),Euro 6,14490.0
+382,Volkswagen,Tiguan,2011.0,SUV,219889.0,Alb,Diesel,1968.0,170.0,Manuala,4x4 (automat),Euro 5,8900.0
+383,Dacia,Sandero Stepway,2012.0,Compacta,181468.0,Gri,Diesel,1496.0,90.0,Manuala,Fata,Euro 5,4200.0
+384,Peugeot,2008,2016.0,Compacta,114500.0,Alb,Benzina,1199.0,110.0,Manuala,Fata,Euro 6,6999.0
+385,Mercedes-Benz,GLE,2025.0,SUV,5896.0,Gri,Hibrid Plug-In,1993.0,333.0,Automata,4x4 (automat),Euro 6,96899.22
+386,BMW,Seria 5,2020.0,Combi,198100.0,Gri,Benzina,1998.0,184.0,Automata,Spate,Euro 6,20990.0
+387,Toyota,Avensis,2012.0,Combi,202000.0,Negru,Diesel,2231.0,177.0,Manuala,Fata,Euro 5,7200.0
+388,Seat,Exeo,2009.0,Sedan,230000.0,Rosu,Diesel,1968.0,170.0,Manuala,Fata,Euro 5,3000.0
+389,BMW,Seria 6,2016.0,Sedan,139000.0,Alte culori,Diesel,2993.0,313.0,Automata,4x4 (automat),Euro 6d-Temp,26980.0
+390,Opel,Astra,2019.0,Combi,155000.0,Gri,Diesel,1598.0,136.0,Manuala,Fata,Euro 6d,7700.0
+391,BMW,Seria 5,2016.0,Combi,267522.0,Maro,Diesel,1995.0,190.0,Automata,Spate,Euro 6b,12500.0
+392,Mazda,CX-80,2024.0,SUV,4600.0,Gri,Hibrid Plug-In,2488.0,327.0,Automata,4x4 (automat),Euro 6,51000.0
+393,Renault,Kadjar,2019.0,SUV,135619.0,Gri,Diesel,1749.0,150.0,Manuala,4x4 (automat),Euro 6,17500.0
+394,Volvo,XC 60,2019.0,SUV,80000.0,Alb,Hibrid Plug-In,1969.0,303.0,Automata,4x4 (automat),Euro 6,30990.0
+395,BMW,X1,2013.0,SUV,250000.0,Alb,Diesel,1995.0,143.0,Automata,4x4 (automat),Euro 6,10490.0
+396,Jaguar,XF,2016.0,Sedan,170000.0,Alb,Diesel,2179.0,163.0,Automata,Spate,Euro 6,11990.0
+397,Porsche,Cayenne,2015.0,SUV,200000.0,Negru,Hibrid Plug-In,2999.0,333.0,Automata,4x4 (automat),Euro 6,25990.0
+398,Toyota,RAV4,2016.0,SUV,170000.0,Alb,Hibrid,2494.0,155.0,Automata,4x4 (automat),Euro 6,18490.0
+399,Volvo,XC 60,2019.0,SUV,130000.0,Negru,Hibrid Plug-In,1969.0,303.0,Automata,4x4 (automat),Euro 6,30490.0
+400,Volvo,XC 60,2020.0,SUV,110000.0,Negru,Diesel,1969.0,190.0,Automata,Fata,Euro 6,27490.0
+401,Seat,Leon,2016.0,Compacta,199563.0,Negru,Diesel,1968.0,184.0,Automata,Fata,Euro 6,11200.0
+402,Skoda,Octavia,2021.0,Sedan,39000.0,Gri,Benzina,1984.0,245.0,Automata,Fata,Euro 6b,27300.0
+403,Mercedes-Benz,GLE,2017.0,SUV,200816.0,Negru,Benzina,2996.0,367.0,Automata,4x4 (automat),Euro 6,29950.0
+404,Volkswagen,Golf,2015.0,Combi,201000.0,Negru,Diesel,1598.0,110.0,Automata,Fata,Euro 6,9200.0
+405,BMW,Seria 3,2015.0,Combi,165631.0,Albastru,Diesel,1995.0,190.0,Automata,4x4 (automat),Euro 6,16700.0
+406,Volkswagen,Golf,2009.0,Compacta,260000.0,Gri,Benzina,1390.0,160.0,Manuala,Fata,Euro 5,4490.0
+407,BMW,Seria 7,2016.0,Sedan,118000.0,Negru,Benzina,2979.0,326.0,Automata,Spate,Euro 6,31780.0
+408,Volkswagen,Tiguan,2012.0,SUV,235000.0,Gri,Diesel,1968.0,140.0,Automata,4x4 (automat),Euro 5,8990.0
+409,Renault,Clio,2016.0,Combi,201000.0,Alb,Benzina,898.0,90.0,Manuala,Fata,Euro 6,5989.5
+410,Peugeot,308,2018.0,Compacta,99200.0,Gri,Benzina,1199.0,130.0,Automata,Fata,Euro 6,8500.0
+411,Volkswagen,Transporter,2019.0,Monovolum,186000.0,Gri,Diesel,1996.0,150.0,Manuala,Fata,Euro 6c,14300.0
+412,Volkswagen,Passat,2018.0,Combi,260000.0,Gri,Diesel,1968.0,150.0,Automata,Fata,Euro 6,10499.0
+413,Mercedes-Benz,CLA,2014.0,Sedan,189192.0,Argint,Benzina,1991.0,211.0,Automata,Fata,Euro 5,15850.0
+414,Audi,A5,2010.0,Cabrio,280000.0,Gri,Diesel,1968.0,170.0,Manuala,Fata,Euro 5,7500.0
+415,Audi,A4,2009.0,Combi,194000.0,Albastru,Diesel,1968.0,143.0,Manuala,Fata,Euro 5,6350.0
+416,Volkswagen,Caddy,2019.0,Combi,190000.0,Alb,Diesel,1968.0,102.0,Automata,Fata,Euro 6d-Temp,12750.0
+417,Renault,Talisman,2017.0,Combi,222865.0,Gri,Diesel,1598.0,130.0,Manuala,Fata,Euro 6,8990.0
+418,Renault,Megane,2019.0,Combi,191000.0,Argint,Diesel,1461.0,116.0,Manuala,Fata,Euro 6,9490.0
+419,Opel,Insignia,2021.0,Combi,138500.0,Gri,Diesel,1955.0,174.0,Automata,Fata,Euro 6,16499.0
+420,Volvo,XC 40,2020.0,SUV,104750.0,Alb,Benzina,1477.0,163.0,Automata,Fata,Euro 6,19360.0
+421,Audi,A6,2016.0,Combi,211000.0,Maro,Diesel,1968.0,190.0,Manuala,Fata,Euro 6,16450.0
+422,Seat,Alhambra,2011.0,Monovolum,234000.0,Negru,Diesel,1968.0,140.0,Automata,Fata,Euro 5,8199.0
+423,Audi,A4,2017.0,Sedan,137648.0,Negru,Diesel,1968.0,190.0,Automata,4x4 (automat),Euro 6c,19950.0
+424,Skoda,Octavia,2012.0,Sedan,215000.0,Alb,Diesel,1598.0,105.0,Manuala,Fata,Euro 5,3900.0
+425,BMW,Seria 3,2008.0,Sedan,140390.0,Verde,Diesel,1995.0,163.0,Manuala,Spate,Euro 5,7500.0
+426,Volkswagen,Passat CC,2012.0,Sedan,245323.0,Maro,Diesel,1968.0,177.0,Automata,Fata,Euro 5,9500.0
+427,Volvo,XC 90,2021.0,SUV,169600.0,Negru,Hibrid Plug-In,1969.0,303.0,Automata,4x4 (automat),Euro 6,36500.0
+428,Volkswagen,Passat,2024.0,Combi,11000.0,Gri,Diesel,1968.0,150.0,Automata,Fata,Euro 6,40293.0
+429,Ford,Kuga,2015.0,SUV,226000.0,Alb,Diesel,1997.0,120.0,Manuala,Fata,Euro 6,7000.0
+430,Renault,Kangoo,2016.0,Monovolum,255000.0,Alb,Diesel,1461.0,110.0,Manuala,Fata,Euro 6,6999.0
+431,Mercedes-Benz,S,2018.0,Sedan,211000.0,Negru,Diesel,2987.0,258.0,Automata,4x4 (automat),Euro 6,36500.0
+432,Ford,Mondeo,2020.0,Sedan,99999.0,Albastru,Benzina + GPL,1499.0,165.0,Automata,Fata,Euro 6,14999.0
+433,Land Rover,Range Rover Velar,2021.0,SUV,192399.0,Alb,Diesel,1999.0,179.0,Automata,4x4 (automat),Euro 6,24999.0
+434,Volvo,V60,2013.0,Combi,299999.0,Gri,Diesel,1560.0,115.0,Automata,Fata,Euro 5,6499.0
+435,Land Rover,Discovery Sport,2022.0,SUV,166699.0,Gri,Diesel,1998.0,204.0,Automata,4x4 (automat),Euro 6,27999.0
+436,BMW,X3,2016.0,SUV,185000.0,Alb,Diesel,1995.0,190.0,Automata,4x4 (automat),Euro 6,17499.0
+437,Volvo,V40,2015.0,Compacta,192457.0,Negru,Diesel,1560.0,115.0,Manuala,Fata,Euro 5,8290.0
+438,Renault,Megane,2017.0,Combi,207502.0,Albastru,Diesel,1461.0,110.0,Automata,Fata,Euro 6,9890.0
+439,Ford,Fiesta,2009.0,Masina de oras,218152.0,Rosu,Benzina + GPL,1388.0,96.0,Manuala,Fata,Euro 5,2999.0
+440,Mercedes-Benz,CLA,2023.0,Combi,169500.0,Alb,Diesel,1950.0,116.0,Automata,Fata,Euro 6b,18500.0
+441,BMW,Seria 1,2019.0,Compacta,149500.0,Alb,Benzina,1499.0,140.0,Automata,Fata,Euro 6b,13200.0
+442,Volkswagen,Passat,2012.0,Combi,218500.0,Maro,Benzina,1390.0,122.0,Manuala,Fata,Euro 5,6390.0
+443,Land Rover,Range Rover Evoque,2014.0,SUV,92000.0,Alb,Diesel,2179.0,150.0,Automata,4x4 (automat),Euro 5,15000.0
+444,Nissan,Qashqai,2015.0,SUV,264000.0,Negru,Diesel,1461.0,110.0,Manuala,Fata,Euro 5,9999.0
+445,Audi,A6,2018.0,Sedan,11500.0,Gri,Diesel,1968.0,204.0,Automata,Fata,Euro 6,27500.0
+446,BMW,Seria 3,2021.0,Sedan,200700.0,Gri,Benzina,1998.0,184.0,Automata,Spate,Euro 6,17800.0
+447,Dacia,Duster,2025.0,SUV,6800.0,Maro,Benzina + GPL,999.0,100.0,Manuala,Fata,Euro 6,21800.0
+448,Nissan,Juke,2010.0,SUV,249619.0,Gri,Diesel,1461.0,110.0,Manuala,Fata,Euro 5,5999.0
+449,Renault,Clio,2014.0,Combi,320000.0,Negru,Diesel,1461.0,90.0,Manuala,Fata,Euro 5,4400.0
+450,Land Rover,Defender,2011.0,SUV,150989.0,Verde,Diesel,2401.0,122.0,Manuala,4x4 (manual),Euro 4,39999.0
+451,Dacia,Sandero Stepway,2020.0,Masina de oras,160000.0,Gri,Benzina,898.0,90.0,Manuala,Fata,Euro 6b,7890.0
+452,Renault,Clio,2016.0,Combi,185000.0,Gri,Diesel,1461.0,90.0,Manuala,Fata,Euro 6,6300.0
+453,Dacia,Duster,2018.0,SUV,95000.0,Albastru,Benzina,1199.0,125.0,Manuala,4x4 (manual),Euro 6,11500.0
+454,Mercedes-Benz,C,2020.0,Combi,221000.0,Negru,Hibrid Plug-In,1950.0,194.0,Automata,Spate,Euro 6,20990.0
+455,Audi,A5,2017.0,Sedan,175000.0,Gri,Diesel,1968.0,190.0,Automata,Fata,Euro 6,20990.0
+456,Nissan,Qashqai,2018.0,SUV,223899.0,Alb,Diesel,1461.0,110.0,Manuala,Fata,Euro 6,14750.0
+457,Mazda,CX-5,2019.0,SUV,176000.0,Albastru,Diesel,2191.0,150.0,Automata,Fata,Euro 6,16250.0
+458,Renault,Megane,2017.0,Combi,192000.0,Albastru,Diesel,1461.0,110.0,Manuala,Fata,Euro 6,10499.0
+459,Opel,Corsa,2016.0,Masina de oras,195000.0,Negru,Benzina,1398.0,90.0,Manuala,Fata,Euro 6,5300.0
+460,Skoda,Superb,2021.0,Combi,185000.0,Negru,Hibrid Plug-In,1395.0,217.0,Automata,Fata,Euro 6,14999.0
+461,BMW,X5,2016.0,SUV,206000.0,Negru,Benzina,2979.0,306.0,Automata,4x4 (automat),Euro 6b,16500.0
+462,BMW,Seria 3,2019.0,Sedan,56000.0,Negru,Benzina,1998.0,258.0,Automata,Spate,Euro 6b,27900.0
+463,Alfa Romeo,Stelvio,2019.0,SUV,139000.0,Albastru,Benzina,1995.0,280.0,Automata,4x4 (automat),Euro 6b,22900.0
+464,Volkswagen,Polo,2015.0,Masina de oras,295000.0,Alb,Diesel,1422.0,90.0,Manuala,Fata,Euro 6,4990.0
+465,Audi,A4,2011.0,Sedan,206123.0,Negru,Benzina,1798.0,120.0,Manuala,Fata,Euro 5,6990.0
+466,BMW,Seria 5,2015.0,Sedan,208000.0,Gri,Diesel,1995.0,190.0,Automata,Spate,Euro 6,13950.0
+467,BMW,Seria 1,2009.0,Compacta,248000.0,Negru,Diesel,1995.0,177.0,Manuala,Spate,Euro 5,4990.0
+468,BMW,Seria 3,2013.0,Combi,265000.0,Alb,Diesel,1995.0,183.0,Automata,Spate,Euro 5,8100.0
+469,Peugeot,308,2008.0,Compacta,216000.0,Galben/Auriu,Diesel,1560.0,110.0,Automata,Fata,Euro 4,3490.0
+470,Citroën,C8,2012.0,Monovolum,295000.0,Gri,Diesel,1997.0,136.0,Manuala,Fata,Euro 5,4550.0
+471,Audi,A1,2020.0,Masina de oras,115000.0,Alb,Benzina,999.0,95.0,Manuala,Fata,Euro 6,12450.0
+472,Volvo,V60,2020.0,Combi,132000.0,Alb,Benzina,1969.0,190.0,Automata,Fata,Euro 6d,18500.0
+473,Dacia,Duster,2011.0,SUV,225394.0,Negru,Diesel,1461.0,109.0,Manuala,4x4 (manual),Euro 5,7500.0
+474,Subaru,Impreza,2011.0,Compacta,250000.0,Negru,Diesel,1998.0,150.0,Manuala,4x4 (automat),Euro 5,2800.0
+475,Ford,Mondeo,2021.0,Sedan,72000.0,Albastru,Diesel,1997.0,150.0,Automata,Fata,Euro 6,16790.0
+476,Audi,A7,2015.0,Sedan,325000.0,Negru,Diesel,2967.0,326.0,Automata,4x4 (automat),Euro 6,21500.0
+477,Audi,A6,2021.0,Combi,218000.0,Negru,Hibrid Plug-In,1984.0,299.0,Automata,4x4 (automat),Euro 6,24650.0
+478,Ford,Fiesta,2010.0,Masina de oras,298400.0,Gri,Diesel,1560.0,95.0,Manuala,Fata,Euro 5,3490.0
+479,Jaguar,XE,2021.0,Sedan,177957.0,Negru,Diesel,1998.0,204.0,Automata,Spate,Euro 6b,17999.0
+480,Peugeot,208,2023.0,Masina de oras,40000.0,Gri,Benzina,1199.0,101.0,Automata,Fata,Euro 6d,15500.0
+481,Citroën,Jumper,2022.0,Monovolum,199400.0,Alb,Diesel,2179.0,140.0,Manuala,Fata,Euro 6d,19995.25
+482,Volkswagen,Passat,2015.0,Sedan,245000.0,Negru,Diesel,1968.0,150.0,Manuala,Fata,Euro 6,10800.0
+483,Land Rover,Range Rover Evoque,2012.0,SUV,342000.0,Alb,Diesel,2179.0,190.0,Automata,4x4 (automat),Euro 5,12350.0
+484,BMW,X1,2018.0,SUV,109000.0,Alb,Diesel,1995.0,149.0,Automata,4x4 (automat),Euro 6,25200.0
+485,Volkswagen,Golf,2015.0,Masina de oras,175000.0,Gri,Benzina,1197.0,110.0,Manuala,Fata,Euro 6,6900.0
+486,Citroën,C3,2017.0,Masina mica,87258.0,Alb,Benzina,1199.0,82.0,Manuala,Fata,Euro 6,7000.0
+487,Nissan,Juke,2012.0,SUV,191358.0,Maro,Benzina,1598.0,117.0,Manuala,Fata,Euro 5,5550.0
+488,Skoda,Octavia,2022.0,Combi,118690.0,Negru,Diesel,1968.0,150.0,Automata,Fata,Euro 6,19965.0
+489,Hyundai,Tucson,2021.0,SUV,99950.0,Gri,Hibrid Plug-In,1598.0,180.0,Automata,4x4 (automat),Euro 6,28998.86
+490,Volkswagen,Touareg,2016.0,SUV,205000.0,Alb,Diesel,2967.0,262.0,Automata,4x4 (automat),Euro 6,19700.0
+491,Hyundai,Tucson,2019.0,SUV,189000.0,Albastru,Diesel,1685.0,116.0,Manuala,Fata,Euro 6b,12900.0
+492,Opel,Astra,2013.0,Combi,224290.0,Gri,Diesel,1686.0,130.0,Manuala,Fata,Euro 5,4550.0
+493,Volvo,XC 40,2023.0,SUV,43500.0,Gri,Benzina,1477.0,129.0,Automata,Fata,Euro 6d,30000.0
+494,Renault,Laguna,2009.0,Sedan,180700.0,Gri,Diesel,1461.0,110.0,Manuala,Fata,Euro 4,3790.0
+495,BMW,Seria 3,2022.0,Sedan,72720.0,Negru,Benzina,1998.0,184.0,Automata,Spate,Euro 6,35989.0
+496,Volvo,XC 60,2020.0,SUV,138000.0,Gri,Hibrid Plug-In,1969.0,303.0,Automata,4x4 (automat),Euro 6,33000.0
+497,BMW,X1,2013.0,SUV,210000.0,Alb,Diesel,1995.0,184.0,Automata,4x4 (automat),Euro 5,11990.0
+498,Audi,A5,2015.0,Sedan,193000.0,Gri,Diesel,1968.0,150.0,Automata,Fata,Euro 5,12800.0
+499,Skoda,Octavia,2021.0,Sedan,150000.0,Alb,Diesel,1968.0,150.0,Automata,Fata,Euro 6,17990.0
+500,Ford,Kuga,2021.0,SUV,60000.0,Albastru,Diesel,1499.0,120.0,Automata,Fata,Euro 6,17990.0
+501,Renault,Kadjar,2017.0,SUV,30000.0,Gri,Benzina,1197.0,130.0,Automata,Fata,Euro 6,14490.0
+502,Ford,Fiesta,2008.0,Compacta,170000.0,Gri,Diesel,1399.0,68.0,Manuala,Fata,Euro 4,2790.01
+503,Volkswagen,Scirocco,2013.0,Coupe,200000.0,Alb,Diesel,1968.0,140.0,Automata,Fata,Euro 5,10990.0
+504,Honda,HR-V,2017.0,SUV,198000.0,Alb,Diesel,1597.0,120.0,Manuala,Fata,Euro 6,11599.0
+505,Renault,Megane,2021.0,Combi,153400.0,Gri,Diesel,1461.0,116.0,Automata,Fata,Euro 6,10950.0
+506,Ford,Focus,2019.0,Compacta,68000.0,Albastru,Benzina,999.0,125.0,Manuala,Fata,Euro 6,12000.0
+507,BMW,Seria 3,2022.0,Combi,127775.0,Negru,Diesel,1995.0,190.0,Automata,4x4 (automat),Euro 6,24500.0
+508,Mercedes-Benz,GLA,2021.0,SUV,59058.0,Negru,Diesel,1950.0,150.0,Automata,4x4 (automat),Euro 6,29499.8
+509,Mitsubishi,ASX,2015.0,SUV,240000.0,Maro,Diesel,2268.0,150.0,Automata,4x4 (automat),Euro 6,8550.0
+510,Renault,Captur,2017.0,SUV,176000.0,Negru,Diesel,1461.0,90.0,Automata,Fata,Euro 6,7500.0
+511,Audi,A3,2012.0,Compacta,282400.0,Negru,Diesel,1598.0,105.0,Automata,Fata,Euro 5,7390.0
+512,Volkswagen,Passat,2016.0,Sedan,270000.0,Maro,Diesel,1968.0,150.0,Automata,Fata,Euro 6,15700.0
+513,Volkswagen,Polo,2013.0,Masina de oras,203500.0,Gri,Diesel,1199.0,75.0,Manuala,Fata,Euro 5,4990.0
+514,Renault,Espace,2015.0,Monovolum,191000.0,Gri,Diesel,1598.0,160.0,Automata,Fata,Euro 6,11590.0
+515,BMW,Seria 3,2020.0,Sedan,209000.0,Gri,Benzina,1998.0,184.0,Automata,Spate,Euro 6b,25034.9
+516,Volkswagen,Passat,2008.0,Sedan,262200.0,Negru,Diesel,1968.0,140.0,Automata,Fata,Euro 4,5990.0
+517,Audi,Q5,2014.0,SUV,243000.0,Gri,Diesel,1968.0,150.0,Manuala,4x4 (manual),Euro 6,11490.0
+518,Renault,Kangoo,2016.0,Monovolum,85400.0,Alb,Diesel,1461.0,90.0,Manuala,Fata,Euro 5b,7990.0
+519,Renault,Talisman,2019.0,Sedan,130000.0,Alb,Diesel,1997.0,160.0,Automata,Fata,Euro 6,18990.0
+520,Fiat,Doblo,2017.0,Monovolum,124000.0,Alb,Diesel,1248.0,95.0,Manuala,Fata,Euro 6,8390.0
+521,Renault,Megane,2018.0,Combi,172500.0,Albastru,Diesel,1461.0,90.0,Manuala,Fata,Euro 6,9990.0
+522,Audi,A4,2018.0,Combi,191000.0,Alb,Diesel,1968.0,150.0,Automata,Fata,Euro 6,14290.0
+523,Renault,Megane,2018.0,Sedan,64500.0,Gri,Benzina,1198.0,130.0,Manuala,Fata,Euro 6,10850.0
+524,Volkswagen,Tiguan,2020.0,SUV,173000.0,Gri,Diesel,1968.0,150.0,Automata,Fata,Euro 6,21490.0
+525,Mercedes-Benz,GLC,2020.0,SUV,153250.0,Gri,Diesel,1950.0,194.0,Automata,4x4 (automat),Euro 6b,31499.0
+526,Fiat,Doblo,2014.0,Monovolum,220100.0,Alb,Diesel,1248.0,90.0,Manuala,Fata,Euro 6b,5590.0
+527,Ford,Fiesta,2021.0,Masina de oras,112000.0,Alb,Benzina,999.0,100.0,Manuala,Fata,Euro 6,8950.0
+528,BMW,Seria 5,2016.0,Sedan,165000.0,Negru,Diesel,1995.0,190.0,Automata,4x4 (automat),Euro 6,18290.0
+529,Mercedes-Benz,GLE,2021.0,SUV,169000.0,Albastru,Diesel,2925.0,272.0,Automata,4x4 (automat),Euro 6d-Temp,47980.13
+530,Volkswagen,Passat,2019.0,Sedan,206000.0,Gri,Diesel,1968.0,150.0,Automata,Fata,Euro 6,18499.0
+531,Audi,A6,2011.0,Sedan,267900.0,Alb,Diesel,1968.0,170.0,Manuala,Fata,Euro 5,8390.0
+532,BMW,X5,2021.0,SUV,169000.0,Alb,Hibrid Plug-In,2998.0,394.0,Automata,4x4 (manual),Euro 6d,50820.0
+533,BMW,X1,2015.0,SUV,77250.0,Gri,Diesel,1995.0,143.0,Automata,4x4 (automat),Euro 5b,12700.0
+534,BMW,Seria 3,2013.0,Sedan,275000.0,Negru,Diesel,1995.0,143.0,Manuala,Spate,Euro 5,8498.0
+535,BMW,X4,2024.0,SUV,13000.0,Gri,Diesel,1995.0,190.0,Automata,Fata,Euro 6,47990.0
+536,Ford,Puma,2021.0,SUV,89000.0,Alb,Benzina,999.0,125.0,Manuala,Fata,Euro 6,13950.0
+537,Mercedes-Benz,GLE,2021.0,SUV,60800.0,Alb,Diesel,2925.0,272.0,Automata,4x4 (automat),Euro 6,64899.56
+538,Mercedes-Benz,E,2024.0,Sedan,18454.0,Negru,Hibrid Plug-In,1999.0,252.0,Automata,4x4 (automat),Euro 6d,90521.31
+539,Peugeot,3008,2019.0,SUV,169400.0,Gri,Benzina,1199.0,131.0,Automata,Fata,Euro 6,14990.0
+540,Volkswagen,Amarok,2018.0,SUV,241001.0,Alb,Diesel,2967.0,258.0,Automata,4x4 (automat),Euro 6,23490.0
+541,Alfa Romeo,Stelvio,2019.0,SUV,194000.0,Gri,Diesel,2143.0,210.0,Automata,4x4 (manual),Euro 6,19500.0
+542,Volkswagen,T-Roc,2021.0,SUV,153217.0,Gri,Diesel,1968.0,150.0,Automata,Fata,Euro 6,18400.0
+543,Seat,Leon,2007.0,Compacta,260435.0,Negru,Benzina,1595.0,102.0,Manuala,Fata,Euro 4,2400.0
+544,Volkswagen,Tiguan,2020.0,SUV,105000.0,Alb,Benzina,1498.0,150.0,Automata,Fata,Euro 6,19890.0
+545,Mercedes-Benz,A,2024.0,Compacta,19000.0,Gri,Hibrid Plug-In,1332.0,218.0,Automata,Fata,Euro 6,38990.0
+546,Audi,Q3,2019.0,SUV,219243.0,Negru,Benzina,1498.0,150.0,Automata,Fata,Euro 6,17800.0
+547,Opel,Corsa,2023.0,Masina de oras,100000.0,Alb,Benzina,1199.0,75.0,Manuala,Fata,Euro 6,8490.0
+548,Renault,Megane,2021.0,Compacta,154007.0,Gri,Diesel,1461.0,116.0,Automata,Fata,Euro 6d,14490.0
+549,Suzuki,Vitara,2021.0,SUV,37400.0,Gri,Benzina,1373.0,129.0,Manuala,Fata,Euro 6,15999.0
+550,Ford,Focus,2021.0,Compacta,29000.0,Albastru,Diesel,1499.0,120.0,Manuala,Fata,Euro 6,11950.0
+551,Audi,Q5,2018.0,SUV,179000.0,Alb,Diesel,1968.0,190.0,Automata,4x4 (automat),Euro 6,23990.0
+552,Volkswagen,Tiguan,2010.0,SUV,243000.0,Negru,Diesel,1968.0,140.0,Automata,Fata,Euro 6,7990.0
+553,BMW,X5 M,2017.0,SUV,210000.0,Negru,Diesel,2993.0,381.0,Automata,4x4 (automat),Euro 6,21990.0
+554,Hyundai,ix35,2015.0,SUV,172000.0,Negru,Benzina,1591.0,135.0,Manuala,Fata,Euro 6b,9900.0
+555,Audi,A3,2013.0,Compacta,148000.0,Negru,Diesel,1598.0,105.0,Automata,Fata,Euro 5,6500.0
+556,Audi,A6,2019.0,Sedan,236712.0,Negru,Diesel,2967.0,286.0,Automata,4x4 (automat),Euro 6,25989.59
+557,Ford,Transit,2019.0,Monovolum,54323.0,Alb,Diesel,1995.0,130.0,Manuala,Fata,Euro 6,22990.0
+558,Chevrolet,Spark,2012.0,Masina de oras,115000.0,Verde,Benzina,1206.0,82.0,Manuala,Fata,Euro 5,3390.0
+559,BMW,Seria 5,2017.0,Combi,175675.0,Negru,Diesel,1995.0,163.0,Automata,Spate,Euro 6,17990.0
+560,Volkswagen,Passat,2015.0,Sedan,215460.0,Alb,Diesel,1598.0,120.0,Manuala,Fata,Euro 6,10490.0
+561,Skoda,Scala,2021.0,Sedan,186367.0,Gri,Benzina,999.0,110.0,Automata,Fata,Euro 6,12990.0
+562,Volkswagen,Multivan,2017.0,Monovolum,244000.0,Albastru,Diesel,1968.0,150.0,Automata,4x4 (automat),Euro 6,24990.0
+563,Audi,S5,2017.0,Coupe,130000.0,Albastru,Benzina,2995.0,353.0,Automata,4x4 (automat),Euro 6,29900.0
+564,Ford,Transit,2020.0,Monovolum,131000.0,Alb,Diesel,1995.0,130.0,Manuala,Fata,Euro 6,18143.95
+565,Audi,A6,2021.0,Combi,162228.0,Alte culori,Diesel,2967.0,286.0,Automata,4x4 (automat),Euro 6d,28490.0
+566,Volkswagen,Passat,2010.0,Combi,360000.0,Albastru,Diesel,1968.0,143.0,Manuala,Fata,Euro 5,5500.0
+567,Dacia,Duster,2018.0,SUV,210000.0,Negru,Benzina,1598.0,114.0,Manuala,Fata,Euro 6,9440.0
+568,Ford,S-Max,2009.0,Monovolum,261408.0,Gri,Diesel,1753.0,125.0,Manuala,Fata,Euro 4,3499.0
+569,Mercedes-Benz,V,2018.0,Monovolum,226000.0,Gri,Diesel,2143.0,190.0,Automata,4x4 (automat),Euro 6,36900.0
+570,Audi,A4,2022.0,Sedan,44000.0,Alb,Benzina,1984.0,150.0,Automata,Fata,Euro 6,30900.0
+571,Ford,Focus,2007.0,Compacta,260000.0,Argint,Diesel,1560.0,90.0,Manuala,Fata,Euro 4,1690.0
+572,Renault,Megane,2016.0,Combi,232680.0,Albastru,Diesel,1461.0,110.0,Automata,Fata,Euro 6,8200.0
+573,Peugeot,5008,2021.0,SUV,37521.0,Albastru,Benzina,1598.0,180.0,Automata,Fata,Euro 6,28900.0
+574,Volkswagen,Golf,2008.0,Compacta,192500.0,Alb,Benzina,1984.0,230.0,Automata,Fata,Euro 4,11700.0
+575,Opel,Astra,2010.0,Masina mica,193750.0,Negru,Benzina,1398.0,100.0,Manuala,Fata,Euro 5,4399.0
+576,Audi,Q7,2021.0,SUV,92807.0,Negru,Hibrid Plug-In,2995.0,380.0,Automata,4x4 (automat),Euro 6d-Temp,49150.0
+577,Renault,Kadjar,2018.0,SUV,142809.0,Albastru,Diesel,1461.0,110.0,Automata,Fata,Euro 6,14499.0
+578,Renault,Espace,2018.0,Monovolum,166910.0,Negru,Diesel,1598.0,160.0,Automata,Fata,Euro 6b,15980.0
+579,Seat,Leon,2019.0,Compacta,87648.0,Albastru,Benzina,1498.0,130.0,Manuala,Fata,Euro 6d-Temp,13900.0
+580,Mercedes-Benz,E,2021.0,Sedan,54200.0,Alb,Diesel,1597.0,160.0,Automata,Spate,Euro 6d,30990.0
+581,BMW,Seria 1,2010.0,Compacta,271896.0,Negru,Diesel,1995.0,204.0,Automata,Spate,Euro 5,6650.0
+582,Renault,Espace,2018.0,Monovolum,219990.0,Gri,Diesel,1598.0,160.0,Automata,Fata,Euro 6,13999.0
+583,Opel,Astra,2015.0,Combi,215322.0,Maro,Diesel,1598.0,110.0,Manuala,Fata,Euro 6b,5699.0
+584,BMW,X3,2019.0,SUV,158000.0,Maro,Diesel,1995.0,190.0,Automata,4x4 (automat),Euro 6,27999.0
+585,Volkswagen,Golf,2021.0,Combi,226700.0,Gri,Diesel,1968.0,150.0,Automata,Fata,Euro 6,18500.0
+586,BMW,X5,2020.0,SUV,85000.0,Gri,Hibrid Plug-In,2998.0,394.0,Automata,4x4 (automat),Euro 6,49900.0
+587,Ford,Puma,2024.0,SUV,16905.0,Gri,Hibrid,999.0,125.0,Automata,Fata,Euro 6,20000.01
+588,Mercedes-Benz,E,2017.0,Sedan,127500.0,Negru,Benzina,1991.0,245.0,Automata,Spate,Euro 6,29500.01
+589,Volvo,XC 90,2020.0,SUV,83362.0,Negru,Hibrid Plug-In,1969.0,303.0,Automata,4x4 (automat),Euro 6,45900.0
+590,Audi,Q7,2021.0,SUV,50227.0,Negru,Diesel,2967.0,231.0,Automata,4x4 (automat),Euro 6,46999.0
+591,BMW,X3,2014.0,SUV,296000.0,Negru,Diesel,1995.0,184.0,Manuala,4x4 (automat),Euro 5,11490.0
+592,Skoda,RAPID,2019.0,Sedan,164000.0,Alb,Benzina,999.0,95.0,Manuala,Fata,Euro 6,6897.0
+593,Kia,XCeed,2021.0,SUV,34000.0,Albastru,Hibrid Plug-In,1580.0,141.0,Automata,Fata,Euro 6,19999.0
+594,Volvo,XC 40,2019.0,SUV,82631.0,Gri,Diesel,1969.0,150.0,Automata,4x4 (automat),Euro 6,26500.21
+595,Kia,Sportage,2022.0,SUV,129320.0,Gri,Hibrid,1598.0,230.0,Automata,Fata,Euro 6,25490.0
+596,Volvo,S60,2017.0,Sedan,191700.0,Negru,Diesel,1969.0,120.0,Manuala,Fata,Euro 6,10750.0
+597,Peugeot,3008,2022.0,SUV,145596.0,Gri,Hibrid Plug-In,1598.0,225.0,Automata,Fata,Euro 6,18290.0
+598,Toyota,Corolla,2019.0,Compacta,82900.0,Rosu,Hibrid,1987.0,178.0,Automata,Fata,Euro 6,21875.0
+599,Ford,Fiesta,2016.0,Masina mica,116622.0,Argint,Benzina,999.0,100.0,Automata,Fata,Euro 6,7499.58
+600,Seat,Leon,2021.0,Compacta,109290.0,Rosu,Benzina,1498.0,130.0,Manuala,Fata,Euro 6,13988.81
+601,Ford,Transit Connect,2018.0,Combi,197000.0,Alb,Diesel,1498.0,100.0,Manuala,Fata,Euro 6,8200.0
+602,Renault,Kadjar,2017.0,SUV,77058.0,Gri,Benzina,1197.0,130.0,Automata,Fata,Euro 6,13400.0
+603,BMW,X3,2021.0,SUV,101336.0,Albastru,Diesel,1995.0,190.0,Automata,4x4 (automat),Euro 6,35500.0
+604,BMW,X6,2020.0,SUV,95000.0,Negru,Diesel,2993.0,286.0,Automata,4x4 (manual),Euro 6c,64999.0
+605,Mercedes-Benz,GLB,2024.0,SUV,42600.0,Alb,Diesel,1950.0,150.0,Automata,4x4 (automat),Euro 6d,44757.9
+606,Dacia,Duster,2021.0,SUV,151000.0,Albastru,Benzina + GPL,999.0,90.0,Manuala,Fata,Euro 6,11999.0
+607,Skoda,Karoq,2021.0,SUV,123435.0,Gri,Benzina,1498.0,150.0,Automata,Fata,Euro 6,20490.01
+608,Ford,Focus,2020.0,Compacta,97980.0,Albastru,Benzina,999.0,125.0,Automata,Fata,Euro 6b,13297.9
+609,Land Rover,Discovery Sport,2015.0,SUV,143200.0,Maro,Diesel,1999.0,180.0,Automata,4x4 (automat),Euro 4,13900.0
+610,Hyundai,i30,2014.0,Compacta,249000.0,Gri,Diesel,1582.0,110.0,Manuala,Fata,Euro 5,6490.0
+611,Volkswagen,Touareg,2021.0,SUV,168040.0,Gri,Hibrid Plug-In,2995.0,340.0,Automata,4x4 (automat),Euro 6,39600.0
+612,Skoda,RAPID,2015.0,Sedan,131628.0,Gri,Benzina,1390.0,122.0,Automata,Fata,Euro 6,9370.0
+613,Dacia,Logan,2023.0,Sedan,58000.0,Alb,Benzina + GPL,999.0,90.0,Manuala,Fata,Euro 6,10490.0
+614,Ford,Galaxy,2019.0,Monovolum,222581.0,Gri,Diesel,1998.0,240.0,Automata,Fata,Euro 6,14500.0
+615,Citroën,C3,2019.0,Masina de oras,46803.0,Gri,Benzina,1199.0,110.0,Manuala,Fata,Euro 6,9990.0
+616,Kia,Sportage,2019.0,SUV,155000.0,Gri,Diesel,1598.0,115.0,Manuala,Fata,Euro 6,15990.0
+617,Audi,A7,2015.0,Sedan,142000.0,Negru,Diesel,2967.0,272.0,Automata,4x4 (automat),Euro 6,22990.0
+618,Ford,Ranger,2016.0,SUV,220000.0,Negru,Diesel,3198.0,200.0,Automata,4x4 (manual),Euro 6,17999.0
+619,Volvo,XC 60,2016.0,SUV,274000.0,Negru,Diesel,1969.0,149.0,Automata,Fata,Euro 6,12990.0
+620,Mercedes-Benz,GLE,2020.0,SUV,154701.0,Alb,Hibrid Plug-In,1950.0,194.0,Automata,4x4 (automat),Euro 6,51800.0
+621,Audi,Q7,2017.0,SUV,266000.0,Albastru,Diesel,2967.0,272.0,Automata,4x4 (automat),Euro 6,25990.0
+622,BMW,X6,2021.0,SUV,165273.0,Negru,Diesel,2993.0,352.0,Automata,4x4 (automat),Euro 6,61700.01
+623,Peugeot,3008,2021.0,SUV,122704.0,Negru,Hibrid Plug-In,1598.0,300.0,Automata,4x4 (automat),Euro 6,20990.0
+624,Toyota,Corolla,2021.0,Combi,205852.0,Alb,Hibrid,1987.0,180.0,Automata,Fata,Euro 6,18350.0
+625,Mercedes-Benz,GLC,2023.0,SUV,12940.0,Rosu,Benzina,1999.0,204.0,Automata,4x4 (automat),Euro 6,66899.99
+626,Renault,Kadjar,2021.0,SUV,155000.0,Alb,Diesel,1461.0,115.0,Automata,Fata,Euro 6b,14200.0
+627,Mercedes-Benz,GLC,2022.0,SUV,85374.0,Negru,Diesel,1950.0,194.0,Automata,4x4 (automat),Euro 6d,37497.9
+628,Kia,Ceed,2014.0,Compacta,220000.0,Alb,Diesel,1582.0,128.0,Manuala,Fata,Euro 5,5750.0
+629,Fiat,Panda,2014.0,Masina de oras,234000.0,Negru,Diesel,1248.0,75.0,Manuala,4x4 (automat),Euro 5,4990.0
+630,Ford,Focus,2012.0,Compacta,262000.0,Negru,Diesel,1560.0,116.0,Manuala,Fata,Euro 5,4990.0
+631,Citroën,Jumper,2019.0,Monovolum,90000.0,Alb,Diesel,1997.0,130.0,Manuala,Fata,Euro 6,14989.48
+632,Peugeot,208,2018.0,Masina de oras,140000.0,Negru,Benzina,1199.0,90.0,Manuala,Fata,Euro 6,7490.0
+633,BMW,Seria 3,2014.0,Sedan,192000.0,Bej,Benzina,1598.0,136.0,Automata,Spate,Euro 6,11990.0
+634,Volvo,V60,2013.0,Combi,166000.0,Negru,Hibrid Plug-In,2400.0,280.0,Automata,4x4 (automat),Euro 5,10990.0
+635,Mercedes-Benz,CLA,2025.0,Coupe,16925.0,Negru,Benzina,1991.0,190.0,Automata,4x4 (automat),Euro 6d-Temp,40499.91
+636,Toyota,Auris,2018.0,Combi,142000.0,Albastru,Hibrid,1798.0,99.0,Automata,Fata,Euro 6,12390.0
+637,Renault,Megane,2019.0,Combi,164000.0,Gri,Diesel,1461.0,95.0,Manuala,Fata,Euro 6b,8999.0
+638,Opel,Corsa,2016.0,Masina de oras,223400.0,Albastru,Diesel,1248.0,95.0,Automata,Fata,Euro 6,6699.0
+639,Audi,Q8,2021.0,SUV,108000.0,Albastru,Diesel,2967.0,231.0,Automata,4x4 (automat),Euro 6,53449.33
+640,Volkswagen,ARTEON,2018.0,Coupe,235000.0,Negru,Benzina,1498.0,150.0,Automata,Fata,Euro 6,18150.0
+641,Volkswagen,Passat,2010.0,Combi,262000.0,Albastru,Diesel,1968.0,140.0,Manuala,Fata,Euro 5,4550.0
+642,BMW,Seria 5,2015.0,Sedan,186000.0,Gri,Diesel,1995.0,190.0,Automata,Spate,Euro 6,14990.0
+643,Mercedes-Benz,GLC,2024.0,SUV,24020.0,Negru,Benzina,1999.0,204.0,Automata,4x4 (automat),Euro 6,59000.0
+644,Mercedes-Benz,GLC Coupe,2025.0,SUV,7500.0,Argint,Benzina,1999.0,258.0,Automata,4x4 (automat),Euro 6d-Temp,66537.9
+645,Volkswagen,Passat CC,2015.0,Sedan,174000.0,Argint,Diesel,1968.0,177.0,Automata,Fata,Euro 5,14999.0
+646,Audi,Q3,2020.0,SUV,209230.0,Negru,Diesel,1968.0,150.0,Automata,Fata,Euro 6,20933.0
+647,Skoda,Octavia,2017.0,Combi,197395.0,Alb,Diesel,1968.0,150.0,Manuala,4x4 (manual),Euro 6,12705.0
+648,BMW,Seria 5,2017.0,Sedan,179261.0,Gri,Diesel,2993.0,320.0,Automata,4x4 (automat),Euro 6,21900.0
+649,Land Rover,Discovery,2006.0,SUV,295312.0,Albastru,Diesel,2720.0,190.0,Automata,4x4 (automat),Euro 4,5200.0
+650,Ford,Kuga,2017.0,SUV,210000.0,Alb,Diesel,1498.0,120.0,Automata,Fata,Euro 6,10900.0
+651,Peugeot,208,2020.0,Masina de oras,121781.0,Gri,Benzina,1199.0,101.0,Manuala,Fata,Euro 6,9990.0
+652,Dacia,Dokker,2016.0,Monovolum,312135.0,Alb,Benzina,1598.0,102.0,Manuala,Fata,Euro 6,5300.0
+653,BMW,X3,2024.0,SUV,19600.0,Negru,Diesel,1995.0,190.0,Automata,4x4 (automat),Euro 6,49900.0
+654,Skoda,Octavia,2021.0,Compacta,104632.0,Argint,Benzina,1498.0,150.0,Manuala,Fata,Euro 6,15890.0
+655,Skoda,Fabia,2012.0,Combi,198173.0,Argint,Benzina,1197.0,86.0,Manuala,Fata,Euro 5,4899.0
+656,Land Rover,Range Rover Evoque,2011.0,SUV,261000.0,Alb,Diesel,2179.0,190.0,Manuala,4x4 (manual),Euro 5,7800.0
+657,Dacia,Logan,2010.0,Combi,175000.0,Rosu,Diesel,1461.0,68.0,Manuala,Fata,Euro 4,3550.0
+658,Mercedes-Benz,GLC,2020.0,SUV,172913.0,Negru,Hibrid Plug-In,1950.0,306.0,Automata,4x4 (automat),Euro 6d,30750.0
+659,Mercedes-Benz,GLE Coupe,2018.0,SUV,49113.0,Negru,Diesel,2987.0,258.0,Automata,4x4 (automat),Euro 6,72479.0
+660,Volkswagen,Golf,2010.0,Compacta,195000.0,Negru,Benzina,1390.0,122.0,Manuala,Fata,Euro 5,4950.0
+661,Skoda,Fabia,2020.0,Compacta,173614.0,Alb,Benzina,999.0,95.0,Manuala,Fata,Euro 6,8450.0
+662,Cupra,Formentor,2020.0,SUV,182000.0,Gri,Benzina,1984.0,310.0,Automata,4x4 (automat),Euro 6,24200.0
+663,BMW,Seria 1,2023.0,Compacta,60300.0,Gri,Benzina,1499.0,136.0,Automata,Fata,Euro 6,26900.01
+664,Peugeot,208,2014.0,Masina mica,113053.0,Gri,Diesel,1398.0,68.0,Manuala,Fata,Euro 6,5490.0
+665,Citroën,C5 Aircross,2020.0,SUV,113300.0,Gri,Hibrid Plug-In,1598.0,225.0,Automata,Fata,Euro 6,17659.0
+666,Volkswagen,Golf,2012.0,Compacta,46000.0,Albastru,Diesel,1598.0,105.0,Manuala,Fata,Euro 5,6500.0
+667,Renault,Kangoo,2019.0,Monovolum,198900.0,Alb,Diesel,1461.0,115.0,Manuala,Fata,Euro 6,9749.0
+668,Toyota,RAV4,2021.0,SUV,119600.0,Albastru,Hibrid,2487.0,218.0,Automata,4x4 (automat),Euro 6,32989.44
+669,Mercedes-Benz,GLE,2024.0,SUV,26235.0,Negru,Diesel,2989.0,367.0,Automata,4x4 (automat),Euro 6,87990.0
+670,Toyota,Yaris Cross,2022.0,SUV,60821.0,Albastru,Hibrid,1490.0,116.0,Automata,Fata,Euro 6,20600.0
+671,Dacia,Sandero Stepway,2013.0,Masina de oras,217216.0,Alte culori,Benzina,898.0,90.0,Manuala,Fata,Euro 5,4990.0
+672,Skoda,Octavia,2013.0,Sedan,180000.0,Gri,Diesel,1598.0,105.0,Automata,Fata,Euro 5,8500.0
+673,Porsche,Cayenne,2012.0,SUV,280000.0,Alb,Diesel,2967.0,240.0,Automata,4x4 (automat),Euro 6,15490.0
+674,Volkswagen,Golf,2022.0,Compacta,80000.0,Alb,Hibrid Plug-In,1395.0,245.0,Automata,Fata,Euro 6,21490.0
+675,Mercedes-Benz,GLC,2016.0,SUV,170000.0,Gri,Diesel,2143.0,204.0,Automata,4x4 (automat),Euro 6,23990.0
+676,Mercedes-Benz,GLC Coupe,2018.0,SUV,130000.0,Gri,Diesel,2143.0,170.0,Automata,4x4 (automat),Euro 6,27990.0
+677,Audi,A4,2023.0,Sedan,100000.0,Negru,Benzina,1984.0,204.0,Automata,4x4 (automat),Euro 6,23990.0
+678,Ford,Mondeo,2019.0,Combi,200000.0,Albastru,Diesel,1997.0,190.0,Automata,4x4 (automat),Euro 6,8990.0
+679,Land Rover,Discovery Sport,2018.0,SUV,140000.0,Albastru,Diesel,1999.0,150.0,Automata,4x4 (automat),Euro 6,19990.0
+680,Peugeot,308,2015.0,Compacta,117500.0,Alb,Benzina,1199.0,130.0,Manuala,Fata,Euro 6,7390.0
+681,Toyota,Hilux,2024.0,SUV,30152.0,Alb,Diesel,2755.0,204.0,Automata,4x4 (manual),Euro 6,57989.25
+682,BMW,X3,2013.0,SUV,200584.0,Alb,Diesel,1995.0,184.0,Automata,4x4 (automat),Euro 5,11990.0
+683,Volkswagen,Passat,2020.0,Sedan,84516.0,Gri,Diesel,1968.0,150.0,Automata,Fata,Euro 6,22900.0
+684,Audi,A5,2011.0,Sedan,281000.0,Negru,Diesel,1968.0,143.0,Automata,Fata,Euro 5,8990.0
+685,Ford,Ranger,2017.0,SUV,190808.0,Negru,Diesel,3127.0,200.0,Automata,4x4 (automat),Euro 6,21990.0
+686,Skoda,Scala,2021.0,Combi,124878.0,Albastru,Benzina,1498.0,150.0,Manuala,Fata,Euro 6,12589.99
+687,Audi,A4,2012.0,Combi,321627.0,Albastru,Diesel,1968.0,143.0,Manuala,Fata,Euro 5,7490.0
+688,Renault,Austral,2023.0,SUV,23000.0,Negru,Hibrid,1199.0,200.0,Automata,Fata,Euro 6,32890.0
+689,Volkswagen,Golf,2024.0,Compacta,47422.0,Albastru,Benzina,999.0,110.0,Automata,Fata,Euro 6,19490.0
+690,Volkswagen,Jetta,2013.0,Sedan,215000.0,Gri,Diesel,1598.0,105.0,Manuala,Fata,Euro 5,6600.0
+691,Ford,Mondeo,2013.0,Combi,277227.0,Argint,Diesel,1997.0,140.0,Automata,Fata,Euro 5,5300.0
+692,Nissan,Qashqai,2014.0,SUV,90516.0,Negru,Diesel,1598.0,130.0,Manuala,4x4 (manual),Euro 5,11900.0
+693,Hyundai,i20,2017.0,Masina de oras,128000.0,Alb,Diesel,1120.0,75.0,Manuala,Fata,Euro 6,7300.0
+694,Dacia,Jogger,2023.0,Combi,38996.0,Verde,Benzina,999.0,110.0,Manuala,Fata,Euro 6,17950.0
+695,BMW,Seria 5,2017.0,Sedan,220000.0,Negru,Diesel,1995.0,190.0,Automata,Spate,Euro 6b,19500.0
+696,Volkswagen,Multivan,2012.0,Monovolum,193000.0,Maro,Diesel,1990.0,180.0,Manuala,Fata,Euro 5,21500.0
+697,BMW,Seria 5,2019.0,Sedan,119000.0,Negru,Benzina,1998.0,184.0,Automata,Spate,Euro 6,25499.0
+698,Dacia,Duster,2021.0,SUV,97802.0,Alb,Diesel,1461.0,115.0,Manuala,4x4 (automat),Euro 6,15900.0
+699,Volkswagen,Sharan,2011.0,Monovolum,280000.0,Gri,Diesel,1968.0,140.0,Manuala,Fata,Euro 5,6700.0
+700,Renault,Clio,2015.0,Combi,270000.0,Negru,Diesel,1461.0,90.0,Manuala,Fata,Euro 5,4990.0
+701,Hyundai,Bayon,2022.0,SUV,100000.0,Negru,Benzina,1197.0,84.0,Manuala,Fata,Euro 6,12990.0
+702,Renault,Arkana,2023.0,SUV,84000.0,Gri,Benzina,1333.0,158.0,Automata,Fata,Euro 6,22500.0
+703,BMW,Seria 1,2011.0,Compacta,257298.0,Negru,Diesel,1995.0,116.0,Manuala,Spate,Euro 5,8299.0
+704,Mercedes-Benz,C,2017.0,Sedan,225000.0,Albastru,Diesel,2143.0,204.0,Automata,4x4 (manual),Euro 6,16890.0
+705,BMW,X5,2017.0,SUV,163380.0,Gri,Hibrid Plug-In,1997.0,313.0,Automata,4x4 (automat),Euro 6,23000.0
+706,Skoda,Octavia,2021.0,Sedan,117198.0,Gri,Benzina,1498.0,150.0,Manuala,Fata,Euro 6,15890.0
+707,BMW,Seria 5,2021.0,Combi,158000.0,Gri,Diesel,2993.0,286.0,Automata,4x4 (automat),Euro 6d,35899.0
+708,BMW,Seria 4,2023.0,Sedan,138000.0,Gri,Benzina,1998.0,184.0,Automata,Spate,Euro 6,39446.0
+709,Mercedes-Benz,C,2025.0,Sedan,6000.0,Negru,Diesel,1993.0,200.0,Automata,4x4 (automat),Euro 6d-Temp,60569.0
+710,Volkswagen,Passat,2015.0,Combi,289000.0,Gri,Diesel,1968.0,150.0,Automata,Fata,Euro 6,10350.0
+711,Volkswagen,Passat,2013.0,Combi,261300.0,Gri,Benzina + GPL,1390.0,160.0,Manuala,Fata,Euro 5,5750.0
+712,Toyota,RAV4,2021.0,SUV,71965.0,Gri,Hibrid,2487.0,178.0,Automata,Fata,Euro 6,31489.04
+713,Dacia,Logan,2020.0,Combi,158000.0,Alb,Benzina + GPL,898.0,90.0,Manuala,Fata,Euro 6,8690.0
+714,Dacia,Duster,2020.0,SUV,114000.0,Gri,Benzina + GPL,999.0,100.0,Manuala,Fata,Euro 6,11290.0
+715,Skoda,Superb,2012.0,Combi,230000.0,Gri,Diesel,1968.0,140.0,Automata,Fata,Euro 5,7650.0
+716,Renault,Captur,2013.0,SUV,204000.0,Gri,Diesel,1461.0,110.0,Manuala,Fata,Euro 6,6950.0
+717,Land Rover,Discovery Sport,2018.0,SUV,83000.0,Negru,Diesel,1999.0,241.0,Automata,4x4 (automat),Euro 6,19900.0
+718,BMW,X5,2007.0,SUV,284000.0,Argint,Diesel,2993.0,235.0,Automata,4x4 (manual),Euro 4,7000.0
+719,Hyundai,Tucson,2021.0,SUV,58000.0,Negru,Hibrid Plug-In,1598.0,251.0,Automata,4x4 (automat),Euro 6,26999.0
+720,Renault,Grand Scenic,2017.0,Monovolum,184700.0,Albastru,Diesel,1598.0,130.0,Manuala,Fata,Euro 6,10890.0
+721,Renault,Kadjar,2015.0,SUV,253700.0,Negru,Diesel,1461.0,110.0,Automata,Fata,Euro 5,9700.0
+722,Cupra,Formentor,2022.0,SUV,104749.0,Gri,Hibrid Plug-In,1395.0,204.0,Automata,Fata,Euro 6,24657.38
+723,Mercedes-Benz,C,2023.0,Sedan,46992.0,Negru,Hibrid Plug-In,1993.0,313.0,Automata,Spate,Euro 6,35989.03
+724,Volvo,XC 60,2023.0,SUV,76000.0,Gri,Diesel,1969.0,197.0,Automata,4x4 (automat),Euro 6,42108.0
+725,Volvo,XC 60,2020.0,SUV,42726.0,Negru,Benzina,1969.0,250.0,Automata,4x4 (automat),Euro 6,35990.01
+726,Citroën,C1,2018.0,Compacta,73137.0,Gri,Benzina,1199.0,82.0,Automata,Fata,Euro 6d-Temp,7990.0
+727,Peugeot,2008,2016.0,Masina mica,130000.0,Alb,Benzina,1199.0,82.0,Manuala,Fata,Euro 6,7690.0
+728,Volkswagen,Passat,2020.0,Combi,94316.0,Negru,Hibrid Plug-In,1395.0,218.0,Automata,Fata,Euro 6,22500.0
+729,Hyundai,IONIQ,2018.0,Sedan,139150.0,Gri,Hibrid Plug-In,1580.0,141.0,Automata,Fata,Euro 6,12999.0
+730,Mercedes-Benz,A,2018.0,Compacta,75900.0,Rosu,Diesel,1461.0,116.0,Automata,Fata,Euro 6,18990.0
+731,Ford,Transit Connect,2021.0,Monovolum,76721.0,Alb,Diesel,1499.0,99.0,Manuala,Fata,Euro 6,13450.0
+732,BMW,Seria 7,2016.0,Sedan,131000.0,Negru,Diesel,2993.0,320.0,Automata,4x4 (automat),Euro 6,32500.0
+733,Volkswagen,Golf,2013.0,Combi,250000.0,Albastru,Diesel,1968.0,150.0,Manuala,Fata,Euro 5,7500.0
+734,Mercedes-Benz,C,2014.0,Sedan,196000.0,Gri,Diesel,2143.0,170.0,Automata,Spate,Euro 5,12500.0
+735,Dacia,Duster,2022.0,SUV,145600.0,Alb,Diesel,1461.0,115.0,Manuala,4x4 (automat),Euro 6,15450.01
+736,Skoda,Octavia,2021.0,Combi,115166.0,Alb,Diesel,1998.0,115.0,Automata,Fata,Euro 6,20450.21
+737,SsangYong,Tivoli,2022.0,SUV,52487.0,Albastru,Benzina,1497.0,163.0,Automata,Fata,Euro 6,13999.7
+738,Mercedes-Benz,GLA,2022.0,SUV,41373.0,Negru,Diesel,1950.0,190.0,Automata,Fata,Euro 6d,34485.0
+739,Peugeot,308,2020.0,Compacta,136772.0,Gri,Diesel,1499.0,130.0,Automata,Fata,Euro 6,11190.0
+740,Renault,Captur,2021.0,SUV,57118.0,Albastru,Hibrid Plug-In,1598.0,160.0,Automata,Fata,Euro 6,17990.0
+741,Toyota,Hilux,2019.0,SUV,93197.0,Gri,Diesel,2393.0,150.0,Manuala,4x4 (manual),Euro 6,27001.15
+742,Land Rover,Range Rover Sport,2018.0,SUV,93114.0,Gri,Diesel,2993.0,306.0,Automata,4x4 (automat),Euro 6,55000.01
+743,Peugeot,3008,2020.0,SUV,44273.0,Alb,Hibrid Plug-In,1598.0,225.0,Automata,Fata,Euro 6,21789.99
+744,Mazda,CX-5,2019.0,SUV,141000.0,Gri,Benzina,2488.0,194.0,Automata,4x4 (automat),Euro 6,21300.0
+745,Peugeot,208,2015.0,Masina de oras,119000.0,Gri,Benzina,1199.0,83.0,Manuala,Fata,Euro 6b,4999.0
+746,Hyundai,Accent,2007.0,Sedan,115500.0,Verde,Benzina,1399.0,95.0,Manuala,Fata,Euro 4,2899.0
+747,Kia,XCeed,2021.0,SUV,27000.0,Alb,Hibrid Plug-In,1580.0,141.0,Automata,Fata,Euro 6,20999.01
+748,Opel,Vivaro,2019.0,Monovolum,156800.0,Argint,Diesel,1598.0,125.0,Manuala,Fata,Euro 6,14278.0
+749,Renault,Grand Scenic,2012.0,Monovolum,380000.0,Gri,Diesel,1461.0,110.0,Automata,Fata,Euro 5,3990.0
+750,Mercedes-Benz,A,2018.0,Compacta,171265.0,Alb,Diesel,1461.0,109.0,Automata,Fata,Euro 6b,16450.0
+751,Peugeot,2008,2014.0,SUV,107000.0,Alb,Benzina,1199.0,82.0,Manuala,Fata,Euro 5,6500.0
+752,Peugeot,508,2012.0,Combi,229371.0,Gri,Hibrid,1997.0,163.0,Automata,4x4 (automat),Euro 5,7999.0
+753,Toyota,RAV4,2021.0,SUV,60000.0,Gri,Hibrid,2494.0,197.0,Automata,4x4 (automat),Euro 6,27990.0
+754,Land Rover,Range Rover Velar,2019.0,SUV,184234.0,Gri,Diesel,1999.0,179.0,Automata,4x4 (automat),Euro 6,22999.0
+755,Renault,Arkana,2024.0,SUV,10000.0,Gri,Benzina,1333.0,158.0,Automata,Fata,Euro 6,27500.0
+756,BMW,X5,2024.0,SUV,27350.0,Gri,Diesel,2993.0,286.0,Automata,4x4 (automat),Euro 6d-Temp,69500.0
+757,BMW,Seria 1,2017.0,Compacta,216300.0,Alb,Benzina,1499.0,136.0,Automata,Fata,Euro 6,10999.51
+758,Mercedes-Benz,C,2020.0,Sedan,70935.0,Negru,Diesel,1950.0,194.0,Automata,4x4 (automat),Euro 6,26499.0
+759,BMW,Seria 2,2021.0,Sedan,95830.0,Alb,Benzina,1499.0,136.0,Automata,Fata,Euro 6,21500.01
+760,Mercedes-Benz,C,2010.0,Combi,387000.0,Negru,Diesel,2143.0,170.0,Automata,Spate,Euro 5,5100.0
+761,Land Rover,Discovery Sport,2017.0,SUV,167192.0,Gri,Diesel,1999.0,180.0,Automata,4x4 (automat),Euro 6,13950.0
+762,BMW,Seria 1,2022.0,Compacta,52000.0,Negru,Benzina,1499.0,136.0,Automata,Fata,Euro 6d-Temp,19900.0
+763,Toyota,Auris,2014.0,Compacta,244000.0,Negru,Diesel,1998.0,124.0,Manuala,Fata,Euro 5,6600.0
+764,Renault,Megane,2011.0,Masina de oras,154000.0,Gri,Benzina,1598.0,110.0,Manuala,Fata,Euro 5,4399.0
+765,Audi,A3,2015.0,Compacta,162141.0,Rosu,Diesel,1968.0,149.0,Automata,Fata,Euro 6,11199.0
+766,Audi,A6 Allroad,2016.0,Combi,239000.0,Maro,Diesel,2967.0,218.0,Automata,4x4 (automat),Euro 6,15900.0
+767,Peugeot,308,2019.0,Combi,147059.0,Gri,Diesel,1499.0,130.0,Automata,Fata,Euro 6,10490.0
+768,Seat,Ateca,2022.0,SUV,14680.0,Albastru,Benzina,1498.0,150.0,Manuala,Fata,Euro 6,20489.99
+769,SsangYong,Torres,2023.0,SUV,11000.0,Gri,Benzina,1497.0,163.0,Automata,Fata,Euro 6,27900.0
+770,BMW,Seria 4,2023.0,Coupe,82100.0,Albastru,Diesel,1995.0,190.0,Automata,4x4 (automat),Euro 6,41900.0
+771,Toyota,C-HR,2018.0,SUV,169000.0,Gri,Hibrid,1798.0,122.0,Automata,Fata,Euro 6,15690.0
+772,Peugeot,3008,2018.0,SUV,190368.0,Alb,Diesel,1499.0,130.0,Automata,Fata,Euro 6,12950.0
+773,Mercedes-Benz,GLB,2020.0,SUV,225000.0,Alb,Benzina,1332.0,163.0,Automata,4x4 (automat),Euro 6,28950.0
+774,Volkswagen,Golf,2010.0,Compacta,241305.0,Negru,Diesel,1598.0,105.0,Manuala,Fata,Euro 5,4250.0
+775,Toyota,Corolla,2020.0,Combi,75481.0,Alb,Hibrid,1798.0,122.0,Automata,Fata,Euro 6,18650.0
+776,Hyundai,i10,2020.0,Masina de oras,48000.0,Albastru,Benzina,1197.0,84.0,Automata,Fata,Euro 6d,11750.0
+777,Renault,Talisman,2016.0,Sedan,149772.0,Alte culori,Diesel,1598.0,160.0,Automata,Fata,Euro 6,14990.0
+778,Mercedes-Benz,A,2023.0,Compacta,67000.0,Alb,Benzina,1991.0,190.0,Automata,4x4 (automat),Euro 6,29990.0
+779,Volvo,S40,2009.0,Sedan,210000.0,Galben/Auriu,Benzina,1596.0,100.0,Manuala,Fata,Euro 4,3000.0
+780,Ford,Transit Custom,2020.0,Monovolum,121500.0,Albastru,Diesel,1995.0,130.0,Manuala,Fata,Euro 6,22983.95
+781,BMW,Seria 5,2016.0,Sedan,252137.0,Argint,Diesel,1995.0,190.0,Automata,Spate,Euro 6b,13990.0
+782,Ford,Puma,2020.0,SUV,77000.0,Alb,Benzina,999.0,125.0,Manuala,Fata,Euro 6,12590.0
+783,Dacia,Sandero,2009.0,Masina de oras,202125.0,Albastru,Benzina,1390.0,75.0,Manuala,Fata,Euro 4,1950.0
+784,Jeep,Renegade,2017.0,SUV,148500.0,Portocaliu,Diesel,1956.0,170.0,Automata,4x4 (automat),Euro 6,13999.0
+785,Mercedes-Benz,E,2023.0,Sedan,38905.0,Alb,Hibrid Plug-In,1999.0,252.0,Automata,4x4 (automat),Euro 6d-Temp,70785.0
+786,BMW,X1,2021.0,SUV,197242.0,Alb,Hibrid Plug-In,1499.0,220.0,Automata,4x4 (automat),Euro 6,19190.0
+787,Ford,Grand C-Max,2011.0,Monovolum,140775.0,Alb,Benzina,1596.0,150.0,Manuala,Fata,Euro 5,6499.0
+788,Dacia,Sandero Stepway,2023.0,Masina de oras,115000.0,Alb,Benzina + GPL,999.0,100.0,Manuala,Fata,Euro 6,10990.0
+789,BMW,Seria 1,2021.0,Compacta,27000.0,Alb,Benzina,1499.0,136.0,Automata,Fata,Euro 6,20990.0
+790,Mercedes-Benz,GLC,2023.0,SUV,39000.0,Gri,Hibrid Plug-In,1999.0,313.0,Automata,4x4 (automat),Euro 6,56990.0
+791,Renault,Arkana,2023.0,SUV,49359.0,Gri,Hibrid,1598.0,145.0,Automata,Fata,Euro 6,21000.0
+792,Audi,Q5,2021.0,SUV,79000.0,Gri,Hibrid Plug-In,1984.0,299.0,Automata,4x4 (automat),Euro 6,37990.01
+793,Hyundai,Tucson,2021.0,SUV,84414.0,Negru,Hibrid,1598.0,230.0,Automata,Fata,Euro 6,28989.99
+794,Renault,Megane,2019.0,Compacta,262308.0,Alb,Diesel,1461.0,116.0,Manuala,Fata,Euro 6,7260.0
+795,Skoda,RAPID,2018.0,Combi,192132.0,Rosu,Benzina,999.0,95.0,Manuala,Fata,Euro 6,6500.0
+796,BMW,Seria 6,2020.0,Sedan,220000.0,Gri,Benzina,1998.0,258.0,Automata,Spate,Euro 6b,24990.0
+797,Mercedes-Benz,ML,2008.0,SUV,180742.0,Negru,Diesel,2987.0,224.0,Automata,4x4 (automat),Euro 4,8000.0
+798,Ford,Kuga,2014.0,SUV,214000.0,Albastru,Diesel,1997.0,163.0,Automata,4x4 (automat),Euro 5,9400.0
+799,BMW,X4 M,2022.0,SUV,117351.0,Alb,Diesel,2993.0,340.0,Automata,4x4 (automat),Euro 6,47963.19
+800,Suzuki,S-Cross,2017.0,SUV,153000.0,Gri,Benzina,998.0,111.0,Automata,Fata,Euro 6c,11990.0
+801,Volkswagen,Taigo,2024.0,SUV,52037.0,Albastru,Benzina,999.0,110.0,Automata,Fata,Euro 6,19490.0
+802,Kia,Sportage,2022.0,SUV,69952.0,Negru,Hibrid Plug-In,1598.0,245.0,Automata,4x4 (automat),Euro 6,31990.0
+803,BMW,X3,2008.0,SUV,179300.0,Albastru,Diesel,2993.0,218.0,Manuala,4x4 (manual),Euro 4,5800.0
+804,Volkswagen,Passat,2021.0,Sedan,210000.0,Gri,Benzina,1498.0,150.0,Automata,4x4 (automat),Euro 6,16290.0
+805,Volkswagen,Tiguan,2021.0,SUV,105000.0,Negru,Diesel,1968.0,150.0,Automata,4x4 (automat),Euro 6,27709.0
+806,Volvo,XC 60,2020.0,SUV,229000.0,Negru,Diesel,1969.0,197.0,Automata,Fata,Euro 6,20777.0
+807,Ford,Mondeo,2018.0,Sedan,85500.0,Rosu,Hibrid,1999.0,187.0,Automata,Fata,Euro 6,16577.0
+808,Audi,Q5,2009.0,SUV,271500.0,Gri,Diesel,1968.0,170.0,Manuala,4x4 (automat),Euro 4,8400.0
+809,Land Rover,Discovery,2017.0,SUV,93000.0,Gri,Diesel,2993.0,258.0,Automata,4x4 (automat),Euro 6,29040.0
+810,Mercedes-Benz,E,2022.0,Sedan,46389.0,Negru,Diesel,1993.0,163.0,Automata,Spate,Euro 6d,37800.0
+811,Renault,Captur,2019.0,SUV,210200.0,Maro,Benzina,898.0,90.0,Manuala,Fata,Euro 6,7900.0
+812,BMW,Seria 3,2023.0,Sedan,55000.0,Negru,Hibrid Plug-In,1998.0,204.0,Automata,Spate,Euro 6,34994.41
+813,Land Rover,Range Rover Evoque,2016.0,SUV,45000.0,Argint,Diesel,1999.0,180.0,Automata,4x4 (automat),Euro 6b,17980.0
+814,Volkswagen,Caddy,2011.0,Combi,283000.0,Albastru,Diesel,1598.0,102.0,Manuala,Fata,Euro 5,5999.0
+815,Land Rover,Range Rover Evoque,2023.0,SUV,90000.0,Albastru,Diesel,1999.0,163.0,Automata,4x4 (automat),Euro 6,25990.0
+816,Mercedes-Benz,GLE Coupe,2020.0,SUV,199900.0,Gri,Diesel,2925.0,330.0,Automata,4x4 (automat),Euro 6,57950.0
+817,Dacia,Duster,2020.0,SUV,147334.0,Maro,Diesel,1461.0,116.0,Manuala,Fata,Euro 6b,11490.0
+818,BMW,X4,2016.0,SUV,227000.0,Alb,Diesel,1995.0,190.0,Automata,4x4 (automat),Euro 6,20490.0
+819,Volkswagen,Golf,2017.0,Compacta,145000.0,Alte culori,Benzina,1395.0,150.0,Manuala,Fata,Euro 6,11900.0
+820,Mercedes-Benz,E,2017.0,Coupe,161000.0,Gri,Benzina,2996.0,333.0,Automata,4x4 (manual),Euro 6,29900.0
+821,Mercedes-Benz,GLA,2018.0,SUV,233000.0,Alb,Benzina,1595.0,122.0,Automata,Fata,Euro 6,17490.0
+822,Volvo,XC 90,2018.0,SUV,93000.0,Negru,Diesel,1969.0,235.0,Automata,4x4 (automat),Euro 6b,34980.0
+823,Mercedes-Benz,GLC,2024.0,SUV,8755.0,Alb,Benzina,1999.0,204.0,Automata,4x4 (automat),Euro 6d-Temp,60379.0
+824,Volvo,XC 40,2025.0,SUV,1300.0,Verde,Benzina,1969.0,197.0,Automata,Fata,Euro 6d,45375.0
+825,BMW,Seria 3,2023.0,Sedan,87672.0,Negru,Diesel,1995.0,150.0,Automata,Spate,Euro 6,29990.0
+826,Ford,Transit Custom,2014.0,Monovolum,298000.0,Alb,Diesel,2198.0,100.0,Manuala,Fata,Euro 5,7150.0
+827,Volkswagen,Golf,2021.0,Compacta,87000.0,Albastru,Benzina,999.0,110.0,Manuala,Fata,Euro 6,14900.0
+828,BMW,Seria 2,2022.0,Monovolum,80000.0,Gri,Diesel,1995.0,190.0,Automata,Fata,Euro 6,16490.0
+829,BMW,Seria 3,2023.0,Sedan,9109.0,Negru,Diesel,1995.0,190.0,Automata,Spate,Euro 6d,29400.0
+830,Volvo,XC 60,2023.0,SUV,49000.0,Gri,Diesel,1969.0,197.0,Automata,4x4 (automat),Euro 6,42500.0
+831,Nissan,X-Trail,2017.0,SUV,219234.0,Negru,Diesel,1598.0,130.0,Automata,Fata,Euro 6,12490.0
+832,Land Rover,Range Rover Velar,2018.0,SUV,170000.0,Alb,Diesel,1999.0,179.0,Automata,4x4 (automat),Euro 6,22990.0
+833,Volkswagen,Golf,2017.0,Masina mica,217000.0,Alb,Diesel,1598.0,110.0,Automata,Fata,Euro 6,12590.0
+834,Audi,A5,2014.0,Sedan,239000.0,Negru,Diesel,1968.0,150.0,Automata,Fata,Euro 5,11990.0
+835,Ford,EcoSport,2018.0,SUV,72000.0,Albastru,Benzina,999.0,125.0,Automata,Fata,Euro 6,12200.0
+836,Renault,Talisman,2015.0,Sedan,209139.0,Gri,Diesel,1598.0,130.0,Manuala,Fata,Euro 6,9590.0
+837,SsangYong,Korando,2024.0,SUV,9200.0,Bej,Benzina,1497.0,163.0,Automata,4x4 (automat),Euro 6c,24999.81
+838,Ford,Fiesta,2020.0,Masina de oras,24043.0,Alb,Benzina,999.0,95.0,Manuala,Fata,Euro 6,10950.5
+839,Volkswagen,Tiguan,2014.0,SUV,213270.0,Negru,Diesel,1968.0,177.0,Automata,4x4 (automat),Euro 5,12680.0
+840,Nissan,Qashqai+2,2012.0,SUV,239000.0,Negru,Diesel,1461.0,110.0,Manuala,Fata,Euro 5,7999.0
+841,Peugeot,3008,2020.0,SUV,134255.0,Alb,Benzina,1199.0,130.0,Automata,Fata,Euro 6,13990.0
+842,Mercedes-Benz,GLC Coupe,2017.0,SUV,156000.0,Negru,Hibrid Plug-In,1991.0,211.0,Automata,4x4 (automat),Euro 6,28998.86
+843,Mercedes-Benz,GLC,2022.0,SUV,145500.0,Gri,Hibrid Plug-In,1950.0,306.0,Automata,4x4 (automat),Euro 6,36542.0
+844,Skoda,Fabia,2011.0,Combi,230000.0,Negru,Diesel,1598.0,105.0,Manuala,Fata,Euro 5,2990.0
+845,Ford,EcoSport,2020.0,SUV,37925.0,Rosu,Benzina,998.0,125.0,Automata,Fata,Euro 6,14799.51
+846,Toyota,Corolla,2023.0,Compacta,12000.0,Albastru,Hibrid,1798.0,98.0,Automata,Fata,Euro 6d-Temp,21296.0
+847,Dacia,Logan,2023.0,Sedan,15948.0,Alb,Benzina,999.0,90.0,Manuala,Fata,Euro 6,12990.0
+848,Renault,Talisman,2017.0,Combi,166073.0,Alb,Diesel,1598.0,160.0,Automata,Fata,Euro 6,12990.0
+849,BMW,X6,2021.0,SUV,40000.0,Alb,Diesel,2993.0,286.0,Automata,4x4 (manual),Euro 6,58900.0
+850,Mercedes-Benz,GLC,2018.0,SUV,72223.0,Alb,Benzina,1991.0,211.0,Automata,4x4 (automat),Euro 6,28368.45
+851,Skoda,Octavia,2006.0,Sedan,203000.0,Albastru,Diesel,1896.0,90.0,Manuala,Fata,Euro 4,2650.0
+852,BMW,Seria 5,2018.0,Sedan,249000.0,Negru,Benzina,2998.0,340.0,Automata,4x4 (automat),Euro 6,25750.0
+853,BMW,Seria 5,2021.0,Sedan,189000.0,Negru,Diesel,2993.0,286.0,Automata,4x4 (automat),Euro 6,35750.0
+854,Dacia,Duster,2015.0,SUV,197000.0,Gri,Diesel,1461.0,109.0,Manuala,Fata,Euro 5,7290.0
+855,Land Rover,Discovery,2017.0,SUV,230000.0,Negru,Diesel,1999.0,179.0,Automata,4x4 (automat),Euro 6,13990.0
+856,Mercedes-Benz,CLS,2018.0,Sedan,199215.0,Negru,Diesel,2925.0,286.0,Automata,4x4 (automat),Euro 6,29999.0
+857,Renault,Megane,2018.0,Combi,96073.0,Negru,Benzina,1332.0,140.0,Automata,Fata,Euro 6,12990.0
+858,Renault,Clio,2018.0,Combi,123843.0,Albastru,Benzina,1197.0,118.0,Automata,Fata,Euro 6,10899.0
+859,Skoda,Kodiaq,2018.0,SUV,149297.0,Gri,Diesel,1968.0,150.0,Automata,4x4 (automat),Euro 6,22990.0
+860,Opel,Astra,2012.0,Combi,228000.0,Albastru,Diesel,1686.0,110.0,Manuala,Fata,Euro 5,4700.0
+861,BMW,Seria 5,2020.0,Sedan,169900.0,Negru,Diesel,2993.0,285.0,Automata,Spate,Euro 6,32670.0
+862,Nissan,Qashqai,2012.0,SUV,215200.0,Alb,Diesel,1461.0,110.0,Manuala,Fata,Euro 5,7999.0
+863,Audi,A6,2020.0,Sedan,83394.0,Alb,Hibrid Plug-In,1984.0,299.0,Automata,4x4 (automat),Euro 6,35498.98
+864,Skoda,Kodiaq,2020.0,SUV,154085.0,Gri,Diesel,1968.0,150.0,Automata,4x4 (automat),Euro 6,23240.0
+865,Skoda,Octavia,2014.0,Sedan,249166.0,Maro,Diesel,1598.0,105.0,Automata,Fata,Euro 6,9500.0
+866,Ford,Focus,2010.0,Combi,250232.0,Rosu,Diesel,1560.0,109.0,Manuala,Fata,Euro 5,2500.0
+867,BMW,Seria 5,2020.0,Sedan,279000.0,Negru,Diesel,1995.0,190.0,Automata,Spate,Euro 6,19980.0
+868,Skoda,Octavia,2020.0,Combi,158200.0,Gri,Diesel,1968.0,150.0,Automata,Fata,Euro 6,18650.0
+869,Skoda,Karoq,2020.0,SUV,126109.0,Verde,Diesel,1968.0,150.0,Automata,4x4 (automat),Euro 6,20990.11
+870,Peugeot,3008,2017.0,SUV,110851.0,Alb,Benzina,1199.0,130.0,Manuala,Fata,Euro 6,11000.0
+871,BMW,Seria 3,2020.0,Combi,53800.0,Albastru,Diesel,1995.0,190.0,Automata,4x4 (automat),Euro 6,28600.0
+872,BMW,Seria 6,2014.0,Sedan,197900.0,Negru,Diesel,2993.0,313.0,Automata,4x4 (automat),Euro 5,22480.0
+873,Audi,A7,2015.0,Sedan,255000.0,Gri,Diesel,2967.0,326.0,Automata,4x4 (automat),Euro 6,22900.0
+874,BMW,Seria 1,2023.0,Compacta,97000.0,Gri,Benzina,1499.0,136.0,Automata,Fata,Euro 6,19749.0
+875,Volkswagen,Transporter,2017.0,Monovolum,229991.0,Alb,Diesel,1968.0,150.0,Manuala,Fata,Euro 6,15999.0
+876,Volkswagen,Tiguan,2021.0,SUV,166202.0,Alb,Diesel,1968.0,150.0,Automata,4x4 (manual),Euro 6,26600.0
+877,Dacia,Logan,2020.0,Sedan,55357.0,Alb,Benzina,898.0,90.0,Manuala,Fata,Euro 6,8990.0
+878,Dacia,Duster,2021.0,SUV,66023.0,Gri,Diesel,1461.0,115.0,Manuala,4x4 (automat),Euro 6,17590.0
+879,Dacia,Duster,2021.0,SUV,52680.0,Gri,Diesel,1461.0,115.0,Manuala,4x4 (automat),Euro 6,17990.0
+880,Renault,Captur,2014.0,SUV,88204.0,Portocaliu,Benzina,1197.0,120.0,Automata,Fata,Euro 5,8499.0
+881,Volkswagen,Caddy,2019.0,Combi,111545.0,Bej,Diesel,1968.0,102.0,Manuala,Fata,Euro 6,17545.0
+882,Peugeot,207,2007.0,Compacta,202000.0,Gri,Diesel,1560.0,90.0,Manuala,Fata,Euro 4,1750.0
+883,Land Rover,Range Rover Evoque,2012.0,SUV,148000.0,Alb,Diesel,2179.0,190.0,Automata,4x4 (automat),Euro 5,10000.0
+884,BMW,X3,2022.0,SUV,199900.0,Gri,Hibrid Plug-In,1998.0,292.0,Automata,4x4 (automat),Euro 6,29499.8
+885,Volkswagen,Passat,2022.0,Combi,84840.0,Argint,Diesel,1968.0,150.0,Automata,Fata,Euro 6d,23500.0
+886,Mercedes-Benz,E,2025.0,Sedan,5000.0,Negru,Hibrid Plug-In,1993.0,313.0,Automata,4x4 (automat),Euro 6,71907.88
+887,Renault,Talisman,2017.0,Sedan,120000.0,Negru,Diesel,1598.0,160.0,Automata,Fata,Euro 6,13990.0
+888,Dacia,Duster,2011.0,SUV,243009.0,Gri,Diesel,1461.0,110.0,Manuala,Fata,Euro 5,5250.0
+889,Cupra,Ateca,2021.0,SUV,73500.0,Gri,Benzina,1984.0,300.0,Automata,4x4 (automat),Euro 6,29000.0
+890,Toyota,C-HR,2022.0,SUV,104157.0,Gri,Hibrid,1798.0,98.0,Automata,Fata,Euro 6,21490.0
+891,BMW,X1,2015.0,SUV,177615.0,Portocaliu,Diesel,1995.0,143.0,Automata,4x4 (automat),Euro 5,12500.0
+892,Mitsubishi,Eclipse-Cross,2022.0,SUV,94000.0,Albastru,Hibrid Plug-In,2360.0,188.0,Automata,4x4 (automat),Euro 6,21780.0
+893,Citroën,DS3,2014.0,Cabrio,118160.0,Maro,Benzina,1598.0,120.0,Automata,Fata,Euro 5,5999.0
+894,Volkswagen,Passat,2016.0,Combi,238000.0,Gri,Diesel,1968.0,150.0,Manuala,Fata,Euro 6,12000.0
+895,Skoda,Fabia,2013.0,Masina de oras,235748.0,Bej,Diesel,1598.0,90.0,Manuala,Fata,Euro 5,4850.0
+896,Opel,Grandland X,2020.0,SUV,60000.0,Gri,Benzina,1199.0,130.0,Automata,Fata,Euro 6,13300.0
+897,Volvo,V40,2016.0,Compacta,129359.0,Alb,Benzina,1498.0,152.0,Automata,Fata,Euro 6,12850.0
+898,BMW,Seria 7,2018.0,Sedan,100000.0,Albastru,Diesel,2993.0,265.0,Automata,Spate,Euro 6,29990.0
+899,Audi,A6 Allroad,2017.0,Combi,260000.0,Negru,Diesel,2967.0,218.0,Automata,4x4 (automat),Euro 6,14990.0
+900,Audi,A5,2012.0,Coupe,280000.0,Alb,Diesel,2967.0,204.0,Automata,Fata,Euro 6,9990.0
+901,Mercedes-Benz,GLK,2011.0,SUV,200000.0,Negru,Diesel,2143.0,170.0,Automata,4x4 (automat),Euro 5,11690.0
+902,Mercedes-Benz,E,2010.0,Coupe,200000.0,Negru,Diesel,2987.0,231.0,Automata,Spate,Euro 6,11990.0
+903,Land Rover,Discovery Sport,2017.0,SUV,120000.0,Alb,Diesel,1999.0,150.0,Automata,4x4 (automat),Euro 6,15000.0
+904,Renault,Talisman,2016.0,Combi,162450.0,Albastru,Diesel,1598.0,160.0,Automata,Fata,Euro 6,10500.0
+905,Peugeot,508,2014.0,Combi,236000.0,Negru,Diesel,1997.0,163.0,Automata,4x4 (automat),Euro 5,10350.0
+906,BMW,X1,2022.0,SUV,190000.0,Alb,Diesel,1995.0,231.0,Automata,4x4 (automat),Euro 6,27490.0
+907,Hyundai,ix35,2014.0,SUV,202800.0,Negru,Diesel,1995.0,184.0,Automata,4x4 (automat),Euro 5,9600.0
+908,Volkswagen,Golf,2015.0,Combi,225100.0,Alb,Diesel,1598.0,110.0,Manuala,Fata,Euro 5,7999.0
+909,Ford,Mondeo,2017.0,Combi,147904.0,Alb,Benzina,1498.0,160.0,Automata,Fata,Euro 6,9750.0
+910,Land Rover,Discovery Sport,2017.0,SUV,272500.0,Negru,Diesel,1999.0,150.0,Manuala,Fata,Euro 6,11900.0
+911,Mazda,CX-5,2012.0,SUV,263000.0,Negru,Diesel,2191.0,175.0,Manuala,4x4 (manual),Euro 5,7490.0
+912,Ford,Focus,2017.0,Combi,121364.0,Alb,Benzina,999.0,100.0,Manuala,Fata,Euro 6,6490.0
+913,Dacia,Logan,2008.0,Combi,298609.0,Argint,Benzina,1598.0,105.0,Manuala,Fata,Euro 4,2900.0
+914,Renault,Espace,2017.0,Monovolum,186029.0,Negru,Diesel,1598.0,160.0,Automata,Fata,Euro 6,13700.0
+915,Mini,Countryman,2019.0,SUV,143000.0,Albastru,Benzina,1499.0,136.0,Automata,Fata,Euro 6,14500.0
+916,Renault,Megane,2011.0,Combi,223003.0,Argint,Diesel,1461.0,90.0,Manuala,Fata,Euro 5,4400.0
+917,Volkswagen,Caddy,2019.0,Combi,175815.0,Rosu,Diesel,1968.0,122.0,Manuala,4x4 (manual),Euro 6d,15500.0
+918,BMW,Seria 4,2015.0,Sedan,200297.0,Gri,Diesel,1995.0,184.0,Automata,4x4 (automat),Euro 6,14200.0
+919,Audi,A5,2018.0,Sedan,133000.0,Negru,Diesel,1968.0,190.0,Automata,Fata,Euro 6,24500.0
+920,Land Rover,Range Rover Velar,2023.0,SUV,27500.0,Alb,Benzina,1997.0,250.0,Automata,4x4 (automat),Euro 6,42500.0
+921,Toyota,C-HR,2017.0,SUV,159000.0,Argint,Hibrid,1798.0,122.0,Automata,Fata,Euro 6b,15100.0
+922,BMW,X6,2015.0,SUV,193803.0,Gri,Diesel,2993.0,258.0,Automata,4x4 (automat),Euro 6,24990.0
+923,Jeep,Grand Cherokee,2007.0,SUV,230317.0,Gri,Diesel,2987.0,216.0,Automata,4x4 (automat),Euro 4,4900.0
+924,Mercedes-Benz,E,2017.0,Combi,300000.0,Negru,Diesel,1950.0,194.0,Automata,4x4 (manual),Euro 6,19000.0
+925,Audi,A3,2010.0,Compacta,86000.0,Alb,Benzina,1395.0,125.0,Manuala,Fata,Euro 5,5300.0
+926,Dacia,Sandero,2011.0,Masina de oras,219000.0,Rosu,Benzina,1149.0,75.0,Manuala,Fata,Euro 5,2799.0
+927,Dacia,Logan,2015.0,Combi,195000.0,Alb,Diesel,1461.0,90.0,Manuala,Fata,Euro 6,6690.09
+928,Skoda,Kodiaq,2020.0,SUV,216000.0,Alte culori,Diesel,1968.0,190.0,Automata,4x4 (automat),Euro 6,23999.0
+929,Volkswagen,Polo,2011.0,Masina de oras,103600.0,Gri,Benzina,1197.0,105.0,Manuala,Fata,Euro 5,6990.0
+930,Kia,Optima,2019.0,Combi,100000.0,Verde,Hibrid Plug-In,1999.0,205.0,Automata,Fata,Euro 6d,16600.0
+931,Mazda,CX-5,2022.0,SUV,22000.0,Gri,Benzina,1998.0,164.0,Manuala,Fata,Euro 6,26000.0
+932,BMW,X2,2018.0,SUV,152946.0,Alb,Benzina,1998.0,192.0,Automata,4x4 (automat),Euro 6,19950.0
+933,Renault,Megane,2012.0,Combi,201000.0,Gri,Diesel,1461.0,110.0,Manuala,Fata,Euro 5,5899.0
+934,Renault,Megane,2016.0,Combi,173000.0,Alb,Diesel,1461.0,110.0,Automata,Fata,Euro 6,6790.0
+935,BMW,X3,2011.0,SUV,205915.0,Galben/Auriu,Diesel,1995.0,184.0,Manuala,4x4 (automat),Euro 5,9850.0
+936,Peugeot,5008,2021.0,SUV,134612.0,Gri,Benzina,1199.0,130.0,Automata,Fata,Euro 6,18850.0
+937,Alfa Romeo,Stelvio,2018.0,SUV,143310.0,Maro,Benzina,1995.0,200.0,Automata,4x4 (automat),Euro 6,21950.0
+938,Skoda,Yeti,2009.0,SUV,299100.0,Maro,Diesel,1968.0,170.0,Manuala,4x4 (manual),Euro 5,7200.0
+939,Peugeot,3008,2020.0,SUV,120000.0,Bej,Diesel,1499.0,130.0,Automata,Fata,Euro 6,13950.0
+940,Mercedes-Benz,V,2025.0,Monovolum,7400.0,Gri,Diesel,1950.0,237.0,Automata,4x4 (automat),Euro 6,96800.0
+941,Volkswagen,Tiguan,2012.0,SUV,152000.0,Maro,Diesel,1968.0,140.0,Manuala,Fata,Euro 5,10850.0
+942,Mercedes-Benz,GLE,2025.0,SUV,6000.0,Albastru,Diesel,1993.0,269.0,Automata,4x4 (automat),Euro 6,85910.0
+943,Peugeot,308,2017.0,Combi,251000.0,Alb,Diesel,1560.0,120.0,Manuala,Fata,Euro 6,7399.0
+944,Mercedes-Benz,GLC,2023.0,SUV,30000.0,Albastru,Diesel,1993.0,269.0,Automata,4x4 (automat),Euro 6,62920.0
+945,Audi,Q3,2014.0,SUV,245000.0,Alb,Diesel,1968.0,140.0,Automata,4x4 (automat),Euro 5,11790.0
+946,Seat,Ibiza,2016.0,Compacta,251212.0,Alb,Benzina,999.0,95.0,Manuala,Fata,Euro 6,5750.0
+947,Audi,A5,2012.0,Cabrio,186546.0,Negru,Benzina,1984.0,211.0,Automata,4x4 (automat),Euro 5,11400.0
+948,Audi,A7,2012.0,Sedan,300000.0,Gri,Diesel,2967.0,245.0,Automata,4x4 (automat),Euro 5,13800.0
+949,Volkswagen,Passat,2012.0,Combi,240000.0,Maro,Diesel,1968.0,140.0,Automata,Fata,Euro 5,6290.0
+950,Renault,Grand Scenic,2013.0,Monovolum,200500.0,Alb,Diesel,1598.0,130.0,Manuala,Fata,Euro 5,6200.0
+951,Audi,Q5,2021.0,SUV,198600.0,Negru,Diesel,1968.0,204.0,Automata,4x4 (automat),Euro 6,29995.9
+952,Dacia,Duster,2012.0,SUV,163000.0,Alb,Diesel,1461.0,110.0,Manuala,4x4 (manual),Euro 5,6500.0
+953,Porsche,Cayenne,2016.0,SUV,149500.0,Negru,Diesel,2967.0,262.0,Automata,4x4 (automat),Euro 6,25500.0
+954,Hyundai,Tucson,2016.0,SUV,226000.0,Bej,Diesel,1991.0,140.0,Automata,Fata,Euro 6,13650.0
+955,Renault,Megane,2020.0,Combi,185666.0,Alb,Diesel,1461.0,110.0,Manuala,Fata,Euro 6,9559.0
+956,Mercedes-Benz,CLS,2016.0,Coupe,219000.0,Alb,Diesel,2987.0,252.0,Automata,4x4 (automat),Euro 6,22999.0
+957,Volkswagen,Polo,2013.0,Masina de oras,125500.0,Rosu,Benzina,1197.0,90.0,Automata,Fata,Euro 5,7500.0
+958,Audi,Q3,2013.0,SUV,136000.0,Albastru,Diesel,1968.0,149.0,Automata,4x4 (manual),Euro 5,13200.0
+959,Mazda,CX-5,2014.0,SUV,215000.0,Rosu,Diesel,2191.0,175.0,Automata,4x4 (automat),Euro 6,8690.0
+960,Dacia,Duster,2014.0,SUV,190000.0,Alb,Diesel,1461.0,110.0,Manuala,4x4 (manual),Euro 5,8300.0
+961,Audi,A4,2016.0,Combi,370000.0,Negru,Diesel,1968.0,190.0,Automata,Fata,Euro 6,10000.0
+962,Dacia,Logan,2016.0,Combi,192000.0,Albastru,Benzina,898.0,90.0,Manuala,Fata,Euro 6,5750.0
+963,Jeep,Compass,2021.0,SUV,42000.0,Alb,Benzina,1332.0,149.0,Automata,Fata,Euro 6,20999.0
+964,BMW,Seria 2,2019.0,Monovolum,174000.0,Albastru,Hibrid Plug-In,1499.0,220.0,Automata,4x4 (automat),Euro 6,13990.0
+965,BMW,Seria 5,2022.0,Sedan,239000.0,Negru,Diesel,1995.0,190.0,Automata,Spate,Euro 6c,23500.0
+966,Peugeot,208,2019.0,Masina de oras,48000.0,Rosu,Benzina,1199.0,82.0,Manuala,Fata,Euro 6b,8300.0
+967,BMW,X5,2018.0,SUV,33800.0,Alb,Diesel,2993.0,313.0,Automata,4x4 (automat),Euro 6b,37999.0
+968,Dacia,Sandero Stepway,2021.0,SUV,140000.0,Alb,Benzina,999.0,90.0,Manuala,Fata,Euro 6,9890.54
+969,Lexus,Seria RX,2023.0,SUV,50991.0,Verde,Hibrid,2487.0,250.0,Automata,4x4 (automat),Euro 6d-Temp,56496.36
+970,Toyota,C-HR,2018.0,SUV,52000.0,Gri,Hibrid,1798.0,122.0,Automata,Fata,Euro 6,18349.0
+971,Ford,Mondeo,2017.0,Sedan,135000.0,Negru,Diesel,1997.0,150.0,Manuala,4x4 (automat),Euro 6,10700.0
+972,BMW,Seria 5,2008.0,Combi,345000.0,Gri,Diesel,1995.0,177.0,Automata,Spate,Euro 4,5999.0
+973,Renault,Megane,2013.0,Combi,228000.0,Alb,Diesel,1461.0,110.0,Manuala,Fata,Euro 5a,4200.0
+974,Volkswagen,Golf,2019.0,Compacta,180000.0,Negru,Diesel,1598.0,115.0,Manuala,Fata,Euro 6,10550.0
+975,Volkswagen,Touareg,2018.0,SUV,219000.0,Negru,Diesel,2967.0,286.0,Automata,4x4 (automat),Euro 6,31500.0
+976,Volkswagen,Golf,2021.0,Combi,166000.0,Gri,Diesel,1968.0,116.0,Automata,Fata,Euro 6d-Temp,15490.42
+977,Ford,Transit Custom,2016.0,Monovolum,300000.0,Alb,Diesel,2196.0,155.0,Manuala,Fata,Euro 6,11979.0
+978,Hyundai,Tucson,2021.0,SUV,175900.0,Rosu,Diesel,1598.0,136.0,Automata,Fata,Euro 6,19998.88
+979,Mercedes-Benz,E,2019.0,Sedan,250000.0,Gri,Diesel,1950.0,194.0,Automata,Spate,Euro 6,18900.0
+980,BMW,X5,2019.0,SUV,115300.0,Gri,Diesel,2993.0,265.0,Automata,4x4 (automat),Euro 6,47600.0
+981,Skoda,Octavia,2019.0,Combi,226216.0,Alb,Benzina,999.0,116.0,Automata,Fata,Euro 6,10450.0
+982,Lexus,UX,2021.0,SUV,31000.0,Argint,Hibrid,1987.0,152.0,Automata,Fata,Euro 6,37500.0
+983,Mazda,2,2008.0,Masina de oras,243000.0,Rosu,Diesel,1399.0,68.0,Manuala,Fata,Euro 4,2100.0
+984,Jaguar,E-Pace,2018.0,SUV,54000.0,Gri,Benzina,1997.0,249.0,Automata,4x4 (automat),Euro 6,22000.0
+985,Mercedes-Benz,GLE,2021.0,SUV,135000.0,Alte culori,Benzina,2999.0,367.0,Automata,4x4 (automat),Euro 6d-Temp,62980.0
+986,Renault,Megane,2022.0,Compacta,142200.0,Alb,Diesel,1461.0,115.0,Manuala,Fata,Euro 6,11250.0
+987,BMW,Seria 5,2013.0,Sedan,274000.0,Negru,Diesel,2993.0,313.0,Automata,4x4 (manual),Euro 6,12700.0
+988,Nissan,Juke,2015.0,SUV,184511.0,Gri,Diesel,1461.0,110.0,Manuala,Fata,Euro 5,6790.0
+989,Seat,Leon,2014.0,Compacta,41000.0,Alb,Benzina,1395.0,125.0,Manuala,Fata,Euro 6,10350.0
+990,Peugeot,208,2018.0,Masina de oras,148000.0,Gri,Benzina,1199.0,82.0,Manuala,Fata,Euro 6,6790.0
+991,Ford,Focus,2016.0,Compacta,215000.0,Argint,Diesel,1560.0,115.0,Manuala,Fata,Euro 6,5600.0
+992,BMW,Seria 3,2016.0,Sedan,152500.0,Negru,Benzina,1499.0,136.0,Automata,Spate,Euro 6,14800.0
+993,Renault,Espace,2015.0,Monovolum,187700.0,Gri,Diesel,1598.0,160.0,Automata,Fata,Euro 6,12290.0
+994,BMW,X3,2021.0,SUV,156860.0,Negru,Diesel,2993.0,286.0,Automata,4x4 (automat),Euro 6,35997.5
+995,Mercedes-Benz,Sprinter,2016.0,Monovolum,266688.0,Gri,Diesel,2143.0,163.0,Manuala,Spate,Euro 6b,14000.0
+996,Peugeot,308,2023.0,Compacta,129000.0,Verde,Benzina,1199.0,130.0,Automata,Fata,Euro 6,15499.0
+997,Volvo,XC 90,2017.0,SUV,163000.0,Gri,Diesel,1969.0,235.0,Automata,4x4 (automat),Euro 6,29850.0
+998,Renault,Megane,2023.0,Sedan,87647.0,Alb,Benzina,1332.0,140.0,Manuala,Fata,Euro 6,14990.0
+999,Audi,A6,2013.0,Sedan,272000.0,Negru,Diesel,2967.0,313.0,Automata,4x4 (automat),Euro 5,16000.0
+1000,Opel,Corsa,2020.0,Compacta,185774.0,Gri,Diesel,1499.0,102.0,Manuala,Fata,Euro 6,8300.0
+1001,BMW,Seria 5,2017.0,Compacta,125000.0,Negru,Diesel,1995.0,190.0,Automata,4x4 (automat),Euro 6,23000.0
+1002,Audi,Q5,2020.0,SUV,199815.0,Albastru,Diesel,1968.0,190.0,Automata,4x4 (automat),Euro 6,24550.0
+1003,Mercedes-Benz,GLC,2020.0,SUV,94000.0,Alb,Diesel,1950.0,194.0,Automata,4x4 (automat),Euro 6,38000.0
+1004,Ford,Focus,2009.0,Combi,250000.0,Negru,Diesel,1997.0,136.0,Manuala,Fata,Euro 4,2600.0
+1005,Peugeot,308,2011.0,Compacta,130928.0,Gri,Diesel,1560.0,112.0,Manuala,Fata,Euro 5,4200.0
+1006,Mercedes-Benz,V,2019.0,Monovolum,154000.0,Negru,Diesel,1950.0,163.0,Automata,Spate,Euro 6,36000.0
+1007,BMW,X1,2020.0,SUV,215000.0,Gri,Hibrid Plug-In,1499.0,220.0,Automata,4x4 (automat),Euro 6d-Temp,18350.0
+1008,Renault,Megane,2012.0,Masina mica,240000.0,Gri,Diesel,1461.0,110.0,Manuala,Fata,Euro 5,4800.0
+1009,Seat,Altea XL,2015.0,Monovolum,230000.0,Alb,Benzina + GPL,1600.0,102.0,Manuala,Fata,Euro 5,3900.0
+1010,Dacia,Logan,2014.0,Sedan,210000.0,Alb,Diesel,1461.0,90.0,Manuala,Fata,Euro 6b,4600.0
+1011,Mazda,CX-60,2023.0,SUV,43000.0,Gri,Hibrid Plug-In,2488.0,192.0,Automata,4x4 (automat),Euro 6,37500.0
+1012,Jeep,Compass,2022.0,SUV,92000.0,Albastru,Hibrid Plug-In,1332.0,240.0,Automata,4x4 (automat),Euro 6,29000.0
+1013,Volkswagen,Transporter,2016.0,Monovolum,280000.0,Alb,Diesel,1968.0,150.0,Manuala,Fata,Euro 6,16819.0
+1014,Chevrolet,Cruze,2009.0,Sedan,139296.0,Gri,Benzina,1598.0,113.0,Manuala,Fata,Euro 4,4000.0
+1015,Renault,Captur,2017.0,SUV,181000.0,Negru,Diesel,1461.0,90.0,Manuala,Fata,Euro 6,8750.0
+1016,Nissan,X-Trail,2017.0,SUV,141500.0,Alb,Diesel,1995.0,177.0,Automata,4x4 (manual),Euro 6,15790.0
+1017,Nissan,Qashqai,2015.0,SUV,168000.0,Negru,Diesel,1598.0,130.0,Manuala,4x4 (manual),Euro 6,11490.0
+1018,BMW,Seria 5,2018.0,Sedan,175000.0,Negru,Diesel,1995.0,190.0,Manuala,Spate,Euro 6,17850.0
+1019,BMW,Seria 5,2006.0,Sedan,300000.0,Gri,Diesel,1995.0,163.0,Manuala,Spate,Euro 4,4600.0
+1020,Toyota,Corolla,2021.0,Combi,82730.0,Albastru,Hibrid,1798.0,98.0,Automata,Fata,Euro 6,20650.0
+1021,Volkswagen,Multivan,2016.0,Monovolum,300000.0,Maro,Diesel,1968.0,150.0,Manuala,Fata,Euro 6,20500.0
+1022,BMW,Seria 4,2022.0,Sedan,179000.0,Negru,Diesel,1995.0,190.0,Automata,Spate,Euro 6,28435.0
+1023,Volkswagen,Touareg,2014.0,SUV,219000.0,Maro,Diesel,2967.0,245.0,Automata,4x4 (manual),Euro 5,14500.0
+1024,Volkswagen,Caravelle,2021.0,Monovolum,200000.0,Galben/Auriu,Diesel,1968.0,150.0,Manuala,Fata,Euro 6,25168.0
+1025,Kia,Ceed,2019.0,Combi,188899.0,Negru,Diesel,1598.0,136.0,Automata,Fata,Euro 6,10250.0
+1026,Opel,Astra,2011.0,Compacta,200000.0,Negru,Diesel,1686.0,110.0,Manuala,Fata,Euro 5,4499.0
+1027,Kia,Ceed,2019.0,Masina de oras,131100.0,Albastru,Diesel,1598.0,115.0,Manuala,Fata,Euro 6,11350.0
+1028,Mercedes-Benz,CLA,2020.0,Sedan,132000.0,Rosu,Benzina,1332.0,136.0,Automata,Fata,Euro 6,24950.0
+1029,Audi,A6,2013.0,Sedan,340000.0,Negru,Diesel,2967.0,204.0,Automata,4x4 (automat),Euro 5,11950.0
+1030,Mercedes-Benz,GLC Coupe,2020.0,SUV,158000.0,Albastru,Hibrid Plug-In,1991.0,320.0,Automata,4x4 (automat),Euro 6,32850.0
+1031,Seat,Ibiza,2009.0,Compacta,181217.0,Negru,Benzina + GPL,1598.0,105.0,Manuala,Fata,Euro 4,3490.0
+1032,Citroën,C3 AIRCROSS,2022.0,SUV,235500.0,Alb,Diesel,1499.0,110.0,Manuala,Fata,Euro 6,8750.0
+1033,Hyundai,Tucson,2022.0,SUV,169770.0,Negru,Diesel,1598.0,136.0,Automata,Fata,Euro 6,22500.0
+1034,Subaru,Forester,2006.0,Combi,305000.0,Argint,Benzina,1994.0,125.0,Manuala,4x4 (automat),Euro 4,4000.0
+1035,BMW,X3,2012.0,SUV,248381.0,Galben/Auriu,Diesel,1995.0,184.0,Automata,4x4 (automat),Euro 6,10999.0
+1036,Skoda,Karoq,2020.0,SUV,125000.0,Albastru,Benzina,1984.0,190.0,Automata,Fata,Euro 6,21990.0
+1037,Renault,Clio,2020.0,Masina de oras,100000.0,Alb,Benzina,999.0,100.0,Manuala,Fata,Euro 6,10490.0
+1038,Volvo,XC 40,2021.0,SUV,108152.0,Negru,Hibrid Plug-In,1477.0,211.0,Automata,Fata,Euro 6d,21480.0
+1039,Dacia,Sandero,2013.0,Compacta,189000.0,Albastru,Benzina,1149.0,73.0,Manuala,Fata,Euro 5,3500.0
+1040,Renault,Talisman,2020.0,Sedan,118000.0,Negru,Benzina,1333.0,160.0,Automata,Fata,Euro 6,16790.0
+1041,BMW,Seria 5,2024.0,Sedan,22800.0,Gri,Diesel,1995.0,197.0,Automata,4x4 (automat),Euro 6d-Temp,61999.19
+1042,Kia,Ceed,2013.0,Combi,232630.0,Albastru,Benzina,1591.0,135.0,Automata,Fata,Euro 5,6980.0
+1043,BMW,Seria 5,2013.0,Combi,370000.0,Gri,Diesel,1995.0,184.0,Automata,Spate,Euro 6,7299.0
+1044,Audi,Q8,2024.0,SUV,16000.0,Negru,Diesel,2967.0,286.0,Automata,4x4 (automat),Euro 6,79000.0
+1045,Seat,Leon,2016.0,Combi,251000.0,Gri,Diesel,1598.0,116.0,Automata,Fata,Euro 5,7250.0
+1046,Peugeot,2008,2022.0,SUV,148484.0,Portocaliu,Diesel,1499.0,130.0,Automata,Fata,Euro 6,13499.0
+1047,Seat,Arona,2019.0,SUV,71447.0,Rosu,Benzina,999.0,110.0,Manuala,Fata,Euro 6,12490.0
+1048,Renault,Megane,2021.0,Sedan,120000.0,Alb,Benzina,999.0,114.0,Manuala,Fata,Euro 6,10450.0
+1049,BMW,X1,2010.0,SUV,235000.0,Maro,Diesel,1995.0,143.0,Automata,Spate,Euro 5,8600.0
+1050,Audi,A4,2017.0,Combi,254000.0,Gri,Diesel,1968.0,150.0,Automata,Fata,Euro 6,13299.0
+1051,Dacia,Duster,2015.0,SUV,208038.0,Gri,Diesel,1461.0,109.0,Manuala,Fata,Euro 5,7299.0
+1052,Land Rover,Range Rover Evoque,2024.0,SUV,19800.0,Negru,Diesel,1999.0,163.0,Automata,4x4 (automat),Euro 6,41000.0
+1053,Honda,CR-V,2023.0,SUV,32100.0,Albastru,Hibrid,1993.0,145.0,Automata,4x4 (automat),Euro 6,40900.0
+1054,Hyundai,Santa Fe,2020.0,SUV,161000.0,Negru,Diesel,2199.0,200.0,Automata,Fata,Euro 6,24990.0
+1055,Peugeot,3008,2018.0,SUV,140000.0,Gri,Benzina,1199.0,130.0,Manuala,Fata,Euro 6,12990.0
+1056,Peugeot,5008,2019.0,SUV,220000.0,Gri,Benzina,1199.0,130.0,Manuala,Fata,Euro 6,10500.0
+1057,Volkswagen,Tiguan,2021.0,SUV,126500.0,Bej,Diesel,1968.0,150.0,Automata,Fata,Euro 6,27817.9
+1058,BMW,Seria 2,2024.0,Monovolum,17000.0,Albastru,Benzina,1499.0,136.0,Automata,Fata,Euro 6,31899.99
+1059,BMW,X6,2020.0,SUV,92000.0,Negru,Diesel,2993.0,265.0,Automata,4x4 (automat),Euro 6,61950.0
+1060,Ford,Edge,2017.0,SUV,179000.0,Alb,Diesel,1997.0,210.0,Automata,Fata,Euro 6,15990.0
+1061,Peugeot,5008,2018.0,SUV,198900.0,Albastru,Diesel,1560.0,120.0,Automata,Fata,Euro 6,13490.0
+1062,Mercedes-Benz,AMG,2021.0,Coupe,36500.0,Albastru,Benzina,2999.0,367.0,Automata,4x4 (automat),Euro 5b,69950.0
+1063,SsangYong,Korando,2020.0,SUV,123000.0,Alb,Diesel,1597.0,136.0,Automata,Fata,Euro 6,13000.0
+1064,Jaguar,E-Pace,2022.0,SUV,25000.0,Negru,Benzina,1997.0,200.0,Automata,4x4 (automat),Euro 6,35000.0
+1065,Renault,Talisman,2017.0,Sedan,169000.0,Gri,Diesel,1598.0,160.0,Automata,Fata,Euro 6b,14000.0
+1066,Mercedes-Benz,CLA,2015.0,Coupe,75000.0,Alb,Benzina,1595.0,156.0,Automata,Fata,Euro 6,18000.0
+1067,Volkswagen,Passat,2016.0,Sedan,257000.0,Negru,Diesel,1968.0,240.0,Automata,4x4 (automat),Euro 6,13600.0
+1068,Seat,Arona,2021.0,SUV,82000.0,Alb,Benzina,999.0,95.0,Manuala,Fata,Euro 6,12990.0
+1069,Dacia,Logan,2019.0,Sedan,104900.0,Alb,Diesel,1461.0,75.0,Manuala,Fata,Euro 6,7950.0
+1070,BMW,X4,2023.0,SUV,52000.0,Rosu,Diesel,1995.0,190.0,Automata,4x4 (automat),Euro 6,45980.0
+1071,Toyota,Corolla,2021.0,Compacta,99900.0,Gri,Hibrid,1798.0,98.0,Automata,Fata,Euro 6,17249.76
+1072,Citroën,C4,2021.0,SUV,90158.0,Gri,Benzina,1199.0,155.0,Automata,Fata,Euro 5,15499.0
+1073,BMW,X1,2021.0,SUV,115300.0,Gri,Benzina,1499.0,136.0,Automata,Fata,Euro 6,18990.0
+1074,Ford,C-Max,2010.0,Monovolum,200000.0,Gri,Diesel,1560.0,109.0,Manuala,Fata,Euro 5,2490.0
+1075,Mercedes-Benz,GLC,2023.0,SUV,38900.0,Gri,Diesel,1993.0,269.0,Automata,4x4 (automat),Euro 6,62920.0
+1076,BMW,X3,2013.0,SUV,232050.0,Gri,Diesel,1995.0,177.0,Automata,4x4 (automat),Euro 5,12850.0
+1077,BMW,X6,2025.0,SUV,14400.0,Negru,Diesel,2993.0,298.0,Automata,4x4 (automat),Euro 6,95590.0
+1078,Mercedes-Benz,C,2020.0,Combi,158000.0,Alb,Hibrid Plug-In,1950.0,306.0,Automata,Spate,Euro 6,18990.0
+1079,Volkswagen,Tiguan,2017.0,SUV,174447.0,Negru,Diesel,1968.0,190.0,Automata,4x4 (automat),Euro 6,19150.0
+1080,Renault,Espace,2019.0,Monovolum,89000.0,Alte culori,Diesel,1598.0,160.0,Automata,Fata,Euro 6b,16600.0
+1081,Toyota,Camry,2021.0,Sedan,78224.0,Albastru,Hibrid,2487.0,218.0,Automata,Fata,Euro 6,30990.52
+1082,Volkswagen,Tiguan,2022.0,SUV,218841.0,Gri,Diesel,1968.0,150.0,Automata,4x4 (automat),Euro 6,22990.0
+1083,Volkswagen,Passat,2007.0,Sedan,252000.0,Gri,Diesel,1968.0,140.0,Manuala,Fata,Euro 4,3150.0
+1084,Hyundai,Tucson,2021.0,SUV,142000.0,Negru,Diesel,1598.0,136.0,Automata,Fata,Euro 6,19990.0
+1085,BMW,X5,2019.0,SUV,70000.0,Alb,Diesel,2993.0,265.0,Automata,4x4 (automat),Euro 6,44990.0
+1086,BMW,X3,2021.0,SUV,79805.0,Gri,Hibrid Plug-In,1998.0,292.0,Automata,4x4 (automat),Euro 6,30899.77
+1087,Jaguar,XF,2014.0,Combi,246800.0,Gri,Diesel,2179.0,163.0,Automata,Spate,Euro 5,7900.0
+1088,BMW,X5,2022.0,SUV,45534.0,Alb,Hibrid Plug-In,2998.0,394.0,Automata,4x4 (automat),Euro 6,64899.56
+1089,BMW,Seria 3,2010.0,Cabrio,299000.0,Gri,Diesel,1995.0,184.0,Automata,Spate,Euro 5,8650.0
+1090,Peugeot,5008,2022.0,SUV,120269.0,Maro,Diesel,1499.0,130.0,Automata,Fata,Euro 6,18789.99
+1091,Mercedes-Benz,CLS,2012.0,Sedan,123147.0,Gri,Diesel,2987.0,265.0,Automata,Spate,Euro 5,19965.0
+1092,BMW,X3,2018.0,SUV,187680.0,Negru,Benzina,1998.0,184.0,Automata,4x4 (automat),Euro 5,24390.0
+1093,Ford,Focus,2021.0,Sedan,118484.0,Alb,Diesel,1499.0,120.0,Manuala,Fata,Euro 6,12490.0
+1094,Audi,A6,2017.0,Sedan,118000.0,Gri,Diesel,1968.0,190.0,Automata,Fata,Euro 6,20890.0
+1095,Mercedes-Benz,S,2009.0,Sedan,155000.0,Negru,Diesel,2987.0,235.0,Automata,Spate,Euro 4,6490.0
+1096,Renault,Megane,2017.0,Combi,279500.0,Albastru,Diesel,1461.0,110.0,Manuala,Fata,Euro 6,8485.0
+1097,Volkswagen,Golf,2010.0,Combi,251000.0,Albastru,Diesel,1968.0,140.0,Manuala,Fata,Euro 5,4998.0
+1098,Skoda,Octavia,2013.0,Combi,335000.0,Alb,Diesel,1968.0,149.0,Automata,Fata,Euro 5,6998.0
+1099,Mercedes-Benz,CLS,2020.0,Coupe,115355.0,Negru,Benzina,2999.0,367.0,Automata,4x4 (automat),Euro 6,43999.23
+1100,Volkswagen,Multivan,2019.0,Monovolum,203000.0,Alb,Diesel,1968.0,198.0,Automata,Spate,Euro 6,35000.0
+1101,Porsche,Cayenne Coupe,2020.0,SUV,98900.0,Alb,Hibrid Plug-In,2995.0,353.0,Automata,4x4 (automat),Euro 6,81344.67
+1102,Renault,Laguna,2013.0,Combi,260000.0,Alb,Diesel,1995.0,173.0,Automata,Fata,Euro 5,5390.0
+1103,Audi,A7,2016.0,Coupe,212678.0,Gri,Diesel,2967.0,272.0,Automata,4x4 (automat),Euro 6,22990.0
+1104,Volkswagen,Touareg,2011.0,SUV,220000.0,Argint,Benzina,2995.0,333.0,Automata,4x4 (automat),Euro 5,15500.0
+1105,Volvo,V60,2021.0,Combi,139178.0,Negru,Diesel,1969.0,197.0,Automata,Fata,Euro 6,19990.0
+1106,Land Rover,Freelander,2012.0,SUV,204000.0,Negru,Diesel,2179.0,190.0,Automata,4x4 (automat),Euro 5,9450.0
+1107,BMW,Seria 5,2018.0,Sedan,131442.0,Gri,Benzina,2998.0,340.0,Automata,4x4 (automat),Euro 6,31980.0
+1108,Kia,Sorento,2015.0,SUV,232000.0,Negru,Diesel,2199.0,200.0,Automata,4x4 (automat),Euro 5,16500.0
+1109,MG,HS,2024.0,SUV,2500.0,Gri,Benzina,1496.0,170.0,Automata,Fata,Euro 6,28499.0
+1110,Volkswagen,Golf,2022.0,Combi,180000.0,Negru,Diesel,1968.0,115.0,Automata,Fata,Euro 6,15990.0
+1111,Fiat,500,2014.0,Masina mica,148000.0,Alb,Benzina,1242.0,69.0,Manuala,Fata,Euro 6,4999.0
+1112,Toyota,Corolla,2021.0,Compacta,81376.0,Gri,Hibrid,1798.0,98.0,Automata,Fata,Euro 6,20200.0
+1113,Mini,Cooper S,2014.0,Coupe,206000.0,Gri,Benzina,1998.0,192.0,Automata,Fata,Euro 6,7990.0
+1114,Toyota,RAV4,2020.0,SUV,106619.0,Gri,Hibrid,2487.0,222.0,Automata,4x4 (automat),Euro 6,28900.0
+1115,Opel,Meriva,2012.0,Monovolum,220000.0,Alb,Benzina,1398.0,100.0,Manuala,Fata,Euro 5,3950.0
+1116,Skoda,Octavia,2022.0,Sedan,162010.0,Albastru,Diesel,1968.0,200.0,Automata,4x4 (automat),Euro 6,24498.87
+1117,Skoda,Octavia,2019.0,Combi,304185.0,Gri,Diesel,1968.0,150.0,Automata,Fata,Euro 6,10400.0
+1118,Audi,A8,2011.0,Sedan,320000.0,Negru,Diesel,2967.0,250.0,Automata,4x4 (automat),Euro 5,10990.0
+1119,Kia,Sportage,2022.0,SUV,114488.0,Gri,Hibrid,1598.0,230.0,Automata,Fata,Euro 6,25390.0
+1120,Mercedes-Benz,A,2025.0,Compacta,5000.0,Negru,Benzina,1332.0,136.0,Automata,Fata,Euro 6,33342.99
+1121,BMW,X3,2008.0,SUV,300000.0,Negru,Diesel,1995.0,177.0,Automata,4x4 (automat),Euro 5,5500.0
+1122,Skoda,Superb,2020.0,Combi,212000.0,Negru,Diesel,1968.0,194.0,Automata,4x4 (automat),Euro 6,16990.0
+1123,Renault,Kadjar,2020.0,SUV,186286.0,Negru,Benzina,1332.0,159.0,Automata,Fata,Euro 6,15950.22
+1124,BMW,Seria 3,2024.0,Sedan,12300.0,Alb,Benzina,1998.0,156.0,Automata,Spate,Euro 6,34900.01
+1125,Volkswagen,Taigo,2023.0,Masina de oras,26000.0,Gri,Benzina,999.0,95.0,Manuala,Fata,Euro 6c,18190.0
+1126,Volkswagen,Transporter,2011.0,Monovolum,187068.0,Gri,Diesel,1968.0,179.0,Manuala,Fata,Euro 6,10990.0
+1127,Mercedes-Benz,CLA,2021.0,Sedan,70000.0,Argint,Diesel,1950.0,150.0,Automata,Spate,Euro 6,32307.0
+1128,Volkswagen,Touareg,2019.0,SUV,201566.0,Gri,Diesel,2967.0,231.0,Automata,4x4 (automat),Euro 6,28900.0
+1129,Opel,Mokka,2017.0,SUV,52700.0,Gri,Benzina,1364.0,140.0,Manuala,Fata,Euro 6,11900.0
+1130,Volkswagen,Golf,2022.0,Masina mica,170000.0,Alb,Diesel,1968.0,115.0,Automata,Fata,Euro 6,20500.0
+1131,BMW,Seria 5,2021.0,Sedan,120700.0,Negru,Diesel,1995.0,190.0,Automata,4x4 (automat),Euro 6d-Temp,37800.0
+1132,BMW,Z4,2006.0,Cabrio,173337.0,Verde,Benzina,2497.0,177.0,Manuala,Spate,Euro 4,10950.0
+1133,BMW,Seria 5,2024.0,Sedan,3800.0,Negru,Benzina,1998.0,208.0,Automata,Spate,Euro 6,52499.99
+1134,Skoda,Karoq,2018.0,SUV,173970.0,Negru,Diesel,1968.0,150.0,Manuala,4x4 (manual),Euro 6,17490.0
+1135,Audi,Q5,2011.0,SUV,236678.0,Negru,Diesel,1968.0,170.0,Automata,4x4 (automat),Euro 5,10900.0
+1136,BMW,Seria 5,2019.0,Sedan,173550.0,Albastru,Diesel,1995.0,190.0,Automata,Spate,Euro 6,22489.06
+1137,Peugeot,3008,2021.0,SUV,95000.0,Albastru,Benzina,1199.0,130.0,Manuala,Fata,Euro 6,17490.0
+1138,Skoda,Fabia,2018.0,Compacta,38444.0,Alb,Benzina,999.0,95.0,Manuala,Fata,Euro 6,8500.0
+1139,BMW,Seria 5,2014.0,Sedan,211347.0,Gri,Diesel,2993.0,258.0,Automata,4x4 (automat),Euro 6,15490.0
+1140,Volvo,XC 90,2023.0,SUV,28415.0,Alb,Diesel,1969.0,235.0,Automata,4x4 (automat),Euro 6,60000.0
+1141,Volvo,XC 40,2023.0,SUV,132000.0,Negru,Hibrid Plug-In,1477.0,211.0,Automata,Fata,Euro 6d,26400.0
+1142,Mercedes-Benz,GLC,2020.0,SUV,145558.0,Gri,Benzina,1991.0,197.0,Automata,Spate,Euro 6,33500.0
+1143,Volkswagen,Sharan,2007.0,Monovolum,340654.0,Negru,Diesel,1968.0,140.0,Manuala,Fata,Euro 4,3999.0
+1144,Honda,CR-V,2020.0,SUV,98030.0,Rosu,Hibrid,1993.0,145.0,Automata,4x4 (automat),Euro 6,27950.0
+1145,Peugeot,208,2019.0,Masina de oras,90830.0,Alb,Benzina,1199.0,101.0,Manuala,Fata,Euro 6,9999.0
+1146,BMW,Seria 3,2009.0,Sedan,169000.0,Argint,Benzina,1599.0,122.0,Manuala,Spate,Euro 5,4950.0
+1147,Toyota,Yaris,2018.0,Masina de oras,137400.0,Alb,Hibrid,1497.0,101.0,Automata,Fata,Euro 6,12999.0
+1148,Kia,Carens,2014.0,Monovolum,175000.0,Negru,Benzina,1591.0,135.0,Manuala,Fata,Euro 5,7300.0
+1149,Skoda,Octavia,2021.0,Sedan,174772.0,Argint,Benzina,1498.0,150.0,Manuala,Fata,Euro 6d-Temp,14000.0
+1150,Dacia,Lodgy,2020.0,Monovolum,73351.0,Alb,Diesel,1461.0,115.0,Manuala,Fata,Euro 6,13450.0
+1151,Audi,A4,2016.0,Sedan,215811.0,Gri,Diesel,1968.0,150.0,Automata,Fata,Euro 6,14990.0
+1152,Volvo,XC 60,2025.0,SUV,13000.0,Alte culori,Hibrid Plug-In,1969.0,350.0,Automata,4x4 (automat),Euro 6d-Temp,62990.0
+1153,Volvo,XC 40,2021.0,SUV,141226.0,Gri,Hibrid Plug-In,1477.0,211.0,Automata,Fata,Euro 6d,24200.0
+1154,Mercedes-Benz,GLC,2021.0,SUV,127482.0,Negru,Hibrid Plug-In,1991.0,319.0,Automata,4x4 (automat),Euro 6d,34400.0
+1155,Opel,Astra,2009.0,Combi,260000.0,Rosu,Benzina,1399.0,90.0,Manuala,Fata,Euro 4,2150.0
+1156,Land Rover,Range Rover Evoque,2017.0,SUV,148295.0,Alb,Diesel,1999.0,150.0,Automata,4x4 (automat),Euro 6,16938.79
+1157,Toyota,RAV4,2021.0,SUV,136000.0,Gri,Hibrid,2487.0,228.0,Automata,4x4 (automat),Euro 6,31702.0
+1158,Volvo,XC 40,2022.0,SUV,146781.0,Negru,Hibrid Plug-In,1477.0,211.0,Automata,Fata,Euro 6d,25700.0
+1159,Hyundai,Tucson,2021.0,SUV,144800.0,Gri,Hibrid,1598.0,230.0,Automata,Fata,Euro 6,23800.0
+1160,BMW,Seria 4,2022.0,Sedan,37000.0,Verde,Diesel,1995.0,190.0,Automata,4x4 (automat),Euro 6b,42350.0
+1161,BMW,Seria 4,2021.0,Coupe,66060.0,Albastru,Benzina,1998.0,258.0,Automata,Spate,Euro 6,37268.0
+1162,Land Rover,Range Rover Evoque,2024.0,SUV,3000.0,Galben/Auriu,Diesel,1999.0,163.0,Automata,4x4 (automat),Euro 6b,58100.0
+1163,Mazda,CX-5,2018.0,SUV,169908.0,Negru,Benzina,1998.0,165.0,Manuala,Fata,Euro 6,17299.37
+1164,Volvo,XC 40,2020.0,SUV,93796.0,Rosu,Benzina,1477.0,163.0,Automata,Fata,Euro 6,24600.0
+1165,BMW,X3,2009.0,SUV,266000.0,Negru,Diesel,1995.0,177.0,Manuala,4x4 (automat),Euro 5,7590.0
+1166,Hyundai,Santa Fe,2021.0,SUV,103157.0,Verde,Hibrid Plug-In,1598.0,265.0,Automata,4x4 (automat),Euro 6,31800.0
+1167,Subaru,WRX STI,2015.0,Compacta,63000.0,Albastru,Benzina,2500.0,310.0,Manuala,4x4 (automat),Euro 5,29040.0
+1168,Mazda,3,2024.0,Sedan,12400.0,Rosu,Benzina,1998.0,149.0,Automata,Fata,Euro 6,22490.0
+1169,Renault,Kadjar,2015.0,SUV,159000.0,Negru,Benzina,1197.0,130.0,Manuala,Fata,Euro 6,9900.0
+1170,Renault,Trafic,2018.0,Monovolum,296700.0,Alb,Diesel,1598.0,90.0,Manuala,Fata,Euro 6,8789.44
+1171,Nissan,Qashqai,2014.0,SUV,226300.0,Rosu,Diesel,1461.0,110.0,Manuala,Fata,Euro 5,6499.0
+1172,Volkswagen,Golf,2014.0,Compacta,222507.0,Negru,Benzina,1197.0,105.0,Manuala,Fata,Euro 5,7250.0
+1173,Dacia,Duster,2018.0,SUV,58700.0,Albastru,Benzina,1197.0,125.0,Manuala,4x4 (manual),Euro 6,10800.0
+1174,Infiniti,FX 30,2011.0,SUV,225000.0,Gri,Diesel,2993.0,238.0,Automata,4x4 (manual),Euro 5,8900.0
+1175,BMW,Seria 5,2014.0,Combi,310862.0,Alb,Diesel,1995.0,218.0,Automata,4x4 (automat),Euro 6,13500.0
+1176,BMW,Seria 7,2009.0,Sedan,395000.0,Albastru,Diesel,2993.0,245.0,Automata,Spate,Euro 5,7000.0
+1177,Jeep,Compass,2021.0,SUV,142551.0,Alb,Hibrid Plug-In,1332.0,190.0,Automata,4x4 (automat),Euro 6,17998.99
+1178,Jeep,Compass,2020.0,SUV,179200.0,Gri,Diesel,1956.0,140.0,Automata,4x4 (automat),Euro 6,16775.44
+1179,Mercedes-Benz,CLA,2015.0,Sedan,162000.0,Gri,Diesel,1796.0,136.0,Automata,Fata,Euro 6,14990.0
+1180,Jeep,Compass,2019.0,SUV,123000.0,Gri,Diesel,1956.0,170.0,Automata,4x4 (automat),Euro 6,18301.25
+1181,Geely,Starray,2025.0,SUV,3300.0,Argint,Benzina,1969.0,238.0,Automata,4x4 (automat),Euro 6,36500.0
+1182,DS Automobiles,DS 3 Crossback,2019.0,SUV,40176.0,Galben/Auriu,Benzina,1199.0,155.0,Automata,Fata,Euro 6,16490.0
+1183,BMW,X5,2020.0,SUV,123000.0,Gri,Hibrid Plug-In,2998.0,391.0,Automata,4x4 (automat),Euro 6,42592.0
+1184,Mercedes-Benz,E,2017.0,Sedan,149670.0,Maro,Benzina,1991.0,184.0,Automata,4x4 (automat),Euro 6,22500.0
+1185,BMW,Seria 3,2008.0,Compacta,190000.0,Negru,Benzina,1995.0,143.0,Automata,Spate,Euro 4,4799.0
+1186,Volkswagen,Golf,2025.0,Compacta,1500.0,Gri,Hibrid Plug-In,1498.0,150.0,Automata,Fata,Euro 6,29490.0
+1187,BMW,Seria 1,2013.0,Compacta,177890.0,Gri,Diesel,1995.0,184.0,Automata,Spate,Euro 5,10000.0
+1188,Kia,Ceed,2010.0,Combi,244000.0,Negru,Benzina,1396.0,90.0,Manuala,Fata,Euro 4,3990.0
+1189,Opel,Combo,2020.0,Monovolum,150576.0,Alb,Diesel,1499.0,100.0,Manuala,Fata,Euro 6d,9890.54
+1190,Dacia,Sandero,2017.0,Masina de oras,52758.0,Alb,Benzina,898.0,90.0,Manuala,Fata,Euro 6,6450.0
+1191,Dacia,Duster,2022.0,SUV,164784.0,Alb,Diesel,1461.0,115.0,Manuala,4x4 (automat),Euro 6d,14989.48
+1192,Dacia,Jogger,2022.0,Combi,56393.0,Gri,Benzina + GPL,999.0,100.0,Manuala,Fata,Euro 6,14000.0
+1193,Mercedes-Benz,T,2024.0,Monovolum,14793.0,Gri,Benzina,1332.0,131.0,Automata,Fata,Euro 6d-Temp,28729.03
+1194,Volkswagen,Passat CC,2013.0,Sedan,313022.0,Alb,Diesel,1968.0,140.0,Manuala,Fata,Euro 5,8999.0
+1195,Volkswagen,Polo,2011.0,Masina de oras,278000.0,Argint,Diesel,1598.0,105.0,Automata,Fata,Euro 5b,6200.0
+1196,Mercedes-Benz,GLC,2015.0,SUV,179870.0,Gri,Diesel,2143.0,170.0,Automata,4x4 (automat),Euro 6,21490.0
+1197,Volkswagen,Golf,2013.0,Combi,240000.0,Albastru,Diesel,1968.0,140.0,Manuala,Fata,Euro 5,5199.0
+1198,Volkswagen,Polo,2011.0,Masina de oras,258000.0,Portocaliu,Diesel,1598.0,90.0,Manuala,Fata,Euro 5,5990.0
+1199,Mercedes-Benz,GLE,2024.0,SUV,25100.0,Negru,Hibrid Plug-In,1993.0,333.0,Automata,4x4 (automat),Euro 6d-Temp,77917.95
+1200,Volvo,V60,2017.0,Combi,179000.0,Negru,Diesel,1969.0,120.0,Manuala,Fata,Euro 6,8350.0
+1201,Skoda,Octavia,2009.0,Compacta,280817.0,Gri,Diesel,1896.0,101.0,Manuala,Fata,Euro 4,2550.0
+1202,Kia,Sportage,2017.0,SUV,130000.0,Alb,Diesel,1995.0,136.0,Automata,4x4 (automat),Euro 6,13999.0
+1203,BMW,X1,2021.0,SUV,52000.0,Negru,Diesel,1995.0,190.0,Automata,4x4 (automat),Euro 6,27399.99
+1204,Volkswagen,Touareg,2015.0,SUV,265000.0,Gri,Diesel,2967.0,262.0,Automata,4x4 (automat),Euro 6,15599.0
+1205,Audi,Q5,2022.0,SUV,66000.0,Gri,Benzina,1984.0,265.0,Automata,4x4 (automat),Euro 6,52000.0
+1206,BMW,X3,2015.0,SUV,209000.0,Negru,Diesel,1995.0,190.0,Automata,4x4 (automat),Euro 6,15600.0
+1207,DS Automobiles,DS 7 Crossback,2021.0,SUV,140000.0,Gri,Hibrid Plug-In,1598.0,200.0,Automata,4x4 (automat),Euro 6,18936.5
+1208,Volkswagen,up!,2018.0,Masina mica,158900.0,Gri,Benzina,999.0,75.0,Manuala,Fata,Euro 6,5990.0
+1209,Volkswagen,Passat CC,2014.0,Sedan,276909.0,Negru,Diesel,1968.0,177.0,Automata,Fata,Euro 5,9990.0
+1210,Nissan,X-Trail,2018.0,SUV,229000.0,Portocaliu,Diesel,1995.0,177.0,Automata,Fata,Euro 6,15499.0
+1211,Mercedes-Benz,CLA,2016.0,Coupe,208000.0,Negru,Diesel,2143.0,177.0,Automata,Fata,Euro 6,14990.0
+1212,Opel,Astra,2021.0,Combi,171750.0,Albastru,Diesel,1496.0,105.0,Manuala,Fata,Euro 6,8998.77
+1213,Ford,Focus,2011.0,Combi,257000.0,Negru,Diesel,1560.0,115.0,Manuala,Fata,Euro 5,3490.0
+1214,BMW,Seria 3,2021.0,Combi,199000.0,Negru,Diesel,1995.0,190.0,Automata,Spate,Euro 6,16990.0
+1215,Mercedes-Benz,GLE,2020.0,SUV,200000.0,Negru,Hibrid Plug-In,1950.0,320.0,Automata,4x4 (automat),Euro 6,39900.0
+1216,Skoda,Scala,2021.0,Combi,141000.0,Gri,Benzina,999.0,110.0,Automata,Fata,Euro 6,12990.0
+1217,Audi,A4 Allroad,2012.0,Combi,188000.0,Rosu,Benzina,1984.0,211.0,Manuala,4x4 (automat),Euro 5,10950.0
+1218,KG Mobility,Torres,2024.0,SUV,16400.0,Argint,Benzina,1497.0,163.0,Automata,Fata,Euro 6d,26500.0
+1219,Volvo,XC 60,2021.0,SUV,32000.0,Alb,Hibrid Plug-In,1969.0,253.0,Automata,4x4 (automat),Euro 6,39760.6
+1220,Dacia,Duster,2020.0,SUV,221000.0,Alb,Diesel,1461.0,115.0,Manuala,4x4 (manual),Euro 6,9990.0
+1221,Opel,Vivaro,2012.0,Combi,231000.0,Argint,Diesel,1995.0,90.0,Manuala,Fata,Euro 5,11990.0
+1222,Volkswagen,Passat,2021.0,Sedan,102891.0,Negru,Diesel,1968.0,150.0,Automata,Fata,Euro 6,19279.99
+1223,Skoda,Fabia,2021.0,Combi,94978.0,Albastru,Benzina,999.0,95.0,Automata,Fata,Euro 6,14299.78
+1224,Dacia,Logan,2019.0,Combi,132000.0,Alb,Benzina + GPL,898.0,90.0,Manuala,Fata,Euro 6,7690.0
+1225,Dacia,Duster,2014.0,SUV,236000.0,Argint,Diesel,1461.0,109.0,Manuala,4x4 (manual),Euro 5,7990.0
+1226,Peugeot,2008,2021.0,SUV,218000.0,Negru,Diesel,1499.0,130.0,Automata,Fata,Euro 6,11950.0
+1227,Skoda,Superb,2017.0,Sedan,159750.0,Alb,Diesel,1968.0,190.0,Automata,Fata,Euro 6,17000.0
+1228,Dacia,Duster,2019.0,SUV,169000.0,Negru,Benzina,1332.0,150.0,Manuala,Fata,Euro 6,11350.0
+1229,Dacia,Logan,2022.0,Sedan,68000.0,Gri,Benzina,999.0,90.0,Manuala,Fata,Euro 6,11990.0
+1230,BMW,Seria 3,2019.0,Combi,240000.0,Negru,Benzina,1998.0,184.0,Automata,4x4 (automat),Euro 6,11800.0
+1231,Dacia,Logan,2019.0,Combi,199801.0,Gri,Diesel,1461.0,95.0,Manuala,Fata,Euro 6,7790.0
+1232,Hyundai,Santa Fe,2015.0,SUV,102528.0,Gri,Diesel,2199.0,197.0,Automata,4x4 (manual),Euro 5,15950.0
+1233,Dacia,Duster,2016.0,SUV,256000.0,Gri,Diesel,1461.0,109.0,Manuala,Fata,Euro 6,8900.0
+1234,Kia,Sportage,2022.0,SUV,39709.0,Alb,Hibrid,1598.0,230.0,Automata,4x4 (automat),Euro 6,32390.01
+1235,Forthing,4 Yacht,2024.0,Monovolum,10000.0,Verde,Benzina,1500.0,170.0,Automata,Fata,Euro 6,28998.86
+1236,BMW,Seria 5,2015.0,Sedan,245000.0,Gri,Diesel,1995.0,218.0,Automata,4x4 (automat),Euro 6,12500.0
+1237,BMW,Seria 5,2025.0,Sedan,8700.0,Negru,Benzina,1998.0,184.0,Automata,Spate,Euro 6,47779.27
+1238,Volkswagen,Golf,2006.0,Compacta,315461.0,Gri,Diesel,1896.0,105.0,Manuala,Fata,Euro 5,3200.0
+1239,Toyota,Auris,2015.0,Combi,299400.0,Maro,Hibrid,1798.0,99.0,Automata,Fata,Euro 5,9999.0
+1240,Mercedes-Benz,Vito,2013.0,Monovolum,198000.0,Negru,Diesel,2143.0,136.0,Manuala,Spate,Euro 5,11900.0
+1241,Ford,Focus,2014.0,Compacta,75000.0,Rosu,Benzina,1596.0,150.0,Manuala,Fata,Euro 5,6500.0
+1242,Volkswagen,Golf,2021.0,Compacta,40281.0,Gri,Diesel,1968.0,116.0,Manuala,Fata,Euro 6,18300.0
+1243,Renault,Trafic,2016.0,Monovolum,249000.0,Alb,Diesel,1598.0,145.0,Manuala,Fata,Euro 6,11200.0
+1244,BMW,Seria 5,2012.0,Sedan,207000.0,Gri,Benzina,1997.0,245.0,Automata,Spate,Euro 5,9999.0
+1245,Dacia,Sandero,2019.0,Masina de oras,104000.0,Alb,Benzina,898.0,90.0,Manuala,Fata,Euro 6,6600.0
+1246,Dacia,Logan,2021.0,Sedan,158000.0,Alb,Benzina + GPL,999.0,90.0,Manuala,Fata,Euro 6,9250.0
+1247,Volkswagen,Passat,2018.0,Sedan,63000.0,Maro,Benzina,1395.0,150.0,Automata,Fata,Euro 6,17000.0
+1248,Dacia,Dokker,2020.0,Monovolum,75000.0,Rosu,Benzina,1332.0,131.0,Manuala,Fata,Euro 6,10300.0
+1249,Renault,Talisman,2017.0,Sedan,208704.0,Negru,Diesel,1598.0,160.0,Automata,Fata,Euro 6,15350.0
+1250,Porsche,Cayenne,2015.0,SUV,118305.0,Maro,Diesel,2967.0,262.0,Automata,4x4 (automat),Euro 6,27800.0
+1251,BMW,Seria 7,2016.0,Sedan,152000.0,Gri,Diesel,2993.0,320.0,Automata,4x4 (automat),Euro 6,35490.0
+1252,Toyota,Yaris,2017.0,Masina de oras,88500.0,Rosu,Hibrid,1497.0,73.0,Automata,Fata,Euro 6,13690.0
+1253,BMW,X6,2019.0,SUV,240000.0,Gri,Diesel,2993.0,258.0,Automata,4x4 (automat),Euro 6,26490.0
+1254,Opel,Vivaro,2017.0,Monovolum,167265.0,Albastru,Diesel,1598.0,125.0,Manuala,Fata,Euro 6,12200.0
+1255,Skoda,Fabia,2020.0,Compacta,213723.0,Alb,Benzina,999.0,95.0,Manuala,Fata,Euro 6,7250.01
+1256,Volkswagen,Transporter,2014.0,Monovolum,188050.0,Galben/Auriu,Diesel,1968.0,180.0,Automata,4x4 (automat),Euro 6,16500.0
+1257,BMW,X3,2021.0,SUV,188700.0,Negru,Hibrid Plug-In,1998.0,292.0,Automata,4x4 (automat),Euro 6,24986.5
+1258,BMW,Seria 1,2020.0,Compacta,56352.0,Alb,Benzina,1499.0,136.0,Automata,Fata,Euro 6,18350.0
+1259,Audi,A4,2011.0,Combi,299000.0,Gri,Diesel,1968.0,143.0,Automata,Fata,Euro 5,6180.0
+1260,Volkswagen,Tiguan,2021.0,SUV,173500.0,Alb,Diesel,1968.0,150.0,Automata,4x4 (automat),Euro 6,21500.0
+1261,Hyundai,IONIQ,2018.0,Sedan,181250.0,Alb,Hibrid,1580.0,105.0,Automata,Fata,Euro 6,12990.0
+1262,Opel,Grandland,2023.0,SUV,88000.0,Gri,Hibrid Plug-In,1598.0,300.0,Automata,4x4 (automat),Euro 6d-Temp,23990.0
+1263,Mercedes-Benz,GLC,2020.0,SUV,125000.0,Negru,Benzina,1991.0,197.0,Automata,4x4 (automat),Euro 6,32500.0
+1264,Audi,Q3,2013.0,SUV,238000.0,Alb,Diesel,1968.0,140.0,Manuala,4x4 (automat),Euro 5,10000.0
+1265,Mitsubishi,Eclipse-Cross,2022.0,SUV,82000.0,Alb,Hibrid Plug-In,2360.0,98.0,Automata,4x4 (automat),Euro 6d-Temp,19290.0
+1266,Mercedes-Benz,A,2019.0,Sedan,132000.0,Albastru,Diesel,1461.0,116.0,Automata,Fata,Euro 6,19965.0
+1267,Toyota,C-HR,2021.0,SUV,108716.0,Gri,Hibrid,1987.0,184.0,Automata,Fata,Euro 6,22899.99
+1268,Mazda,CX-5,2016.0,SUV,146000.0,Gri,Diesel,2191.0,175.0,Automata,4x4 (automat),Euro 6,11990.0
+1269,Hyundai,i30,2016.0,Compacta,56445.0,Alb,Benzina,1368.0,100.0,Manuala,Fata,Euro 6,9000.0
+1270,Volkswagen,Caravelle,2022.0,Sedan,54318.0,Negru,Diesel,1968.0,150.0,Automata,Fata,Euro 6,42899.34
+1271,BMW,Seria 5,2014.0,Compacta,226300.0,Alb,Diesel,2993.0,313.0,Automata,4x4 (automat),Euro 6,15900.0
+1272,Dacia,Sandero Stepway,2014.0,Masina de oras,157000.0,Rosu,Benzina,898.0,90.0,Manuala,Fata,Euro 5,4700.0
+1273,Nissan,Qashqai,2018.0,SUV,129950.0,Alb,Diesel,1461.0,110.0,Manuala,Fata,Euro 6,14500.0
+1274,BMW,Seria 3,2016.0,Combi,198500.0,Gri,Diesel,1995.0,150.0,Automata,Spate,Euro 6,13550.0
+1275,Honda,CR-V,2018.0,SUV,259000.0,Negru,Diesel,1597.0,160.0,Automata,4x4 (automat),Euro 6,10990.0
+1276,BMW,X3,2019.0,SUV,86020.0,Gri,Benzina,1998.0,184.0,Automata,4x4 (automat),Euro 6,28499.0
+1277,Audi,A4 Allroad,2016.0,Combi,257000.0,Argint,Diesel,1968.0,190.0,Automata,4x4 (automat),Euro 6,11990.0
+1278,Toyota,C-HR,2020.0,SUV,77406.0,Negru,Hibrid,1798.0,122.0,Automata,Fata,Euro 6d-Temp,17780.0
+1279,Volkswagen,Golf,2019.0,Combi,204500.0,Albastru,Diesel,1968.0,150.0,Automata,4x4 (automat),Euro 6,12000.0
+1280,Seat,Tarraco,2023.0,SUV,190000.0,Gri,Diesel,1968.0,150.0,Automata,Fata,Euro 6,19900.0
+1281,Renault,Megane,2017.0,Combi,207930.0,Gri,Diesel,1461.0,110.0,Manuala,Fata,Euro 6,9300.0
+1282,Audi,A6,2021.0,Combi,89000.0,Albastru,Diesel,1968.0,204.0,Automata,4x4 (automat),Euro 6,34999.25
+1283,Volkswagen,Tiguan,2025.0,SUV,2900.0,Alb,Hibrid Plug-In,1498.0,204.0,Automata,Fata,Euro 6,44498.96
+1284,Ford,Focus,2024.0,Compacta,15400.0,Albastru,Benzina,999.0,125.0,Manuala,Fata,Euro 6,19989.2
+1285,Audi,A4,2013.0,Combi,235200.0,Negru,Diesel,1968.0,143.0,Manuala,Fata,Euro 5,7999.0
+1286,Fiat,500,2015.0,Masina mica,74893.0,Rosu,Benzina,875.0,80.0,Automata,Fata,Euro 6,9290.0
+1287,Ford,Kuga,2021.0,SUV,68050.0,Albastru,Hibrid,2488.0,190.0,Automata,Fata,Euro 6d-Temp,19990.0
+1288,Kia,Sportage,2020.0,SUV,148000.0,Alb,Diesel,1995.0,185.0,Automata,4x4 (manual),Euro 6,19990.0
+1289,Mercedes-Benz,C,2019.0,Sedan,70840.0,Albastru,Diesel,1597.0,122.0,Automata,Spate,Euro 6,26190.0
+1290,BMW,X4,2017.0,SUV,221195.0,Gri,Diesel,1995.0,190.0,Automata,4x4 (automat),Euro 6,20400.0
+1291,Mercedes-Benz,E,2010.0,Coupe,279400.0,Alb,Diesel,2143.0,204.0,Automata,Spate,Euro 5,8999.0
+1292,Skoda,Octavia,2011.0,Combi,237800.0,Negru,Diesel,1598.0,105.0,Manuala,Fata,Euro 5,5499.0
+1293,Peugeot,207,2008.0,Cabrio,186300.0,Negru,Benzina,1598.0,150.0,Manuala,Fata,Euro 4,3999.0
+1294,Nissan,Qashqai,2015.0,SUV,149420.0,Negru,Diesel,1598.0,130.0,Manuala,Fata,Euro 6,12999.0
+1295,Renault,Clio,2009.0,Masina de oras,193000.0,Gri,Benzina,1598.0,112.0,Automata,Fata,Euro 4,4699.0
+1296,Chevrolet,Captiva,2011.0,SUV,279636.0,Argint,Diesel,2231.0,184.0,Automata,4x4 (automat),Euro 5,6350.0
+1297,Volkswagen,Passat,2013.0,Combi,195300.0,Maro,Diesel,1598.0,105.0,Manuala,Fata,Euro 5,7499.0
+1298,Volkswagen,Tiguan,2019.0,SUV,233400.0,Negru,Benzina,1498.0,150.0,Automata,Fata,Euro 6,18899.0
+1299,Volkswagen,Polo,2014.0,Masina de oras,246000.0,Negru,Diesel,1199.0,75.0,Manuala,Fata,Euro 5,5499.0
+1300,Audi,Q7,2017.0,SUV,253000.0,Negru,Diesel,2967.0,286.0,Automata,4x4 (automat),Euro 6,26500.0
+1301,Volvo,XC 60,2017.0,SUV,247000.0,Negru,Diesel,1969.0,190.0,Automata,4x4 (automat),Euro 6,22000.0
+1302,Toyota,RAV4,2023.0,SUV,37743.0,Argint,Hibrid,2487.0,222.0,Automata,4x4 (automat),Euro 6d,36499.65
+1303,Isuzu,D-Max,2024.0,SUV,4600.0,Alb,Diesel,1898.0,164.0,Automata,4x4 (manual),Euro 6d-Temp,43489.82
+1304,Jeep,Wrangler,2015.0,SUV,60973.0,Albastru,Diesel,2776.0,200.0,Automata,4x4 (manual),Euro 5,29490.0
+1305,Ford,B-Max,2013.0,Monovolum,259000.0,Portocaliu,Diesel,1560.0,95.0,Manuala,Fata,Euro 5,5450.0
+1306,Volkswagen,Golf,2009.0,Compacta,223000.0,Gri,Benzina,1390.0,80.0,Manuala,Fata,Euro 5,4650.0
+1307,Opel,Zafira,2014.0,Monovolum,228000.0,Albastru,Diesel,1598.0,135.0,Manuala,Fata,Euro 6,6750.0
+1308,Volkswagen,Passat,2007.0,Sedan,271000.0,Verde,Benzina,3168.0,250.0,Automata,4x4 (automat),Euro 4,1600.0
+1309,BMW,Seria 7,2019.0,Sedan,110000.0,Negru,Diesel,2993.0,265.0,Automata,4x4 (automat),Euro 6,31350.0
+1310,Toyota,C-HR,2022.0,SUV,55852.0,Albastru,Hibrid,1798.0,122.0,Automata,Fata,Euro 6,21189.99
+1311,BMW,X3,2018.0,SUV,119300.0,Albastru,Diesel,2993.0,265.0,Automata,4x4 (automat),Euro 6,26499.0
+1312,Mercedes-Benz,GLE,2022.0,Coupe,40000.0,Albastru,Diesel,2925.0,330.0,Automata,4x4 (automat),Euro 6d,79500.0
+1313,Volkswagen,Tiguan,2013.0,SUV,203046.0,Maro,Diesel,1968.0,140.0,Automata,4x4 (automat),Euro 5,10990.0
+1314,Volkswagen,Polo,2020.0,Masina de oras,127000.0,Alb,Benzina,999.0,80.0,Manuala,Fata,Euro 6,8990.0
+1315,Audi,Q5,2020.0,SUV,97950.0,Gri,Diesel,1968.0,163.0,Automata,Fata,Euro 6,26500.0
+1316,Mercedes-Benz,GLB,2020.0,SUV,46317.0,Negru,Diesel,1950.0,190.0,Automata,4x4 (automat),Euro 6,34000.04
+1317,BMW,Seria 3,2023.0,Combi,99193.0,Negru,Diesel,1995.0,190.0,Automata,Spate,Euro 6,28072.0
+1318,DS Automobiles,DS 7 Crossback,2020.0,SUV,170265.0,Albastru,Diesel,1499.0,130.0,Automata,Fata,Euro 6,14989.99
+1319,Audi,A5,2020.0,Compacta,108172.0,Alb,Diesel,1968.0,190.0,Automata,Fata,Euro 6,26989.05
+1320,Peugeot,508,2021.0,Sedan,143000.0,Alb,Diesel,1499.0,130.0,Automata,Fata,Euro 6,17990.0
+1321,Volkswagen,Golf,2021.0,Combi,51859.0,Galben/Auriu,Benzina,1498.0,150.0,Automata,Fata,Euro 6,23500.0
+1322,BMW,X1,2020.0,SUV,73374.0,Alb,Diesel,1995.0,150.0,Automata,Fata,Euro 6,20800.0
+1323,Peugeot,308,2014.0,Compacta,247293.0,Gri,Diesel,1560.0,120.0,Manuala,Fata,Euro 6,6499.0
+1324,Toyota,Corolla,2020.0,Combi,66888.0,Gri,Hibrid,1987.0,152.0,Automata,Fata,Euro 6,22000.0
+1325,Volvo,XC 60,2022.0,SUV,72390.0,Gri,Benzina,1969.0,250.0,Automata,4x4 (automat),Euro 6,37900.0
+1326,Volkswagen,Golf,2011.0,Combi,220000.0,Gri,Diesel,1598.0,105.0,Manuala,Fata,Euro 5,3950.0
+1327,Seat,Leon,2012.0,Compacta,189735.0,Gri,Diesel,1598.0,105.0,Manuala,Fata,Euro 5,5990.0
+1328,Skoda,RAPID,2014.0,Sedan,311850.0,Alb,Diesel,1598.0,105.0,Manuala,Fata,Euro 5,6499.0
+1329,BMW,X3,2019.0,SUV,97752.0,Albastru,Diesel,1995.0,190.0,Automata,4x4 (automat),Euro 6,29000.0
+1330,BMW,X3,2021.0,SUV,125038.0,Negru,Hibrid Plug-In,1998.0,292.0,Automata,4x4 (automat),Euro 6,28999.0
+1331,Volvo,V40,2018.0,Compacta,249000.0,Negru,Diesel,1969.0,150.0,Automata,Fata,Euro 6,9400.0
+1332,Peugeot,2008,2020.0,SUV,99916.0,Alb,Benzina,1199.0,130.0,Manuala,Fata,Euro 6,16490.0
+1333,Nissan,Qashqai,2011.0,Combi,161441.0,Argint,Diesel,1461.0,110.0,Manuala,Fata,Euro 4,6490.0
+1334,Mercedes-Benz,A,2023.0,Sedan,27175.0,Negru,Benzina,1332.0,163.0,Automata,Fata,Euro 6,33900.03
+1335,Toyota,Corolla,2025.0,Sedan,1275.0,Gri,Hibrid,1798.0,140.0,Automata,Fata,Euro 6d-Temp,26499.0
+1336,BMW,X6,2013.0,SUV,215000.0,Negru,Diesel,2993.0,258.0,Automata,4x4 (automat),Euro 5,15000.0
+1337,Toyota,Auris,2015.0,Compacta,136000.0,Maro,Diesel,1998.0,124.0,Manuala,Fata,Euro 6,9200.0
+1338,BMW,Seria 5,2024.0,Sedan,22626.0,Gri,Benzina,1998.0,184.0,Automata,Spate,Euro 6,54785.17
+1339,Volvo,XC 90,2017.0,SUV,264100.0,Gri,Diesel,1969.0,235.0,Automata,4x4 (automat),Euro 6,24680.0
+1340,BMW,Seria 1,2013.0,Compacta,166000.0,Alb,Diesel,1995.0,143.0,Manuala,Spate,Euro 5,7800.0
+1341,Volvo,V60,2015.0,Combi,219000.0,Albastru,Hibrid Plug-In,2400.0,280.0,Automata,4x4 (manual),Euro 6,10290.0
+1342,Audi,A6 Allroad,2018.0,Combi,197000.0,Negru,Diesel,2967.0,272.0,Automata,4x4 (automat),Euro 6,19500.0
+1343,Volkswagen,Passat CC,2014.0,Coupe,176000.0,Alb,Diesel,1968.0,177.0,Automata,Fata,Euro 5,14700.0
+1344,Volkswagen,Passat,2009.0,Combi,290000.0,Argint,Diesel,1968.0,140.0,Automata,Fata,Euro 5,3980.0
+1345,Lexus,Seria RX,2023.0,SUV,39900.0,Albastru,Hibrid,2487.0,190.0,Automata,4x4 (automat),Euro 6d-Temp,64130.0
+1346,DS Automobiles,DS 7 Crossback,2019.0,SUV,116000.0,Maro,Diesel,1997.0,180.0,Automata,Fata,Euro 6,20950.0
+1347,Mitsubishi,ASX,2015.0,SUV,200000.0,Argint,Diesel,2268.0,150.0,Automata,4x4 (manual),Euro 5b,9499.0
+1348,Toyota,Verso,2015.0,Combi,142876.0,Gri,Diesel,1998.0,126.0,Manuala,Fata,Euro 5,6400.0
+1349,Ford,Kuga,2017.0,SUV,117802.0,Alb,Diesel,1997.0,150.0,Automata,4x4 (automat),Euro 6,12750.0
+1350,Suzuki,Vitara,2018.0,SUV,118300.0,Albastru,Benzina,1586.0,120.0,Manuala,4x4 (automat),Euro 6,13500.0
+1351,BMW,Seria 5,2015.0,Sedan,285363.0,Negru,Diesel,2993.0,258.0,Automata,Spate,Euro 6,15900.0
+1352,Skoda,Fabia,2010.0,Combi,215269.0,Gri,Diesel,1422.0,80.0,Manuala,Fata,Euro 4,2790.0
+1353,Nissan,Juke,2013.0,SUV,260000.0,Negru,Diesel,1461.0,110.0,Manuala,Fata,Euro 5,6990.0
+1354,Land Rover,Range Rover Sport,2017.0,SUV,250000.0,Albastru,Diesel,2993.0,211.0,Automata,4x4 (automat),Euro 6,17980.0
+1355,Hyundai,Bayon,2021.0,SUV,22109.0,Verde,Benzina,998.0,100.0,Automata,4x4 (automat),Euro 6,15990.0
+1356,BMW,Seria 5,2019.0,Sedan,195600.0,Negru,Benzina,1998.0,184.0,Automata,Spate,Euro 6,20993.5
+1357,Land Rover,Defender,2012.0,SUV,50500.0,Verde,Diesel,2198.0,122.0,Manuala,4x4 (automat),Euro 5,74900.0
+1358,Ford,Kuga,2017.0,SUV,108000.0,Rosu,Benzina,1499.0,150.0,Manuala,Fata,Euro 6,12500.0
+1359,BMW,X3,2021.0,SUV,89000.0,Albastru,Hibrid Plug-In,1998.0,292.0,Automata,4x4 (automat),Euro 6,37510.0
+1360,Mercedes-Benz,A,2019.0,Sedan,157200.0,Negru,Diesel,1461.0,116.0,Automata,Fata,Euro 6,20993.5
+1361,Mercedes-Benz,A,2020.0,Sedan,179000.0,Gri,Benzina,1332.0,136.0,Automata,Fata,Euro 6,20993.5
+1362,Ford,Kuga,2009.0,SUV,215000.0,Negru,Diesel,1997.0,136.0,Manuala,Fata,Euro 5,6800.0
+1363,BMW,X4,2016.0,SUV,220000.0,Negru,Diesel,1995.0,190.0,Automata,4x4 (automat),Euro 6,19990.0
+1364,Mercedes-Benz,GLK,2013.0,SUV,199000.0,Negru,Diesel,2143.0,143.0,Manuala,Spate,Euro 5,11750.0
+1365,Mercedes-Benz,C,2017.0,Sedan,153000.0,Gri,Diesel,1598.0,116.0,Manuala,Spate,Euro 6,13600.0
+1366,BMW,Seria 4,2017.0,Cabrio,220000.0,Gri,Diesel,1995.0,190.0,Automata,Spate,Euro 6,21990.0
+1367,Volkswagen,Golf,2019.0,Combi,183285.0,Negru,Diesel,1968.0,150.0,Automata,Fata,Euro 6b,13915.0
+1368,Opel,Mokka,2016.0,SUV,131185.0,Argint,Benzina,1364.0,140.0,Manuala,4x4 (automat),Euro 6,8500.0
+1369,Peugeot,5008,2021.0,SUV,161260.0,Gri,Diesel,1499.0,130.0,Automata,Fata,Euro 6,18470.0
+1370,BMW,X6,2024.0,Sedan,38500.0,Alb,Diesel,2993.0,298.0,Automata,4x4 (automat),Euro 6,90969.01
+1371,Renault,Megane,2019.0,Combi,200000.0,Albastru,Benzina,1332.0,116.0,Manuala,Fata,Euro 6,9317.0
+1372,Renault,Megane,2019.0,Combi,206221.0,Negru,Diesel,1461.0,116.0,Automata,4x4 (automat),Euro 6,9667.9
+1373,BMW,Seria 5,2013.0,Sedan,269000.0,Gri,Diesel,1995.0,143.0,Automata,Spate,Euro 6,10900.0
+1374,BMW,X3,2018.0,SUV,240000.0,Albastru,Diesel,1995.0,190.0,Automata,4x4 (automat),Euro 6,23750.0
+1375,Toyota,Auris,2013.0,Compacta,223000.0,Alb,Diesel,1364.0,90.0,Manuala,Fata,Euro 5,6750.0
+1376,Chevrolet,Captiva,2011.0,SUV,185000.0,Gri,Diesel,2231.0,184.0,Automata,4x4 (automat),Euro 5,6980.0
+1377,BMW,Seria 3,2017.0,Sedan,219962.0,Negru,Diesel,1995.0,190.0,Automata,Spate,Euro 6,14800.0
+1378,Volvo,XC 40,2020.0,SUV,219000.0,Gri,Diesel,1969.0,190.0,Automata,4x4 (automat),Euro 6,23990.0
+1379,Mercedes-Benz,A,2022.0,Sedan,16569.0,Negru,Benzina,1991.0,190.0,Automata,4x4 (automat),Euro 6,35900.7
+1380,Mercedes-Benz,A,2025.0,Compacta,3000.0,Negru,Hibrid Plug-In,1332.0,218.0,Automata,Fata,Euro 6d,43977.0
+1381,DS Automobiles,DS 7 Crossback,2021.0,SUV,119127.0,Albastru,Hibrid Plug-In,1598.0,300.0,Automata,4x4 (automat),Euro 6,23989.99
+1382,Ford,Focus,2009.0,Combi,199000.0,Gri,Diesel,1997.0,136.0,Manuala,Fata,Euro 5,2990.0
+1383,Skoda,Kodiaq,2022.0,SUV,90001.0,Albastru,Diesel,1968.0,200.0,Automata,4x4 (automat),Euro 6d,33859.0
+1384,BMW,Seria 7,2020.0,Sedan,98520.0,Gri,Benzina,2998.0,340.0,Automata,4x4 (automat),Euro 6,52490.0
+1385,Audi,Q3,2023.0,SUV,21909.0,Gri,Benzina,1498.0,150.0,Automata,Fata,Euro 6,34490.01
+1386,Dacia,Duster,2010.0,SUV,211033.0,Gri,Benzina,1461.0,85.0,Manuala,Fata,Euro 4,5650.0
+1387,Mini,Cooper S,2013.0,Masina mica,182536.0,Albastru,Benzina,1598.0,185.0,Automata,Fata,Euro 5,8150.0
+1388,Volkswagen,Transporter,2014.0,Monovolum,188050.0,Galben/Auriu,Diesel,1968.0,180.0,Automata,4x4 (automat),Euro 5,16500.0
+1389,Audi,A8,2017.0,Sedan,175000.0,Negru,Diesel,2967.0,258.0,Automata,4x4 (automat),Euro 6,19900.0
+1390,Volvo,XC 60,2021.0,SUV,76243.0,Gri,Hibrid Plug-In,1969.0,340.0,Automata,4x4 (automat),Euro 6,35077.9
+1391,Mercedes-Benz,GLA,2018.0,SUV,132000.0,Gri,Diesel,2143.0,136.0,Automata,Fata,Euro 6c,24187.9
+1392,Mercedes-Benz,GLE,2024.0,SUV,68485.0,Albastru,Hibrid,1993.0,270.0,Automata,4x4 (automat),Euro 6d-Temp,77490.0
+1393,Kia,Sportage,2022.0,SUV,103143.0,Gri,Diesel,1598.0,136.0,Automata,Fata,Euro 6,21699.99
+1394,Mercedes-Benz,GLC,2016.0,SUV,290000.0,Negru,Diesel,2143.0,204.0,Automata,4x4 (automat),Euro 6,15990.0
+1395,BMW,X5 M,2020.0,SUV,102000.0,Negru,Diesel,2993.0,400.0,Automata,4x4 (automat),Euro 6,46999.0
+1396,Peugeot,3008,2022.0,SUV,76859.0,Alb,Hibrid Plug-In,1598.0,300.0,Automata,4x4 (automat),Euro 6,33000.0
+1397,Skoda,Karoq,2020.0,SUV,50178.0,Albastru,Diesel,1598.0,115.0,Automata,Fata,Euro 6,19390.0
+1398,Jeep,Compass,2017.0,SUV,113027.0,Gri,Benzina,1368.0,170.0,Automata,4x4 (automat),Euro 6,16999.0
+1399,Skoda,Superb,2020.0,Sedan,81995.0,Albastru,Benzina,1498.0,150.0,Automata,Fata,Euro 6,20989.99
+1400,BMW,X2,2024.0,SUV,35664.0,Negru,Benzina,1499.0,170.0,Automata,Fata,Euro 6,45499.99
+1401,Audi,A4,2022.0,Combi,155661.0,Albastru,Diesel,1968.0,204.0,Automata,4x4 (automat),Euro 6,29027.9
+1402,Nissan,Qashqai,2010.0,SUV,214000.0,Gri,Diesel,1461.0,103.0,Manuala,Fata,Euro 4,6299.0
+1403,Mercedes-Benz,GLE,2023.0,SUV,45000.0,Negru,Hibrid Plug-In,1950.0,320.0,Automata,4x4 (automat),Euro 6d,85000.08
+1404,Kia,XCeed,2021.0,Compacta,159377.0,Gri,Hibrid Plug-In,1580.0,141.0,Automata,Fata,Euro 6,16990.0
+1405,Audi,A8,2022.0,Sedan,38290.0,Albastru,Diesel,2967.0,286.0,Automata,4x4 (automat),Euro 6,58900.0
+1406,Mini,Cooper S,2017.0,Masina de oras,72048.0,Gri,Benzina,1998.0,192.0,Automata,Fata,Euro 5,15900.0
+1407,BMW,Seria 3,2020.0,Sedan,77945.0,Albastru,Diesel,1995.0,190.0,Automata,4x4 (automat),Euro 6,30990.0
+1408,Volkswagen,Transporter,2021.0,Monovolum,197000.0,Alb,Diesel,1968.0,110.0,Manuala,Fata,Euro 6,19360.0
+1409,Audi,A6 Allroad,2021.0,Combi,158785.0,Gri,Diesel,2967.0,286.0,Automata,4x4 (automat),Euro 6,39917.9
+1410,Opel,Mokka,2021.0,SUV,50000.0,Alb,Benzina,1199.0,130.0,Automata,Fata,Euro 6d-Temp,17490.0
+1411,Mercedes-Benz,C,2020.0,Sedan,157204.0,Negru,Diesel,1950.0,194.0,Automata,4x4 (automat),Euro 6,29900.0
+1412,Audi,A4,2020.0,Sedan,147566.0,Negru,Diesel,1968.0,163.0,Automata,Fata,Euro 6d,21500.01
+1413,Mercedes-Benz,C,2021.0,Sedan,136500.0,Albastru,Hibrid Plug-In,1950.0,306.0,Automata,Spate,Euro 6,27990.0
+1414,BMW,X5,2020.0,SUV,67293.0,Gri,Hibrid Plug-In,2998.0,394.0,Automata,4x4 (automat),Euro 6,50202.9
+1415,Ford,Focus,2011.0,Combi,247003.0,Negru,Diesel,1997.0,163.0,Automata,Fata,Euro 5,5500.0
+1416,Audi,A7,2020.0,Sedan,129506.0,Gri,Hibrid Plug-In,1984.0,367.0,Automata,4x4 (automat),Euro 6,41732.9
+1417,Citroën,C4,2016.0,Compacta,70000.0,Gri,Benzina,1199.0,130.0,Manuala,Fata,Euro 6b,5900.0
+1418,Ford,Focus,2016.0,Combi,216000.0,Rosu,Diesel,1499.0,120.0,Manuala,Fata,Euro 6,6900.0
+1419,Mazda,CX-5,2022.0,SUV,33874.0,Albastru,Benzina,1998.0,165.0,Automata,Fata,Euro 6,27950.0
+1420,Peugeot,2008,2022.0,SUV,17146.0,Albastru,Benzina,1199.0,130.0,Automata,Fata,Euro 6,17490.0
+1421,Mazda,CX-3,2016.0,SUV,178000.0,Rosu,Diesel,1499.0,105.0,Automata,4x4 (automat),Euro 6,12999.0
+1422,Toyota,Corolla,2022.0,Sedan,129500.0,Negru,Hibrid,1798.0,122.0,Automata,Fata,Euro 6,17990.0
+1423,DS Automobiles,DS 7 Crossback,2023.0,SUV,62269.0,Albastru,Diesel,1499.0,130.0,Automata,Fata,Euro 6d-Temp,26990.0
+1424,Toyota,Yaris Cross,2022.0,SUV,55000.0,Alb,Hibrid,1490.0,92.0,Automata,4x4 (automat),Euro 6,24750.0
+1425,Toyota,Yaris,2018.0,Masina de oras,67000.0,Rosu,Hibrid,1497.0,73.0,Automata,Fata,Euro 6,13990.0
+1426,Hyundai,KONA,2019.0,SUV,67000.0,Gri,Benzina,998.0,120.0,Manuala,Fata,Euro 6,11490.0
+1427,Toyota,RAV4,2020.0,SUV,73000.0,Albastru,Hibrid,2487.0,222.0,Automata,4x4 (automat),Euro 6,30750.0
+1428,Volkswagen,Passat,2021.0,Sedan,81500.0,Albastru,Diesel,1968.0,150.0,Manuala,Fata,Euro 6,17787.0
+1429,Mercedes-Benz,GLA,2024.0,SUV,6507.0,Gri,Benzina,1332.0,163.0,Automata,Fata,Euro 6d-Temp,42688.8
+1430,Hyundai,Tucson,2021.0,SUV,179000.0,Gri,Diesel,1598.0,136.0,Automata,Fata,Euro 6b,19500.0
+1431,BMW,Seria 3,2015.0,Sedan,160968.0,Albastru,Diesel,1995.0,190.0,Automata,Spate,Euro 6,15490.0
+1432,Volkswagen,Touareg,2012.0,SUV,290058.0,Gri,Diesel,2967.0,245.0,Automata,4x4 (automat),Euro 5,11490.0
+1433,Volkswagen,Passat,2021.0,Combi,202359.0,Negru,Diesel,1968.0,150.0,Automata,Fata,Euro 6,17490.01
+1434,BMW,X6,2015.0,SUV,229743.0,Alb,Diesel,2993.0,313.0,Automata,4x4 (automat),Euro 6,25990.0
+1435,Volkswagen,Touran,2016.0,Monovolum,225508.0,Negru,Diesel,1598.0,110.0,Automata,Fata,Euro 6,11490.0
+1436,Volkswagen,Tiguan,2018.0,SUV,247847.0,Albastru,Diesel,1968.0,150.0,Automata,Fata,Euro 6,17990.0
+1437,Kia,Niro,2019.0,SUV,175366.0,Negru,Hibrid,1580.0,141.0,Automata,Fata,Euro 6,15990.0
+1438,BMW,Seria 3,2018.0,Combi,225515.0,Negru,Benzina,1998.0,185.0,Automata,Spate,Euro 6,12490.0
+1439,BMW,X6,2014.0,SUV,261265.0,Negru,Diesel,2993.0,258.0,Automata,4x4 (automat),Euro 6,24990.0
+1440,BMW,Seria 7,2020.0,Sedan,146681.0,Negru,Diesel,2993.0,340.0,Automata,4x4 (automat),Euro 6,54437.9
+1441,Mini,ONE,2013.0,Masina de oras,121000.0,Galben/Auriu,Benzina,1598.0,75.0,Manuala,Fata,Euro 6,5900.0
+1442,Kia,Sportage,2014.0,SUV,186335.0,Gri,Diesel,1685.0,115.0,Manuala,Fata,Euro 5,9990.0
+1443,Nissan,Qashqai,2017.0,SUV,205000.0,Gri,Diesel,1598.0,130.0,Automata,Fata,Euro 6,12999.0
+1444,Mini,Countryman,2019.0,SUV,113000.0,Gri,Diesel,1995.0,150.0,Automata,4x4 (automat),Euro 6b,16790.0
+1445,Renault,Arkana,2022.0,SUV,131634.0,Gri,Hibrid,1598.0,145.0,Automata,Fata,Euro 6,17989.99
+1446,Volkswagen,Golf,2020.0,Compacta,61525.0,Negru,Benzina,999.0,110.0,Automata,Fata,Euro 6d-Temp,17496.6
+1447,BMW,X1,2020.0,SUV,75000.0,Negru,Diesel,1995.0,150.0,Automata,4x4 (automat),Euro 6,21499.28
+1448,Ford,Puma,2020.0,SUV,123800.0,Albastru,Benzina,999.0,125.0,Manuala,Fata,Euro 6d,11979.0
+1449,Audi,A4,2020.0,Combi,50800.0,Negru,Diesel,1968.0,190.0,Automata,Fata,Euro 6,29490.0
+1450,Mercedes-Benz,GLE,2021.0,SUV,73032.0,Negru,Diesel,1950.0,245.0,Automata,4x4 (manual),Euro 6,62490.0
+1451,Lynk&Co,01,2022.0,SUV,78985.0,Gri,Hibrid Plug-In,1477.0,261.0,Automata,Fata,Euro 6,22990.0
+1452,Skoda,Octavia,2007.0,Combi,327000.0,Gri,Diesel,1896.0,105.0,Manuala,Fata,Euro 4,2350.0
+1453,Audi,A3,2006.0,Compacta,292500.0,Gri,Benzina,1598.0,115.0,Manuala,Fata,Euro 4,2400.0
+1454,BMW,X5,2016.0,SUV,180850.0,Albastru,Diesel,1995.0,231.0,Automata,4x4 (automat),Euro 6,23490.0
+1455,Nissan,Qashqai,2018.0,SUV,129400.0,Maro,Diesel,1461.0,110.0,Manuala,Fata,Euro 6,16490.0
+1456,Mazda,3,2018.0,Compacta,230000.0,Rosu,Benzina,1998.0,120.0,Manuala,Fata,Euro 6,9500.0
+1457,BMW,Seria 3,2020.0,Sedan,199000.0,Gri,Diesel,1995.0,190.0,Automata,Spate,Euro 6d-Temp,21499.0
+1458,Mercedes-Benz,C,2022.0,Sedan,46000.0,Negru,Diesel,1993.0,265.0,Automata,Spate,Euro 6,40998.43
+1459,BMW,X3,2021.0,SUV,155000.0,Negru,Diesel,2993.0,286.0,Automata,4x4 (automat),Euro 6c,32990.0
+1460,BMW,X3,2020.0,SUV,148800.0,Negru,Diesel,2993.0,265.0,Automata,4x4 (automat),Euro 6,29900.0
+1461,BMW,Seria 2,2016.0,Compacta,240000.0,Negru,Diesel,1995.0,150.0,Manuala,Fata,Euro 6,9900.0
+1462,Mercedes-Benz,ML,2013.0,SUV,177000.0,Alb,Diesel,2987.0,258.0,Automata,4x4 (automat),Euro 6,21990.0
+1463,Volkswagen,Passat CC,2014.0,Sedan,123900.0,Alb,Benzina,1390.0,160.0,Automata,Fata,Euro 5,11990.0
+1464,Skoda,Octavia,2014.0,Combi,288000.0,Negru,Diesel,1598.0,105.0,Manuala,Fata,Euro 5,6499.0
+1465,Nissan,Micra,2017.0,Masina de oras,108000.0,Gri,Diesel,1461.0,90.0,Manuala,Fata,Euro 6,9999.0
+1466,Seat,Ibiza,2017.0,Masina mica,193000.0,Negru,Diesel,1422.0,90.0,Manuala,Fata,Euro 6,6750.0
+1467,Renault,Megane,2012.0,Combi,261000.0,Negru,Diesel,1461.0,110.0,Manuala,Fata,Euro 5,6499.0
+1468,Mazda,CX-5,2014.0,SUV,198000.0,Gri,Diesel,2191.0,150.0,Manuala,4x4 (automat),Euro 6,12500.0
+1469,Volkswagen,Caravelle,2018.0,Monovolum,219980.0,Alb,Diesel,1968.0,150.0,Automata,4x4 (automat),Euro 6,28890.0
+1470,Volvo,V40,2015.0,Compacta,284000.0,Alb,Diesel,1969.0,120.0,Manuala,Fata,Euro 6,7999.0
+1471,Volkswagen,T-Roc,2019.0,SUV,219506.0,Gri,Diesel,1968.0,150.0,Automata,Fata,Euro 6,15990.0
+1472,Mini,Cooper,2018.0,Masina mica,108349.0,Albastru,Benzina,1499.0,136.0,Automata,Fata,Euro 6d,13500.0
+1473,Peugeot,208,2019.0,Masina de oras,174468.0,Alb,Diesel,1499.0,102.0,Manuala,Fata,Euro 6,7616.34
+1474,Nissan,X-Trail,2018.0,SUV,95000.0,Negru,Diesel,1598.0,130.0,Automata,Fata,Euro 6,13990.0
+1475,Audi,A7,2019.0,Sedan,189000.0,Albastru,Diesel,2967.0,286.0,Automata,4x4 (automat),Euro 6,34450.0
+1476,Skoda,Superb,2018.0,Combi,186000.0,Alb,Diesel,1968.0,190.0,Automata,4x4 (automat),Euro 6,19800.0
+1477,Volkswagen,Golf,2023.0,Compacta,28135.0,Negru,Diesel,1968.0,150.0,Automata,Fata,Euro 6,23499.0
+1478,Audi,A6,2013.0,Sedan,280000.0,Negru,Diesel,2967.0,204.0,Automata,4x4 (automat),Euro 5,10700.0
+1479,BMW,X1,2022.0,SUV,129500.0,Albastru,Benzina,1998.0,218.0,Automata,4x4 (automat),Euro 6,33800.0
+1480,Volkswagen,Tiguan,2013.0,SUV,212733.0,Alb,Diesel,1968.0,140.0,Automata,4x4 (manual),Euro 5,12700.0
+1481,Renault,Koleos,2020.0,SUV,74168.0,Negru,Diesel,1997.0,190.0,Automata,4x4 (automat),Euro 6,22000.0
+1482,Peugeot,3008,2021.0,SUV,173960.0,Alb,Hibrid Plug-In,1598.0,300.0,Automata,4x4 (automat),Euro 6,18999.0
+1483,Ford,Kuga,2015.0,SUV,165000.0,Albastru,Diesel,1997.0,150.0,Manuala,4x4 (automat),Euro 6,9500.0
+1484,Dacia,Logan,2016.0,Sedan,278000.0,Alb,Diesel,1461.0,75.0,Manuala,Fata,Euro 6,3699.0
+1485,Alfa Romeo,Mito,2010.0,Masina mica,218000.0,Negru,Benzina,1368.0,140.0,Automata,Fata,Euro 5,4600.0
+1486,Hyundai,i30,2021.0,Compacta,68346.0,Alb,Benzina,1498.0,110.0,Manuala,Fata,Euro 6,14520.0
+1487,Audi,A6,2019.0,Sedan,129000.0,Gri,Diesel,1968.0,163.0,Automata,Fata,Euro 6b,27000.0
+1488,Ford,Fiesta,2012.0,Masina de oras,260000.0,Negru,Diesel,1560.0,95.0,Manuala,Fata,Euro 5,3650.0
+1489,BMW,Seria 3,2017.0,Combi,193000.0,Galben/Auriu,Diesel,1995.0,150.0,Automata,Spate,Euro 6,13390.0
+1490,Mercedes-Benz,S,2015.0,Sedan,149191.0,Negru,Diesel,2987.0,258.0,Automata,Spate,Euro 6,32890.22
+1491,BMW,X2,2020.0,SUV,45000.0,Galben/Auriu,Diesel,1995.0,190.0,Automata,4x4 (automat),Euro 6,28500.0
+1492,Volkswagen,Passat Alltrack,2019.0,Combi,65200.0,Gri,Diesel,1968.0,190.0,Automata,4x4 (automat),Euro 6,23300.0
+1493,Skoda,RAPID,2013.0,Combi,154040.0,Alb,Benzina,1197.0,105.0,Manuala,Fata,Euro 5,5950.0
+1494,BMW,X3,2023.0,SUV,189000.0,Alb,Diesel,1995.0,190.0,Automata,4x4 (automat),Euro 6,32400.0
+1495,BMW,Seria 7,2019.0,Sedan,71129.0,Negru,Diesel,2993.0,265.0,Automata,4x4 (automat),Euro 6,50990.01
+1496,Skoda,Octavia,2020.0,Sedan,102584.0,Gri,Diesel,1968.0,115.0,Manuala,Fata,Euro 6,17390.0
+1497,Peugeot,2008,2019.0,Combi,82840.0,Negru,Diesel,1499.0,102.0,Manuala,Fata,Euro 6,11290.0
+1498,Hyundai,Santa Fe,2022.0,SUV,119600.0,Negru,Hibrid Plug-In,1598.0,265.0,Automata,4x4 (automat),Euro 6d,30890.0
+1499,Citroën,C5 Aircross,2020.0,SUV,125091.0,Gri,Benzina,1199.0,130.0,Automata,Fata,Euro 6d-Temp,13490.0
+1500,DS Automobiles,DS 7 Crossback,2021.0,SUV,134700.0,Gri,Hibrid Plug-In,1598.0,300.0,Automata,4x4 (automat),Euro 6c,22990.0
+1501,Audi,A5,2021.0,Coupe,134265.0,Gri,Benzina,1984.0,204.0,Automata,Fata,Euro 6,31900.0
+1502,BMW,X3,2021.0,SUV,59200.0,Negru,Benzina,1998.0,184.0,Automata,4x4 (automat),Euro 6,37899.62
+1503,Renault,Scenic,2014.0,Monovolum,257752.0,Gri,Diesel,1461.0,110.0,Automata,Fata,Euro 5,5990.0
+1504,Land Rover,Range Rover Evoque,2014.0,SUV,118000.0,Negru,Diesel,2179.0,190.0,Manuala,4x4 (automat),Euro 5,10999.0
+1505,Peugeot,5008,2020.0,Monovolum,117449.0,Negru,Benzina,1598.0,181.0,Automata,Fata,Euro 6d,22990.0
+1506,Seat,Altea XL,2008.0,Monovolum,218000.0,Alte culori,Diesel,1896.0,105.0,Automata,Fata,Euro 4,4999.0
+1507,Peugeot,3008,2018.0,SUV,165000.0,Alte culori,Diesel,1560.0,120.0,Automata,Fata,Euro 6,14950.0
+1508,Hyundai,ix35,2015.0,SUV,240000.0,Gri,Diesel,1685.0,115.0,Manuala,Fata,Euro 5,8950.0
+1509,Mazda,CX-5,2018.0,SUV,154000.0,Rosu,Diesel,2191.0,150.0,Automata,Fata,Euro 6,17700.0
+1510,Peugeot,508,2020.0,Combi,197000.0,Gri,Diesel,1499.0,130.0,Automata,Fata,Euro 6,13850.0
+1511,Renault,Altul,2012.0,Sedan,223000.0,Alb,Diesel,1995.0,163.0,Manuala,Fata,Euro 5,5900.0
+1512,Peugeot,207,2007.0,Cabrio,139000.0,Negru,Benzina,1598.0,120.0,Manuala,Fata,Euro 4,3950.0
+1513,Peugeot,Partner,2015.0,Monovolum,229000.0,Alb,Diesel,1560.0,90.0,Manuala,Fata,Euro 5,6750.0
+1514,Peugeot,508,2020.0,Sedan,215000.0,Negru,Diesel,1499.0,130.0,Automata,Fata,Euro 6,13450.0
+1515,Kia,Sportage,2012.0,SUV,229000.0,Alb,Diesel,1685.0,115.0,Manuala,Fata,Euro 5,7950.0
+1516,Peugeot,208,2015.0,Masina de oras,203000.0,Argint,Diesel,1398.0,68.0,Manuala,Fata,Euro 5,4950.0
+1517,Skoda,Octavia,2019.0,Combi,205000.0,Negru,Diesel,1598.0,116.0,Manuala,Fata,Euro 6,10950.0
+1518,Renault,Talisman,2020.0,Sedan,292000.0,Albastru,Diesel,1997.0,200.0,Automata,Fata,Euro 6,11900.0
+1519,Mercedes-Benz,E,2014.0,Masina de oras,332000.0,Negru,Diesel,2143.0,170.0,Automata,Spate,Euro 6,9900.0
+1520,Dacia,Duster,2019.0,SUV,95000.0,Negru,Diesel,1461.0,115.0,Manuala,4x4 (automat),Euro 6,14500.0
+1521,Land Rover,Range Rover Vogue,2016.0,SUV,198000.0,Negru,Diesel,2993.0,258.0,Automata,4x4 (automat),Euro 6,21990.0
+1522,Audi,A4,2021.0,Sedan,159999.0,Gri,Diesel,1968.0,164.0,Automata,Fata,Euro 6,23999.0
+1523,Audi,A4,2014.0,Sedan,259000.0,Negru,Diesel,1968.0,150.0,Automata,Fata,Euro 6,10998.0
+1524,Audi,Q5,2024.0,SUV,35000.0,Gri,Diesel,1968.0,163.0,Automata,Fata,Euro 6d-Temp,46500.0
+1525,Hyundai,IONIQ,2016.0,Sedan,133500.0,Alb,Hibrid,1580.0,105.0,Automata,Fata,Euro 6,12995.0
+1526,Hyundai,Tucson,2019.0,SUV,187811.0,Alb,Diesel,1598.0,136.0,Automata,Fata,Euro 6,15900.0
+1527,BMW,X5,2014.0,SUV,193000.0,Gri,Diesel,1995.0,218.0,Automata,4x4 (automat),Euro 6,17900.0
+1528,Volvo,V90,2018.0,Combi,189000.0,Negru,Diesel,1969.0,150.0,Automata,Fata,Euro 6,15800.0
+1529,Skoda,Octavia,2015.0,Combi,179000.0,Alb,Diesel,1968.0,184.0,Automata,Fata,Euro 5,10990.0
+1530,Mercedes-Benz,C,2012.0,Sedan,196000.0,Negru,Benzina,1796.0,156.0,Manuala,Spate,Euro 5,9300.0
+1531,Land Rover,Range Rover Evoque,2016.0,SUV,136000.0,Maro,Diesel,1999.0,150.0,Automata,4x4 (automat),Euro 6,14990.0
+1532,Volkswagen,Golf,2011.0,Combi,220011.0,Rosu,Benzina,1390.0,160.0,Automata,Fata,Euro 5,5550.0
+1533,Mercedes-Benz,GLE Coupe,2016.0,SUV,176819.0,Alb,Diesel,2987.0,258.0,Automata,4x4 (automat),Euro 6,33850.0
+1534,Citroën,C4 Cactus,2015.0,SUV,112656.0,Gri,Benzina,1199.0,82.0,Manuala,Fata,Euro 5b,5900.0
+1535,Renault,Clio,2022.0,Compacta,100000.0,Alb,Hibrid,1598.0,145.0,Automata,Fata,Euro 6,14100.0
+1536,Nissan,Qashqai,2018.0,SUV,107400.0,Gri,Benzina,1197.0,115.0,Manuala,Fata,Euro 6,13490.0
+1537,Opel,Astra,2020.0,Combi,199000.0,Argint,Diesel,1598.0,110.0,Manuala,Fata,Euro 6b,8650.0
+1538,Volkswagen,Passat CC,2014.0,Sedan,243941.0,Argint,Diesel,1968.0,177.0,Automata,Fata,Euro 5,10490.0
+1539,Hyundai,Tucson,2016.0,SUV,179000.0,Gri,Diesel,1685.0,116.0,Manuala,Fata,Euro 6b,11999.0
+1540,BMW,Seria 5,2021.0,Combi,144483.0,Albastru,Benzina,1998.0,252.0,Automata,Spate,Euro 6,32065.0
+1541,Land Rover,Defender,2022.0,SUV,119597.0,Alb,Diesel,2996.0,300.0,Automata,4x4 (automat),Euro 6,55657.58
+1542,Fiat,500,2011.0,Masina de oras,180827.0,Negru,Benzina,1242.0,69.0,Automata,Fata,Euro 5,6550.0
+1543,Peugeot,508,2019.0,Sedan,127900.0,Verde,Diesel,1997.0,163.0,Automata,Fata,Euro 6,16400.0
+1544,Suzuki,Vitara,2023.0,SUV,23500.0,Negru,Hibrid,1462.0,115.0,Manuala,4x4 (automat),Euro 6,18700.0
+1545,Citroën,C5 Aircross,2020.0,SUV,193000.0,Gri,Diesel,1499.0,131.0,Manuala,Fata,Euro 6d,12500.0
+1546,Audi,A4,2019.0,Sedan,270000.0,Argint,Diesel,1968.0,150.0,Manuala,Fata,Euro 6,12000.0
+1547,BMW,X6,2024.0,SUV,8200.0,Negru,Diesel,2993.0,286.0,Automata,4x4 (automat),Euro 6,87998.46
+1548,Audi,Q8,2021.0,SUV,65100.0,Maro,Benzina,2995.0,340.0,Automata,4x4 (automat),Euro 6,53997.46
+1549,Renault,Grand Scenic,2018.0,Monovolum,267000.0,Negru,Diesel,1461.0,110.0,Manuala,Fata,Euro 6,8700.0
+1550,Audi,A3,2016.0,Combi,184000.0,Negru,Diesel,1598.0,110.0,Manuala,Fata,Euro 6b,8200.0
+1551,Audi,A3,2017.0,Combi,176000.0,Alb,Benzina,999.0,115.0,Manuala,Fata,Euro 6b,9400.0
+1552,Kia,Stonic,2021.0,SUV,151000.0,Negru,Benzina,998.0,120.0,Manuala,Fata,Euro 6d,9200.0
+1553,BMW,Seria 7,2024.0,Sedan,43300.0,Gri,Diesel,2993.0,320.0,Automata,4x4 (automat),Euro 6,89998.59
+1554,Mercedes-Benz,E,2024.0,Sedan,20600.0,Negru,Benzina,1999.0,204.0,Automata,Spate,Euro 6,54998.13
+1555,Land Rover,Range Rover Evoque,2017.0,SUV,149989.0,Alb,Diesel,1999.0,180.0,Automata,4x4 (automat),Euro 6,18607.38
+1556,Kia,Sportage,2017.0,SUV,182000.0,Alb,Diesel,1685.0,115.0,Manuala,Fata,Euro 5,11000.0
+1557,BMW,Seria 5,2019.0,Sedan,289000.0,Alte culori,Diesel,1995.0,190.0,Automata,Spate,Euro 6d,17900.0
+1558,Audi,Q5,2022.0,SUV,187000.0,Negru,Diesel,1968.0,163.0,Automata,Fata,Euro 6b,32775.27
+1559,BMW,Seria 4,2023.0,Sedan,63000.0,Alte culori,Diesel,1995.0,190.0,Automata,Spate,Euro 6,42988.88
+1560,BMW,X5,2020.0,SUV,129087.0,Negru,Hibrid Plug-In,2998.0,394.0,Automata,4x4 (automat),Euro 6,53845.0
+1561,Mercedes-Benz,S,2017.0,Sedan,156272.0,Gri,Diesel,2925.0,286.0,Automata,4x4 (automat),Euro 6,47500.0
+1562,Audi,Q7,2021.0,SUV,151677.0,Argint,Hibrid Plug-In,2995.0,381.0,Automata,4x4 (automat),Euro 6,49998.41
+1563,Mercedes-Benz,GLE,2021.0,SUV,94076.0,Negru,Diesel,2925.0,330.0,Automata,4x4 (automat),Euro 6,57000.0
+1564,Audi,A4 Allroad,2020.0,Combi,229800.0,Negru,Diesel,1968.0,190.0,Automata,4x4 (automat),Euro 6,22958.54
+1565,BMW,Seria 4,2024.0,Cabrio,15099.0,Negru,Diesel,2993.0,340.0,Automata,4x4 (manual),Euro 6,59996.64
+1566,Opel,Grandland X,2019.0,SUV,173938.0,Alb,Benzina,1199.0,131.0,Manuala,Fata,Euro 6,11898.99
+1567,Audi,Q8,2019.0,SUV,152819.0,Gri,Hibrid,2967.0,286.0,Automata,4x4 (automat),Euro 6,49990.0
+1568,Audi,A5,2019.0,Coupe,141735.0,Argint,Diesel,2967.0,285.0,Automata,4x4 (automat),Euro 6,24998.6
+1569,BMW,Seria 7,2019.0,Sedan,138065.0,Gri,Hibrid Plug-In,2998.0,286.0,Automata,4x4 (automat),Euro 6,44997.48
+1570,Land Rover,Range Rover,2014.0,SUV,201200.0,Gri,Diesel,2993.0,258.0,Automata,4x4 (automat),Euro 5,18990.0
+1571,Mercedes-Benz,GLE,2019.0,SUV,101000.0,Alb,Diesel,2925.0,330.0,Automata,4x4 (manual),Euro 6,64500.0
+1572,Mercedes-Benz,GLS,2017.0,SUV,184000.0,Argint,Diesel,2987.0,258.0,Automata,4x4 (automat),Euro 6,34999.0
+1573,Fiat,500,2011.0,Masina de oras,189442.0,Argint,Benzina,1242.0,69.0,Automata,Fata,Euro 5,6450.0
+1574,Toyota,Yaris Cross,2023.0,SUV,80290.0,Negru,Hibrid,1490.0,116.0,Automata,Fata,Euro 6,23290.0
+1575,Opel,Astra,2014.0,Combi,254898.0,Alb,Diesel,1686.0,110.0,Manuala,Fata,Euro 5,5799.0
+1576,BMW,Seria 1,2014.0,Compacta,289000.0,Albastru,Diesel,1598.0,116.0,Manuala,Spate,Euro 5,6899.0
+1577,Mercedes-Benz,E,2024.0,Sedan,22900.0,Negru,Diesel,1993.0,197.0,Automata,4x4 (automat),Euro 6d-Temp,73989.08
+1578,BMW,Seria 5,2022.0,Sedan,160000.0,Negru,Diesel,1995.0,190.0,Automata,Spate,Euro 6,30499.26
+1579,Jeep,Renegade,2022.0,SUV,100000.0,Alb,Hibrid Plug-In,1332.0,190.0,Automata,4x4 (automat),Euro 6,16499.0
+1580,Jaguar,E-Pace,2019.0,SUV,163816.0,Negru,Diesel,1999.0,180.0,Automata,4x4 (manual),Euro 6,17850.0
+1581,Mercedes-Benz,GLE,2021.0,SUV,125061.0,Gri,Hibrid Plug-In,1950.0,319.0,Automata,4x4 (automat),Euro 6,50300.0
+1582,Seat,Tarraco,2021.0,SUV,188538.0,Alb,Benzina,1498.0,150.0,Automata,Fata,Euro 6,21990.0
+1583,Toyota,Corolla,2020.0,Combi,179000.0,Albastru,Hibrid,1798.0,98.0,Automata,Fata,Euro 6d,16779.0
+1584,Volkswagen,Polo,2022.0,Masina de oras,82594.0,Gri,Benzina,999.0,95.0,Manuala,Fata,Euro 6,12350.0
+1585,Mercedes-Benz,GLK,2011.0,SUV,235819.0,Negru,Diesel,2143.0,170.0,Automata,4x4 (automat),Euro 5,9950.0
+1586,Peugeot,3008,2022.0,SUV,37064.0,Albastru,Diesel,1499.0,130.0,Automata,Fata,Euro 6,23450.0
+1587,Volkswagen,Touareg,2020.0,SUV,144300.0,Negru,Diesel,2967.0,231.0,Automata,4x4 (automat),Euro 6,32399.99
+1588,Kia,Sportage,2016.0,SUV,203500.0,Gri,Diesel,1995.0,184.0,Automata,4x4 (manual),Euro 5,12390.0
+1589,Volkswagen,Touran,2012.0,Monovolum,214898.0,Albastru,Diesel,1598.0,105.0,Manuala,Fata,Euro 5,6490.0
+1590,Skoda,RAPID,2014.0,Compacta,169343.0,Negru,Diesel,1598.0,90.0,Manuala,Fata,Euro 5,7000.0
+1591,BMW,X3,2016.0,SUV,187600.0,Negru,Diesel,1995.0,190.0,Automata,4x4 (automat),Euro 6b,18800.0
+1592,Mercedes-Benz,GLB,2021.0,SUV,39277.0,Alb,Benzina,1991.0,224.0,Automata,4x4 (automat),Euro 6,37490.0
+1593,Mercedes-Benz,GL,2015.0,SUV,159000.0,Maro,Diesel,2987.0,258.0,Automata,4x4 (automat),Euro 6,28950.0
+1594,Skoda,Superb,2020.0,Sedan,131000.0,Albastru,Diesel,1968.0,150.0,Automata,Fata,Euro 6,20812.0
+1595,BMW,Seria 4,2014.0,Sedan,230094.0,Gri,Diesel,1995.0,184.0,Automata,Spate,Euro 5,12990.0
+1596,Mercedes-Benz,C,2019.0,Combi,234624.0,Negru,Diesel,1597.0,122.0,Automata,Spate,Euro 6d-Temp,13500.0
+1597,Volkswagen,Polo,2021.0,Masina de oras,138198.0,Argint,Benzina,999.0,95.0,Automata,Fata,Euro 6,13307.58
+1598,Peugeot,3008,2021.0,SUV,128686.0,Albastru,Diesel,1499.0,130.0,Automata,Fata,Euro 6,18813.08
+1599,Renault,Scenic,2015.0,Monovolum,201900.0,Negru,Diesel,1461.0,110.0,Manuala,Fata,Euro 5,6600.0
+1600,Audi,A5,2016.0,Sedan,199972.0,Alb,Diesel,1968.0,150.0,Manuala,Fata,Euro 6,15850.0
+1601,Mercedes-Benz,E,2020.0,Sedan,199737.0,Negru,Diesel,1950.0,194.0,Automata,Fata,Euro 6,30990.52
+1602,Mercedes-Benz,GLC,2022.0,SUV,161704.0,Negru,Hibrid Plug-In,1991.0,320.0,Automata,4x4 (automat),Euro 6,32600.0
+1603,Volkswagen,ARTEON,2022.0,Sedan,112498.0,Argint,Hibrid Plug-In,1395.0,218.0,Automata,Fata,Euro 6,29350.0
+1604,Alfa Romeo,Stelvio,2017.0,SUV,193000.0,Negru,Benzina,1995.0,280.0,Automata,4x4 (automat),Euro 6,17800.0
+1605,BMW,Seria 5,2018.0,Combi,205823.0,Gri,Diesel,1995.0,190.0,Automata,4x4 (automat),Euro 6,19490.0
+1606,Hyundai,Tucson,2021.0,SUV,142060.0,Verde,Hibrid,1598.0,215.0,Automata,4x4 (automat),Euro 6,19600.0
+1607,Renault,Megane,2022.0,Combi,157000.0,Alb,Diesel,1461.0,115.0,Manuala,Fata,Euro 6,12690.0
+1608,BMW,X3,2023.0,SUV,51300.0,Negru,Benzina,1998.0,184.0,Automata,4x4 (automat),Euro 6,40499.91
+1609,BMW,X3,2022.0,SUV,131413.0,Negru,Hibrid Plug-In,1998.0,292.0,Automata,4x4 (automat),Euro 6,34989.57
+1610,Dacia,Duster,2021.0,SUV,139037.0,Alb,Diesel,1461.0,115.0,Manuala,4x4 (automat),Euro 6,14390.0
+1611,Mercedes-Benz,GLC,2022.0,SUV,59500.0,Alb,Hibrid Plug-In,1950.0,306.0,Automata,4x4 (automat),Euro 6b,40497.49
+1612,Skoda,Octavia,2021.0,Compacta,136315.0,Argint,Benzina,1498.0,149.0,Manuala,Fata,Euro 6,15999.0
+1613,Skoda,Kamiq,2019.0,SUV,96000.0,Rosu,Benzina,1498.0,150.0,Automata,Fata,Euro 6,17787.0
+1614,Volkswagen,Tiguan,2019.0,SUV,150000.0,Negru,Benzina,1498.0,150.0,Automata,Fata,Euro 6,18997.0
+1615,Mini,Countryman,2018.0,SUV,162000.0,Gri,Benzina,1499.0,136.0,Manuala,Fata,Euro 6,12749.77
+1616,Renault,Arkana,2022.0,SUV,66290.0,Gri,Hibrid,1598.0,145.0,Automata,Fata,Euro 6,17889.85
+1617,BMW,X3,2021.0,SUV,155000.0,Gri,Diesel,1995.0,150.0,Automata,Spate,Euro 6,28677.0
+1618,Peugeot,308,2022.0,Combi,78000.0,Albastru,Diesel,1499.0,130.0,Automata,Fata,Euro 6,17787.0
+1619,Lexus,Seria NX,2024.0,SUV,33414.0,Portocaliu,Hibrid,2487.0,190.0,Automata,4x4 (manual),Euro 6,45989.68
+1620,Ford,Kuga,2019.0,SUV,208000.0,Alb,Benzina,1498.0,176.0,Automata,4x4 (manual),Euro 6,11499.84
+1621,Audi,Q5,2021.0,SUV,75050.0,Negru,Diesel,1968.0,204.0,Automata,4x4 (manual),Euro 6,33999.79
+1622,Opel,Grandland X,2020.0,SUV,205000.0,Alb,Benzina,1199.0,130.0,Automata,Fata,Euro 6,10990.43
+1623,Audi,A6,2023.0,Sedan,35076.0,Negru,Diesel,1968.0,204.0,Automata,4x4 (automat),Euro 6,45990.0
+1624,BMW,X3,2019.0,SUV,94000.0,Argint,Diesel,1995.0,190.0,Automata,4x4 (automat),Euro 6,31097.0
+1625,Mercedes-Benz,CLA,2019.0,Coupe,92000.0,Gri,Benzina,1332.0,163.0,Automata,Fata,Euro 6d,30842.9
+1626,Dacia,Logan,2020.0,Sedan,101000.0,Alb,Benzina,998.0,73.0,Manuala,Fata,Euro 6,6990.0
+1627,BMW,X5 M,2020.0,SUV,154150.0,Negru,Diesel,2993.0,400.0,Automata,4x4 (automat),Euro 6,48969.91
+1628,Volvo,XC 60,2021.0,SUV,122610.0,Albastru,Benzina,1969.0,254.0,Automata,4x4 (automat),Euro 6c,30998.99
+1629,Volkswagen,Passat,2019.0,Combi,268000.0,Argint,Diesel,1968.0,150.0,Automata,Fata,Euro 6,10527.0
+1630,Toyota,RAV4,2023.0,SUV,50056.0,Gri,Benzina,1987.0,175.0,Automata,4x4 (automat),Euro 6,28990.39
+1631,Hyundai,Tucson,2020.0,SUV,225000.0,Rosu,Diesel,1995.0,185.0,Automata,4x4 (manual),Euro 6,17000.5
+1632,Dacia,Duster,2020.0,SUV,121336.0,Alb,Diesel,1461.0,115.0,Manuala,4x4 (automat),Euro 6,14590.0
+1633,Audi,Q5,2022.0,SUV,111152.0,Albastru,Hibrid Plug-In,1984.0,367.0,Automata,4x4 (automat),Euro 6,34989.57
+1634,BMW,Seria 5,2021.0,Sedan,131050.0,Negru,Hibrid Plug-In,2998.0,394.0,Automata,4x4 (automat),Euro 6,35990.24
+1635,BMW,Seria 4,2016.0,Sedan,211000.0,Negru,Diesel,1995.0,190.0,Manuala,Spate,Euro 6,14090.0
+1636,Volvo,XC 60,2019.0,SUV,136450.0,Albastru,Diesel,1969.0,197.0,Automata,4x4 (automat),Euro 6,25999.27
+1637,Audi,A4,2019.0,Combi,153000.0,Negru,Diesel,1968.0,190.0,Automata,4x4 (automat),Euro 6,18392.0
+1638,BMW,Seria 8,2022.0,Sedan,134246.0,Negru,Diesel,2993.0,340.0,Automata,4x4 (manual),Euro 6,50000.0
+1639,Mercedes-Benz,GLB,2020.0,SUV,133000.0,Alb,Diesel,1950.0,150.0,Automata,Fata,Euro 6,28677.0
+1640,DS Automobiles,DS 7 Crossback,2020.0,SUV,112000.0,Negru,Hibrid Plug-In,1598.0,300.0,Automata,4x4 (automat),Euro 6,22506.0
+1641,BMW,X1,2024.0,SUV,2660.0,Verde,Hibrid Plug-In,1499.0,245.0,Automata,4x4 (automat),Euro 6b,38998.3
+1642,Toyota,RAV4,2023.0,SUV,71235.0,Gri,Benzina,1987.0,175.0,Automata,Fata,Euro 6,26990.26
+1643,Peugeot,2008,2022.0,SUV,118000.0,Albastru,Benzina,1199.0,130.0,Automata,Fata,Euro 6,14956.81
+1644,Skoda,Octavia,2022.0,Combi,141100.0,Alb,Diesel,1968.0,115.0,Automata,Fata,Euro 6,16998.08
+1645,BMW,X3,2021.0,SUV,156000.0,Negru,Diesel,1995.0,190.0,Automata,4x4 (automat),Euro 6,31218.0
+1646,Audi,A4,2021.0,Combi,215000.0,Gri,Diesel,1968.0,204.0,Automata,Fata,Euro 6,18399.26
+1647,Audi,Q5,2017.0,SUV,216000.0,Albastru,Diesel,1968.0,163.0,Automata,4x4 (automat),Euro 6,22450.34
+1648,Toyota,RAV4,2020.0,SUV,117799.0,Albastru,Hibrid,2487.0,178.0,Automata,Fata,Euro 6,24990.13
+1649,Skoda,Superb,2020.0,Combi,177421.0,Negru,Diesel,1968.0,190.0,Automata,4x4 (automat),Euro 6,24500.0
+1650,Volkswagen,Tiguan,2022.0,SUV,152623.0,Negru,Diesel,1968.0,200.0,Automata,4x4 (automat),Euro 6,30400.04
+1651,Volkswagen,Passat,2020.0,Combi,242400.0,Gri,Diesel,1598.0,120.0,Automata,Fata,Euro 6,13750.44
+1652,Seat,Arona,2021.0,SUV,102000.0,Rosu,Benzina,999.0,95.0,Manuala,Fata,Euro 6,10700.03
+1653,Audi,A3,2022.0,Compacta,187000.0,Rosu,Benzina,999.0,110.0,Manuala,Fata,Euro 6,15990.15
+1654,Renault,Trafic,2021.0,Monovolum,118364.0,Alb,Diesel,1997.0,110.0,Manuala,Fata,Euro 6d-Temp,22499.0
+1655,Peugeot,308,2022.0,Compacta,141000.0,Verde,Benzina,1199.0,130.0,Automata,Fata,Euro 6,15800.18
+1656,Volvo,XC 60,2021.0,SUV,123900.0,Alb,Hibrid Plug-In,1969.0,341.0,Automata,4x4 (automat),Euro 6,28193.0
+1657,BMW,X4,2023.0,SUV,46000.0,Negru,Benzina,1998.0,184.0,Automata,4x4 (manual),Euro 6,49899.19
+1658,Audi,A6,2024.0,Sedan,27694.0,Negru,Benzina,1984.0,265.0,Automata,4x4 (automat),Euro 6,52900.0
+1659,BMW,X6,2022.0,SUV,58000.0,Negru,Diesel,2993.0,286.0,Automata,4x4 (automat),Euro 6,72399.14
+1660,Citroën,C4 Aircross,2013.0,SUV,210000.0,Alb,Diesel,1560.0,114.0,Manuala,Fata,Euro 6,7400.0
+1661,Hyundai,Santa Fe,2014.0,SUV,181763.0,Maro,Diesel,2199.0,197.0,Manuala,4x4 (manual),Euro 5,12850.0
+1662,BMW,X5,2021.0,SUV,93000.0,Negru,Diesel,2993.0,286.0,Automata,4x4 (automat),Euro 6,48990.0
+1663,Nissan,X-Trail,2015.0,SUV,228000.0,Alte culori,Diesel,1598.0,130.0,Manuala,4x4 (manual),Euro 5,10990.0
+1664,Opel,Grandland X,2020.0,SUV,145800.0,Negru,Diesel,1499.0,130.0,Automata,Fata,Euro 6,14499.43
+1665,Nissan,Qashqai+2,2010.0,SUV,238000.0,Negru,Benzina,1997.0,140.0,Manuala,Fata,Euro 4,6499.0
+1666,Renault,Megane,2013.0,Combi,285300.0,Alb,Diesel,1461.0,110.0,Manuala,Fata,Euro 5,5999.0
+1667,Opel,Corsa,2016.0,Masina de oras,236000.0,Argint,Diesel,1248.0,95.0,Manuala,Fata,Euro 6,5999.0
+1668,Peugeot,2008,2015.0,Combi,147890.0,Gri,Benzina,1199.0,82.0,Manuala,Fata,Euro 6,6999.0
+1669,BMW,X5,2017.0,SUV,197000.0,Maro,Hibrid Plug-In,1997.0,245.0,Automata,4x4 (manual),Euro 6,26499.0
+1670,Alfa Romeo,Stelvio,2021.0,SUV,198000.0,Rosu,Diesel,2143.0,190.0,Automata,4x4 (automat),Euro 6,19999.0
+1671,Audi,A4,2008.0,Sedan,140000.0,Albastru,Benzina,1798.0,160.0,Manuala,Fata,Euro 4,6699.0
+1672,Ford,Tourneo Custom,2014.0,Monovolum,186900.0,Gri,Diesel,2198.0,125.0,Manuala,Fata,Euro 5,15999.0
+1673,Audi,A6 Allroad,2017.0,Combi,127100.0,Negru,Diesel,2967.0,218.0,Automata,4x4 (automat),Euro 6,22999.68
+1674,Citroën,Jumpy,2011.0,Monovolum,200600.0,Alb,Diesel,1997.0,120.0,Manuala,Fata,Euro 5,6999.0
+1675,BMW,X6,2015.0,SUV,249500.0,Alb,Diesel,2993.0,258.0,Automata,4x4 (automat),Euro 6,24999.0
+1676,Kia,Ceed,2021.0,Combi,240300.0,Gri,Benzina,998.0,120.0,Manuala,Fata,Euro 6,9699.36
+1677,Ford,C-Max,2006.0,Monovolum,298000.0,Gri,Diesel,1753.0,115.0,Manuala,Fata,Euro 4,3999.0
+1678,Opel,Astra,2012.0,Combi,260000.0,Albastru,Diesel,1956.0,165.0,Manuala,Fata,Euro 5,4499.0
+1679,Nissan,Qashqai,2016.0,SUV,213000.0,Negru,Benzina,1197.0,115.0,Manuala,Fata,Euro 5,8999.0
+1680,Volvo,XC 60,2020.0,SUV,162507.0,Alb,Diesel,1969.0,150.0,Manuala,Fata,Euro 6d-Temp,22748.0
+1681,Audi,Q7,2017.0,SUV,220000.0,Alb,Diesel,2967.0,272.0,Automata,4x4 (automat),Euro 6,21500.0
+1682,Volkswagen,ARTEON,2019.0,Compacta,170990.0,Gri,Benzina,1984.0,190.0,Automata,Fata,Euro 6,24990.0
+1683,BMW,X3,2022.0,SUV,90000.0,Negru,Hibrid Plug-In,1998.0,292.0,Automata,4x4 (automat),Euro 6b,35490.0
+1684,Mercedes-Benz,CLA,2014.0,Sedan,192000.0,Alb,Diesel,1796.0,136.0,Automata,Fata,Euro 5,15190.0
+1685,BMW,Seria 3,2020.0,Sedan,111000.0,Negru,Hibrid Plug-In,1998.0,292.0,Automata,Spate,Euro 6,26990.01
+1686,Ford,Galaxy,2011.0,SUV,237000.0,Negru,Diesel,1997.0,140.0,Manuala,Fata,Euro 5,6990.0
+1687,Audi,Q5,2013.0,SUV,207652.0,Negru,Diesel,1968.0,177.0,Manuala,4x4 (manual),Euro 5,14350.0
+1688,Hyundai,Tucson,2021.0,SUV,90930.0,Negru,Hibrid Plug-In,1598.0,265.0,Automata,4x4 (automat),Euro 6,27990.0
+1689,Mercedes-Benz,C,2024.0,Sedan,15500.0,Gri,Diesel,1993.0,197.0,Automata,Spate,Euro 6d,43547.9
+1690,BMW,Seria 3,2021.0,Sedan,72000.0,Gri,Benzina,1998.0,184.0,Automata,Spate,Euro 6,24502.5
+1691,Toyota,RAV4,2023.0,SUV,46687.0,Gri,Benzina,1987.0,175.0,Automata,Fata,Euro 6,29500.01
+1692,Volkswagen,Passat,2020.0,Sedan,143698.0,Argint,Benzina,1498.0,150.0,Automata,Fata,Euro 6,17990.0
+1693,Audi,Q7,2015.0,SUV,257000.0,Gri,Diesel,2967.0,272.0,Automata,4x4 (automat),Euro 6,23990.0
+1694,Renault,Espace,2020.0,Monovolum,93200.0,Albastru,Diesel,1997.0,160.0,Automata,Fata,Euro 6,20498.61
+1695,Renault,Talisman,2020.0,Combi,80670.0,Albastru,Diesel,1997.0,160.0,Automata,Fata,Euro 6,15998.62
+1696,Mercedes-Benz,GLC Coupe,2022.0,SUV,160000.0,Rosu,Hibrid Plug-In,1950.0,306.0,Automata,4x4 (automat),Euro 5,31999.0
+1697,Skoda,Octavia,2020.0,Combi,214600.0,Negru,Diesel,1968.0,115.0,Manuala,Fata,Euro 6,14989.99
+1698,BMW,Seria 5,2019.0,Sedan,203000.0,Negru,Hibrid Plug-In,1998.0,252.0,Automata,Spate,Euro 6,20490.0
+1699,Dacia,Logan,2016.0,Combi,109000.0,Alte culori,Benzina,898.0,90.0,Manuala,Fata,Euro 6,6990.0
+1700,Mercedes-Benz,GLC,2022.0,SUV,185000.0,Argint,Diesel,1993.0,163.0,Automata,4x4 (automat),Euro 6,25999.0
+1701,Mitsubishi,L200,2016.0,SUV,254946.0,Gri,Diesel,2442.0,181.0,Manuala,4x4 (manual),Euro 6,16990.0
+1702,Nissan,Qashqai,2024.0,SUV,45300.0,Negru,Benzina,1332.0,140.0,Manuala,Fata,Euro 6d,21690.0
+1703,Nissan,X-Trail,2020.0,SUV,157846.0,Negru,Diesel,1749.0,150.0,Manuala,4x4 (manual),Euro 6,16990.0
+1704,Audi,A4,2019.0,Combi,385832.0,Gri,Diesel,1968.0,190.0,Automata,Fata,Euro 6,13990.0
+1705,BMW,Seria 7,2020.0,Sedan,108018.0,Negru,Hibrid Plug-In,2998.0,394.0,Automata,4x4 (automat),Euro 6,46999.0
+1706,BMW,X5,2023.0,SUV,80974.0,Albastru,Diesel,2993.0,298.0,Automata,4x4 (automat),Euro 6,66950.0
+1707,Renault,Talisman,2016.0,Sedan,164051.0,Gri,Diesel,1598.0,160.0,Automata,Fata,Euro 6,14950.0
+1708,BMW,X1,2021.0,SUV,163000.0,Negru,Hibrid Plug-In,1499.0,220.0,Automata,4x4 (automat),Euro 6,23997.93
+1709,Peugeot,5008,2021.0,SUV,144234.0,Negru,Diesel,1499.0,130.0,Automata,Fata,Euro 6,19450.0
+1710,Volvo,V90,2021.0,Combi,97650.0,Alb,Diesel,1969.0,235.0,Automata,4x4 (automat),Euro 6,33900.57
+1711,Mitsubishi,Eclipse-Cross,2024.0,SUV,19000.0,Gri,Hibrid Plug-In,2360.0,188.0,Automata,4x4 (automat),Euro 6,26983.0
+1712,Citroën,C4 Cactus,2018.0,SUV,76000.0,Rosu,Benzina,1199.0,110.0,Automata,Fata,Euro 6,9990.0
+1713,BMW,Seria 5,2021.0,Sedan,107000.0,Albastru,Hibrid Plug-In,1998.0,292.0,Automata,Spate,Euro 6,35695.0
+1714,BMW,X1,2015.0,SUV,165000.0,Negru,Diesel,1995.0,231.0,Automata,4x4 (automat),Euro 6,16300.01
+1715,Opel,Insignia,2020.0,Combi,70000.0,Rosu,Diesel,1496.0,122.0,Automata,Fata,Euro 6,16999.0
+1716,Volvo,XC 40,2021.0,SUV,75000.0,Negru,Hibrid Plug-In,1477.0,211.0,Automata,Fata,Euro 6,27951.0
+1717,Volvo,XC 90,2022.0,SUV,108804.0,Negru,Hibrid Plug-In,1969.0,310.0,Automata,4x4 (automat),Euro 6d-Temp,53989.99
+1718,Hyundai,Tucson,2022.0,SUV,91723.0,Maro,Hibrid Plug-In,1598.0,251.0,Automata,4x4 (automat),Euro 6d,26983.0
+1719,Renault,Clio,2022.0,Compacta,83000.0,Alb,Hibrid,1598.0,143.0,Automata,Fata,Euro 6,14700.0
+1720,BMW,X5,2021.0,SUV,221000.0,Albastru,Diesel,1995.0,231.0,Automata,4x4 (automat),Euro 6b,38888.0
+1721,Renault,Megane,2015.0,Combi,177000.0,Gri,Benzina,1198.0,116.0,Manuala,Fata,Euro 6,6149.0
+1722,DS Automobiles,DS 3 Crossback,2020.0,SUV,113186.0,Albastru,Benzina,1199.0,130.0,Automata,Fata,Euro 6d,14299.0
+1723,Nissan,Qashqai+2,2011.0,SUV,230550.0,Gri,Diesel,1995.0,150.0,Automata,4x4 (automat),Euro 5,6999.0
+1724,Renault,Captur,2020.0,SUV,181700.0,Argint,Diesel,1461.0,115.0,Automata,Fata,Euro 6,12999.88
+1725,Dacia,Dokker,2013.0,Monovolum,324500.0,Alb,Diesel,1461.0,75.0,Manuala,Fata,Euro 5,3650.0
+1726,Mercedes-Benz,GLE,2016.0,SUV,128000.0,Negru,Diesel,2143.0,204.0,Automata,4x4 (automat),Euro 6,23700.0
+1727,Dacia,Logan,2019.0,Sedan,180714.0,Alb,Benzina,898.0,90.0,Manuala,Fata,Euro 6,6750.0
+1728,Kia,XCeed,2022.0,SUV,55560.0,Rosu,Hibrid Plug-In,1580.0,141.0,Automata,Fata,Euro 6b,19990.0
+1729,Mercedes-Benz,GLE,2023.0,SUV,80400.0,Alte culori,Hibrid Plug-In,1993.0,333.0,Automata,4x4 (automat),Euro 6,82945.5
+1730,Mercedes-Benz,E,2024.0,Sedan,18000.0,Negru,Benzina,1999.0,204.0,Automata,Spate,Euro 6,69454.0
+1731,Opel,Mokka,2015.0,SUV,176457.0,Albastru,Benzina,1598.0,115.0,Manuala,Fata,Euro 5,7499.0
+1732,Volkswagen,Touareg,2019.0,SUV,148502.0,Negru,Diesel,2967.0,286.0,Automata,4x4 (automat),Euro 6,39999.0
+1733,Mercedes-Benz,A,2020.0,Compacta,21000.0,Albastru,Benzina,1991.0,190.0,Automata,4x4 (automat),Euro 6,31300.0
+1734,Toyota,Corolla,2021.0,Combi,173700.0,Albastru,Hibrid,1798.0,97.0,Automata,Fata,Euro 6,17989.07
+1735,Kia,Sportage,2013.0,SUV,225777.0,Maro,Diesel,1995.0,136.0,Automata,4x4 (automat),Euro 5,11750.0
+1736,Nissan,Juke,2018.0,SUV,181877.0,Negru,Diesel,1461.0,110.0,Manuala,Fata,Euro 6,8599.0
+1737,BMW,Seria 2,2015.0,Monovolum,224000.0,Alb,Diesel,1995.0,190.0,Automata,Fata,Euro 6,12870.0
+1738,Skoda,Octavia,2012.0,Sedan,203000.0,Gri,Benzina,1197.0,105.0,Manuala,Fata,Euro 5,4499.0
+1739,Porsche,Macan,2015.0,SUV,141276.0,Gri,Diesel,2967.0,258.0,Automata,4x4 (automat),Euro 6,26500.21
+1740,Peugeot,5008,2022.0,SUV,103000.0,Negru,Diesel,1499.0,130.0,Automata,Fata,Euro 6,20557.9
+1741,BMW,Seria 3,2017.0,Combi,192945.0,Gri,Diesel,1995.0,150.0,Automata,4x4 (automat),Euro 6,11500.0
+1742,Renault,Megane,2016.0,Compacta,76719.0,Albastru,Benzina,1197.0,132.0,Manuala,Fata,Euro 6,11690.0
+1743,Maserati,Ghibli,2022.0,Sedan,32138.0,Alb,Benzina,1995.0,330.0,Automata,Spate,Euro 6,48490.0
+1744,Mercedes-Benz,S,2014.0,Sedan,369400.0,Negru,Diesel,2987.0,258.0,Automata,Spate,Euro 6,21999.0
+1745,Hyundai,IONIQ,2021.0,Masina de oras,55000.0,Rosu,Hibrid Plug-In,1580.0,141.0,Automata,Fata,Euro 6,19795.6
+1746,Dacia,Logan,2017.0,Sedan,142300.0,Alb,Benzina,998.0,73.0,Manuala,Fata,Euro 6,5999.18
+1747,BMW,X3,2022.0,SUV,127000.0,Gri,Diesel,1995.0,190.0,Automata,4x4 (automat),Euro 6,44770.0
+1748,Volkswagen,Passat,2015.0,Sedan,201000.0,Albastru,Diesel,1968.0,240.0,Automata,4x4 (automat),Euro 6,13499.0
+1749,Toyota,Corolla,2019.0,Combi,155818.0,Argint,Hibrid,1798.0,122.0,Automata,Fata,Euro 6d-Temp,16940.0
+1750,Audi,A6,2011.0,Combi,269352.0,Alb,Diesel,1968.0,170.0,Automata,Fata,Euro 5,7990.0
+1751,Nissan,Qashqai,2015.0,SUV,230000.0,Alb,Diesel,1461.0,110.0,Manuala,Fata,Euro 5,8499.0
+1752,Dacia,Duster,2014.0,SUV,216000.0,Alb,Diesel,1461.0,110.0,Manuala,Fata,Euro 5,7350.0
+1753,Mercedes-Benz,GLC,2021.0,SUV,68099.0,Albastru,Diesel,1950.0,163.0,Automata,Spate,Euro 6d-Temp,37490.0
+1754,Volkswagen,Tiguan,2012.0,SUV,199989.0,Alb,Diesel,1968.0,140.0,Manuala,Fata,Euro 5,8490.0
+1755,Audi,A6,2017.0,Combi,198647.0,Gri,Diesel,1968.0,190.0,Automata,Fata,Euro 6,14550.0
+1756,DS Automobiles,DS 7 Crossback,2021.0,SUV,106950.0,Gri,Hibrid Plug-In,1598.0,200.0,Automata,4x4 (automat),Euro 6d-Temp,19950.0
+1757,Skoda,Octavia,2012.0,Combi,183000.0,Argint,Diesel,1598.0,105.0,Manuala,Fata,Euro 5,5499.0
+1758,Mercedes-Benz,GLE,2022.0,SUV,81700.0,Gri,Hibrid Plug-In,1950.0,320.0,Automata,4x4 (automat),Euro 6c,56900.0
+1759,Hyundai,i30,2021.0,Compacta,173700.0,Gri,Diesel,1598.0,115.0,Automata,Fata,Euro 6d-Temp,13726.89
+1760,Nissan,Qashqai,2016.0,SUV,189000.0,Alb,Diesel,1598.0,130.0,Manuala,4x4 (manual),Euro 6,10999.0
+1761,Mercedes-Benz,E,2024.0,Sedan,11000.0,Alb,Benzina,1999.0,204.0,Automata,Spate,Euro 6,69454.0
+1762,Renault,Megane,2019.0,Combi,203000.0,Alb,Diesel,1461.0,95.0,Manuala,Fata,Euro 6,9990.0
+1763,BMW,Seria 3,2020.0,Combi,122300.0,Alb,Diesel,1995.0,190.0,Automata,4x4 (automat),Euro 6,25200.67
+1764,Skoda,Octavia,2021.0,Sedan,154000.0,Albastru,Benzina,1498.0,150.0,Automata,Fata,Euro 6,16990.0
+1765,Nissan,Qashqai,2011.0,SUV,194888.0,Alb,Diesel,1994.0,150.0,Automata,4x4 (automat),Euro 5,7990.0
+1766,Seat,Ateca,2016.0,SUV,120000.0,Negru,Diesel,1968.0,190.0,Automata,4x4 (manual),Euro 6,16900.0
+1767,BMW,X4,2023.0,SUV,24000.0,Gri,Diesel,1995.0,190.0,Automata,4x4 (automat),Euro 6,54450.0
+1768,Mercedes-Benz,GLC,2020.0,SUV,157800.0,Negru,Hibrid Plug-In,1950.0,306.0,Automata,4x4 (automat),Euro 6,35989.03
+1769,Mercedes-Benz,V,2020.0,Monovolum,137150.0,Albastru,Diesel,1950.0,190.0,Automata,4x4 (automat),Euro 6,42999.77
+1770,Kia,Ceed,2014.0,Combi,274600.0,Negru,Benzina,1591.0,135.0,Manuala,Fata,Euro 5,5499.0
+1771,Volkswagen,Tiguan,2009.0,SUV,219600.0,Negru,Diesel,1968.0,140.0,Manuala,4x4 (automat),Euro 4,7699.0
+1772,Mazda,MX-5,2011.0,Cabrio,121000.0,Negru,Benzina,1999.0,160.0,Manuala,Spate,Euro 5,12890.0
+1773,Audi,Q3,2013.0,SUV,157963.0,Negru,Diesel,1968.0,140.0,Manuala,4x4 (automat),Euro 5,13490.0
+1774,Mitsubishi,Outlander,2014.0,SUV,180400.0,Gri,Hibrid Plug-In,1998.0,121.0,Automata,4x4 (manual),Euro 5,11290.0
+1775,Mazda,CX-3,2016.0,SUV,126303.0,Albastru,Diesel,1499.0,105.0,Manuala,Fata,Euro 6,11490.0
+1776,BMW,Seria 1,2009.0,Compacta,153000.0,Gri,Benzina,1597.0,122.0,Manuala,Spate,Euro 4,3999.0
+1777,Audi,A5,2020.0,Sedan,130000.0,Rosu,Diesel,1968.0,163.0,Automata,Fata,Euro 6b,27572.27
+1778,Renault,Koleos,2018.0,SUV,190331.0,Alte culori,Diesel,1995.0,177.0,Automata,4x4 (automat),Euro 6,17250.0
+1779,Seat,Ateca,2017.0,SUV,203089.0,Negru,Diesel,1968.0,150.0,Manuala,4x4 (automat),Euro 6,14250.0
+1780,Audi,A7,2019.0,Sedan,135000.0,Negru,Benzina,2995.0,340.0,Automata,4x4 (automat),Euro 6,43450.0
+1781,Renault,Captur,2018.0,SUV,219000.0,Albastru,Diesel,1461.0,90.0,Manuala,Fata,Euro 6,8999.0
+1782,Mercedes-Benz,C,2022.0,Sedan,150451.0,Albastru,Diesel,1993.0,163.0,Automata,Spate,Euro 6d,32890.0
+1783,Volkswagen,Touareg,2023.0,SUV,80151.0,Negru,Diesel,2967.0,286.0,Automata,4x4 (automat),Euro 6,48600.0
+1784,Kia,Sportage,2022.0,SUV,151000.0,Alb,Benzina,1598.0,180.0,Automata,4x4 (automat),Euro 6d,24690.0
+1785,Ford,Kuga,2011.0,SUV,261828.0,Negru,Diesel,1997.0,140.0,Manuala,Fata,Euro 5,7250.0
+1786,Volkswagen,Tiguan,2012.0,SUV,181817.0,Gri,Benzina,1390.0,160.0,Manuala,Fata,Euro 5,9250.0
+1787,Land Rover,Defender,2023.0,SUV,44000.0,Negru,Diesel,2996.0,249.0,Automata,4x4 (automat),Euro 6d-Temp,71980.48
+1788,Audi,A4,2021.0,Combi,159000.0,Bej,Diesel,1968.0,163.0,Automata,Fata,Euro 6b,20570.0
+1789,Audi,A6,2020.0,Combi,146500.0,Argint,Diesel,1968.0,204.0,Automata,4x4 (automat),Euro 6,29645.0
+1790,Toyota,RAV4,2019.0,SUV,182800.0,Albastru,Benzina,1987.0,175.0,Automata,Fata,Euro 6,23958.0
+1791,Volvo,XC 90,2020.0,SUV,178200.0,Gri,Diesel,1969.0,235.0,Automata,4x4 (automat),Euro 6,33150.0
+1792,BMW,X1,2021.0,SUV,159000.0,Negru,Hibrid Plug-In,1499.0,220.0,Automata,4x4 (automat),Euro 6,19998.88
+1793,Toyota,C-HR,2018.0,Compacta,228500.0,Gri,Hibrid,1798.0,122.0,Automata,Fata,Euro 6,14890.0
+1794,BMW,X7,2020.0,SUV,85000.0,Alb,Diesel,2993.0,340.0,Automata,4x4 (automat),Euro 6,68990.0
+1795,Skoda,Kodiaq,2025.0,SUV,11800.0,Galben/Auriu,Hibrid Plug-In,1498.0,204.0,Automata,Fata,Euro 6,44400.95
+1796,Mercedes-Benz,C,2023.0,Sedan,20000.0,Alb,Benzina,1496.0,204.0,Automata,4x4 (automat),Euro 6,49110.27
+1797,Ford,Mondeo,2017.0,Combi,154092.0,Gri,Diesel,1997.0,150.0,Manuala,Fata,Euro 6,10499.0
+1798,Skoda,Superb,2010.0,Combi,307000.0,Gri,Diesel,1968.0,140.0,Automata,Fata,Euro 5,4500.0
+1799,Mercedes-Benz,A,2024.0,Compacta,13723.0,Gri,Benzina,1991.0,306.0,Automata,4x4 (automat),Euro 6,54450.0
+1800,Peugeot,308,2020.0,Compacta,135000.0,Gri,Benzina,1199.0,130.0,Automata,Fata,Euro 6d,10990.43
+1801,Mercedes-Benz,GLE Coupe,2021.0,SUV,87500.0,Alb,Diesel,2925.0,330.0,Automata,4x4 (automat),Euro 6,66999.0
+1802,Citroën,DS5,2013.0,Sedan,168000.0,Alb,Diesel,1997.0,163.0,Manuala,Fata,Euro 5,7450.0
+1803,BMW,X3,2016.0,SUV,217750.0,Negru,Diesel,1995.0,190.0,Automata,4x4 (automat),Euro 6,16850.0
+1804,Skoda,Octavia,2025.0,Sedan,1000.0,Alb,Benzina,1498.0,150.0,Automata,Fata,Euro 6,31900.44
+1805,Citroën,C4 Aircross,2013.0,SUV,184000.0,Alb,Diesel,1798.0,150.0,Manuala,4x4 (manual),Euro 5,7850.0
+1806,Volkswagen,Tiguan,2015.0,SUV,189300.0,Negru,Diesel,1968.0,110.0,Manuala,Fata,Euro 6,11499.0
+1807,Porsche,Cayenne,2019.0,SUV,292664.0,Negru,Benzina,2995.0,340.0,Automata,4x4 (automat),Euro 6,35990.0
+1808,BMW,X4,2020.0,SUV,199384.0,Alb,Diesel,2993.0,265.0,Automata,4x4 (automat),Euro 6,27799.75
+1809,Seat,Tarraco,2021.0,SUV,194900.0,Gri,Benzina,1984.0,190.0,Automata,4x4 (automat),Euro 6,19900.0
+1810,Toyota,Aygo,2019.0,Masina de oras,187650.0,Alb,Benzina,998.0,72.0,Manuala,Fata,Euro 6,5760.0
+1811,Dacia,Duster,2019.0,SUV,139500.0,Gri,Diesel,1461.0,116.0,Manuala,Fata,Euro 6d-Temp,12650.0
+1812,BMW,Seria 7,2020.0,Sedan,163000.0,Negru,Hibrid Plug-In,2998.0,394.0,Automata,Spate,Euro 6,44498.96
+1813,Opel,Astra,2014.0,Compacta,167759.0,Maro,Diesel,1686.0,110.0,Manuala,Fata,Euro 5,6250.0
+1814,Renault,Koleos,2018.0,SUV,180801.0,Galben/Auriu,Diesel,1995.0,175.0,Automata,Fata,Euro 6,16950.0
+1815,Peugeot,2008,2019.0,SUV,150000.0,Negru,Diesel,1499.0,110.0,Manuala,Fata,Euro 6,9196.0
+1816,Porsche,Macan,2014.0,SUV,189000.0,Albastru,Benzina,2997.0,340.0,Automata,4x4 (automat),Euro 6,24999.0
+1817,Mitsubishi,ASX,2017.0,SUV,184800.0,Alb,Diesel,2268.0,150.0,Automata,4x4 (automat),Euro 6,9900.0
+1818,BMW,Seria 3,2016.0,Sedan,219000.0,Negru,Hibrid Plug-In,1998.0,251.0,Automata,Spate,Euro 6d,15490.0
+1819,Mercedes-Benz,E,2011.0,Sedan,149000.0,Gri,Diesel,2143.0,136.0,Automata,Spate,Euro 5,10750.0
+1820,Skoda,Superb,2016.0,Sedan,117163.0,Alb,Benzina,1395.0,150.0,Automata,Fata,Euro 6,15950.0
+1821,Mazda,3,2014.0,Compacta,179000.0,Negru,Benzina,1998.0,165.0,Manuala,Fata,Euro 5,9450.0
+1822,Honda,Civic,2016.0,Masina mica,242000.0,Negru,Diesel,1597.0,120.0,Manuala,Fata,Euro 5,8750.0
+1823,Audi,A3,2014.0,Compacta,139000.0,Negru,Diesel,1968.0,150.0,Manuala,Fata,Euro 5,9750.0
+1824,Volkswagen,Golf,2009.0,Combi,283000.0,Gri,Diesel,1896.0,105.0,Manuala,Fata,Euro 4,3750.0
+1825,Opel,Astra,2017.0,Combi,223074.0,Gri,Benzina,998.0,105.0,Manuala,Fata,Euro 6,8450.0
+1826,BMW,Seria 5,2017.0,Sedan,229693.0,Gri,Diesel,1995.0,163.0,Automata,Spate,Euro 6,18950.0
+1827,Hyundai,Santa Fe,2019.0,SUV,71724.0,Negru,Diesel,2199.0,200.0,Automata,4x4 (automat),Euro 6,27950.0
+1828,Volkswagen,Passat,2019.0,Sedan,229607.0,Negru,Diesel,1598.0,120.0,Automata,Fata,Euro 6,15450.0
+1829,Audi,Q7,2022.0,SUV,84600.0,Negru,Diesel,2967.0,286.0,Automata,4x4 (automat),Euro 6,45500.0
+1830,Volkswagen,Polo,2022.0,Masina de oras,81045.0,Alb,Benzina,999.0,95.0,Manuala,Fata,Euro 6,12350.0
+1831,Dacia,Duster,2021.0,SUV,152467.0,Alb,Diesel,1461.0,115.0,Manuala,4x4 (automat),Euro 6,12950.0
+1832,BMW,Seria 5,2019.0,Sedan,140200.0,Alb,Hibrid Plug-In,1998.0,252.0,Automata,Spate,Euro 6,23498.2
+1833,Peugeot,3008,2018.0,SUV,81000.0,Alb,Benzina,1199.0,130.0,Automata,Fata,Euro 6,14400.0
+1834,Renault,Captur,2020.0,SUV,117316.0,Albastru,Hibrid Plug-In,1598.0,158.0,Automata,Fata,Euro 6d,14990.0
+1835,Hyundai,Tucson,2019.0,SUV,157000.0,Rosu,Diesel,1995.0,185.0,Automata,4x4 (manual),Euro 6,18300.0
+1836,Mazda,3,2015.0,Compacta,348500.0,Negru,Diesel,2191.0,150.0,Manuala,Fata,Euro 6,6499.0
+1837,Dacia,Duster,2017.0,SUV,128400.0,Albastru,Diesel,1461.0,110.0,Manuala,4x4 (automat),Euro 6,11499.84
+1838,Skoda,Kamiq,2025.0,SUV,1000.0,Alb,Benzina,999.0,115.0,Automata,Fata,Euro 6,23300.97
+1839,BMW,Seria 3,2018.0,Combi,182500.0,Negru,Diesel,1995.0,150.0,Automata,Spate,Euro 6b,11900.0
+1840,Volvo,XC 40,2021.0,SUV,142000.0,Alte culori,Hibrid Plug-In,1477.0,211.0,Automata,Fata,Euro 6,23450.0
+1841,Nissan,Juke,2015.0,SUV,199536.0,Alb,Diesel,1461.0,110.0,Manuala,Fata,Euro 6,7500.0
+1842,Volkswagen,Golf,2015.0,Compacta,180000.0,Albastru,Diesel,1598.0,105.0,Manuala,Fata,Euro 5,9000.0
+1843,Renault,Koleos,2020.0,SUV,194000.0,Negru,Diesel,1995.0,190.0,Automata,4x4 (automat),Euro 6,18490.0
+1844,Volvo,XC 60,2015.0,SUV,120230.0,Gri,Diesel,2400.0,190.0,Automata,4x4 (automat),Euro 5,13400.0
+1845,Mercedes-Benz,GLC Coupe,2021.0,SUV,18200.0,Albastru,Hibrid Plug-In,1950.0,306.0,Automata,4x4 (automat),Euro 6,47988.6
+1846,Peugeot,2008,2020.0,Monovolum,128700.0,Portocaliu,Diesel,1499.0,102.0,Manuala,Fata,Euro 6,13890.0
+1847,Land Rover,Range Rover,2017.0,SUV,198200.0,Negru,Diesel,2993.0,258.0,Automata,4x4 (automat),Euro 6,25970.0
+1848,BMW,X6 M,2020.0,SUV,139722.0,Maro,Diesel,2993.0,400.0,Automata,4x4 (automat),Euro 6,61750.0
+1849,Mercedes-Benz,GLE,2021.0,SUV,256884.0,Gri,Diesel,1950.0,245.0,Automata,4x4 (automat),Euro 6,34999.0
+1850,Skoda,Superb,2017.0,Sedan,179244.0,Gri,Diesel,1968.0,150.0,Automata,Fata,Euro 6,14950.0
+1851,Skoda,RAPID,2016.0,Sedan,94850.0,Albastru,Diesel,1598.0,115.0,Manuala,Fata,Euro 5,6300.0
+1852,Volkswagen,Polo,2021.0,Masina de oras,97993.0,Argint,Benzina,999.0,95.0,Automata,Fata,Euro 6,14990.0
+1853,Audi,A3,2015.0,Compacta,178800.0,Negru,Diesel,1598.0,110.0,Automata,Fata,Euro 6,11990.0
+1854,Mercedes-Benz,C,2022.0,Sedan,38575.0,Gri,Benzina,1496.0,170.0,Automata,Spate,Euro 6,34500.0
+1855,Volvo,V40,2013.0,Compacta,273926.0,Albastru,Diesel,1560.0,115.0,Manuala,Fata,Euro 5,6900.0
+1856,Jeep,Gladiator,2020.0,SUV,39871.0,Albastru,Diesel,2987.0,264.0,Automata,4x4 (automat),Euro 6,49899.19
+1857,Audi,A7,2014.0,Sedan,210000.0,Maro,Diesel,2967.0,204.0,Automata,Fata,Euro 5,14490.0
+1858,Audi,Q3,2022.0,SUV,60440.0,Negru,Diesel,1968.0,200.0,Automata,4x4 (automat),Euro 6d,39400.0
+1859,Volkswagen,Tiguan,2018.0,SUV,122178.0,Argint,Diesel,1968.0,150.0,Manuala,Fata,Euro 6,16990.0
+1860,Ford,Mondeo,2020.0,Combi,68170.0,Alb,Hibrid,1999.0,187.0,Automata,Fata,Euro 6d,17950.0
+1861,Ford,Mondeo,2021.0,Sedan,100000.0,Albastru,Diesel,1997.0,150.0,Automata,Fata,Euro 6,15990.0
+1862,Nissan,X-Trail,2017.0,SUV,145000.0,Rosu,Diesel,1995.0,177.0,Automata,4x4 (automat),Euro 6,15850.0
+1863,BMW,Seria 4,2023.0,Sedan,129000.0,Negru,Diesel,1995.0,190.0,Automata,4x4 (automat),Euro 6,38450.17
+1864,Kia,Niro,2021.0,SUV,47650.0,Albastru,Hibrid,1580.0,105.0,Automata,Fata,Euro 6,18750.0
+1865,Audi,A8,2015.0,Sedan,260000.0,Negru,Diesel,2967.0,258.0,Automata,4x4 (manual),Euro 6,17900.0
+1866,BMW,X1,2013.0,SUV,210000.0,Maro,Diesel,1995.0,184.0,Automata,4x4 (automat),Euro 6,11490.0
+1867,Citroën,C5 Aircross,2021.0,SUV,142275.0,Alb,Benzina,1598.0,180.0,Automata,Fata,Euro 6,17789.99
+1868,Mercedes-Benz,S,2020.0,Sedan,124000.0,Gri,Diesel,2925.0,286.0,Automata,4x4 (automat),Euro 6d,82267.9
+1869,Renault,Koleos,2017.0,SUV,147000.0,Alb,Diesel,1995.0,177.0,Automata,4x4 (automat),Euro 6,16450.0
+1870,Audi,A4,2023.0,Sedan,152047.0,Negru,Diesel,1968.0,136.0,Automata,Fata,Euro 6,21990.0
+1871,Audi,Q5,2020.0,SUV,109000.0,Negru,Hibrid Plug-In,1984.0,299.0,Automata,4x4 (automat),Euro 6,31460.0
+1872,Mercedes-Benz,GLC,2021.0,Compacta,180000.0,Negru,Hibrid Plug-In,1950.0,306.0,Automata,4x4 (automat),Euro 6,26000.0
+1873,Renault,Clio,2018.0,Compacta,130700.0,Alb,Benzina,999.0,90.0,Manuala,Fata,Euro 6,7989.63
+1874,Dacia,Logan,2016.0,Combi,105000.0,Negru,Benzina,898.0,90.0,Manuala,Fata,Euro 5b,5490.0
+1875,Audi,A4,2010.0,Combi,247000.0,Gri,Diesel,1968.0,120.0,Manuala,Fata,Euro 5,5999.0
+1876,Renault,Talisman,2021.0,Sedan,197100.0,Negru,Diesel,1997.0,160.0,Automata,Fata,Euro 6,12499.0
+1877,Skoda,Octavia,2014.0,Combi,256212.0,Gri,Diesel,1598.0,110.0,Manuala,Fata,Euro 5,7999.0
+1878,Volkswagen,Passat,2009.0,Combi,247691.0,Gri,Diesel,1968.0,140.0,Manuala,Fata,Euro 5,5499.0
+1879,Mitsubishi,Outlander,2020.0,SUV,77234.0,Negru,Hibrid Plug-In,2360.0,135.0,Automata,4x4 (automat),Euro 6,21450.0
+1880,BMW,X3,2019.0,SUV,87604.0,Negru,Diesel,1995.0,190.0,Automata,4x4 (automat),Euro 6,27650.0
+1881,BMW,X3,2013.0,SUV,194000.0,Negru,Diesel,1995.0,184.0,Automata,4x4 (automat),Euro 5,12990.0
+1882,Hyundai,i30,2012.0,Masina de oras,199000.0,Alb,Benzina,1396.0,100.0,Manuala,Fata,Euro 5,5999.0
+1883,Volkswagen,Tiguan,2018.0,SUV,116000.0,Gri,Diesel,1968.0,240.0,Automata,4x4 (automat),Euro 6,24800.0
+1884,Mercedes-Benz,GLC,2021.0,SUV,166600.0,Negru,Benzina,1991.0,197.0,Automata,4x4 (automat),Euro 6,30976.0
+1885,Land Rover,Range Rover,2019.0,SUV,165500.0,Albastru,Diesel,2993.0,258.0,Automata,4x4 (automat),Euro 6,38962.0
+1886,BMW,X5,2021.0,SUV,24000.0,Negru,Diesel,2993.0,286.0,Automata,4x4 (automat),Euro 6d,71995.0
+1887,Nissan,Note,2013.0,Masina mica,241000.0,Alte culori,Diesel,1461.0,90.0,Manuala,Fata,Euro 5,4798.0
+1888,BMW,Seria 3,2014.0,Combi,267000.0,Gri,Diesel,1995.0,143.0,Manuala,Spate,Euro 5,8498.0
+1889,Peugeot,5008,2019.0,SUV,229000.0,Alte culori,Diesel,1499.0,130.0,Automata,Fata,Euro 6,14700.0
+1890,Mercedes-Benz,X,2018.0,SUV,136458.0,Negru,Diesel,2298.0,190.0,Automata,4x4 (automat),Euro 6,24400.0
+1891,Peugeot,308,2018.0,Combi,137000.0,Gri,Benzina,1199.0,130.0,Manuala,Fata,Euro 6,8400.0
+1892,Mazda,CX-3,2015.0,SUV,151390.0,Maro,Diesel,1499.0,105.0,Automata,4x4 (automat),Euro 6b,11990.0
