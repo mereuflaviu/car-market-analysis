@@ -55,3 +55,6 @@ logs/
 # Debug / scratch files
 model/extraction/debug_next_data.json
 presentation-prompt.md
+
+# Superpowers system docs
+docs/superpowers/
