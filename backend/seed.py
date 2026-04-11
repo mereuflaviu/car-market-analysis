@@ -15,25 +15,36 @@ from app import models
 
 CSV_PATH = os.path.join(
     os.path.dirname(os.path.abspath(__file__)),
+    "..", "model", "data", "cleaned_car_listings_extended.csv",
+)
+CSV_FALLBACK = os.path.join(
+    os.path.dirname(os.path.abspath(__file__)),
     "..", "model", "data", "cleaned_car_listings.csv",
 )
 
 
-def seed():
+def seed(force=False):
     print("Creating database tables ...")
     models.Base.metadata.create_all(bind=engine)
 
     db = SessionLocal()
     existing = db.query(models.Car).count()
-    if existing > 0:
-        print(f"Database already has {existing} cars — skipping seed.")
+    if existing > 0 and not force:
+        print(f"Database already has {existing} cars — use force=True to re-seed.")
         db.close()
         return
+    if existing > 0 and force:
+        print(f"Clearing {existing} existing rows ...")
+        db.query(models.Car).delete()
+        db.commit()
 
     csv_path = os.path.abspath(CSV_PATH)
     if not os.path.exists(csv_path):
-        print(f"ERROR: CSV not found at {csv_path}")
-        sys.exit(1)
+        csv_path = os.path.abspath(CSV_FALLBACK)
+        if not os.path.exists(csv_path):
+            print(f"ERROR: CSV not found at {csv_path}")
+            sys.exit(1)
+        print(f"  Extended CSV not found, falling back to {csv_path}")
 
     print(f"Loading {csv_path} ...")
     df = pd.read_csv(csv_path)
@@ -81,4 +92,8 @@ def seed():
 
 
 if __name__ == "__main__":
-    seed()
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--force", action="store_true", help="Drop existing rows and re-seed")
+    args = parser.parse_args()
+    seed(force=args.force)

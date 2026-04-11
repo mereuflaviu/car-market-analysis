@@ -8,16 +8,114 @@ const DEFAULTS = {
   gearbox: 'Manuala', transmission: 'Fata', pollution_standard: 'Euro 6',
 }
 
+// ── Equipment catalogue ─────────────────────────────────────────────────────
+const EQUIPMENT_GROUPS = [
+  {
+    label: 'Connectivity',
+    items: [
+      { key: 'apple_carplay',      label: 'Apple CarPlay' },
+      { key: 'android_auto',       label: 'Android Auto' },
+      { key: 'bluetooth',          label: 'Bluetooth' },
+      { key: 'navigation',         label: 'Navigation' },
+      { key: 'wireless_charging',  label: 'Wireless Charging' },
+      { key: 'usb_port',           label: 'USB Port' },
+      { key: 'head_up_display',    label: 'Head-Up Display' },
+      { key: 'internet',           label: 'Internet / Wi-Fi' },
+    ],
+  },
+  {
+    label: 'Climate & Comfort',
+    items: [
+      { key: 'ac',               label: 'Air Conditioning' },
+      { key: 'climatronic',      label: 'Climatronic (1-zone)' },
+      { key: 'climatronic_2zone',label: 'Climatronic 2-zone' },
+      { key: 'climatronic_3zone',label: 'Climatronic 3-zone' },
+      { key: 'heated_windshield',label: 'Heated Windshield' },
+      { key: 'front_armrest',    label: 'Front Armrest' },
+    ],
+  },
+  {
+    label: 'Roof',
+    items: [
+      { key: 'panoramic_roof',     label: 'Panoramic Roof' },
+      { key: 'electric_sunroof',   label: 'Electric Sunroof' },
+      { key: 'manual_sunroof',     label: 'Manual Sunroof' },
+      { key: 'rear_glass_sunroof', label: 'Rear Glass Sunroof' },
+    ],
+  },
+  {
+    label: 'Seats & Interior',
+    items: [
+      { key: 'upholstery_leather',      label: 'Full Leather' },
+      { key: 'upholstery_leather_mix',  label: 'Leather Mix' },
+      { key: 'upholstery_alcantara',    label: 'Alcantara' },
+      { key: 'heated_driver_seat',      label: 'Heated Driver Seat' },
+      { key: 'heated_passenger_seat',   label: 'Heated Passenger Seat' },
+      { key: 'ventilated_front_seats',  label: 'Ventilated Front Seats' },
+      { key: 'ventilated_rear_seats',   label: 'Ventilated Rear Seats' },
+      { key: 'electric_driver_seat',    label: 'Electric Driver Seat' },
+      { key: 'memory_seat',             label: 'Memory Seat' },
+      { key: 'sport_steering_wheel',    label: 'Sport Steering Wheel' },
+      { key: 'paddle_shifters',         label: 'Paddle Shifters' },
+    ],
+  },
+  {
+    label: 'Driving Assistance',
+    items: [
+      { key: 'cruise_control',    label: 'Cruise Control' },
+      { key: 'adaptive_cruise',   label: 'Adaptive Cruise Control' },
+      { key: 'predictive_acc',    label: 'Predictive ACC' },
+      { key: 'lane_assist',       label: 'Lane Assist' },
+      { key: 'blind_spot',        label: 'Blind Spot Monitor' },
+      { key: 'distance_control',  label: 'Distance Control' },
+      { key: 'autonomous_driving',label: 'Autonomous Driving' },
+      { key: 'keyless_entry',     label: 'Keyless Entry' },
+      { key: 'keyless_go',        label: 'Keyless Go (Start)' },
+      { key: 'air_suspension',    label: 'Air Suspension' },
+      { key: 'sport_suspension',  label: 'Sport Suspension' },
+    ],
+  },
+  {
+    label: 'Lighting',
+    items: [
+      { key: 'led_lights',       label: 'LED Headlights' },
+      { key: 'xenon',            label: 'Xenon' },
+      { key: 'bi_xenon',         label: 'Bi-Xenon' },
+      { key: 'laser_lights',     label: 'Laser Lights' },
+      { key: 'dynamic_lights',   label: 'Dynamic Lights' },
+      { key: 'follow_me_home',   label: 'Follow-Me-Home' },
+    ],
+  },
+  {
+    label: 'Parking & Safety',
+    items: [
+      { key: 'front_park_sensors', label: 'Front Park Sensors' },
+      { key: 'rear_park_sensors',  label: 'Rear Park Sensors' },
+      { key: 'park_assist',        label: 'Park Assist' },
+      { key: 'auto_park',          label: 'Auto Park' },
+      { key: 'rear_camera',        label: 'Rear Camera' },
+      { key: 'camera_360',         label: '360° Camera' },
+      { key: 'folding_mirrors',    label: 'Folding Mirrors' },
+      { key: 'isofix',             label: 'ISOFIX' },
+    ],
+  },
+]
+
+const ALL_EQUIP_KEYS = EQUIPMENT_GROUPS.flatMap(g => g.items.map(i => i.key))
+const EMPTY_EQUIP = Object.fromEntries(ALL_EQUIP_KEYS.map(k => [k, false]))
+
+function equipTier(n) {
+  if (n >= 15) return { label: 'Ultra', color: 'text-purple-700 bg-purple-100' }
+  if (n >= 10) return { label: 'Premium', color: 'text-blue-700 bg-blue-100' }
+  if (n >= 5)  return { label: 'Standard', color: 'text-green-700 bg-green-100' }
+  return { label: 'Basic', color: 'text-slate-600 bg-slate-100' }
+}
+
 function SelectField({ label, name, opts, value, onChange, required }) {
   return (
     <div>
       <label className="block text-xs font-medium text-slate-600 mb-1">{label}</label>
-      <select
-        className="select-field"
-        value={value}
-        onChange={(e) => onChange(name, e.target.value)}
-        required={required}
-      >
+      <select className="select-field" value={value} onChange={(e) => onChange(name, e.target.value)} required={required}>
         <option value="">Select…</option>
         {(opts || []).map((o) => <option key={o} value={o}>{o}</option>)}
       </select>
@@ -25,24 +123,33 @@ function SelectField({ label, name, opts, value, onChange, required }) {
   )
 }
 
-function NumberField({ label, name, placeholder, value, onChange }) {
+function NumberField({ label, name, placeholder, value, onChange, unit }) {
   return (
     <div>
       <label className="block text-xs font-medium text-slate-600 mb-1">{label}</label>
-      <input
-        type="number"
-        className="input-field"
-        value={value}
-        placeholder={placeholder}
-        onChange={(e) => onChange(name, e.target.value)}
-        required
-      />
+      <div className="relative">
+        <input type="number" className="input-field" value={value} placeholder={placeholder}
+          onChange={(e) => onChange(name, e.target.value)} required />
+        {unit && (
+          <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-slate-400 pointer-events-none">{unit}</span>
+        )}
+      </div>
+    </div>
+  )
+}
+
+function SectionHeading({ children }) {
+  return (
+    <div className="col-span-2 flex items-center gap-2 pt-2">
+      <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider whitespace-nowrap">{children}</div>
+      <div className="flex-1 border-t border-slate-200" />
     </div>
   )
 }
 
 export default function Prediction() {
   const [form, setForm] = useState(DEFAULTS)
+  const [equip, setEquip] = useState(EMPTY_EQUIP)
   const [options, setOptions] = useState({})
   const [models, setModels] = useState([])
   const [result, setResult] = useState(null)
@@ -50,18 +157,20 @@ export default function Prediction() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const [modelInfo, setModelInfo] = useState(null)
+  const [topFeatures, setTopFeatures] = useState([])
 
   useEffect(() => {
     makesApi.options().then((r) => setOptions(r.data)).catch(() => {})
-    predictionsApi.modelInfo().then((r) => setModelInfo(r.data)).catch(() => {})
+    predictionsApi.modelInfo().then((r) => {
+      setModelInfo(r.data)
+      setTopFeatures(r.data.top_features || [])
+    }).catch(() => {})
     loadHistory()
   }, [])
 
   useEffect(() => {
     if (form.make) {
-      makesApi.models(form.make)
-        .then((r) => setModels(r.data.models || []))
-        .catch(() => setModels([]))
+      makesApi.models(form.make).then((r) => setModels(r.data.models || [])).catch(() => setModels([]))
     } else {
       setModels([])
     }
@@ -72,6 +181,9 @@ export default function Prediction() {
   }
 
   const set = (k, v) => setForm((p) => ({ ...p, [k]: v }))
+  const toggleEquip = (k) => setEquip((p) => ({ ...p, [k]: !p[k] }))
+
+  const equipCount = Object.values(equip).filter(Boolean).length
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -80,18 +192,14 @@ export default function Prediction() {
     setResult(null)
     try {
       const payload = {
-        make: form.make,
-        model: form.model,
-        year: parseInt(form.year),
-        body_type: form.body_type,
-        mileage: parseFloat(form.mileage),
-        color: form.color,
-        fuel_type: form.fuel_type,
-        engine_capacity: parseFloat(form.engine_capacity),
-        engine_power: parseFloat(form.engine_power),
-        gearbox: form.gearbox,
-        transmission: form.transmission,
-        pollution_standard: form.pollution_standard,
+        make: form.make, model: form.model,
+        year: parseInt(form.year), body_type: form.body_type,
+        mileage: parseFloat(form.mileage), color: form.color,
+        fuel_type: form.fuel_type, engine_capacity: parseFloat(form.engine_capacity),
+        engine_power: parseFloat(form.engine_power), gearbox: form.gearbox,
+        transmission: form.transmission, pollution_standard: form.pollution_standard,
+        equipment_count: equipCount,
+        ...equip,
       }
       const r = await predictionsApi.predict(payload)
       setResult(r.data)
@@ -109,25 +217,20 @@ export default function Prediction() {
   }
 
   const fmt = (n) => Number(n).toLocaleString('de-DE')
-
-  // SelectField and NumberField are defined outside this component to avoid focus loss
+  const mae = modelInfo?.mae ? Math.round(modelInfo.mae) : 1921
+  const price = result?.predicted_price
+  const tier = equipTier(equipCount)
+  const maxImportance = topFeatures.length > 0 ? topFeatures[0].importance : 1
 
   return (
     <div className="p-6 space-y-6">
       <div>
         <h1 className="text-2xl font-bold text-slate-800">Price Prediction</h1>
-        <p className="text-sm text-slate-500 mt-1">
-          Enter car specifications to get an AI-powered price estimate
-        </p>
+        <p className="text-sm text-slate-500 mt-1">Enter car specifications to get an AI-powered price estimate</p>
       </div>
 
-      {/* Model status banner */}
       {modelInfo && (
-        <div
-          className={`card py-3 border-l-4 ${
-            modelInfo.status === 'ready' ? 'border-l-green-500 bg-green-50' : 'border-l-yellow-500 bg-yellow-50'
-          }`}
-        >
+        <div className={`card py-3 border-l-4 ${modelInfo.status === 'ready' ? 'border-l-green-500 bg-green-50' : 'border-l-yellow-500 bg-yellow-50'}`}>
           {modelInfo.status === 'ready' ? (
             <div className="flex flex-wrap items-center gap-4 text-sm">
               <span className="text-green-700 font-semibold">✓ XGBoost model ready</span>
@@ -139,7 +242,7 @@ export default function Prediction() {
             <div className="text-yellow-800 text-sm">
               ⚠ Model not trained. Run:{' '}
               <code className="bg-yellow-100 px-1.5 py-0.5 rounded font-mono text-xs">
-                cd backend &amp;&amp; python app/ml/train.py
+                cd backend &amp;&amp; python app/ml/train_extended.py
               </code>
             </div>
           )}
@@ -147,91 +250,149 @@ export default function Prediction() {
       )}
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {/* Form */}
-        <div className="lg:col-span-2 card">
-          <h2 className="font-semibold text-slate-700 mb-5">Car Specifications</h2>
-          <form onSubmit={handleSubmit} className="grid grid-cols-2 gap-4">
-            {/* Make */}
-            <div>
-              <label className="block text-xs font-medium text-slate-600 mb-1">Make *</label>
-              <select
-                className="select-field"
-                value={form.make}
-                onChange={(e) => {
-                  set('make', e.target.value)
-                  set('model', '')
-                  if (e.target.value) {
-                    makesApi.models(e.target.value)
-                      .then((r) => setModels(r.data.models || []))
-                      .catch(() => setModels([]))
-                  } else {
-                    setModels([])
-                  }
-                }}
-                required
-              >
-                <option value="">Select make…</option>
-                {(options.makes || []).map((m) => <option key={m} value={m}>{m}</option>)}
-              </select>
-            </div>
+        {/* ── FORM ── */}
+        <div className="lg:col-span-2 space-y-5">
 
-            {/* Model */}
-            <div>
-              <label className="block text-xs font-medium text-slate-600 mb-1">Model *</label>
-              {models.length > 0 ? (
-                <select className="select-field" value={form.model} onChange={(e) => set('model', e.target.value)} required>
-                  <option value="">Select model…</option>
-                  {models.map((m) => <option key={m} value={m}>{m}</option>)}
+          {/* Basic specs card */}
+          <div className="card">
+            <h2 className="font-semibold text-slate-700 mb-5">Car Specifications</h2>
+            <div className="grid grid-cols-2 gap-4">
+
+              <SectionHeading>Identity</SectionHeading>
+
+              <div>
+                <label className="block text-xs font-medium text-slate-600 mb-1">Make *</label>
+                <select className="select-field" value={form.make} required
+                  onChange={(e) => {
+                    set('make', e.target.value); set('model', '')
+                    if (e.target.value) makesApi.models(e.target.value).then((r) => setModels(r.data.models || [])).catch(() => setModels([]))
+                    else setModels([])
+                  }}>
+                  <option value="">Select make…</option>
+                  {(options.makes || []).map((m) => <option key={m} value={m}>{m}</option>)}
                 </select>
-              ) : (
-                <input type="text" className="input-field" placeholder="Model name" value={form.model} onChange={(e) => set('model', e.target.value)} required />
-              )}
-            </div>
-
-            <NumberField label="Year *" name="year" placeholder="2019" value={form.year} onChange={set} />
-            <NumberField label="Mileage (km) *" name="mileage" placeholder="80000" value={form.mileage} onChange={set} />
-            <NumberField label="Engine Capacity (cm³) *" name="engine_capacity" placeholder="1995" value={form.engine_capacity} onChange={set} />
-            <NumberField label="Engine Power (HP) *" name="engine_power" placeholder="150" value={form.engine_power} onChange={set} />
-            <SelectField label="Body Type *" name="body_type" opts={options.body_types} value={form.body_type} onChange={set} required />
-            <SelectField label="Fuel Type *" name="fuel_type" opts={options.fuel_types} value={form.fuel_type} onChange={set} required />
-            <SelectField label="Gearbox *" name="gearbox" opts={options.gearboxes} value={form.gearbox} onChange={set} required />
-            <SelectField label="Transmission *" name="transmission" opts={options.transmissions} value={form.transmission} onChange={set} required />
-            <SelectField label="Pollution Standard *" name="pollution_standard" opts={options.pollution_standards} value={form.pollution_standard} onChange={set} required />
-            <SelectField label="Color *" name="color" opts={options.colors} value={form.color} onChange={set} required />
-
-            {error && (
-              <div className="col-span-2 bg-red-50 border border-red-200 text-red-700 rounded-lg px-4 py-3 text-sm">
-                {error}
               </div>
-            )}
+              <div>
+                <label className="block text-xs font-medium text-slate-600 mb-1">Model *</label>
+                {models.length > 0 ? (
+                  <select className="select-field" value={form.model} onChange={(e) => set('model', e.target.value)} required>
+                    <option value="">Select model…</option>
+                    {models.map((m) => <option key={m} value={m}>{m}</option>)}
+                  </select>
+                ) : (
+                  <input type="text" className="input-field" placeholder="Model name" value={form.model}
+                    onChange={(e) => set('model', e.target.value)} required />
+                )}
+              </div>
 
-            <div className="col-span-2">
-              <button type="submit" className="btn-primary w-full py-3 text-base" disabled={loading}>
-                {loading ? '⏳ Predicting…' : '🤖 Predict Price'}
-              </button>
+              <NumberField label="Year *"    name="year"    placeholder="2019"  value={form.year}    onChange={set} />
+              <SelectField label="Body Type *" name="body_type" opts={options.body_types} value={form.body_type} onChange={set} required />
+
+              <SectionHeading>Engine &amp; Performance</SectionHeading>
+
+              <NumberField label="Engine Capacity *" name="engine_capacity" placeholder="1995" value={form.engine_capacity} onChange={set} unit="cm³" />
+              <NumberField label="Engine Power *"    name="engine_power"    placeholder="150"  value={form.engine_power}    onChange={set} unit="HP" />
+              <SelectField label="Fuel Type *"       name="fuel_type"       opts={options.fuel_types} value={form.fuel_type} onChange={set} required />
+              <SelectField label="Pollution Std *"   name="pollution_standard" opts={options.pollution_standards} value={form.pollution_standard} onChange={set} required />
+
+              <SectionHeading>Specs</SectionHeading>
+
+              <NumberField label="Mileage *" name="mileage" placeholder="80000" value={form.mileage} onChange={set} unit="km" />
+              <SelectField label="Color *"   name="color"   opts={options.colors} value={form.color} onChange={set} required />
+              <SelectField label="Gearbox *"      name="gearbox"      opts={options.gearboxes}    value={form.gearbox}      onChange={set} required />
+              <SelectField label="Transmission *" name="transmission" opts={options.transmissions} value={form.transmission} onChange={set} required />
             </div>
+          </div>
+
+          {/* Equipment card */}
+          <div className="card">
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="font-semibold text-slate-700">Equipment &amp; Options</h2>
+              <div className="flex items-center gap-2">
+                <span className={`text-xs font-semibold px-2.5 py-1 rounded-full ${tier.color}`}>
+                  {tier.label}
+                </span>
+                <span className="text-xs text-slate-500">{equipCount} selected</span>
+                {equipCount > 0 && (
+                  <button type="button" onClick={() => setEquip(EMPTY_EQUIP)}
+                    className="text-xs text-slate-400 hover:text-red-400 underline">
+                    Clear all
+                  </button>
+                )}
+              </div>
+            </div>
+
+            <div className="space-y-5">
+              {EQUIPMENT_GROUPS.map((group) => (
+                <div key={group.label}>
+                  <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">
+                    {group.label}
+                  </div>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-y-2 gap-x-3">
+                    {group.items.map(({ key, label }) => (
+                      <label key={key}
+                        className={`flex items-center gap-2 text-xs cursor-pointer rounded-lg px-2.5 py-1.5 border transition-colors select-none
+                          ${equip[key]
+                            ? 'bg-blue-50 border-blue-300 text-blue-800 font-medium'
+                            : 'bg-white border-slate-200 text-slate-600 hover:border-slate-300 hover:bg-slate-50'}`}>
+                        <input
+                          type="checkbox"
+                          className="accent-blue-600 w-3.5 h-3.5 flex-shrink-0"
+                          checked={equip[key]}
+                          onChange={() => toggleEquip(key)}
+                        />
+                        {label}
+                      </label>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Submit (outside the form tag – use a wrapping form) */}
+          <form onSubmit={handleSubmit}>
+            {error && (
+              <div className="mb-3 bg-red-50 border border-red-200 text-red-700 rounded-lg px-4 py-3 text-sm">{error}</div>
+            )}
+            <button type="submit" className="btn-primary w-full py-3 text-base" disabled={loading}>
+              {loading ? '⏳ Predicting…' : '🤖 Predict Price'}
+            </button>
           </form>
         </div>
 
-        {/* Result + model info */}
+        {/* ── RIGHT PANEL ── */}
         <div className="space-y-4">
           {result ? (
             <div className="card border-2 border-blue-300 bg-gradient-to-br from-blue-50 to-white">
               <div className="text-xs text-blue-600 font-semibold uppercase tracking-wider mb-2">
                 Predicted Market Price
               </div>
-              <div className="text-5xl font-extrabold text-blue-800 mb-3">
-                €{fmt(Math.round(result.predicted_price))}
+              <div className="text-5xl font-extrabold text-blue-800 mb-1">
+                €{fmt(Math.round(price))}
               </div>
-              <div className="text-xs text-slate-500 space-y-1 border-t border-blue-100 pt-3">
-                <div>
-                  <strong>{result.input.make} {result.input.model}</strong> · {result.input.year}
+
+              {/* Price range bar */}
+              <div className="mt-3 mb-3">
+                <div className="flex justify-between text-xs text-slate-500 mb-1">
+                  <span>€{fmt(Math.round(price - mae))}</span>
+                  <span className="text-blue-600 font-semibold">±€{fmt(mae)} MAE</span>
+                  <span>€{fmt(Math.round(price + mae))}</span>
                 </div>
+                <div className="relative h-2 bg-blue-100 rounded-full overflow-hidden">
+                  <div className="absolute inset-y-0 bg-blue-300/60 rounded-full" style={{ left: '10%', right: '10%' }} />
+                  <div className="absolute inset-y-0 left-1/2 w-0.5 bg-blue-600 -translate-x-1/2" />
+                </div>
+                <p className="text-xs text-slate-400 mt-1 text-center">Likely range based on model MAE</p>
+              </div>
+
+              <div className="text-xs text-slate-500 space-y-1 border-t border-blue-100 pt-3">
+                <div><strong>{result.input.make} {result.input.model}</strong> · {result.input.year}</div>
                 <div>{fmt(result.input.mileage)} km · {result.input.engine_power} HP</div>
                 <div>{result.input.fuel_type} · {result.input.gearbox} · {result.input.body_type}</div>
-              </div>
-              <div className="mt-3 pt-3 border-t border-blue-100 text-xs text-blue-400">
-                MAE ≈ €3,037 — actual market price likely within this range
+                <div>Equipment: <span className={`font-semibold px-1.5 py-0.5 rounded ${tier.color}`}>
+                  {tier.label} ({equipCount} options)
+                </span></div>
               </div>
             </div>
           ) : (
@@ -241,17 +402,19 @@ export default function Prediction() {
             </div>
           )}
 
+          {/* Model metrics */}
           <div className="card p-4">
             <div className="text-xs font-semibold text-slate-600 mb-3">Model Details</div>
             <dl className="space-y-2 text-xs">
               {[
                 ['Algorithm', 'XGBoost Regressor'],
-                ['R² Score', '0.8951'],
-                ['MAE', '€3,037'],
-                ['RMSE', '€5,194'],
-                ['Training samples', '1,514'],
-                ['Test samples', '379'],
-                ['Features', '12'],
+                ['R² Score', modelInfo?.r2 ? modelInfo.r2.toFixed(4) : '0.9343'],
+                ['MAE', modelInfo?.mae ? `€${Math.round(modelInfo.mae).toLocaleString()}` : '€1,921'],
+                ['RMSE', modelInfo?.rmse ? `€${Math.round(modelInfo.rmse).toLocaleString()}` : '€3,034'],
+                ['Training samples', '4,181'],
+                ['Test samples', '1,046'],
+                ['Features', modelInfo?.n_features ?? '32'],
+                ['Dataset', '5,444 listings'],
               ].map(([k, v]) => (
                 <div key={k} className="flex justify-between">
                   <span className="text-slate-500">{k}</span>
@@ -260,6 +423,31 @@ export default function Prediction() {
               ))}
             </dl>
           </div>
+
+          {/* Feature importance */}
+          {topFeatures.length > 0 && (
+            <div className="card p-4">
+              <div className="text-xs font-semibold text-slate-600 mb-3">Top Predictive Features</div>
+              <div className="space-y-2">
+                {topFeatures.slice(0, 8).map(({ feature, importance }) => (
+                  <div key={feature}>
+                    <div className="flex justify-between text-xs mb-0.5">
+                      <span className="text-slate-600 truncate max-w-[130px]" title={feature}>
+                        {feature.replace(/_/g, ' ')}
+                      </span>
+                      <span className="text-slate-400 font-mono ml-1">
+                        {(importance * 100 / maxImportance).toFixed(0)}%
+                      </span>
+                    </div>
+                    <div className="h-1.5 bg-slate-100 rounded-full overflow-hidden">
+                      <div className="h-full bg-blue-500 rounded-full"
+                        style={{ width: `${(importance / maxImportance) * 100}%` }} />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </div>
 
@@ -271,13 +459,9 @@ export default function Prediction() {
             <table className="min-w-full text-sm">
               <thead className="bg-slate-50">
                 <tr>
-                  {['Make', 'Model', 'Year', 'Mileage', 'Fuel', 'Gearbox', 'Predicted Price', 'Date', ''].map(
-                    (h) => (
-                      <th key={h} className="px-3 py-2 text-left text-xs font-semibold text-slate-500 uppercase whitespace-nowrap">
-                        {h}
-                      </th>
-                    ),
-                  )}
+                  {['Make', 'Model', 'Year', 'Mileage', 'Fuel', 'Gearbox', 'Predicted Price', 'Date', ''].map((h) => (
+                    <th key={h} className="px-3 py-2 text-left text-xs font-semibold text-slate-500 uppercase whitespace-nowrap">{h}</th>
+                  ))}
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-100">
@@ -294,12 +478,8 @@ export default function Prediction() {
                       {p.created_at ? new Date(p.created_at).toLocaleDateString() : '—'}
                     </td>
                     <td className="px-3 py-2">
-                      <button
-                        className="text-slate-300 hover:text-red-400 text-lg leading-none"
-                        onClick={() => deleteHistory(p.id)}
-                      >
-                        ×
-                      </button>
+                      <button className="text-slate-300 hover:text-red-400 text-lg leading-none"
+                        onClick={() => deleteHistory(p.id)}>×</button>
                     </td>
                   </tr>
                 ))}

@@ -70,6 +70,7 @@ class PredictionInput(BaseModel):
     gearbox: str
     transmission: str
     pollution_standard: str
+    equipment_count: Optional[int] = 0
 
 
 class PredictionOut(BaseModel):

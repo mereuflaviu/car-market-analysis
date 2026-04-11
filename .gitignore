@@ -48,3 +48,10 @@ logs/
 # Misc
 .cache/
 .pytest_cache/
+
+# Claude Code memory
+.claude/
+
+# Debug / scratch files
+model/extraction/debug_next_data.json
+presentation-prompt.md
