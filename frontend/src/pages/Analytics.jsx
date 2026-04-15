@@ -13,11 +13,11 @@ function ChartCard({ title, subtitle, loading, children }) {
   return (
     <div className="card">
       <div className="mb-4">
-        <h2 className="font-semibold text-slate-700">{title}</h2>
-        {subtitle && <p className="text-xs text-slate-400 mt-0.5">{subtitle}</p>}
+        <h2 className="font-semibold text-black">{title}</h2>
+        {subtitle && <p className="text-xs text-as-muted mt-0.5">{subtitle}</p>}
       </div>
       {loading ? (
-        <div className="flex items-center justify-center text-slate-300 text-sm animate-pulse" style={{ height: 260 }}>
+        <div className="flex items-center justify-center text-as-muted text-sm animate-pulse" style={{ height: 260 }}>
           Loading chart…
         </div>
       ) : (
@@ -29,6 +29,15 @@ function ChartCard({ title, subtitle, loading, children }) {
 
 const euroFmt = (v) => `€${Number(v).toLocaleString()}`
 const kFmt = (v) => `€${(v / 1000).toFixed(0)}k`
+
+function ChartSkeleton() {
+  return (
+    <div className="card animate-pulse">
+      <div className="h-4 bg-[#f0f0f0] rounded w-1/3 mb-4" />
+      <div className="h-[240px] bg-[#f0f0f0] rounded" />
+    </div>
+  )
+}
 
 export default function Analytics() {
   const [data, setData] = useState({})
@@ -54,14 +63,33 @@ export default function Analytics() {
     load('yearVsPrice', analyticsApi.yearVsPrice)
     load('scatter', analyticsApi.mileageVsPrice)
     load('gearbox', analyticsApi.gearboxDistribution)
+    load('transmission', analyticsApi.transmissionDistribution)
   }, [])
 
+  const initialLoading = Object.keys(data).length === 0
+
+  if (initialLoading) {
+    return (
+      <div className="space-y-6">
+        <div>
+          <h1 className="text-[32px] font-bold text-black leading-tight">Analytics</h1>
+          <p className="text-as-body text-sm mt-1">Market intelligence across 5,444 listings</p>
+        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {Array.from({ length: 8 }).map((_, i) => (
+            <ChartSkeleton key={i} />
+          ))}
+        </div>
+      </div>
+    )
+  }
+
   return (
-    <div className="p-6 space-y-6">
+    <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold text-slate-800">Market Analytics</h1>
-        <p className="text-sm text-slate-500 mt-1">
-          7 interactive charts derived from 2,000 used car listings
+        <h1 className="text-[32px] font-bold text-black leading-tight">Market Analytics</h1>
+        <p className="text-sm text-as-body mt-1">
+          8 interactive charts derived from 5,444 real used car listings
         </p>
       </div>
 
@@ -73,7 +101,7 @@ export default function Analytics() {
       >
         <ResponsiveContainer width="100%" height={280}>
           <BarChart data={data.priceDist || []} margin={{ top: 4, right: 16, left: 8, bottom: 52 }}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" />
+            <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
             <XAxis dataKey="range" angle={-45} textAnchor="end" tick={{ fontSize: 10 }} interval={1} />
             <YAxis tick={{ fontSize: 11 }} />
             <Tooltip formatter={(v) => [v, 'Cars']} labelFormatter={(l) => `Starting at ${l}`} />
@@ -82,40 +110,41 @@ export default function Analytics() {
         </ResponsiveContainer>
       </ChartCard>
 
-      {/* 2 — Price by Make + Gearbox Pie */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <ChartCard
-          title="Average Price by Make"
-          subtitle="Top 15 brands · min 3 listings"
-          loading={loading.priceByMake}
-        >
-          <ResponsiveContainer width="100%" height={320}>
-            <BarChart
-              layout="vertical"
-              data={data.priceByMake || []}
-              margin={{ top: 4, right: 64, left: 84, bottom: 4 }}
-            >
-              <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" horizontal={false} />
-              <XAxis type="number" tick={{ fontSize: 10 }} tickFormatter={kFmt} />
-              <YAxis type="category" dataKey="make" tick={{ fontSize: 11 }} width={80} />
-              <Tooltip formatter={(v) => [euroFmt(Math.round(v)), 'Avg Price']} />
-              <Bar dataKey="avg_price" fill="#10b981" radius={[0, 3, 3, 0]} />
-            </BarChart>
-          </ResponsiveContainer>
-        </ChartCard>
+      {/* 2 — Price by Make (full width) */}
+      <ChartCard
+        title="Average Price by Make"
+        subtitle="Top 15 brands · min 3 listings"
+        loading={loading.priceByMake}
+      >
+        <ResponsiveContainer width="100%" height={320}>
+          <BarChart
+            layout="vertical"
+            data={data.priceByMake || []}
+            margin={{ top: 4, right: 64, left: 84, bottom: 4 }}
+          >
+            <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" horizontal={false} />
+            <XAxis type="number" tick={{ fontSize: 10 }} tickFormatter={kFmt} />
+            <YAxis type="category" dataKey="make" tick={{ fontSize: 11 }} width={80} />
+            <Tooltip formatter={(v) => [euroFmt(Math.round(v)), 'Avg Price']} />
+            <Bar dataKey="avg_price" fill="#10b981" radius={[0, 3, 3, 0]} />
+          </BarChart>
+        </ResponsiveContainer>
+      </ChartCard>
 
+      {/* 3 — Gearbox + Transmission pies */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <ChartCard
           title="Gearbox Distribution"
           subtitle="Manual vs Automatic breakdown"
           loading={loading.gearbox}
         >
-          <ResponsiveContainer width="100%" height={320}>
+          <ResponsiveContainer width="100%" height={300}>
             <PieChart>
               <Pie
                 data={data.gearbox || []}
                 cx="50%"
                 cy="44%"
-                outerRadius={110}
+                outerRadius={100}
                 dataKey="count"
                 nameKey="gearbox"
                 label={({ gearbox: g, percent }) => `${g}: ${(percent * 100).toFixed(1)}%`}
@@ -130,6 +159,33 @@ export default function Analytics() {
             </PieChart>
           </ResponsiveContainer>
         </ChartCard>
+
+        <ChartCard
+          title="Transmission Distribution"
+          subtitle="Drive configuration breakdown (FWD / RWD / AWD)"
+          loading={loading.transmission}
+        >
+          <ResponsiveContainer width="100%" height={300}>
+            <PieChart>
+              <Pie
+                data={data.transmission || []}
+                cx="50%"
+                cy="44%"
+                outerRadius={100}
+                dataKey="count"
+                nameKey="transmission"
+                label={({ transmission: t, percent }) => `${t}: ${(percent * 100).toFixed(1)}%`}
+                labelLine
+              >
+                {(data.transmission || []).map((_, i) => (
+                  <Cell key={i} fill={COLORS[(i + 2) % COLORS.length]} />
+                ))}
+              </Pie>
+              <Tooltip formatter={(v, _n, p) => [v.toLocaleString(), p.payload.transmission]} />
+              <Legend formatter={(_v, entry) => entry.payload.transmission} />
+            </PieChart>
+          </ResponsiveContainer>
+        </ChartCard>
       </div>
 
       {/* 3 — Price by Fuel + Price by Body Type */}
@@ -141,7 +197,7 @@ export default function Analytics() {
         >
           <ResponsiveContainer width="100%" height={260}>
             <BarChart data={data.priceByFuel || []} margin={{ top: 4, right: 16, left: 8, bottom: 44 }}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" />
+              <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
               <XAxis dataKey="fuel_type" angle={-30} textAnchor="end" tick={{ fontSize: 11 }} />
               <YAxis tick={{ fontSize: 10 }} tickFormatter={kFmt} />
               <Tooltip formatter={(v) => [euroFmt(Math.round(v)), 'Avg Price']} />
@@ -157,7 +213,7 @@ export default function Analytics() {
         >
           <ResponsiveContainer width="100%" height={260}>
             <BarChart data={data.priceByBody || []} margin={{ top: 4, right: 16, left: 8, bottom: 44 }}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" />
+              <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
               <XAxis dataKey="body_type" angle={-30} textAnchor="end" tick={{ fontSize: 11 }} />
               <YAxis tick={{ fontSize: 10 }} tickFormatter={kFmt} />
               <Tooltip formatter={(v) => [euroFmt(Math.round(v)), 'Avg Price']} />
@@ -175,7 +231,7 @@ export default function Analytics() {
       >
         <ResponsiveContainer width="100%" height={260}>
           <LineChart data={data.yearVsPrice || []} margin={{ top: 4, right: 24, left: 24, bottom: 4 }}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" />
+            <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
             <XAxis dataKey="year" tick={{ fontSize: 11 }} />
             <YAxis tick={{ fontSize: 10 }} tickFormatter={kFmt} />
             <Tooltip
@@ -202,7 +258,7 @@ export default function Analytics() {
       >
         <ResponsiveContainer width="100%" height={300}>
           <ScatterChart margin={{ top: 4, right: 24, left: 24, bottom: 4 }}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" />
+            <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
             <XAxis
               type="number"
               dataKey="mileage"
@@ -223,7 +279,7 @@ export default function Analytics() {
                 if (!payload?.length) return null
                 const d = payload[0].payload
                 return (
-                  <div className="bg-white border border-slate-200 rounded-lg px-3 py-2 text-xs shadow">
+                  <div className="bg-white border border-[#e8e8e8] rounded-lg px-3 py-2 text-xs shadow-card">
                     <div className="font-semibold">{d.make}</div>
                     <div>Mileage: {Number(d.mileage).toLocaleString()} km</div>
                     <div>Price: €{Number(d.price).toLocaleString()}</div>

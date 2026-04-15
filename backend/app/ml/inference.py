@@ -3,10 +3,14 @@ Lazy-loading inference module.
 Compatible with artifacts from train_extended.py (log-price, target encoding, engineered features).
 """
 import os
+import threading
+import logging
 import numpy as np
 import joblib
 import pandas as pd
 from app.ml.encoders import SmoothedTargetEncoder  # noqa: F401 — needed for joblib deserialisation
+
+logger = logging.getLogger("autoscope.inference")
 
 _HERE = os.path.dirname(os.path.abspath(__file__))
 ARTIFACTS_DIR = os.path.join(_HERE, "..", "..", "artifacts")
@@ -15,27 +19,29 @@ _model      = None
 _ord_enc    = None
 _te_enc     = None
 _metadata   = None
+_lock       = threading.Lock()
 
 
 def _load():
     global _model, _ord_enc, _te_enc, _metadata
     model_path = os.path.join(ARTIFACTS_DIR, "model.joblib")
     if not os.path.exists(model_path):
-        raise FileNotFoundError(
-            f"Model not found at {model_path}. "
-            "Run: python backend/app/ml/train_extended.py"
-        )
+        raise FileNotFoundError("ML model artifacts not found. Train the model first.")
+    logger.info("Loading ML model artifacts from %s", ARTIFACTS_DIR)
     _model    = joblib.load(model_path)
     _ord_enc  = joblib.load(os.path.join(ARTIFACTS_DIR, "encoder.joblib"))
     _metadata = joblib.load(os.path.join(ARTIFACTS_DIR, "metadata.joblib"))
 
     te_path = os.path.join(ARTIFACTS_DIR, "te_encoder.joblib")
     _te_enc = joblib.load(te_path) if os.path.exists(te_path) else None
+    logger.info("ML model loaded (R²=%.4f)", _metadata.get("r2", 0))
 
 
 def _ensure_loaded():
     if _model is None:
-        _load()
+        with _lock:
+            if _model is None:  # double-checked locking
+                _load()
 
 
 def is_ready() -> bool:
@@ -163,7 +169,9 @@ def get_model_info() -> dict:
         "mae":         _metadata.get("mae"),
         "rmse":        _metadata.get("rmse"),
         "cv_r2":       _metadata.get("cv_r2"),
-        "n_features":  len(_metadata.get("all_features", [])),
-        "features":    _metadata.get("all_features", []),
-        "top_features": get_feature_importance(top_n=10),
+        "n_features":    len(_metadata.get("all_features", [])),
+        "features":      _metadata.get("all_features", []),
+        "top_features":  get_feature_importance(top_n=10),
+        "train_samples": _metadata.get("train_samples"),
+        "test_samples":  _metadata.get("test_samples"),
     }

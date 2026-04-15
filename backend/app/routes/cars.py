@@ -1,16 +1,17 @@
-from fastapi import APIRouter, Depends, HTTPException, Query
+from fastapi import APIRouter, Depends, HTTPException, Query, Request
 from sqlalchemy.orm import Session
 from typing import Optional
 
 from ..database import get_db
-from .. import crud, schemas
+from .. import crud, schemas, models
+from ..dependencies import get_current_user, get_optional_user
+from ..limiter import limiter
 
 router = APIRouter(prefix="/cars", tags=["cars"])
 
 
 @router.get("/stats", response_model=schemas.StatsResponse)
 def get_stats(db: Session = Depends(get_db)):
-    """Aggregate statistics for the entire dataset."""
     return crud.get_car_stats(db)
 
 
@@ -28,19 +29,27 @@ def list_cars(
     body_type: Optional[str] = None,
     gearbox: Optional[str] = None,
     transmission: Optional[str] = None,
+    mileage_min: Optional[float] = None,
+    mileage_max: Optional[float] = None,
+    power_min: Optional[float] = None,
+    power_max: Optional[float] = None,
     sort_by: Optional[str] = None,
     sort_dir: Optional[str] = "asc",
+    mine: bool = Query(False),
     db: Session = Depends(get_db),
+    current_user: Optional[models.User] = Depends(get_optional_user),
 ):
-    """Paginated, filtered car listings."""
+    owner_id = current_user.id if (mine and current_user) else None
     items, total = crud.get_cars(
-        db,
-        page=page, page_size=page_size,
+        db, page=page, page_size=page_size,
         make=make, model=model,
         year_min=year_min, year_max=year_max,
         price_min=price_min, price_max=price_max,
         fuel_type=fuel_type, body_type=body_type,
         gearbox=gearbox, transmission=transmission,
+        mileage_min=mileage_min, mileage_max=mileage_max,
+        power_min=power_min, power_max=power_max,
+        owner_id=owner_id,
         sort_by=sort_by, sort_dir=sort_dir or "asc",
     )
     return schemas.CarListResponse(items=items, total=total, page=page, page_size=page_size)
@@ -48,7 +57,6 @@ def list_cars(
 
 @router.get("/{car_id}", response_model=schemas.CarOut)
 def get_car(car_id: int, db: Session = Depends(get_db)):
-    """Get a single car by ID."""
     car = crud.get_car(db, car_id)
     if not car:
         raise HTTPException(status_code=404, detail="Car not found")
@@ -56,22 +64,45 @@ def get_car(car_id: int, db: Session = Depends(get_db)):
 
 
 @router.post("", response_model=schemas.CarOut, status_code=201)
-def create_car(car: schemas.CarCreate, db: Session = Depends(get_db)):
-    """Create a new car listing."""
-    return crud.create_car(db, car)
+@limiter.limit("30/minute")
+def create_car(
+    request: Request,
+    car: schemas.CarCreate,
+    db: Session = Depends(get_db),
+    current_user: models.User = Depends(get_current_user),
+):
+    return crud.create_car(db, car, user_id=current_user.id)
 
 
 @router.put("/{car_id}", response_model=schemas.CarOut)
-def update_car(car_id: int, car_update: schemas.CarUpdate, db: Session = Depends(get_db)):
-    """Update an existing car listing."""
-    car = crud.update_car(db, car_id, car_update)
+@limiter.limit("30/minute")
+def update_car(
+    request: Request,
+    car_id: int,
+    car_update: schemas.CarUpdate,
+    db: Session = Depends(get_db),
+    current_user: models.User = Depends(get_current_user),
+):
+    car = crud.get_car(db, car_id)
     if not car:
         raise HTTPException(status_code=404, detail="Car not found")
-    return car
+    if current_user.role != "admin" and car.user_id != current_user.id:
+        raise HTTPException(status_code=403, detail="You can only edit your own listings")
+    updated = crud.update_car(db, car_id, car_update)
+    return updated
 
 
 @router.delete("/{car_id}", status_code=204)
-def delete_car(car_id: int, db: Session = Depends(get_db)):
-    """Delete a car listing."""
-    if not crud.delete_car(db, car_id):
+@limiter.limit("30/minute")
+def delete_car(
+    request: Request,
+    car_id: int,
+    db: Session = Depends(get_db),
+    current_user: models.User = Depends(get_current_user),
+):
+    car = crud.get_car(db, car_id)
+    if not car:
         raise HTTPException(status_code=404, detail="Car not found")
+    if current_user.role != "admin" and car.user_id != current_user.id:
+        raise HTTPException(status_code=403, detail="You can only delete your own listings")
+    crud.delete_car(db, car_id)

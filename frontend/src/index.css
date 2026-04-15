@@ -4,24 +4,42 @@
 
 @layer base {
   body {
-    @apply text-slate-800 bg-slate-50;
+    /* Use built-in Tailwind classes here — extended theme tokens can't be @apply'd in @layer base */
+    @apply text-black bg-white font-sans;
   }
 }
 
 @layer components {
   .card {
-    @apply bg-white rounded-xl shadow-sm border border-slate-200 p-6;
+    @apply bg-white rounded-lg p-6;
+    box-shadow: rgba(0,0,0,0.12) 0px 4px 16px 0px;
   }
   .btn-primary {
-    @apply bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed;
+    @apply bg-black text-white px-5 py-2 text-sm font-medium transition-colors disabled:opacity-40 disabled:cursor-not-allowed;
+    border-radius: 999px;
+  }
+  .btn-primary:hover:not(:disabled) {
+    background-color: #4b4b4b;
   }
   .btn-secondary {
-    @apply bg-slate-100 hover:bg-slate-200 text-slate-700 px-4 py-2 rounded-lg font-medium transition-colors;
+    @apply bg-white text-black border border-black px-5 py-2 text-sm font-medium transition-colors;
+    border-radius: 999px;
+  }
+  .btn-secondary:hover {
+    background-color: #e2e2e2;
+  }
+  .btn-ghost {
+    @apply text-black px-4 py-2 text-sm font-medium transition-colors;
+    background-color: #efefef;
+    border-radius: 999px;
+  }
+  .btn-ghost:hover {
+    background-color: #e2e2e2;
   }
   .input-field {
-    @apply w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent;
+    @apply w-full border border-black rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent;
   }
   .select-field {
-    @apply w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white;
+    @apply w-full border border-black rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent bg-white;
   }
 }

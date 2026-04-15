@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import { carsApi, makesApi } from '../api/client'
 import CarForm from '../components/CarForm'
+import { useAuth } from '../context/AuthContext'
 
 function Pagination({ page, total, pageSize, onChange }) {
   const totalPages = Math.ceil(total / pageSize)
@@ -14,7 +15,7 @@ function Pagination({ page, total, pageSize, onChange }) {
       >
         ← Prev
       </button>
-      <span className="text-slate-500">
+      <span className="text-as-muted">
         Page {page} / {totalPages} &nbsp;·&nbsp; {total.toLocaleString()} results
       </span>
       <button
@@ -33,6 +34,7 @@ const EMPTY_FILTERS = {
   year_min: '', year_max: '', price_min: '', price_max: '',
   mileage_min: '', mileage_max: '', power_min: '', power_max: '',
   sort_by: 'price', sort_dir: 'asc',
+  mine: false,
 }
 
 export default function Listings() {
@@ -48,6 +50,7 @@ export default function Listings() {
   const [showForm, setShowForm] = useState(false)
   const [editCar, setEditCar] = useState(null)
 
+  const { user } = useAuth()
   const PAGE_SIZE = 20
 
   useEffect(() => {
@@ -70,21 +73,12 @@ export default function Listings() {
       setLoading(true)
       try {
         const params = { page: p, page_size: PAGE_SIZE }
-        const skip = ['mileage_min', 'mileage_max', 'power_min', 'power_max']
         for (const [k, v] of Object.entries(filters)) {
-          if (v === '') continue
-          // Backend uses year_min/max, price_min/max, sort_by, sort_dir directly
-          // mileage and power range not yet in backend — we filter client-side below
-          if (!skip.includes(k)) params[k] = v
+          if (v === '' || v === false) continue
+          params[k] = v
         }
         const res = await carsApi.list(params)
-        let items = res.data.items
-        // Client-side mileage / power filtering (backend doesn't expose these yet)
-        if (filters.mileage_min !== '') items = items.filter(c => c.mileage == null || c.mileage >= Number(filters.mileage_min))
-        if (filters.mileage_max !== '') items = items.filter(c => c.mileage == null || c.mileage <= Number(filters.mileage_max))
-        if (filters.power_min !== '') items = items.filter(c => c.engine_power == null || c.engine_power >= Number(filters.power_min))
-        if (filters.power_max !== '') items = items.filter(c => c.engine_power == null || c.engine_power <= Number(filters.power_max))
-        setCars(items)
+        setCars(res.data.items)
         setTotal(res.data.total)
       } catch (e) {
         console.error(e)
@@ -135,7 +129,7 @@ export default function Listings() {
 
   const selField = (label, key, opts, placeholder) => (
     <div key={key}>
-      <label className="text-xs text-slate-500 mb-1 block">{label}</label>
+      <label className="text-xs text-as-muted mb-1 block">{label}</label>
       <select
         className="select-field text-xs py-1.5"
         value={filters[key]}
@@ -149,7 +143,7 @@ export default function Listings() {
 
   const numField = (label, key, placeholder) => (
     <div key={key}>
-      <label className="text-xs text-slate-500 mb-1 block">{label}</label>
+      <label className="text-xs text-as-muted mb-1 block">{label}</label>
       <input
         type="number"
         className="input-field text-xs py-1.5"
@@ -161,31 +155,48 @@ export default function Listings() {
   )
 
   return (
-    <div className="p-6">
+    <div>
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h1 className="text-2xl font-bold text-slate-800">Car Listings</h1>
-          <p className="text-sm text-slate-500 mt-0.5">{total.toLocaleString()} results</p>
+          <h1 className="text-[32px] font-bold text-black leading-tight">Car Listings</h1>
+          <p className="text-sm text-as-body mt-0.5">{total.toLocaleString()} results</p>
         </div>
-        <button
-          className="btn-primary"
-          onClick={() => { setEditCar(null); setShowForm(true) }}
-        >
-          + Add Car
-        </button>
+        <div className="flex items-center gap-2">
+          {user && (
+            <button
+              type="button"
+              onClick={() => { setFilters(f => ({ ...f, mine: !f.mine })); setPage(1) }}
+              className={`px-4 py-1.5 rounded-pill text-sm font-medium transition-colors ${
+                filters.mine
+                  ? 'bg-black text-white'
+                  : 'bg-as-chip text-black hover:bg-as-hover'
+              }`}
+            >
+              My Listings
+            </button>
+          )}
+          {user && (
+            <button
+              className="btn-primary"
+              onClick={() => { setEditCar(null); setShowForm(true) }}
+            >
+              + Add Car
+            </button>
+          )}
+        </div>
       </div>
 
       <div className="flex gap-5">
         {/* Filter sidebar */}
         <aside className="w-56 flex-shrink-0">
           <div className="card p-4 space-y-3">
-            <div className="font-semibold text-slate-700 text-sm">Filters</div>
+            <div className="font-semibold text-black text-sm">Filters</div>
 
             {/* Make & Model (cascading) */}
             {selField('Make', 'make', options.makes, 'All makes')}
             <div>
-              <label className="text-xs text-slate-500 mb-1 block">Model</label>
+              <label className="text-xs text-as-muted mb-1 block">Model</label>
               {models.length > 0 ? (
                 <select
                   className="select-field text-xs py-1.5"
@@ -207,7 +218,7 @@ export default function Listings() {
               )}
             </div>
 
-            <div className="border-t border-slate-100 pt-2 text-xs font-semibold text-slate-500 uppercase tracking-wider">
+            <div className="border-t border-[#f0f0f0] pt-2 text-xs font-semibold text-as-muted uppercase tracking-wider">
               Type
             </div>
             {selField('Fuel Type', 'fuel_type', options.fuel_types, 'All fuels')}
@@ -215,7 +226,7 @@ export default function Listings() {
             {selField('Gearbox', 'gearbox', options.gearboxes, 'All')}
             {selField('Transmission', 'transmission', options.transmissions, 'All')}
 
-            <div className="border-t border-slate-100 pt-2 text-xs font-semibold text-slate-500 uppercase tracking-wider">
+            <div className="border-t border-[#f0f0f0] pt-2 text-xs font-semibold text-as-muted uppercase tracking-wider">
               Year
             </div>
             <div className="grid grid-cols-2 gap-1.5">
@@ -223,7 +234,7 @@ export default function Listings() {
               {numField('To', 'year_max', '2024')}
             </div>
 
-            <div className="border-t border-slate-100 pt-2 text-xs font-semibold text-slate-500 uppercase tracking-wider">
+            <div className="border-t border-[#f0f0f0] pt-2 text-xs font-semibold text-as-muted uppercase tracking-wider">
               Price (€)
             </div>
             <div className="grid grid-cols-2 gap-1.5">
@@ -231,7 +242,7 @@ export default function Listings() {
               {numField('Max', 'price_max', '100k')}
             </div>
 
-            <div className="border-t border-slate-100 pt-2 text-xs font-semibold text-slate-500 uppercase tracking-wider">
+            <div className="border-t border-[#f0f0f0] pt-2 text-xs font-semibold text-as-muted uppercase tracking-wider">
               Mileage (km)
             </div>
             <div className="grid grid-cols-2 gap-1.5">
@@ -239,7 +250,7 @@ export default function Listings() {
               {numField('Max', 'mileage_max', '300k')}
             </div>
 
-            <div className="border-t border-slate-100 pt-2 text-xs font-semibold text-slate-500 uppercase tracking-wider">
+            <div className="border-t border-[#f0f0f0] pt-2 text-xs font-semibold text-as-muted uppercase tracking-wider">
               Power (HP)
             </div>
             <div className="grid grid-cols-2 gap-1.5">
@@ -247,7 +258,7 @@ export default function Listings() {
               {numField('Max', 'power_max', '500')}
             </div>
 
-            <div className="border-t border-slate-100 pt-2 text-xs font-semibold text-slate-500 uppercase tracking-wider">
+            <div className="border-t border-[#f0f0f0] pt-2 text-xs font-semibold text-as-muted uppercase tracking-wider">
               Sort
             </div>
             {selField('Sort by', 'sort_by', ['price', 'year', 'mileage', 'engine_power', 'make'], 'Default')}
@@ -262,20 +273,20 @@ export default function Listings() {
         {/* Table */}
         <div className="flex-1 min-w-0">
           {loading ? (
-            <div className="card flex items-center justify-center h-40 text-slate-400 animate-pulse">
+            <div className="card flex items-center justify-center h-40 text-as-muted animate-pulse">
               Loading…
             </div>
           ) : (
             <>
-              <div className="overflow-x-auto rounded-xl border border-slate-200 bg-white">
+              <div className="overflow-x-auto rounded-xl border border-[#e8e8e8] bg-white">
                 <table className="min-w-full text-sm">
-                  <thead className="bg-slate-50 border-b border-slate-200">
+                  <thead className="bg-[#f9f9f9] border-b border-[#e8e8e8]">
                     <tr>
                       {['Make', 'Model', 'Year', 'Body', 'Fuel', 'Mileage', 'Power', 'Gearbox', 'Trans.', 'Price', ''].map(
                         (h) => (
                           <th
                             key={h}
-                            className="px-3 py-3 text-left text-xs font-semibold text-slate-500 uppercase tracking-wider whitespace-nowrap"
+                            className="px-3 py-3 text-left text-xs font-semibold text-as-muted uppercase tracking-wider whitespace-nowrap"
                           >
                             {h}
                           </th>
@@ -283,47 +294,49 @@ export default function Listings() {
                       )}
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-slate-100">
+                  <tbody className="divide-y divide-[#f0f0f0]">
                     {cars.length === 0 ? (
                       <tr>
-                        <td colSpan={11} className="px-4 py-10 text-center text-slate-400">
+                        <td colSpan={11} className="px-4 py-10 text-center text-as-muted">
                           No cars found matching your filters.
                         </td>
                       </tr>
                     ) : (
                       cars.map((car) => (
-                        <tr key={car.id} className="hover:bg-slate-50 transition-colors">
+                        <tr key={car.id} className="hover:bg-as-chip transition-colors">
                           <td className="px-3 py-2.5 font-medium whitespace-nowrap">{car.make}</td>
-                          <td className="px-3 py-2.5 text-slate-600 whitespace-nowrap">{car.model}</td>
-                          <td className="px-3 py-2.5 text-slate-600">{car.year}</td>
-                          <td className="px-3 py-2.5 text-slate-500 whitespace-nowrap">{car.body_type || '—'}</td>
-                          <td className="px-3 py-2.5 text-slate-500 whitespace-nowrap">{car.fuel_type || '—'}</td>
-                          <td className="px-3 py-2.5 text-slate-500 whitespace-nowrap">
+                          <td className="px-3 py-2.5 text-as-body whitespace-nowrap">{car.model}</td>
+                          <td className="px-3 py-2.5 text-as-body">{car.year}</td>
+                          <td className="px-3 py-2.5 text-as-muted whitespace-nowrap">{car.body_type || '—'}</td>
+                          <td className="px-3 py-2.5 text-as-muted whitespace-nowrap">{car.fuel_type || '—'}</td>
+                          <td className="px-3 py-2.5 text-as-muted whitespace-nowrap">
                             {car.mileage ? `${fmt(car.mileage)} km` : '—'}
                           </td>
-                          <td className="px-3 py-2.5 text-slate-500 whitespace-nowrap">
+                          <td className="px-3 py-2.5 text-as-muted whitespace-nowrap">
                             {car.engine_power ? `${car.engine_power} HP` : '—'}
                           </td>
-                          <td className="px-3 py-2.5 text-slate-500 whitespace-nowrap">{car.gearbox || '—'}</td>
-                          <td className="px-3 py-2.5 text-slate-500 whitespace-nowrap">{car.transmission || '—'}</td>
-                          <td className="px-3 py-2.5 font-semibold text-blue-700 whitespace-nowrap">
+                          <td className="px-3 py-2.5 text-as-muted whitespace-nowrap">{car.gearbox || '—'}</td>
+                          <td className="px-3 py-2.5 text-as-muted whitespace-nowrap">{car.transmission || '—'}</td>
+                          <td className="px-3 py-2.5 font-semibold text-black whitespace-nowrap">
                             €{fmt(car.price)}
                           </td>
                           <td className="px-3 py-2.5">
-                            <div className="flex gap-1">
-                              <button
-                                className="text-xs text-slate-500 hover:text-blue-600 px-2 py-1 rounded hover:bg-blue-50 transition-colors"
-                                onClick={() => { setEditCar(car); setShowForm(true) }}
-                              >
-                                Edit
-                              </button>
-                              <button
-                                className="text-xs text-red-400 hover:text-red-600 px-2 py-1 rounded hover:bg-red-50 transition-colors"
-                                onClick={() => handleDelete(car.id)}
-                              >
-                                Del
-                              </button>
-                            </div>
+                            {(user?.role === 'admin' || user?.id === car.user_id) && (
+                              <div className="flex gap-1">
+                                <button
+                                  className="text-xs text-as-muted hover:text-black px-2 py-1 rounded hover:bg-as-chip transition-colors"
+                                  onClick={() => { setEditCar(car); setShowForm(true) }}
+                                >
+                                  Edit
+                                </button>
+                                <button
+                                  className="text-xs text-red-400 hover:text-red-600 px-2 py-1 rounded hover:bg-red-50 transition-colors"
+                                  onClick={() => handleDelete(car.id)}
+                                >
+                                  Del
+                                </button>
+                              </div>
+                            )}
                           </td>
                         </tr>
                       ))

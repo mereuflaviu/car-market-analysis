@@ -20,10 +20,17 @@ def get_cars(
     body_type: Optional[str] = None,
     gearbox: Optional[str] = None,
     transmission: Optional[str] = None,
+    mileage_min: Optional[float] = None,
+    mileage_max: Optional[float] = None,
+    power_min: Optional[float] = None,
+    power_max: Optional[float] = None,
+    owner_id: Optional[int] = None,
     sort_by: Optional[str] = None,
     sort_dir: str = "asc",
 ):
     q = db.query(models.Car)
+    if owner_id is not None:
+        q = q.filter(models.Car.user_id == owner_id)
     if make:
         q = q.filter(models.Car.make == make)
     if model:
@@ -44,11 +51,19 @@ def get_cars(
         q = q.filter(models.Car.gearbox == gearbox)
     if transmission:
         q = q.filter(models.Car.transmission == transmission)
+    if mileage_min is not None:
+        q = q.filter(models.Car.mileage >= mileage_min)
+    if mileage_max is not None:
+        q = q.filter(models.Car.mileage <= mileage_max)
+    if power_min is not None:
+        q = q.filter(models.Car.engine_power >= power_min)
+    if power_max is not None:
+        q = q.filter(models.Car.engine_power <= power_max)
 
-    if sort_by:
-        col = getattr(models.Car, sort_by, None)
-        if col is not None:
-            q = q.order_by(col.desc() if sort_dir == "desc" else col.asc())
+    _SORTABLE = {"price", "year", "mileage", "engine_power", "make"}
+    if sort_by and sort_by in _SORTABLE:
+        col = getattr(models.Car, sort_by)
+        q = q.order_by(col.desc() if sort_dir == "desc" else col.asc())
     else:
         q = q.order_by(models.Car.id.asc())
 
@@ -61,8 +76,8 @@ def get_car(db: Session, car_id: int):
     return db.query(models.Car).filter(models.Car.id == car_id).first()
 
 
-def create_car(db: Session, car: schemas.CarCreate):
-    db_car = models.Car(**car.model_dump())
+def create_car(db: Session, car: schemas.CarCreate, user_id: Optional[int] = None):
+    db_car = models.Car(**car.model_dump(), user_id=user_id)
     db.add(db_car)
     db.commit()
     db.refresh(db_car)
@@ -115,21 +130,20 @@ _PRED_FIELDS = {
 }
 
 
-def create_prediction_record(db: Session, input_data: dict, predicted_price: float):
+def create_prediction_record(db: Session, input_data: dict, predicted_price: float, user_id: Optional[int] = None):
     filtered = {k: v for k, v in input_data.items() if k in _PRED_FIELDS}
-    db_pred = models.Prediction(**filtered, predicted_price=round(predicted_price, 2))
+    db_pred = models.Prediction(**filtered, predicted_price=round(predicted_price, 2), user_id=user_id)
     db.add(db_pred)
     db.commit()
     db.refresh(db_pred)
     return db_pred
 
 
-def get_predictions(db: Session, skip: int = 0, limit: int = 50):
-    return (
-        db.query(models.Prediction)
-        .order_by(models.Prediction.created_at.desc())
-        .offset(skip).limit(limit).all()
-    )
+def get_predictions(db: Session, skip: int = 0, limit: int = 50, user_id: Optional[int] = None):
+    q = db.query(models.Prediction)
+    if user_id is not None:
+        q = q.filter(models.Prediction.user_id == user_id)
+    return q.order_by(models.Prediction.created_at.desc()).offset(skip).limit(limit).all()
 
 
 def get_prediction(db: Session, prediction_id: int):
@@ -176,3 +190,62 @@ def get_field_options(db: Session) -> dict:
         "pollution_standards": vals(models.Car.pollution_standard),
         "colors": vals(models.Car.color),
     }
+
+
+# ── USERS ─────────────────────────────────────────────────────────────────────
+
+def get_user_by_email(db: Session, email: str) -> Optional[models.User]:
+    return db.query(models.User).filter(models.User.email == email.lower()).first()
+
+
+def get_user_by_id(db: Session, user_id: int) -> Optional[models.User]:
+    return db.query(models.User).filter(models.User.id == user_id).first()
+
+
+def create_user(db: Session, email: str, password_hash: str, display_name: str,
+                phone: Optional[str], role: str) -> models.User:
+    user = models.User(
+        email=email.lower(),
+        password_hash=password_hash,
+        display_name=display_name,
+        phone=phone,
+        role=role,
+    )
+    db.add(user)
+    db.commit()
+    db.refresh(user)
+    return user
+
+
+def list_users(db: Session, page: int, page_size: int, search: str):
+    q = db.query(models.User)
+    if search:
+        term = f"%{search}%"
+        q = q.filter(
+            models.User.email.ilike(term) | models.User.display_name.ilike(term)
+        )
+    total = q.count()
+    items = q.order_by(models.User.created_at.desc()).offset((page - 1) * page_size).limit(page_size).all()
+    return items, total
+
+
+def update_user_admin(db: Session, user_id: int, role: Optional[str], is_active: Optional[bool]) -> Optional[models.User]:
+    user = get_user_by_id(db, user_id)
+    if not user:
+        return None
+    if role is not None:
+        user.role = role
+    if is_active is not None:
+        user.is_active = is_active
+    db.commit()
+    db.refresh(user)
+    return user
+
+
+def delete_user(db: Session, user_id: int) -> bool:
+    user = get_user_by_id(db, user_id)
+    if not user:
+        return False
+    db.delete(user)
+    db.commit()
+    return True

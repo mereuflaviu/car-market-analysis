@@ -12,7 +12,7 @@ const EMPTY = {
 function SelectField({ label, name, opts, value, onChange, required }) {
   return (
     <div>
-      <label className="block text-xs font-medium text-slate-600 mb-1">{label}</label>
+      <label className="block text-xs font-medium text-as-body mb-1">{label}</label>
       <select
         className="select-field"
         value={value}
@@ -31,7 +31,7 @@ function SelectField({ label, name, opts, value, onChange, required }) {
 function NumberField({ label, name, placeholder, value, onChange, required }) {
   return (
     <div>
-      <label className="block text-xs font-medium text-slate-600 mb-1">{label}</label>
+      <label className="block text-xs font-medium text-as-body mb-1">{label}</label>
       <input
         type="number"
         className="input-field"
@@ -112,22 +112,22 @@ export default function CarForm({ car, options, onClose }) {
   return (
     <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 p-4">
       <div className="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[92vh] overflow-y-auto">
-        <div className="flex items-center justify-between px-6 py-4 border-b border-slate-200 sticky top-0 bg-white z-10">
-          <h2 className="text-lg font-semibold text-slate-800">
+        <div className="flex items-center justify-between px-6 py-4 border-b border-black sticky top-0 bg-white z-10">
+          <h2 className="text-lg font-bold text-black">
             {car ? 'Edit Car Listing' : 'Add New Car Listing'}
           </h2>
           <button
             onClick={() => onClose(false)}
-            className="text-slate-400 hover:text-slate-600 text-2xl font-light leading-none"
+            className="w-8 h-8 flex items-center justify-center rounded-full bg-as-chip hover:bg-as-hover text-black transition-colors"
           >
-            ×
+            ✕
           </button>
         </div>
 
         <form onSubmit={handleSubmit} className="p-6 grid grid-cols-2 gap-4">
           {/* Make */}
           <div>
-            <label className="block text-xs font-medium text-slate-600 mb-1">Make *</label>
+            <label className="block text-xs font-medium text-as-body mb-1">Make *</label>
             <select
               className="select-field"
               value={form.make}
@@ -143,7 +143,7 @@ export default function CarForm({ car, options, onClose }) {
 
           {/* Model */}
           <div>
-            <label className="block text-xs font-medium text-slate-600 mb-1">Model *</label>
+            <label className="block text-xs font-medium text-as-body mb-1">Model *</label>
             {models.length > 0 ? (
               <select
                 className="select-field"

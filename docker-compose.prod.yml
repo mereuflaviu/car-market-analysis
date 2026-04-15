@@ -1,0 +1,15 @@
+# Production overrides — use with:
+#   docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d
+#
+# Required environment variables (set in backend/.env before deploying):
+#   ENV=production
+#   JWT_SECRET=<generate: python -c "import secrets; print(secrets.token_hex(32))">
+#   API_KEY=<generate: python -c "import secrets; print(secrets.token_hex(32))">
+#   FIRST_ADMIN_EMAIL=<your admin email>
+#   CORS_ORIGINS=https://yourdomain.com
+
+services:
+  backend:
+    ports: []           # Remove direct port exposure — backend only reachable via nginx
+    environment:
+      - ENV=production  # Triggers JWT_SECRET validation and API key enforcement

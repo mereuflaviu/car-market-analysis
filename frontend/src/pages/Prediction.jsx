@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { predictionsApi, makesApi } from '../api/client'
+import { useAuth } from '../context/AuthContext'
 
 const DEFAULTS = {
   make: '', model: '', year: '2019', body_type: 'SUV',
@@ -105,16 +107,16 @@ const ALL_EQUIP_KEYS = EQUIPMENT_GROUPS.flatMap(g => g.items.map(i => i.key))
 const EMPTY_EQUIP = Object.fromEntries(ALL_EQUIP_KEYS.map(k => [k, false]))
 
 function equipTier(n) {
-  if (n >= 15) return { label: 'Ultra', color: 'text-purple-700 bg-purple-100' }
-  if (n >= 10) return { label: 'Premium', color: 'text-blue-700 bg-blue-100' }
-  if (n >= 5)  return { label: 'Standard', color: 'text-green-700 bg-green-100' }
-  return { label: 'Basic', color: 'text-slate-600 bg-slate-100' }
+  if (n >= 15) return { label: 'Ultra', color: 'text-white bg-black' }
+  if (n >= 10) return { label: 'Premium', color: 'text-white bg-as-body' }
+  if (n >= 5)  return { label: 'Standard', color: 'text-black bg-as-chip' }
+  return { label: 'Basic', color: 'text-as-muted bg-[#f0f0f0]' }
 }
 
 function SelectField({ label, name, opts, value, onChange, required }) {
   return (
     <div>
-      <label className="block text-xs font-medium text-slate-600 mb-1">{label}</label>
+      <label className="block text-xs font-medium text-as-body mb-1">{label}</label>
       <select className="select-field" value={value} onChange={(e) => onChange(name, e.target.value)} required={required}>
         <option value="">Select…</option>
         {(opts || []).map((o) => <option key={o} value={o}>{o}</option>)}
@@ -126,12 +128,12 @@ function SelectField({ label, name, opts, value, onChange, required }) {
 function NumberField({ label, name, placeholder, value, onChange, unit }) {
   return (
     <div>
-      <label className="block text-xs font-medium text-slate-600 mb-1">{label}</label>
+      <label className="block text-xs font-medium text-as-body mb-1">{label}</label>
       <div className="relative">
         <input type="number" className="input-field" value={value} placeholder={placeholder}
           onChange={(e) => onChange(name, e.target.value)} required />
         {unit && (
-          <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-slate-400 pointer-events-none">{unit}</span>
+          <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-as-muted pointer-events-none">{unit}</span>
         )}
       </div>
     </div>
@@ -141,8 +143,8 @@ function NumberField({ label, name, placeholder, value, onChange, unit }) {
 function SectionHeading({ children }) {
   return (
     <div className="col-span-2 flex items-center gap-2 pt-2">
-      <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider whitespace-nowrap">{children}</div>
-      <div className="flex-1 border-t border-slate-200" />
+      <div className="text-xs font-semibold text-as-muted uppercase tracking-wider whitespace-nowrap">{children}</div>
+      <div className="flex-1 border-t border-[#f0f0f0]" />
     </div>
   )
 }
@@ -176,6 +178,8 @@ export default function Prediction() {
     }
   }, [form.make])
 
+  const { user } = useAuth()
+
   const loadHistory = () => {
     predictionsApi.history({ limit: 10 }).then((r) => setHistory(r.data)).catch(() => {})
   }
@@ -205,7 +209,7 @@ export default function Prediction() {
       setResult(r.data)
       loadHistory()
     } catch (err) {
-      setError(err.response?.data?.detail || 'Prediction failed. Is the ML model trained?')
+      setError(err.message || 'Prediction failed. Is the ML model trained?')
     } finally {
       setLoading(false)
     }
@@ -223,18 +227,33 @@ export default function Prediction() {
   const maxImportance = topFeatures.length > 0 ? topFeatures[0].importance : 1
 
   return (
-    <div className="p-6 space-y-6">
+    <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold text-slate-800">Price Prediction</h1>
-        <p className="text-sm text-slate-500 mt-1">Enter car specifications to get an AI-powered price estimate</p>
+        <h1 className="text-[32px] font-bold text-black leading-tight">Price Prediction</h1>
+        <p className="text-sm text-as-body mt-1">Enter car specifications to get an AI-powered price estimate</p>
       </div>
 
+      {!user ? (
+        <div className="card flex flex-col items-center justify-center py-20 text-center max-w-sm mx-auto">
+          <div className="text-5xl mb-4">🔒</div>
+          <h2 className="text-xl font-bold text-black mb-2">Sign in to predict prices</h2>
+          <p className="text-as-muted text-sm mb-6">
+            Create a free account to use the AI price estimator and save your prediction history.
+          </p>
+          <div className="flex gap-3">
+            <Link to="/login" className="btn-primary px-6">Log in</Link>
+            <Link to="/register" className="btn-secondary px-6">Create account</Link>
+          </div>
+        </div>
+      ) : (
+        <>
+
       {modelInfo && (
-        <div className={`card py-3 border-l-4 ${modelInfo.status === 'ready' ? 'border-l-green-500 bg-green-50' : 'border-l-yellow-500 bg-yellow-50'}`}>
+        <div className="card py-3">
           {modelInfo.status === 'ready' ? (
             <div className="flex flex-wrap items-center gap-4 text-sm">
-              <span className="text-green-700 font-semibold">✓ XGBoost model ready</span>
-              <span className="text-slate-500">
+              <span className="font-semibold text-black">✓ XGBoost model ready</span>
+              <span className="text-as-muted">
                 R² = {modelInfo.r2?.toFixed(4)} &nbsp;·&nbsp; MAE = €{Math.round(modelInfo.mae || 0).toLocaleString()}
               </span>
             </div>
@@ -255,13 +274,13 @@ export default function Prediction() {
 
           {/* Basic specs card */}
           <div className="card">
-            <h2 className="font-semibold text-slate-700 mb-5">Car Specifications</h2>
+            <h2 className="font-semibold text-black mb-5">Car Specifications</h2>
             <div className="grid grid-cols-2 gap-4">
 
               <SectionHeading>Identity</SectionHeading>
 
               <div>
-                <label className="block text-xs font-medium text-slate-600 mb-1">Make *</label>
+                <label className="block text-xs font-medium text-as-body mb-1">Make *</label>
                 <select className="select-field" value={form.make} required
                   onChange={(e) => {
                     set('make', e.target.value); set('model', '')
@@ -273,7 +292,7 @@ export default function Prediction() {
                 </select>
               </div>
               <div>
-                <label className="block text-xs font-medium text-slate-600 mb-1">Model *</label>
+                <label className="block text-xs font-medium text-as-body mb-1">Model *</label>
                 {models.length > 0 ? (
                   <select className="select-field" value={form.model} onChange={(e) => set('model', e.target.value)} required>
                     <option value="">Select model…</option>
@@ -307,15 +326,15 @@ export default function Prediction() {
           {/* Equipment card */}
           <div className="card">
             <div className="flex items-center justify-between mb-4">
-              <h2 className="font-semibold text-slate-700">Equipment &amp; Options</h2>
+              <h2 className="font-semibold text-black">Equipment &amp; Options</h2>
               <div className="flex items-center gap-2">
                 <span className={`text-xs font-semibold px-2.5 py-1 rounded-full ${tier.color}`}>
                   {tier.label}
                 </span>
-                <span className="text-xs text-slate-500">{equipCount} selected</span>
+                <span className="text-xs text-as-muted">{equipCount} selected</span>
                 {equipCount > 0 && (
                   <button type="button" onClick={() => setEquip(EMPTY_EQUIP)}
-                    className="text-xs text-slate-400 hover:text-red-400 underline">
+                    className="text-xs text-as-muted hover:text-black underline transition-colors">
                     Clear all
                   </button>
                 )}
@@ -325,7 +344,7 @@ export default function Prediction() {
             <div className="space-y-5">
               {EQUIPMENT_GROUPS.map((group) => (
                 <div key={group.label}>
-                  <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">
+                  <div className="text-xs font-semibold text-as-muted uppercase tracking-wider mb-2">
                     {group.label}
                   </div>
                   <div className="grid grid-cols-2 sm:grid-cols-3 gap-y-2 gap-x-3">
@@ -333,11 +352,11 @@ export default function Prediction() {
                       <label key={key}
                         className={`flex items-center gap-2 text-xs cursor-pointer rounded-lg px-2.5 py-1.5 border transition-colors select-none
                           ${equip[key]
-                            ? 'bg-blue-50 border-blue-300 text-blue-800 font-medium'
-                            : 'bg-white border-slate-200 text-slate-600 hover:border-slate-300 hover:bg-slate-50'}`}>
+                            ? 'bg-black border-black text-white font-medium'
+                            : 'bg-white border-[#e0e0e0] text-as-body hover:border-black hover:bg-as-chip'}`}>
                         <input
                           type="checkbox"
-                          className="accent-blue-600 w-3.5 h-3.5 flex-shrink-0"
+                          className="accent-black w-3.5 h-3.5 flex-shrink-0"
                           checked={equip[key]}
                           onChange={() => toggleEquip(key)}
                         />
@@ -364,30 +383,30 @@ export default function Prediction() {
         {/* ── RIGHT PANEL ── */}
         <div className="space-y-4">
           {result ? (
-            <div className="card border-2 border-blue-300 bg-gradient-to-br from-blue-50 to-white">
-              <div className="text-xs text-blue-600 font-semibold uppercase tracking-wider mb-2">
+            <div className="card">
+              <div className="text-xs text-as-muted font-semibold uppercase tracking-wider mb-2">
                 Predicted Market Price
               </div>
-              <div className="text-5xl font-extrabold text-blue-800 mb-1">
+              <div className="text-5xl font-extrabold text-black mb-1">
                 €{fmt(Math.round(price))}
               </div>
 
               {/* Price range bar */}
               <div className="mt-3 mb-3">
-                <div className="flex justify-between text-xs text-slate-500 mb-1">
+                <div className="flex justify-between text-xs text-as-muted mb-1">
                   <span>€{fmt(Math.round(price - mae))}</span>
-                  <span className="text-blue-600 font-semibold">±€{fmt(mae)} MAE</span>
+                  <span className="text-black font-semibold">±€{fmt(mae)} MAE</span>
                   <span>€{fmt(Math.round(price + mae))}</span>
                 </div>
-                <div className="relative h-2 bg-blue-100 rounded-full overflow-hidden">
-                  <div className="absolute inset-y-0 bg-blue-300/60 rounded-full" style={{ left: '10%', right: '10%' }} />
-                  <div className="absolute inset-y-0 left-1/2 w-0.5 bg-blue-600 -translate-x-1/2" />
+                <div className="relative h-2 bg-[#f0f0f0] rounded-full overflow-hidden">
+                  <div className="absolute inset-y-0 bg-black/15 rounded-full" style={{ left: '10%', right: '10%' }} />
+                  <div className="absolute inset-y-0 left-1/2 w-0.5 bg-black -translate-x-1/2" />
                 </div>
-                <p className="text-xs text-slate-400 mt-1 text-center">Likely range based on model MAE</p>
+                <p className="text-xs text-as-muted mt-1 text-center">Likely range based on model MAE</p>
               </div>
 
-              <div className="text-xs text-slate-500 space-y-1 border-t border-blue-100 pt-3">
-                <div><strong>{result.input.make} {result.input.model}</strong> · {result.input.year}</div>
+              <div className="text-xs text-as-body space-y-1 border-t border-[#f0f0f0] pt-3">
+                <div><strong className="text-black">{result.input.make} {result.input.model}</strong> · {result.input.year}</div>
                 <div>{fmt(result.input.mileage)} km · {result.input.engine_power} HP</div>
                 <div>{result.input.fuel_type} · {result.input.gearbox} · {result.input.body_type}</div>
                 <div>Equipment: <span className={`font-semibold px-1.5 py-0.5 rounded ${tier.color}`}>
@@ -396,29 +415,29 @@ export default function Prediction() {
               </div>
             </div>
           ) : (
-            <div className="card border-2 border-dashed border-slate-200 flex flex-col items-center justify-center py-14 text-center">
+            <div className="card border-2 border-dashed border-[#e0e0e0] flex flex-col items-center justify-center py-14 text-center">
               <div className="text-4xl mb-3">🤖</div>
-              <div className="text-slate-400 text-sm">Fill in the form and click<br />Predict Price</div>
+              <div className="text-as-muted text-sm">Fill in the form and click<br />Predict Price</div>
             </div>
           )}
 
           {/* Model metrics */}
           <div className="card p-4">
-            <div className="text-xs font-semibold text-slate-600 mb-3">Model Details</div>
+            <div className="text-xs font-semibold text-as-body mb-3">Model Details</div>
             <dl className="space-y-2 text-xs">
               {[
                 ['Algorithm', 'XGBoost Regressor'],
                 ['R² Score', modelInfo?.r2 ? modelInfo.r2.toFixed(4) : '0.9343'],
                 ['MAE', modelInfo?.mae ? `€${Math.round(modelInfo.mae).toLocaleString()}` : '€1,921'],
                 ['RMSE', modelInfo?.rmse ? `€${Math.round(modelInfo.rmse).toLocaleString()}` : '€3,034'],
-                ['Training samples', '4,181'],
-                ['Test samples', '1,046'],
+                ['Training samples', modelInfo?.train_samples != null ? modelInfo.train_samples.toLocaleString() : '4,181'],
+                ['Test samples', modelInfo?.test_samples != null ? modelInfo.test_samples.toLocaleString() : '1,046'],
                 ['Features', modelInfo?.n_features ?? '32'],
                 ['Dataset', '5,444 listings'],
               ].map(([k, v]) => (
                 <div key={k} className="flex justify-between">
-                  <span className="text-slate-500">{k}</span>
-                  <span className="font-medium text-slate-700">{v}</span>
+                  <span className="text-as-muted">{k}</span>
+                  <span className="font-medium text-black">{v}</span>
                 </div>
               ))}
             </dl>
@@ -427,20 +446,20 @@ export default function Prediction() {
           {/* Feature importance */}
           {topFeatures.length > 0 && (
             <div className="card p-4">
-              <div className="text-xs font-semibold text-slate-600 mb-3">Top Predictive Features</div>
+              <div className="text-xs font-semibold text-as-body mb-3">Top Predictive Features</div>
               <div className="space-y-2">
                 {topFeatures.slice(0, 8).map(({ feature, importance }) => (
                   <div key={feature}>
                     <div className="flex justify-between text-xs mb-0.5">
-                      <span className="text-slate-600 truncate max-w-[130px]" title={feature}>
+                      <span className="text-as-body truncate max-w-[130px]" title={feature}>
                         {feature.replace(/_/g, ' ')}
                       </span>
-                      <span className="text-slate-400 font-mono ml-1">
+                      <span className="text-as-muted font-mono ml-1">
                         {(importance * 100 / maxImportance).toFixed(0)}%
                       </span>
                     </div>
-                    <div className="h-1.5 bg-slate-100 rounded-full overflow-hidden">
-                      <div className="h-full bg-blue-500 rounded-full"
+                    <div className="h-1.5 bg-[#f0f0f0] rounded-full overflow-hidden">
+                      <div className="h-full bg-black rounded-full"
                         style={{ width: `${(importance / maxImportance) * 100}%` }} />
                     </div>
                   </div>
@@ -454,31 +473,31 @@ export default function Prediction() {
       {/* Prediction history */}
       {history.length > 0 && (
         <div className="card">
-          <h2 className="font-semibold text-slate-700 mb-4">Recent Predictions</h2>
+          <h2 className="font-semibold text-black mb-4">Recent Predictions</h2>
           <div className="overflow-x-auto">
             <table className="min-w-full text-sm">
-              <thead className="bg-slate-50">
+              <thead className="bg-[#f9f9f9]">
                 <tr>
                   {['Make', 'Model', 'Year', 'Mileage', 'Fuel', 'Gearbox', 'Predicted Price', 'Date', ''].map((h) => (
-                    <th key={h} className="px-3 py-2 text-left text-xs font-semibold text-slate-500 uppercase whitespace-nowrap">{h}</th>
+                    <th key={h} className="px-3 py-2 text-left text-xs font-semibold text-as-muted uppercase whitespace-nowrap">{h}</th>
                   ))}
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-100">
+              <tbody className="divide-y divide-[#f0f0f0]">
                 {history.map((p) => (
-                  <tr key={p.id} className="hover:bg-slate-50">
+                  <tr key={p.id} className="hover:bg-as-chip">
                     <td className="px-3 py-2 font-medium">{p.make}</td>
-                    <td className="px-3 py-2 text-slate-600">{p.model}</td>
-                    <td className="px-3 py-2 text-slate-600">{p.year}</td>
-                    <td className="px-3 py-2 text-slate-500">{p.mileage ? `${fmt(p.mileage)} km` : '—'}</td>
-                    <td className="px-3 py-2 text-slate-500">{p.fuel_type}</td>
-                    <td className="px-3 py-2 text-slate-500">{p.gearbox}</td>
-                    <td className="px-3 py-2 font-bold text-blue-700">€{fmt(Math.round(p.predicted_price))}</td>
-                    <td className="px-3 py-2 text-slate-400 text-xs whitespace-nowrap">
+                    <td className="px-3 py-2 text-as-body">{p.model}</td>
+                    <td className="px-3 py-2 text-as-body">{p.year}</td>
+                    <td className="px-3 py-2 text-as-muted">{p.mileage ? `${fmt(p.mileage)} km` : '—'}</td>
+                    <td className="px-3 py-2 text-as-muted">{p.fuel_type}</td>
+                    <td className="px-3 py-2 text-as-muted">{p.gearbox}</td>
+                    <td className="px-3 py-2 font-semibold text-black">€{fmt(Math.round(p.predicted_price))}</td>
+                    <td className="px-3 py-2 text-as-muted text-xs whitespace-nowrap">
                       {p.created_at ? new Date(p.created_at).toLocaleDateString() : '—'}
                     </td>
                     <td className="px-3 py-2">
-                      <button className="text-slate-300 hover:text-red-400 text-lg leading-none"
+                      <button className="text-as-muted hover:text-black text-lg leading-none transition-colors"
                         onClick={() => deleteHistory(p.id)}>×</button>
                     </td>
                   </tr>
@@ -487,6 +506,8 @@ export default function Prediction() {
             </table>
           </div>
         </div>
+      )}
+        </>
       )}
     </div>
   )

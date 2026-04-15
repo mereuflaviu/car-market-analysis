@@ -1,13 +1,15 @@
 import random
 import numpy as np
 import pandas as pd
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, Response
 from sqlalchemy.orm import Session
 
 from ..database import get_db
 from ..models import Car
 
 router = APIRouter(prefix="/analytics", tags=["analytics"])
+
+_CACHE_1H = "public, max-age=3600"
 
 
 # ── helpers ───────────────────────────────────────────────────────────────────
@@ -20,7 +22,8 @@ def _query_df(db, *cols, col_names):
 # ── endpoints ─────────────────────────────────────────────────────────────────
 
 @router.get("/price-distribution")
-def price_distribution(db: Session = Depends(get_db)):
+def price_distribution(response: Response, db: Session = Depends(get_db)):
+    response.headers["Cache-Control"] = _CACHE_1H
     """Histogram bins for car prices (20 bins)."""
     prices = [r[0] for r in db.query(Car.price).all() if r[0] is not None]
     if not prices:
@@ -41,7 +44,8 @@ def price_distribution(db: Session = Depends(get_db)):
 
 
 @router.get("/price-by-make")
-def price_by_make(db: Session = Depends(get_db)):
+def price_by_make(response: Response, db: Session = Depends(get_db)):
+    response.headers["Cache-Control"] = _CACHE_1H
     """Average price per brand (top 15 by avg price, min 3 listings)."""
     rows = db.query(Car.make, Car.price).all()
     df = pd.DataFrame([(r[0], r[1]) for r in rows], columns=["make", "price"]).dropna()
@@ -60,7 +64,8 @@ def price_by_make(db: Session = Depends(get_db)):
 
 
 @router.get("/price-by-fuel")
-def price_by_fuel(db: Session = Depends(get_db)):
+def price_by_fuel(response: Response, db: Session = Depends(get_db)):
+    response.headers["Cache-Control"] = _CACHE_1H
     """Average price per fuel type."""
     rows = db.query(Car.fuel_type, Car.price).all()
     df = pd.DataFrame([(r[0], r[1]) for r in rows], columns=["fuel_type", "price"]).dropna()
@@ -79,7 +84,8 @@ def price_by_fuel(db: Session = Depends(get_db)):
 
 
 @router.get("/price-by-body-type")
-def price_by_body_type(db: Session = Depends(get_db)):
+def price_by_body_type(response: Response, db: Session = Depends(get_db)):
+    response.headers["Cache-Control"] = _CACHE_1H
     """Average price per body type."""
     rows = db.query(Car.body_type, Car.price).all()
     df = pd.DataFrame([(r[0], r[1]) for r in rows], columns=["body_type", "price"]).dropna()
@@ -98,7 +104,8 @@ def price_by_body_type(db: Session = Depends(get_db)):
 
 
 @router.get("/mileage-vs-price")
-def mileage_vs_price(db: Session = Depends(get_db)):
+def mileage_vs_price(response: Response, db: Session = Depends(get_db)):
+    response.headers["Cache-Control"] = _CACHE_1H
     """Scatter data: mileage vs price (500 sampled points)."""
     rows = db.query(Car.mileage, Car.price, Car.make, Car.fuel_type).all()
     data = [
@@ -113,7 +120,8 @@ def mileage_vs_price(db: Session = Depends(get_db)):
 
 
 @router.get("/year-vs-price")
-def year_vs_price(db: Session = Depends(get_db)):
+def year_vs_price(response: Response, db: Session = Depends(get_db)):
+    response.headers["Cache-Control"] = _CACHE_1H
     """Average price by manufacturing year."""
     rows = db.query(Car.year, Car.price).all()
     df = pd.DataFrame([(r[0], r[1]) for r in rows], columns=["year", "price"]).dropna()
@@ -132,7 +140,8 @@ def year_vs_price(db: Session = Depends(get_db)):
 
 
 @router.get("/gearbox-distribution")
-def gearbox_distribution(db: Session = Depends(get_db)):
+def gearbox_distribution(response: Response, db: Session = Depends(get_db)):
+    response.headers["Cache-Control"] = _CACHE_1H
     """Count per gearbox type."""
     rows = db.query(Car.gearbox).all()
     df = pd.DataFrame([r[0] for r in rows], columns=["gearbox"]).dropna()
@@ -144,7 +153,8 @@ def gearbox_distribution(db: Session = Depends(get_db)):
 
 
 @router.get("/transmission-distribution")
-def transmission_distribution(db: Session = Depends(get_db)):
+def transmission_distribution(response: Response, db: Session = Depends(get_db)):
+    response.headers["Cache-Control"] = _CACHE_1H
     """Count per transmission type."""
     rows = db.query(Car.transmission).all()
     df = pd.DataFrame([r[0] for r in rows], columns=["transmission"]).dropna()
