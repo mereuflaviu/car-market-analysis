@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { predictionsApi, makesApi } from '../api/client'
+import { predictionsApi, makesApi, carsApi } from '../api/client'
 import { useAuth } from '../context/AuthContext'
+import { HoverPeek } from '../components/ui/link-preview'
 
 const DEFAULTS = {
   make: '', model: '', year: '2019', body_type: 'SUV',
@@ -158,15 +159,10 @@ export default function Prediction() {
   const [history, setHistory] = useState([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
-  const [modelInfo, setModelInfo] = useState(null)
-  const [topFeatures, setTopFeatures] = useState([])
+  const [recs, setRecs] = useState(null)
 
   useEffect(() => {
     makesApi.options().then((r) => setOptions(r.data)).catch(() => {})
-    predictionsApi.modelInfo().then((r) => {
-      setModelInfo(r.data)
-      setTopFeatures(r.data.top_features || [])
-    }).catch(() => {})
     loadHistory()
   }, [])
 
@@ -177,6 +173,18 @@ export default function Prediction() {
       setModels([])
     }
   }, [form.make])
+
+  useEffect(() => {
+    if (!result) return
+    setRecs(null)
+    carsApi.recommendations({
+      make: result.input.make,
+      model: result.input.model,
+      year: result.input.year,
+      mileage: result.input.mileage,
+      limit: 5,
+    }).then((r) => setRecs(r.data)).catch(() => setRecs([]))
+  }, [result])
 
   const { user } = useAuth()
 
@@ -194,6 +202,7 @@ export default function Prediction() {
     setLoading(true)
     setError('')
     setResult(null)
+    setRecs(null)
     try {
       const payload = {
         make: form.make, model: form.model,
@@ -221,10 +230,8 @@ export default function Prediction() {
   }
 
   const fmt = (n) => Number(n).toLocaleString('de-DE')
-  const mae = modelInfo?.mae ? Math.round(modelInfo.mae) : 1921
   const price = result?.predicted_price
   const tier = equipTier(equipCount)
-  const maxImportance = topFeatures.length > 0 ? topFeatures[0].importance : 1
 
   return (
     <div className="space-y-6">
@@ -247,26 +254,6 @@ export default function Prediction() {
         </div>
       ) : (
         <>
-
-      {modelInfo && (
-        <div className="card py-3">
-          {modelInfo.status === 'ready' ? (
-            <div className="flex flex-wrap items-center gap-4 text-sm">
-              <span className="font-semibold text-black">✓ XGBoost model ready</span>
-              <span className="text-as-muted">
-                R² = {modelInfo.r2?.toFixed(4)} &nbsp;·&nbsp; MAE = €{Math.round(modelInfo.mae || 0).toLocaleString()}
-              </span>
-            </div>
-          ) : (
-            <div className="text-yellow-800 text-sm">
-              ⚠ Model not trained. Run:{' '}
-              <code className="bg-yellow-100 px-1.5 py-0.5 rounded font-mono text-xs">
-                cd backend &amp;&amp; python app/ml/train_extended.py
-              </code>
-            </div>
-          )}
-        </div>
-      )}
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* ── FORM ── */}
@@ -394,9 +381,9 @@ export default function Prediction() {
               {/* Price range bar */}
               <div className="mt-3 mb-3">
                 <div className="flex justify-between text-xs text-as-muted mb-1">
-                  <span>€{fmt(Math.round(price - mae))}</span>
-                  <span className="text-black font-semibold">±€{fmt(mae)} MAE</span>
-                  <span>€{fmt(Math.round(price + mae))}</span>
+                  <span>€{fmt(Math.round(price - 1986))}</span>
+                  <span className="text-black font-semibold">±€{fmt(1986)} MAE</span>
+                  <span>€{fmt(Math.round(price + 1986))}</span>
                 </div>
                 <div className="relative h-2 bg-[#f0f0f0] rounded-full overflow-hidden">
                   <div className="absolute inset-y-0 bg-black/15 rounded-full" style={{ left: '10%', right: '10%' }} />
@@ -421,50 +408,77 @@ export default function Prediction() {
             </div>
           )}
 
-          {/* Model metrics */}
-          <div className="card p-4">
-            <div className="text-xs font-semibold text-as-body mb-3">Model Details</div>
-            <dl className="space-y-2 text-xs">
-              {[
-                ['Algorithm', 'XGBoost Regressor'],
-                ['R² Score', modelInfo?.r2 ? modelInfo.r2.toFixed(4) : '0.9343'],
-                ['MAE', modelInfo?.mae ? `€${Math.round(modelInfo.mae).toLocaleString()}` : '€1,921'],
-                ['RMSE', modelInfo?.rmse ? `€${Math.round(modelInfo.rmse).toLocaleString()}` : '€3,034'],
-                ['Training samples', modelInfo?.train_samples != null ? modelInfo.train_samples.toLocaleString() : '4,181'],
-                ['Test samples', modelInfo?.test_samples != null ? modelInfo.test_samples.toLocaleString() : '1,046'],
-                ['Features', modelInfo?.n_features ?? '32'],
-                ['Dataset', '5,444 listings'],
-              ].map(([k, v]) => (
-                <div key={k} className="flex justify-between">
-                  <span className="text-as-muted">{k}</span>
-                  <span className="font-medium text-black">{v}</span>
-                </div>
-              ))}
-            </dl>
-          </div>
-
-          {/* Feature importance */}
-          {topFeatures.length > 0 && (
+          {/* Similar Listings */}
+          {result && (
             <div className="card p-4">
-              <div className="text-xs font-semibold text-as-body mb-3">Top Predictive Features</div>
-              <div className="space-y-2">
-                {topFeatures.slice(0, 8).map(({ feature, importance }) => (
-                  <div key={feature}>
-                    <div className="flex justify-between text-xs mb-0.5">
-                      <span className="text-as-body truncate max-w-[130px]" title={feature}>
-                        {feature.replace(/_/g, ' ')}
-                      </span>
-                      <span className="text-as-muted font-mono ml-1">
-                        {(importance * 100 / maxImportance).toFixed(0)}%
-                      </span>
-                    </div>
-                    <div className="h-1.5 bg-[#f0f0f0] rounded-full overflow-hidden">
-                      <div className="h-full bg-black rounded-full"
-                        style={{ width: `${(importance / maxImportance) * 100}%` }} />
-                    </div>
-                  </div>
-                ))}
-              </div>
+              <div className="text-xs font-semibold text-as-body mb-3">Similar Listings</div>
+              {recs === null ? (
+                <div className="space-y-2 animate-pulse">
+                  {[...Array(3)].map((_, i) => (
+                    <div key={i} className="h-8 bg-[#f0f0f0] rounded" />
+                  ))}
+                </div>
+              ) : recs.length === 0 ? (
+                <p className="text-xs text-as-muted">No listings found for this make/model.</p>
+              ) : (
+                <div className="overflow-x-auto">
+                  <table className="min-w-full text-xs">
+                    <thead className="bg-[#f9f9f9] border-b border-[#e8e8e8]">
+                      <tr>
+                        {['Make', 'Model', 'Year', 'Body', 'Fuel', 'Mileage', 'Power', 'Gearbox', 'Trans.', 'Price', 'Source'].map((h) => (
+                          <th key={h} className="px-2 py-2 text-left font-semibold text-as-muted uppercase tracking-wider whitespace-nowrap">
+                            {h}
+                          </th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-[#f0f0f0]">
+                      {recs.map((car) => (
+                        <tr key={car.id} className="hover:bg-as-chip transition-colors">
+                          <td className="px-2 py-2 font-medium whitespace-nowrap">{car.make}</td>
+                          <td className="px-2 py-2 text-as-body whitespace-nowrap">{car.model}</td>
+                          <td className="px-2 py-2 text-as-body">{car.year}</td>
+                          <td className="px-2 py-2 text-as-muted whitespace-nowrap">{car.body_type || '—'}</td>
+                          <td className="px-2 py-2 text-as-muted whitespace-nowrap">{car.fuel_type || '—'}</td>
+                          <td className="px-2 py-2 text-as-muted whitespace-nowrap">
+                            {car.mileage ? `${Number(car.mileage).toLocaleString('de-DE')} km` : '—'}
+                          </td>
+                          <td className="px-2 py-2 text-as-muted whitespace-nowrap">
+                            {car.engine_power ? `${car.engine_power} HP` : '—'}
+                          </td>
+                          <td className="px-2 py-2 text-as-muted whitespace-nowrap">{car.gearbox || '—'}</td>
+                          <td className="px-2 py-2 text-as-muted whitespace-nowrap">{car.transmission || '—'}</td>
+                          <td className="px-2 py-2 font-semibold text-black whitespace-nowrap">
+                            €{Number(car.price).toLocaleString('de-DE')}
+                          </td>
+                          <td className="px-2 py-2">
+                            {car.source_url ? (
+                              <HoverPeek
+                                url={car.source_url}
+                                isStatic={true}
+                                imageSrc={`${import.meta.env.VITE_API_URL || 'http://localhost:8001/api'}/cars/${car.id}/og-image`}
+                                peekWidth={220}
+                                peekHeight={138}
+                              >
+                                <a
+                                  href={car.source_url}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="text-blue-500 hover:text-blue-700 underline decoration-dotted whitespace-nowrap"
+                                >
+                                  Autovit →
+                                </a>
+                              </HoverPeek>
+                            ) : (
+                              <span className="text-as-muted">—</span>
+                            )}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              )}
             </div>
           )}
         </div>

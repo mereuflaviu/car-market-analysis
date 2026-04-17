@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException, Query, Request
 from fastapi.responses import RedirectResponse
 from sqlalchemy.orm import Session
-from typing import Optional
+from typing import Optional, List
 import re
 import urllib.request
 import asyncio
@@ -116,6 +116,18 @@ async def get_og_image(car_id: int, db: Session = Depends(get_db)):
     if not image_url:
         raise HTTPException(status_code=404, detail="Preview not available")
     return RedirectResponse(url=image_url, status_code=302)
+
+
+@router.get("/recommendations", response_model=List[schemas.CarOut])
+def get_recommendations(
+    make: str = Query(..., min_length=1),
+    model: str = Query(..., min_length=1),
+    year: int = Query(..., ge=1950, le=2030),
+    mileage: float = Query(0.0, ge=0),
+    limit: int = Query(5, ge=1, le=20),
+    db: Session = Depends(get_db),
+):
+    return crud.get_recommendations(db, make=make, model=model, year=year, mileage=mileage, limit=limit)
 
 
 @router.get("/{car_id}", response_model=schemas.CarOut)

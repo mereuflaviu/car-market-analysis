@@ -121,6 +121,44 @@ def get_car_stats(db: Session) -> dict:
     }
 
 
+def get_recommendations(
+    db: Session,
+    make: str,
+    model: str,
+    year: int,
+    mileage: Optional[float] = None,
+    limit: int = 5,
+) -> list:
+    score_expr = (
+        func.abs(models.Car.year - year) * 3
+        + func.coalesce(models.Car.mileage, 0) / 10000.0
+    )
+
+    # Pass 1: same make + model
+    primary = (
+        db.query(models.Car)
+        .filter(models.Car.make == make, models.Car.model == model)
+        .order_by(score_expr.asc())
+        .limit(limit)
+        .all()
+    )
+
+    if len(primary) >= 3 or len(primary) == limit:
+        return primary
+
+    # Pass 2: same make, different model — fill up to limit
+    needed = limit - len(primary)
+    fallback = (
+        db.query(models.Car)
+        .filter(models.Car.make == make, models.Car.model != model)
+        .order_by(score_expr.asc())
+        .limit(needed)
+        .all()
+    )
+
+    return primary + fallback
+
+
 # ── PREDICTIONS ──────────────────────────────────────────────────────────────
 
 _PRED_FIELDS = {
