@@ -1,13 +1,54 @@
 from fastapi import APIRouter, Depends, HTTPException, Query, Request
+from fastapi.responses import RedirectResponse
 from sqlalchemy.orm import Session
 from typing import Optional
+import re
+import urllib.request
+import asyncio
+import logging
 
 from ..database import get_db
 from .. import crud, schemas, models
 from ..dependencies import get_current_user, get_optional_user
 from ..limiter import limiter
 
+logger = logging.getLogger("autoscope")
+
 router = APIRouter(prefix="/cars", tags=["cars"])
+
+# Simple in-memory cache: car_id → image_url (or None if unavailable)
+_og_image_cache: dict[int, str | None] = {}
+
+def _fetch_og_image(url: str) -> str | None:
+    """Fetch the og:image URL from a listing page. Runs in a thread pool."""
+    try:
+        req = urllib.request.Request(
+            url,
+            headers={
+                "User-Agent": (
+                    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                    "AppleWebKit/537.36 (KHTML, like Gecko) "
+                    "Chrome/124.0.0.0 Safari/537.36"
+                ),
+                "Accept-Language": "ro-RO,ro;q=0.9,en;q=0.8",
+            },
+        )
+        with urllib.request.urlopen(req, timeout=6) as resp:
+            html = resp.read(64 * 1024).decode("utf-8", errors="ignore")
+        match = re.search(
+            r'<meta[^>]+property=["\']og:image["\'][^>]+content=["\'](https?://[^"\']+)["\']',
+            html,
+            re.IGNORECASE,
+        ) or re.search(
+            r'<meta[^>]+content=["\'](https?://[^"\']+)["\'][^>]+property=["\']og:image["\']',
+            html,
+            re.IGNORECASE,
+        )
+        if match:
+            return match.group(1)
+    except Exception as exc:
+        logger.debug("og:image fetch failed for %s: %s", url, exc)
+    return None
 
 
 @router.get("/stats", response_model=schemas.StatsResponse)
@@ -53,6 +94,28 @@ def list_cars(
         sort_by=sort_by, sort_dir=sort_dir or "asc",
     )
     return schemas.CarListResponse(items=items, total=total, page=page, page_size=page_size)
+
+
+@router.get("/{car_id}/og-image")
+async def get_og_image(car_id: int, db: Session = Depends(get_db)):
+    """Return a redirect to the listing's og:image (the car's actual photo)."""
+    if car_id in _og_image_cache:
+        image_url = _og_image_cache[car_id]
+        if not image_url:
+            raise HTTPException(status_code=404, detail="Preview not available")
+        return RedirectResponse(url=image_url, status_code=302)
+
+    car = db.query(models.Car).filter(models.Car.id == car_id).first()
+    if not car or not car.source_url:
+        _og_image_cache[car_id] = None
+        raise HTTPException(status_code=404, detail="No source URL")
+
+    image_url = await asyncio.to_thread(_fetch_og_image, car.source_url)
+    _og_image_cache[car_id] = image_url
+
+    if not image_url:
+        raise HTTPException(status_code=404, detail="Preview not available")
+    return RedirectResponse(url=image_url, status_code=302)
 
 
 @router.get("/{car_id}", response_model=schemas.CarOut)

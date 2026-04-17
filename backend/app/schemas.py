@@ -46,6 +46,7 @@ class CarUpdate(BaseModel):
 class CarOut(CarBase):
     id: int
     user_id: Optional[int] = None
+    source_url: Optional[str] = None
     created_at: Optional[datetime] = None
     updated_at: Optional[datetime] = None
     model_config = {"from_attributes": True}

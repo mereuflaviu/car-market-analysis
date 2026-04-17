@@ -79,6 +79,7 @@ def seed(force=False):
                     transmission=row.get("transmission"),
                     pollution_standard=row.get("pollution_standard"),
                     price=float(row["price"]),
+                    source_url=row.get("url") or None,
                 )
             )
         except Exception:

@@ -37,6 +37,7 @@ class Car(Base):
     transmission = Column(String)
     pollution_standard = Column(String)
     price = Column(Float, nullable=False)
+    source_url = Column(String, nullable=True)
     created_at = Column(DateTime, default=datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 

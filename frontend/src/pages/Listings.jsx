@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from 'react'
 import { carsApi, makesApi } from '../api/client'
 import CarForm from '../components/CarForm'
 import { useAuth } from '../context/AuthContext'
+import { HoverPeek } from '../components/ui/link-preview'
 
 function Pagination({ page, total, pageSize, onChange }) {
   const totalPages = Math.ceil(total / pageSize)
@@ -282,7 +283,7 @@ export default function Listings() {
                 <table className="min-w-full text-sm">
                   <thead className="bg-[#f9f9f9] border-b border-[#e8e8e8]">
                     <tr>
-                      {['Make', 'Model', 'Year', 'Body', 'Fuel', 'Mileage', 'Power', 'Gearbox', 'Trans.', 'Price', ''].map(
+                      {['Make', 'Model', 'Year', 'Body', 'Fuel', 'Mileage', 'Power', 'Gearbox', 'Trans.', 'Price', 'Source', ''].map(
                         (h) => (
                           <th
                             key={h}
@@ -319,6 +320,28 @@ export default function Listings() {
                           <td className="px-3 py-2.5 text-as-muted whitespace-nowrap">{car.transmission || '—'}</td>
                           <td className="px-3 py-2.5 font-semibold text-black whitespace-nowrap">
                             €{fmt(car.price)}
+                          </td>
+                          <td className="px-3 py-2.5">
+                            {car.source_url ? (
+                              <HoverPeek
+                                url={car.source_url}
+                                isStatic={true}
+                                imageSrc={`${import.meta.env.VITE_API_URL || 'http://localhost:8001/api'}/cars/${car.id}/og-image`}
+                                peekWidth={220}
+                                peekHeight={138}
+                              >
+                                <a
+                                  href={car.source_url}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="text-xs text-blue-500 hover:text-blue-700 underline decoration-dotted whitespace-nowrap"
+                                >
+                                  Autovit →
+                                </a>
+                              </HoverPeek>
+                            ) : (
+                              <span className="text-xs text-as-muted">—</span>
+                            )}
                           </td>
                           <td className="px-3 py-2.5">
                             {(user?.role === 'admin' || user?.id === car.user_id) && (

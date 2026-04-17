@@ -1,5 +1,7 @@
+import { useEffect, useRef } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
+import { ThemeSwitcher } from './ui/theme-switcher'
 
 const NAV = [
   { to: '/app',            label: 'Dashboard' },
@@ -12,6 +14,23 @@ export default function AppLayout({ children }) {
   const { pathname } = useLocation()
   const { user, logout } = useAuth()
   const navigate = useNavigate()
+  const headerRef = useRef(null)
+  const spotlightRef = useRef(null)
+
+  useEffect(() => {
+    const onPointerMove = (e) => {
+      if (!headerRef.current || !spotlightRef.current) return
+      const rect = headerRef.current.getBoundingClientRect()
+      const x = e.clientX - rect.left
+      const y = e.clientY - rect.top
+      const buffer = 80
+      const nearNav = e.clientY <= rect.bottom + buffer
+      spotlightRef.current.style.opacity = nearNav ? '1' : '0'
+      spotlightRef.current.style.background = `radial-gradient(400px circle at ${x}px ${y}px, rgba(99,102,241,0.12), transparent 70%)`
+    }
+    document.addEventListener('pointermove', onPointerMove)
+    return () => document.removeEventListener('pointermove', onPointerMove)
+  }, [])
 
   const handleLogout = async () => {
     await logout()
@@ -19,9 +38,15 @@ export default function AppLayout({ children }) {
   }
 
   return (
-    <div className="min-h-screen bg-white">
-      <header className="sticky top-0 z-50 bg-white border-b border-black">
-        <div className="max-w-[1136px] mx-auto px-6 h-14 flex items-center gap-6">
+    <div className="min-h-screen page-bg transition-colors duration-200">
+      <header ref={headerRef} data-dark-nav className="sticky top-0 z-50 bg-white border-b border-black overflow-hidden transition-colors duration-200">
+        <div
+          ref={spotlightRef}
+          aria-hidden="true"
+          style={{ opacity: 0, transition: 'opacity 0.3s ease' }}
+          className="pointer-events-none absolute inset-0 z-0"
+        />
+        <div className="relative z-10 max-w-[1136px] mx-auto px-6 h-14 flex items-center gap-6">
           <Link to="/" className="font-bold text-lg text-black tracking-tight mr-4">
             AutoScope
           </Link>
@@ -34,7 +59,9 @@ export default function AppLayout({ children }) {
                   key={to}
                   to={to}
                   className={`px-4 py-1.5 rounded-pill text-sm font-medium transition-colors ${
-                    active ? 'bg-black text-white' : 'bg-as-chip text-black hover:bg-as-hover'
+                    active
+                      ? 'bg-black text-white nav-pill-active'
+                      : 'bg-as-chip text-black hover:bg-as-hover'
                   }`}
                 >
                   {label}
@@ -43,7 +70,9 @@ export default function AppLayout({ children }) {
             })}
           </nav>
 
-          <div className="flex items-center gap-2 ml-auto flex-shrink-0">
+          <div className="flex items-center gap-3 ml-auto flex-shrink-0">
+            <ThemeSwitcher />
+
             {user ? (
               <>
                 {user.role === 'admin' && (
@@ -51,7 +80,7 @@ export default function AppLayout({ children }) {
                     to="/admin/users"
                     className={`px-3 py-1.5 rounded-pill text-xs font-semibold transition-colors ${
                       pathname.startsWith('/admin')
-                        ? 'bg-black text-white'
+                        ? 'bg-black text-white nav-pill-active'
                         : 'bg-as-chip text-black hover:bg-as-hover'
                     }`}
                   >

@@ -1,0 +1,114 @@
+<h2>Where should the dark mode toggle sit?</h2>
+<p class="subtitle">All three use a sun/moon icon. The question is placement and style.</p>
+
+<div class="cards">
+
+  <div class="card" data-choice="navbar-right" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div class="mockup">
+        <div class="mockup-header">Navbar Preview</div>
+        <div class="mockup-body" style="padding:0">
+          <!-- Light navbar version -->
+          <div style="background:#fff;border-bottom:1px solid #e5e7eb;padding:10px 20px;display:flex;align-items:center;gap:12px;margin-bottom:8px">
+            <span style="font-weight:700;font-size:14px;color:#111">AutoScope</span>
+            <span style="color:#6b7280;font-size:12px">Listings</span>
+            <span style="color:#6b7280;font-size:12px">Predict</span>
+            <span style="color:#6b7280;font-size:12px">Analytics</span>
+            <div style="margin-left:auto;display:flex;align-items:center;gap:10px">
+              <span style="color:#6b7280;font-size:12px">mereu_flaviu</span>
+              <div style="width:30px;height:18px;background:#e5e7eb;border-radius:9px;display:flex;align-items:center;padding:2px;cursor:pointer">
+                <div style="width:14px;height:14px;background:#fff;border-radius:50%;box-shadow:0 1px 2px rgba(0,0,0,.3)"></div>
+              </div>
+            </div>
+          </div>
+          <!-- Dark navbar version -->
+          <div style="background:#1c1c1e;border-bottom:1px solid #2c2c2e;padding:10px 20px;display:flex;align-items:center;gap:12px">
+            <span style="font-weight:700;font-size:14px;color:#f5f5f7">AutoScope</span>
+            <span style="color:#8e8e93;font-size:12px">Listings</span>
+            <span style="color:#8e8e93;font-size:12px">Predict</span>
+            <span style="color:#8e8e93;font-size:12px">Analytics</span>
+            <div style="margin-left:auto;display:flex;align-items:center;gap:10px">
+              <span style="color:#8e8e93;font-size:12px">mereu_flaviu</span>
+              <div style="width:30px;height:18px;background:#ff9f0a;border-radius:9px;display:flex;align-items:center;padding:2px;justify-content:flex-end;cursor:pointer">
+                <div style="width:14px;height:14px;background:#fff;border-radius:50%;box-shadow:0 1px 2px rgba(0,0,0,.3)"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A — Pill toggle, far right</h3>
+      <p>Small toggle switch next to the user avatar/name. Clean, minimal — common pattern (GitHub, Linear). Orange when dark mode is active.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="navbar-icon" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div class="mockup">
+        <div class="mockup-header">Navbar Preview</div>
+        <div class="mockup-body" style="padding:0">
+          <div style="background:#fff;border-bottom:1px solid #e5e7eb;padding:10px 20px;display:flex;align-items:center;gap:12px;margin-bottom:8px">
+            <span style="font-weight:700;font-size:14px;color:#111">AutoScope</span>
+            <span style="color:#6b7280;font-size:12px">Listings</span>
+            <span style="color:#6b7280;font-size:12px">Predict</span>
+            <span style="color:#6b7280;font-size:12px">Analytics</span>
+            <div style="margin-left:auto;display:flex;align-items:center;gap:10px">
+              <span style="color:#6b7280;font-size:12px">mereu_flaviu</span>
+              <div style="width:28px;height:28px;background:#f3f4f6;border-radius:6px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:15px">☀️</div>
+            </div>
+          </div>
+          <div style="background:#1c1c1e;border-bottom:1px solid #2c2c2e;padding:10px 20px;display:flex;align-items:center;gap:12px">
+            <span style="font-weight:700;font-size:14px;color:#f5f5f7">AutoScope</span>
+            <span style="color:#8e8e93;font-size:12px">Listings</span>
+            <span style="color:#8e8e93;font-size:12px">Predict</span>
+            <span style="color:#8e8e93;font-size:12px">Analytics</span>
+            <div style="margin-left:auto;display:flex;align-items:center;gap:10px">
+              <span style="color:#8e8e93;font-size:12px">mereu_flaviu</span>
+              <div style="width:28px;height:28px;background:#2c2c2e;border-radius:6px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:15px">🌙</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B — Icon button, far right</h3>
+      <p>Sun icon in light mode, moon in dark mode. Slightly larger click target, more expressive. No pill — just a rounded square icon button.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="navbar-text" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div class="mockup">
+        <div class="mockup-header">Navbar Preview</div>
+        <div class="mockup-body" style="padding:0">
+          <div style="background:#fff;border-bottom:1px solid #e5e7eb;padding:10px 20px;display:flex;align-items:center;gap:12px;margin-bottom:8px">
+            <span style="font-weight:700;font-size:14px;color:#111">AutoScope</span>
+            <span style="color:#6b7280;font-size:12px">Listings</span>
+            <span style="color:#6b7280;font-size:12px">Predict</span>
+            <span style="color:#6b7280;font-size:12px">Analytics</span>
+            <div style="margin-left:auto;display:flex;align-items:center;gap:10px">
+              <span style="color:#6b7280;font-size:12px">mereu_flaviu</span>
+              <button style="border:1px solid #e5e7eb;background:transparent;color:#6b7280;font-size:11px;padding:3px 8px;border-radius:4px;cursor:pointer">☀ Light</button>
+            </div>
+          </div>
+          <div style="background:#1c1c1e;border-bottom:1px solid #2c2c2e;padding:10px 20px;display:flex;align-items:center;gap:12px">
+            <span style="font-weight:700;font-size:14px;color:#f5f5f7">AutoScope</span>
+            <span style="color:#8e8e93;font-size:12px">Listings</span>
+            <span style="color:#8e8e93;font-size:12px">Predict</span>
+            <span style="color:#8e8e93;font-size:12px">Analytics</span>
+            <div style="margin-left:auto;display:flex;align-items:center;gap:10px">
+              <span style="color:#8e8e93;font-size:12px">mereu_flaviu</span>
+              <button style="border:1px solid #3a3a3c;background:transparent;color:#ff9f0a;font-size:11px;padding:3px 8px;border-radius:4px;cursor:pointer">🌙 Dark</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C — Text button</h3>
+      <p>Small labelled button ("Light" / "Dark") with icon. Most explicit — user always knows current mode. Slightly more space, but zero ambiguity.</p>
+    </div>
+  </div>
+
+</div>

@@ -42,6 +42,10 @@ def _run_migrations():
             conn.execute(text("ALTER TABLE predictions ADD COLUMN user_id INTEGER REFERENCES users(id)"))
             logger.info("Migration: added predictions.user_id")
 
+        if "source_url" not in car_cols:
+            conn.execute(text("ALTER TABLE cars ADD COLUMN source_url TEXT"))
+            logger.info("Migration: added cars.source_url")
+
         conn.commit()
 
 _run_migrations()
