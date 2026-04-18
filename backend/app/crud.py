@@ -230,6 +230,27 @@ def get_field_options(db: Session) -> dict:
     }
 
 
+def get_model_options(db: Session, make: str, model: str) -> dict:
+    """Return only the field values that exist for a specific make+model."""
+    base = db.query(models.Car).filter(
+        models.Car.make == make,
+        models.Car.model == model,
+    )
+
+    def vals(col):
+        rows = base.with_entities(distinct(col)).order_by(col).all()
+        return sorted([r[0] for r in rows if r[0]])
+
+    return {
+        "body_types": vals(models.Car.body_type),
+        "fuel_types": vals(models.Car.fuel_type),
+        "gearboxes": vals(models.Car.gearbox),
+        "transmissions": vals(models.Car.transmission),
+        "pollution_standards": vals(models.Car.pollution_standard),
+        "colors": vals(models.Car.color),
+    }
+
+
 # ── USERS ─────────────────────────────────────────────────────────────────────
 
 def get_user_by_email(db: Session, email: str) -> Optional[models.User]:

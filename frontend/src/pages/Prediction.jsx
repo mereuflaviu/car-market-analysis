@@ -154,6 +154,7 @@ export default function Prediction() {
   const [form, setForm] = useState(DEFAULTS)
   const [equip, setEquip] = useState(EMPTY_EQUIP)
   const [options, setOptions] = useState({})
+  const [modelOptions, setModelOptions] = useState(null)
   const [models, setModels] = useState([])
   const [result, setResult] = useState(null)
   const [history, setHistory] = useState([])
@@ -173,6 +174,36 @@ export default function Prediction() {
       setModels([])
     }
   }, [form.make])
+
+  // Fetch constrained options when both make and model are selected
+  useEffect(() => {
+    if (form.make && form.model) {
+      makesApi.modelOptions(form.make, form.model).then((r) => {
+        const mo = r.data
+        setModelOptions(mo)
+        // Reset form fields that are no longer valid for this make+model
+        setForm((prev) => {
+          const updated = { ...prev }
+          const checks = [
+            ['body_type', 'body_types'],
+            ['fuel_type', 'fuel_types'],
+            ['gearbox', 'gearboxes'],
+            ['transmission', 'transmissions'],
+            ['pollution_standard', 'pollution_standards'],
+            ['color', 'colors'],
+          ]
+          for (const [field, key] of checks) {
+            if (mo[key] && mo[key].length > 0 && !mo[key].includes(prev[field])) {
+              updated[field] = mo[key].length === 1 ? mo[key][0] : ''
+            }
+          }
+          return updated
+        })
+      }).catch(() => setModelOptions(null))
+    } else {
+      setModelOptions(null)
+    }
+  }, [form.make, form.model])
 
   useEffect(() => {
     if (!result) return
@@ -292,21 +323,21 @@ export default function Prediction() {
               </div>
 
               <NumberField label="Year *"    name="year"    placeholder="2019"  value={form.year}    onChange={set} />
-              <SelectField label="Body Type *" name="body_type" opts={options.body_types} value={form.body_type} onChange={set} required />
+              <SelectField label="Body Type *" name="body_type" opts={modelOptions?.body_types || options.body_types} value={form.body_type} onChange={set} required />
 
               <SectionHeading>Engine &amp; Performance</SectionHeading>
 
               <NumberField label="Engine Capacity *" name="engine_capacity" placeholder="1995" value={form.engine_capacity} onChange={set} unit="cm³" />
               <NumberField label="Engine Power *"    name="engine_power"    placeholder="150"  value={form.engine_power}    onChange={set} unit="HP" />
-              <SelectField label="Fuel Type *"       name="fuel_type"       opts={options.fuel_types} value={form.fuel_type} onChange={set} required />
-              <SelectField label="Pollution Std *"   name="pollution_standard" opts={options.pollution_standards} value={form.pollution_standard} onChange={set} required />
+              <SelectField label="Fuel Type *"       name="fuel_type"       opts={modelOptions?.fuel_types || options.fuel_types} value={form.fuel_type} onChange={set} required />
+              <SelectField label="Pollution Std *"   name="pollution_standard" opts={modelOptions?.pollution_standards || options.pollution_standards} value={form.pollution_standard} onChange={set} required />
 
               <SectionHeading>Specs</SectionHeading>
 
               <NumberField label="Mileage *" name="mileage" placeholder="80000" value={form.mileage} onChange={set} unit="km" />
-              <SelectField label="Color *"   name="color"   opts={options.colors} value={form.color} onChange={set} required />
-              <SelectField label="Gearbox *"      name="gearbox"      opts={options.gearboxes}    value={form.gearbox}      onChange={set} required />
-              <SelectField label="Transmission *" name="transmission" opts={options.transmissions} value={form.transmission} onChange={set} required />
+              <SelectField label="Color *"   name="color"   opts={modelOptions?.colors || options.colors} value={form.color} onChange={set} required />
+              <SelectField label="Gearbox *"      name="gearbox"      opts={modelOptions?.gearboxes || options.gearboxes}    value={form.gearbox}      onChange={set} required />
+              <SelectField label="Transmission *" name="transmission" opts={modelOptions?.transmissions || options.transmissions} value={form.transmission} onChange={set} required />
             </div>
           </div>
 

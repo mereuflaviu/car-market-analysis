@@ -106,6 +106,8 @@ export const makesApi = {
   list: () => api.get('/makes'),
   models: (make) => api.get(`/makes/${encodeURIComponent(make)}/models`),
   options: () => api.get('/makes/options'),
+  modelOptions: (make, model) =>
+    api.get(`/makes/${encodeURIComponent(make)}/models/${encodeURIComponent(model)}/options`),
 }
 
 // ── Auth ──────────────────────────────────────────────────────────────────────

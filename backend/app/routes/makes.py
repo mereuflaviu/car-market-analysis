@@ -24,3 +24,9 @@ def get_options(db: Session = Depends(get_db)):
 def get_models(make: str, db: Session = Depends(get_db)):
     """All models available for a given make."""
     return {"make": make, "models": crud.get_models_for_make(db, make)}
+
+
+@router.get("/{make}/models/{model}/options")
+def get_model_options(make: str, model: str, db: Session = Depends(get_db)):
+    """Field values that exist in the dataset for a specific make + model."""
+    return crud.get_model_options(db, make, model)
