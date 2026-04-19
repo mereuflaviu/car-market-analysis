@@ -41,8 +41,8 @@ RANDOM_STATE = 42
 # Trim outlier prices before training.
 # The top ~3% are rare exotic/luxury cars that skew MAE without representative
 # training data. The model is documented as targeting cars in this range.
-PRICE_PERCENTILE_LOW  = 0.01   # drop lowest 1% (data errors)
-PRICE_PERCENTILE_HIGH = 0.97   # drop top 3% (exotic cars > ~EUR 60k)
+PRICE_PERCENTILE_LOW  = 0.005  # drop lowest 0.5% (data errors)
+PRICE_PERCENTILE_HIGH = 0.985  # drop top 1.5% (keep more luxury cars for learning)
 
 # ── Column definitions ────────────────────────────────────────────────────────
 BASE_CAT = [
@@ -55,36 +55,21 @@ TARGET_ENCODE_COLS = ["make", "model"]
 BASE_NUM  = ["year", "mileage", "engine_capacity", "engine_power"]
 EXTRA_NUM = [
     "door_count", "nr_seats", "equipment_count",
-    "car_age", "log_car_age",               # age — linear + log
-    "power_per_liter",                       # sportiness
-    "power_over_age",                        # performance × newness
-    "power_auto",                            # powerful automatic premium
-    "equip_per_age",                         # equipment density relative to age
-    "cohort_size",                           # how many same make+model+year listed (liquidity)
-    "mileage_vs_cohort",                     # over/under-mileaged vs same cohort (z-score)
-    "mileage_vs_make_model",                 # over/under-mileaged vs same make+model
-    "luxury_power",                          # luxury brand × engine power interaction
+    "car_age", "log_car_age",
+    "power_per_liter",
+    "power_over_age",
+    "power_auto",
+    "equip_per_age",
+    "cohort_size",
+    "mileage_vs_cohort",
+    "mileage_vs_make_model",
+    "luxury_power",
+    "equipment_value_eur",
+    "mileage_per_year",
+    "value_density",
 ]
-EXTRA_CAT  = ["equipment_tier", "brand_tier"]
-BINARY     = ["is_well_equipped", "is_electric", "is_hybrid_plugin", "is_hybrid", "hybrid_plugin_new"]
-
-EQUIPMENT_COLS = [
-    "apple_carplay", "android_auto", "bluetooth", "wireless_charging",
-    "navigation", "internet", "usb_port", "head_up_display",
-    "ac", "climatronic", "climatronic_2zone", "climatronic_3zone", "climatronic_4zone",
-    "panoramic_roof", "electric_sunroof", "manual_sunroof", "rear_glass_sunroof",
-    "upholstery_alcantara", "upholstery_leather_mix", "upholstery_leather", "upholstery_fabric",
-    "electric_driver_seat", "heated_driver_seat", "heated_passenger_seat",
-    "ventilated_front_seats", "ventilated_rear_seats", "memory_seat",
-    "front_armrest", "sport_steering_wheel", "paddle_shifters",
-    "keyless_entry", "keyless_go", "heated_windshield",
-    "air_suspension", "sport_suspension",
-    "predictive_acc", "cruise_control", "adaptive_cruise",
-    "bi_xenon", "laser_lights", "led_lights", "xenon", "dynamic_lights", "follow_me_home",
-    "front_park_sensors", "rear_park_sensors", "park_assist", "auto_park",
-    "camera_360", "rear_camera", "folding_mirrors", "blind_spot",
-    "lane_assist", "distance_control", "autonomous_driving", "isofix",
-]
+EXTRA_CAT = ["brand_tier", "power_segment"]
+BINARY = ["is_electric", "is_hybrid_plugin", "is_hybrid", "hybrid_plugin_new"]
 
 # ── Brand tiers ───────────────────────────────────────────────────────────────
 LUXURY_BRANDS = {
@@ -95,6 +80,50 @@ LUXURY_BRANDS = {
 BUDGET_BRANDS = {
     "Dacia", "Fiat", "Seat", "Chevrolet", "Daewoo", "Lada",
     "Mitsubishi", "Suzuki", "Kia", "Hyundai",
+}
+
+# ── Equipment residual value (EUR) ──────────────────────────────────────────
+# Used-market residual values, not new-car configurator prices.
+# Bundled features are priced as their share of the bundle.
+EQUIPMENT_VALUE = {
+    # Standard — EUR 0 (expected on any car, no premium)
+    "ac": 0, "bluetooth": 0, "cruise_control": 0, "isofix": 0,
+    "front_armrest": 0, "usb_port": 0, "upholstery_fabric": 0,
+    "climatronic": 0, "climatronic_2zone": 0,
+
+    # Light value
+    "follow_me_home": 100, "folding_mirrors": 100,
+    "led_lights": 200, "front_park_sensors": 250,
+    "rear_park_sensors": 250, "rear_camera": 300,
+    "upholstery_leather_mix": 300, "memory_seat": 300,
+    "paddle_shifters": 150, "sport_steering_wheel": 150,
+
+    # Bundles (priced as share of bundle)
+    "apple_carplay": 200, "android_auto": 200,
+    "navigation": 200, "internet": 100,
+    "heated_driver_seat": 200, "heated_passenger_seat": 200,
+    "electric_driver_seat": 250,
+    "keyless_entry": 300, "keyless_go": 300,
+
+    # Mid-premium
+    "heated_windshield": 400, "climatronic_3zone": 500,
+    "upholstery_alcantara": 500, "sport_suspension": 300,
+    "camera_360": 500, "blind_spot": 300,
+    "lane_assist": 300, "distance_control": 200,
+    "ventilated_front_seats": 400, "ventilated_rear_seats": 200,
+    "adaptive_cruise": 500, "predictive_acc": 200,
+
+    # Premium
+    "head_up_display": 800, "electric_sunroof": 800,
+    "panoramic_roof": 1200, "upholstery_leather": 1200,
+    "laser_lights": 1000, "autonomous_driving": 1200,
+    "climatronic_4zone": 1800, "air_suspension": 2500,
+
+    # Minor / legacy
+    "bi_xenon": 100, "xenon": 100, "dynamic_lights": 100,
+    "park_assist": 200, "auto_park": 300,
+    "wireless_charging": 200, "manual_sunroof": 400,
+    "rear_glass_sunroof": 500,
 }
 
 # ── Experiment definitions ────────────────────────────────────────────────────
@@ -250,6 +279,25 @@ def add_engineered_features(df: pd.DataFrame) -> pd.DataFrame:
     # High-power + luxury brand → strong premium signal
     df["luxury_power"] = (df["brand_tier"] == "luxury").astype(float) * df["engine_power"]
 
+    # ── Equipment value (EUR) — replaces 57 sparse binary flags ──────────
+    equip_cols_in_df = [c for c in EQUIPMENT_VALUE if c in df.columns]
+    df["equipment_value_eur"] = sum(
+        df[col].fillna(0) * EQUIPMENT_VALUE[col] for col in equip_cols_in_df
+    )
+
+    # ── Power segment — separates 190HP from 374HP within same model ─────
+    df["power_segment"] = pd.cut(
+        df["engine_power"],
+        bins=[0, 120, 180, 250, 350, 9999],
+        labels=["economy", "mid", "strong", "performance", "super"],
+    ).astype(str)
+
+    # ── Mileage per year — is this car high/low mileage for its age? ─────
+    df["mileage_per_year"] = df["mileage"] / (df["car_age"] + 1)
+
+    # ── Value density — option value relative to car age ─────────────────
+    df["value_density"] = df["equipment_value_eur"] / (df["car_age"] + 1)
+
     return df
 
 
@@ -389,6 +437,7 @@ def run_experiment(name: str, df: pd.DataFrame, do_tune: bool = False, n_iter: i
     print(f"{'='*62}")
 
     X, y, num_cols, cat_cols, bin_cols, tenc_cols = prepare_features(df, exp)
+    max_equip_val = float(df["equipment_value_eur"].max()) if "equipment_value_eur" in df.columns else 15000.0
     log_target = exp["log_target"]
     y_model = np.log(y) if log_target else y
 
@@ -463,6 +512,7 @@ def run_experiment(name: str, df: pd.DataFrame, do_tune: bool = False, n_iter: i
         "target_enc_features":  tenc_cols,
         "feature_importance":   fi,
         "cohort_stats":         cohort_stats,
+        "max_equipment_value_eur": max_equip_val,
     }
 
 
@@ -493,6 +543,7 @@ def save_artifacts(result: dict, suffix: str = ""):
         "rmse":  result["metrics"]["rmse"],
         "cv_r2": result["metrics"]["cv_r2"],
         "cv_std": result["metrics"]["cv_std"],
+        "max_equipment_value_eur": result.get("max_equipment_value_eur", 15000.0),
         "feature_importance": fi_dict,
         "dataset": "cleaned_car_listings_extended.csv",
     }, os.path.join(ARTIFACTS_DIR, f"metadata{tag}.joblib"))

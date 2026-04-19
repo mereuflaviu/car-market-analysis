@@ -124,10 +124,11 @@ def get_recommendations(
     model: str = Query(..., min_length=1),
     year: int = Query(..., ge=1950, le=2030),
     mileage: float = Query(0.0, ge=0),
+    predicted_price: float = Query(None, ge=0),
     limit: int = Query(5, ge=1, le=20),
     db: Session = Depends(get_db),
 ):
-    return crud.get_recommendations(db, make=make, model=model, year=year, mileage=mileage, limit=limit)
+    return crud.get_recommendations(db, make=make, model=model, year=year, mileage=mileage, predicted_price=predicted_price, limit=limit)
 
 
 @router.get("/{car_id}", response_model=schemas.CarOut)

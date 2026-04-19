@@ -9,21 +9,23 @@ import numpy as np
 import joblib
 import pandas as pd
 from app.ml.encoders import SmoothedTargetEncoder  # noqa: F401 — needed for joblib deserialisation
+from app.ml.train_extended import EQUIPMENT_VALUE
 
 logger = logging.getLogger("autoscope.inference")
 
 _HERE = os.path.dirname(os.path.abspath(__file__))
 ARTIFACTS_DIR = os.path.join(_HERE, "..", "..", "artifacts")
 
-_model      = None
-_ord_enc    = None
-_te_enc     = None
-_metadata   = None
-_lock       = threading.Lock()
+_model        = None
+_ord_enc      = None
+_te_enc       = None
+_metadata     = None
+_cohort_stats = None
+_lock         = threading.Lock()
 
 
 def _load():
-    global _model, _ord_enc, _te_enc, _metadata
+    global _model, _ord_enc, _te_enc, _metadata, _cohort_stats
     model_path = os.path.join(ARTIFACTS_DIR, "model.joblib")
     if not os.path.exists(model_path):
         raise FileNotFoundError("ML model artifacts not found. Train the model first.")
@@ -35,6 +37,12 @@ def _load():
     te_path = os.path.join(ARTIFACTS_DIR, "te_encoder.joblib")
     _te_enc = joblib.load(te_path) if os.path.exists(te_path) else None
     logger.info("ML model loaded (R²=%.4f)", _metadata.get("r2", 0))
+
+    global _cohort_stats
+    cs_path = os.path.join(ARTIFACTS_DIR, "cohort_stats.joblib")
+    _cohort_stats = joblib.load(cs_path) if os.path.exists(cs_path) else None
+    if _cohort_stats:
+        logger.info("Cohort stats loaded (%d cohorts)", len(_cohort_stats.get("cohort_size", {})))
 
 
 def _ensure_loaded():
@@ -90,6 +98,59 @@ def _add_engineered(row: dict) -> dict:
     # Cohort key — will be target-encoded from training map
     model = row.get("model", "unknown")
     row["cohort"] = f"{make}|{model}|{year}"
+
+    # ── Equipment value (EUR) ────────────────────────────────────────────
+    equip_total = sum(
+        EQUIPMENT_VALUE.get(k, 0)
+        for k, v in row.items()
+        if k in EQUIPMENT_VALUE and v in (1, True, "1", "true", "True")
+    )
+    # Cap at training max to prevent extrapolation
+    max_equip_val = _metadata.get("max_equipment_value_eur", 15000) if _metadata else 15000
+    row["equipment_value_eur"] = min(equip_total, max_equip_val)
+
+    # ── Power segment ────────────────────────────────────────────────────
+    if ep <= 120:
+        row["power_segment"] = "economy"
+    elif ep <= 180:
+        row["power_segment"] = "mid"
+    elif ep <= 250:
+        row["power_segment"] = "strong"
+    elif ep <= 350:
+        row["power_segment"] = "performance"
+    else:
+        row["power_segment"] = "super"
+
+    # ── Mileage per year ─────────────────────────────────────────────────
+    mileage = float(row.get("mileage", 0) or 0)
+    row["mileage_per_year"] = mileage / (car_age + 1)
+
+    # ── Value density ────────────────────────────────────────────────────
+    row["value_density"] = row["equipment_value_eur"] / (car_age + 1)
+
+    # ── Cohort statistics (from training data, no leakage) ───────────────
+    cohort_key = row["cohort"]
+    make_model_key = (make, model) if isinstance(make, str) else (str(make), str(model))
+
+    if _cohort_stats:
+        row["cohort_size"] = _cohort_stats["cohort_size"].get(cohort_key, 1)
+
+        cohort_mean_m = _cohort_stats["cohort_mean_mileage"].get(cohort_key)
+        cohort_std_m = _cohort_stats["cohort_std_mileage"].get(cohort_key, 1)
+        if cohort_mean_m is not None:
+            row["mileage_vs_cohort"] = (mileage - cohort_mean_m) / max(cohort_std_m, 1)
+        else:
+            row["mileage_vs_cohort"] = 0.0
+
+        mm_mean = _cohort_stats["make_model_mean_mileage"].get(make_model_key)
+        if mm_mean is not None:
+            row["mileage_vs_make_model"] = mileage - mm_mean
+        else:
+            row["mileage_vs_make_model"] = 0.0
+    else:
+        row["cohort_size"] = 1
+        row["mileage_vs_cohort"] = 0.0
+        row["mileage_vs_make_model"] = 0.0
 
     return row
 

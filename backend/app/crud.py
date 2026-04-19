@@ -127,30 +127,74 @@ def get_recommendations(
     model: str,
     year: int,
     mileage: Optional[float] = None,
+    predicted_price: Optional[float] = None,
     limit: int = 5,
 ) -> list:
+    # Price proximity is the main ranking signal
+    if predicted_price is not None:
+        price_score = func.abs(models.Car.price - predicted_price) / predicted_price
+    else:
+        price_score = 0
+
     score_expr = (
-        func.abs(models.Car.year - year) * 3
-        + func.coalesce(models.Car.mileage, 0) / 10000.0
+        price_score * 10                                    # price closeness dominates
+        + func.abs(models.Car.year - year) * 1.0            # year proximity
+        + func.abs(func.coalesce(models.Car.mileage, 0) - (mileage or 0)) / 50000.0  # mileage proximity
     )
 
-    # Pass 1: same make + model
+    # Tight spec filters: +-1 year, +-20k km
+    year_filter = [
+        models.Car.year >= year - 1,
+        models.Car.year <= year + 1,
+    ]
+    mileage_filter = []
+    if mileage is not None:
+        mileage_filter = [
+            models.Car.mileage >= mileage - 20000,
+            models.Car.mileage <= mileage + 20000,
+        ]
+
+    # Pass 1: same make + model, tight filters
     primary = (
         db.query(models.Car)
-        .filter(models.Car.make == make, models.Car.model == model)
+        .filter(models.Car.make == make, models.Car.model == model, *year_filter, *mileage_filter)
         .order_by(score_expr.asc())
         .limit(limit)
         .all()
     )
 
-    if len(primary) >= 3 or len(primary) == limit:
+    if len(primary) >= limit:
         return primary
 
-    # Pass 2: same make, different model — fill up to limit
+    # Pass 2: same make + model, relaxed filters (+-2 years, no mileage cap)
+    seen = {c.id for c in primary}
+    needed = limit - len(primary)
+    relaxed = (
+        db.query(models.Car)
+        .filter(
+            models.Car.make == make, models.Car.model == model,
+            models.Car.id.notin_(seen) if seen else True,
+            models.Car.year >= year - 2, models.Car.year <= year + 2,
+        )
+        .order_by(score_expr.asc())
+        .limit(needed)
+        .all()
+    )
+    primary += relaxed
+
+    if len(primary) >= limit:
+        return primary[:limit]
+
+    # Pass 3: same make, different model — fill remaining
+    seen = {c.id for c in primary}
     needed = limit - len(primary)
     fallback = (
         db.query(models.Car)
-        .filter(models.Car.make == make, models.Car.model != model)
+        .filter(
+            models.Car.make == make,
+            models.Car.model != model,
+            models.Car.id.notin_(seen) if seen else True,
+        )
         .order_by(score_expr.asc())
         .limit(needed)
         .all()

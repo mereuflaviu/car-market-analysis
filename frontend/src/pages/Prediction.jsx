@@ -213,6 +213,7 @@ export default function Prediction() {
       model: result.input.model,
       year: result.input.year,
       mileage: result.input.mileage,
+      predicted_price: result.predicted_price,
       limit: 5,
     }).then((r) => setRecs(r.data)).catch(() => setRecs([]))
   }, [result])

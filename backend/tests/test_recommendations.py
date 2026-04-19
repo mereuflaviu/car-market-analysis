@@ -83,3 +83,18 @@ def test_endpoint_requires_make():
     client = TestClient(app)
     resp = client.get("/api/cars/recommendations?model=320d&year=2019&mileage=60000")
     assert resp.status_code == 422
+
+
+def test_price_proximity_ordering(db):
+    """Cars closer to predicted price should rank higher."""
+    results = crud.get_recommendations(
+        db, make="BMW", model="320d", year=2019,
+        mileage=60000, predicted_price=21000, limit=3
+    )
+    # The car at 20000 (2019) should rank before 17000 (2018) when predicted_price=21000
+    same_model = [c for c in results if c.model == "320d"]
+    assert len(same_model) >= 2
+    # First result should be closest to predicted price
+    prices = [c.price for c in same_model]
+    diffs = [abs(p - 21000) for p in prices]
+    assert diffs[0] <= diffs[1], f"First car (price={prices[0]}) should be closer to 21000 than second (price={prices[1]})"
