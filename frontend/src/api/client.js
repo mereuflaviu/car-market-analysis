@@ -78,6 +78,7 @@ export const carsApi = {
   delete: (id) => api.delete(`/cars/${id}`),
   stats: () => api.get('/cars/stats'),
   recommendations: (params) => api.get('/cars/recommendations', { params }),
+  dealScores: (carIds, config) => api.post('/cars/deal-scores', carIds, config),
 }
 
 // ── Predictions ───────────────────────────────────────────────────────────────

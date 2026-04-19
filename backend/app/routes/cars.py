@@ -11,6 +11,7 @@ from ..database import get_db
 from .. import crud, schemas, models
 from ..dependencies import get_current_user, get_optional_user
 from ..limiter import limiter
+from ..ml import inference
 
 logger = logging.getLogger("autoscope")
 
@@ -54,6 +55,47 @@ def _fetch_og_image(url: str) -> str | None:
 @router.get("/stats", response_model=schemas.StatsResponse)
 def get_stats(db: Session = Depends(get_db)):
     return crud.get_car_stats(db)
+
+
+@router.post("/deal-scores")
+def deal_scores(
+    car_ids: List[int],
+    db: Session = Depends(get_db),
+):
+    """Batch-predict fair prices for given car IDs and return deal scores."""
+    if not car_ids or len(car_ids) > 100:
+        raise HTTPException(status_code=400, detail="Provide 1-100 car IDs")
+
+    cars = db.query(models.Car).filter(models.Car.id.in_(car_ids)).all()
+    if not cars:
+        return {"scores": []}
+
+    car_dicts = []
+    for car in cars:
+        car_dicts.append({
+            "id": car.id,
+            "make": car.make,
+            "model": car.model,
+            "year": car.year,
+            "body_type": car.body_type,
+            "mileage": car.mileage,
+            "color": car.color,
+            "fuel_type": car.fuel_type,
+            "engine_capacity": car.engine_capacity,
+            "engine_power": car.engine_power,
+            "gearbox": car.gearbox,
+            "transmission": car.transmission,
+            "pollution_standard": car.pollution_standard,
+            "price": car.price,
+            "equipment_count": 0,
+        })
+
+    try:
+        scores = inference.predict_batch(car_dicts)
+        return {"scores": scores}
+    except Exception as exc:
+        logger.error("Deal score batch failed: %s", exc)
+        raise HTTPException(status_code=500, detail="Could not compute deal scores")
 
 
 @router.get("", response_model=schemas.CarListResponse)

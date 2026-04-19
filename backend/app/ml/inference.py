@@ -208,6 +208,92 @@ def predict(input_data: dict) -> dict:
     }
 
 
+def predict_batch(cars: list[dict]) -> list[dict]:
+    """Run inference on multiple cars and return deal scores.
+
+    Each car dict must have: make, model, year, and ideally mileage,
+    engine_power, engine_capacity, fuel_type, gearbox, transmission,
+    body_type, pollution_standard, color.  equipment_count defaults to 0.
+
+    Returns a list of {car_id, predicted_price, deal_pct, deal_label}.
+    """
+    _ensure_loaded()
+    log_target = _metadata.get("log_target", False)
+    all_feats  = _metadata["all_features"]
+    cat_feats  = _metadata["categorical_features"]
+    bin_feats  = _metadata.get("binary_features", [])
+    num_feats  = _metadata["numerical_features"]
+    tenc_feats = _metadata.get("target_enc_features", [])
+
+    rows = []
+    car_ids = []
+    actual_prices = []
+    for car in cars:
+        row = dict(car)
+        row.setdefault("equipment_count", 0)
+        row = _add_engineered(row)
+        rows.append(row)
+        car_ids.append(car["id"])
+        actual_prices.append(float(car["price"]))
+
+    # Build DataFrame for all cars at once
+    feat_rows = []
+    for row in rows:
+        feat_row = {}
+        for col in all_feats:
+            val = row.get(col)
+            if val is not None:
+                feat_row[col] = val
+            elif col in bin_feats:
+                feat_row[col] = 0
+            else:
+                feat_row[col] = None
+        feat_rows.append(feat_row)
+
+    X = pd.DataFrame(feat_rows)[all_feats]
+
+    if cat_feats:
+        X[cat_feats] = _ord_enc.transform(X[cat_feats])
+    if tenc_feats and _te_enc is not None:
+        X = _te_enc.transform(X, tenc_feats)
+    for col in num_feats + bin_feats:
+        if col in X.columns:
+            X[col] = pd.to_numeric(X[col], errors="coerce").fillna(0)
+
+    raw_preds = _model.predict(X)
+
+    results = []
+    for i, raw in enumerate(raw_preds):
+        predicted = float(np.exp(raw)) if log_target else float(raw)
+        predicted = max(0.0, round(predicted, 2))
+        actual = actual_prices[i]
+
+        if predicted > 0:
+            deal_pct = round((actual - predicted) / predicted * 100, 1)
+        else:
+            deal_pct = 0.0
+
+        if deal_pct <= -15:
+            deal_label = "Great Deal"
+        elif deal_pct <= -5:
+            deal_label = "Good Deal"
+        elif deal_pct <= 5:
+            deal_label = "Fair Price"
+        elif deal_pct <= 15:
+            deal_label = "Above Market"
+        else:
+            deal_label = "Overpriced"
+
+        results.append({
+            "car_id": car_ids[i],
+            "predicted_price": predicted,
+            "deal_pct": deal_pct,
+            "deal_label": deal_label,
+        })
+
+    return results
+
+
 def get_feature_importance(top_n: int = 15) -> list[dict]:
     _ensure_loaded()
     fi = _metadata.get("feature_importance", {})

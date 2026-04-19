@@ -1,8 +1,32 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 import { carsApi, makesApi } from '../api/client'
 import CarForm from '../components/CarForm'
 import { useAuth } from '../context/AuthContext'
 import { HoverPeek } from '../components/ui/link-preview'
+
+const DEAL_STYLES = {
+  'Great Deal':   { bg: 'bg-emerald-100', text: 'text-emerald-800', icon: '▼▼' },
+  'Good Deal':    { bg: 'bg-green-100',   text: 'text-green-700',   icon: '▼' },
+  'Fair Price':   { bg: 'bg-gray-100',    text: 'text-gray-600',    icon: '—' },
+  'Above Market': { bg: 'bg-orange-100',  text: 'text-orange-700',  icon: '▲' },
+  'Overpriced':   { bg: 'bg-red-100',     text: 'text-red-700',     icon: '▲▲' },
+}
+
+function DealBadge({ score }) {
+  if (!score) return <span className="text-xs text-as-muted">…</span>
+  const style = DEAL_STYLES[score.deal_label] || DEAL_STYLES['Fair Price']
+  const sign = score.deal_pct > 0 ? '+' : ''
+  return (
+    <div className="flex flex-col items-start gap-0.5">
+      <span className={`deal-badge inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold ${style.bg} ${style.text}`}>
+        {style.icon} {score.deal_label}
+      </span>
+      <span className="text-[10px] text-as-muted leading-tight ml-0.5">
+        {sign}{score.deal_pct}% · est. €{Number(score.predicted_price).toLocaleString()}
+      </span>
+    </div>
+  )
+}
 
 function Pagination({ page, total, pageSize, onChange }) {
   const totalPages = Math.ceil(total / pageSize)
@@ -50,6 +74,9 @@ export default function Listings() {
 
   const [showForm, setShowForm] = useState(false)
   const [editCar, setEditCar] = useState(null)
+  const [dealScores, setDealScores] = useState({})
+  const [scoresLoading, setScoresLoading] = useState(false)
+  const scoresAbort = useRef(null)
 
   const { user } = useAuth()
   const PAGE_SIZE = 20
@@ -93,6 +120,31 @@ export default function Listings() {
   useEffect(() => {
     fetchCars(page)
   }, [page, fetchCars])
+
+  // Fetch deal scores for current page of cars
+  useEffect(() => {
+    if (cars.length === 0) { setDealScores({}); return }
+
+    // Cancel any in-flight request
+    if (scoresAbort.current) scoresAbort.current.abort()
+    const controller = new AbortController()
+    scoresAbort.current = controller
+
+    setScoresLoading(true)
+    const ids = cars.map((c) => c.id)
+    carsApi.dealScores(ids, { signal: controller.signal })
+      .then((res) => {
+        const map = {}
+        for (const s of res.data.scores) map[s.car_id] = s
+        setDealScores(map)
+      })
+      .catch((err) => {
+        if (err?.name !== 'CanceledError') console.error('Deal scores failed:', err)
+      })
+      .finally(() => setScoresLoading(false))
+
+    return () => controller.abort()
+  }, [cars])
 
   const handleFilter = (key, value) => {
     setFilters((p) => {
@@ -283,7 +335,7 @@ export default function Listings() {
                 <table className="min-w-full text-sm">
                   <thead className="bg-[#f9f9f9] border-b border-[#e8e8e8]">
                     <tr>
-                      {['Make', 'Model', 'Year', 'Body', 'Fuel', 'Mileage', 'Power', 'Gearbox', 'Trans.', 'Price', 'Source', ''].map(
+                      {['Make', 'Model', 'Year', 'Body', 'Fuel', 'Mileage', 'Power', 'Gearbox', 'Trans.', 'Price', 'Deal Score', 'Source', ''].map(
                         (h) => (
                           <th
                             key={h}
@@ -298,7 +350,7 @@ export default function Listings() {
                   <tbody className="divide-y divide-[#f0f0f0]">
                     {cars.length === 0 ? (
                       <tr>
-                        <td colSpan={11} className="px-4 py-10 text-center text-as-muted">
+                        <td colSpan={13} className="px-4 py-10 text-center text-as-muted">
                           No cars found matching your filters.
                         </td>
                       </tr>
@@ -320,6 +372,9 @@ export default function Listings() {
                           <td className="px-3 py-2.5 text-as-muted whitespace-nowrap">{car.transmission || '—'}</td>
                           <td className="px-3 py-2.5 font-semibold text-black whitespace-nowrap">
                             €{fmt(car.price)}
+                          </td>
+                          <td className="px-3 py-2.5 whitespace-nowrap">
+                            <DealBadge score={dealScores[car.id]} />
                           </td>
                           <td className="px-3 py-2.5">
                             {car.source_url ? (
