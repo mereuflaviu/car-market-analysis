@@ -20,6 +20,13 @@ def model_info():
     return inference.get_model_info()
 
 
+@router.get("/equipment-values")
+def equipment_values():
+    """Return equipment resale value map (EUR) used by the ML model."""
+    from ..ml.train_extended import EQUIPMENT_VALUE
+    return {"values": EQUIPMENT_VALUE}
+
+
 @router.post("/predict", response_model=schemas.PredictResponse)
 @limiter.limit("20/minute")
 def predict_price(

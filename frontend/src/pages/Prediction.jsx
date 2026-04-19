@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import { predictionsApi, makesApi, carsApi } from '../api/client'
 import { useAuth } from '../context/AuthContext'
@@ -161,9 +161,12 @@ export default function Prediction() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const [recs, setRecs] = useState(null)
+  const [equipValues, setEquipValues] = useState({})
+  const [showRoi, setShowRoi] = useState(false)
 
   useEffect(() => {
     makesApi.options().then((r) => setOptions(r.data)).catch(() => {})
+    predictionsApi.equipmentValues().then((r) => setEquipValues(r.data.values || {})).catch(() => {})
     loadHistory()
   }, [])
 
@@ -228,6 +231,21 @@ export default function Prediction() {
   const toggleEquip = (k) => setEquip((p) => ({ ...p, [k]: !p[k] }))
 
   const equipCount = Object.values(equip).filter(Boolean).length
+  const equipTotalValue = useMemo(
+    () => ALL_EQUIP_KEYS.reduce((sum, k) => sum + (equip[k] ? (equipValues[k] || 0) : 0), 0),
+    [equip, equipValues],
+  )
+  const roiRanking = useMemo(() => {
+    const all = ALL_EQUIP_KEYS
+      .map((k) => {
+        const group = EQUIPMENT_GROUPS.find((g) => g.items.some((i) => i.key === k))
+        const item = group?.items.find((i) => i.key === k)
+        return { key: k, label: item?.label || k, value: equipValues[k] || 0, selected: !!equip[k] }
+      })
+      .filter((x) => x.value > 0)
+      .sort((a, b) => b.value - a.value)
+    return all
+  }, [equipValues, equip])
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -351,6 +369,11 @@ export default function Prediction() {
                   {tier.label}
                 </span>
                 <span className="text-xs text-as-muted">{equipCount} selected</span>
+                {equipTotalValue > 0 && (
+                  <span className="text-xs font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full equip-value-total">
+                    +€{equipTotalValue.toLocaleString()} value
+                  </span>
+                )}
                 {equipCount > 0 && (
                   <button type="button" onClick={() => setEquip(EMPTY_EQUIP)}
                     className="text-xs text-as-muted hover:text-black underline transition-colors">
@@ -367,21 +390,29 @@ export default function Prediction() {
                     {group.label}
                   </div>
                   <div className="grid grid-cols-2 sm:grid-cols-3 gap-y-2 gap-x-3">
-                    {group.items.map(({ key, label }) => (
-                      <label key={key}
-                        className={`flex items-center gap-2 text-xs cursor-pointer rounded-lg px-2.5 py-1.5 border transition-colors select-none
-                          ${equip[key]
-                            ? 'bg-black border-black text-white font-medium'
-                            : 'bg-white border-[#e0e0e0] text-as-body hover:border-black hover:bg-as-chip'}`}>
-                        <input
-                          type="checkbox"
-                          className="accent-black w-3.5 h-3.5 flex-shrink-0"
-                          checked={equip[key]}
-                          onChange={() => toggleEquip(key)}
-                        />
-                        {label}
-                      </label>
-                    ))}
+                    {group.items.map(({ key, label }) => {
+                      const val = equipValues[key]
+                      return (
+                        <label key={key}
+                          className={`flex items-center gap-2 text-xs cursor-pointer rounded-lg px-2.5 py-1.5 border transition-colors select-none
+                            ${equip[key]
+                              ? 'bg-black border-black text-white font-medium'
+                              : 'bg-white border-[#e0e0e0] text-as-body hover:border-black hover:bg-as-chip'}`}>
+                          <input
+                            type="checkbox"
+                            className="accent-black w-3.5 h-3.5 flex-shrink-0"
+                            checked={equip[key]}
+                            onChange={() => toggleEquip(key)}
+                          />
+                          <span className="flex-1">{label}</span>
+                          {val > 0 && (
+                            <span className={`text-[10px] font-medium flex-shrink-0 ${equip[key] ? 'text-emerald-300' : 'text-emerald-600'}`}>
+                              +€{val.toLocaleString()}
+                            </span>
+                          )}
+                        </label>
+                      )
+                    })}
                   </div>
                 </div>
               ))}
@@ -437,6 +468,47 @@ export default function Prediction() {
             <div className="card border-2 border-dashed border-[#e0e0e0] flex flex-col items-center justify-center py-14 text-center">
               <div className="text-4xl mb-3">🤖</div>
               <div className="text-as-muted text-sm">Fill in the form and click<br />Predict Price</div>
+            </div>
+          )}
+
+          {/* Equipment ROI Ranking */}
+          {roiRanking.length > 0 && (
+            <div className="card p-4">
+              <button
+                type="button"
+                className="w-full flex items-center justify-between"
+                onClick={() => setShowRoi((p) => !p)}
+              >
+                <div className="text-xs font-semibold text-as-body">Equipment ROI Ranking</div>
+                <span className="text-as-muted text-xs">{showRoi ? '▲ Hide' : '▼ Show'}</span>
+              </button>
+              <p className="text-[10px] text-as-muted mt-1 mb-2">Which options add the most resale value</p>
+              {showRoi && (
+                <div className="space-y-1 max-h-72 overflow-y-auto">
+                  {roiRanking.map((item, i) => (
+                    <div
+                      key={item.key}
+                      className={`flex items-center gap-2 text-xs px-2 py-1.5 rounded-lg transition-colors cursor-pointer ${
+                        item.selected
+                          ? 'bg-emerald-50 border border-emerald-200 equip-roi-selected'
+                          : 'hover:bg-as-chip'
+                      }`}
+                      onClick={() => toggleEquip(item.key)}
+                    >
+                      <span className="text-as-muted w-4 text-right flex-shrink-0">{i + 1}.</span>
+                      <span className={`flex-1 ${item.selected ? 'font-medium text-black' : 'text-as-body'}`}>
+                        {item.label}
+                      </span>
+                      <span className={`font-semibold flex-shrink-0 ${item.selected ? 'text-emerald-700' : 'text-emerald-600'}`}>
+                        +€{item.value.toLocaleString()}
+                      </span>
+                      {item.selected && (
+                        <span className="text-emerald-500 text-[10px]">✓</span>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           )}
 

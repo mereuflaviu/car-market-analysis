@@ -88,6 +88,7 @@ export const predictionsApi = {
   get: (id) => api.get(`/predictions/${id}`),
   delete: (id) => api.delete(`/predictions/${id}`),
   modelInfo: () => api.get('/predictions/model-info'),
+  equipmentValues: () => api.get('/predictions/equipment-values'),
 }
 
 // ── Analytics ─────────────────────────────────────────────────────────────────

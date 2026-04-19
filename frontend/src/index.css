@@ -155,6 +155,16 @@ html.dark .btn-ghost:hover {
   background-color: #252525 !important;
 }
 
+/* ── Equipment ROI ────────────────────────────────── */
+html.dark .equip-value-total       { background-color: rgba(6,78,59,0.3) !important; color: #6ee7b7 !important; }
+html.dark .equip-roi-selected      { background-color: rgba(6,78,59,0.2) !important; border-color: rgba(6,78,59,0.4) !important; }
+html.dark .text-emerald-600        { color: #6ee7b7 !important; }
+html.dark .text-emerald-700        { color: #6ee7b7 !important; }
+html.dark .text-emerald-300        { color: #a7f3d0 !important; }
+html.dark .text-emerald-500        { color: #34d399 !important; }
+html.dark .bg-emerald-50           { background-color: rgba(6,78,59,0.2) !important; }
+html.dark .border-emerald-200      { border-color: rgba(6,78,59,0.4) !important; }
+
 /* ── Deal score badges ────────────────────────────── */
 html.dark .deal-badge.bg-emerald-100 { background-color: rgba(6,78,59,0.35) !important; color: #6ee7b7 !important; }
 html.dark .deal-badge.bg-green-100   { background-color: rgba(20,83,45,0.35) !important; color: #86efac !important; }
