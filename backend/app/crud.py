@@ -129,84 +129,63 @@ def get_recommendations(
     year: int,
     mileage: Optional[float] = None,
     predicted_price: Optional[float] = None,
+    fuel_type: Optional[str] = None,
+    transmission: Optional[str] = None,
     limit: int = 5,
 ) -> list:
-    # Price proximity is the main ranking signal
     if predicted_price is not None:
         price_score = func.abs(models.Car.price - predicted_price) / predicted_price
     else:
         price_score = 0
 
     score_expr = (
-        price_score * 10                                    # price closeness dominates
-        + func.abs(models.Car.year - year) * 1.0            # year proximity
-        + func.abs(func.coalesce(models.Car.mileage, 0) - (mileage or 0)) / 50000.0  # mileage proximity
+        price_score * 10
+        + func.abs(models.Car.year - year) * 1.0
+        + func.abs(func.coalesce(models.Car.mileage, 0) - (mileage or 0)) / 50000.0
     )
 
-    # Tight spec filters: +-1 year, +-20k km
-    year_filter = [
-        models.Car.year >= year - 1,
-        models.Car.year <= year + 1,
-    ]
-    mileage_filter = []
-    if mileage is not None:
-        mileage_filter = [
-            models.Car.mileage >= mileage - 20000,
-            models.Car.mileage <= mileage + 20000,
-        ]
+    base = [models.Car.status == "active", models.Car.make == make, models.Car.model == model]
+    results: list = []
 
-    # Pass 1: same make + model, tight filters
-    primary = (
-        db.query(models.Car)
-        .filter(models.Car.status == "active", models.Car.make == make, models.Car.model == model, *year_filter, *mileage_filter)
-        .order_by(score_expr.asc())
-        .limit(limit)
-        .all()
-    )
-
-    if len(primary) >= limit:
-        return primary
-
-    # Pass 2: same make + model, relaxed filters (+-2 years, no mileage cap)
-    seen = {c.id for c in primary}
-    needed = limit - len(primary)
-    relaxed = (
-        db.query(models.Car)
-        .filter(
-            models.Car.status == "active",
-            models.Car.make == make, models.Car.model == model,
-            models.Car.id.notin_(seen) if seen else True,
-            models.Car.year >= year - 2, models.Car.year <= year + 2,
+    def _fill(extra_filters):
+        nonlocal results
+        needed = limit - len(results)
+        if needed <= 0:
+            return
+        seen = {c.id for c in results}
+        excl = [models.Car.id.notin_(seen)] if seen else []
+        batch = (
+            db.query(models.Car)
+            .filter(*base, *excl, *extra_filters)
+            .order_by(score_expr.asc())
+            .limit(needed)
+            .all()
         )
-        .order_by(score_expr.asc())
-        .limit(needed)
-        .all()
-    )
-    primary += relaxed
+        results += batch
 
-    if len(primary) >= limit:
-        return primary[:limit]
+    fuel_f = [models.Car.fuel_type == fuel_type] if fuel_type else []
+    trans_f = [models.Car.transmission == transmission] if transmission else []
+    yr = models.Car.year
 
-    # Pass 3: same make, different model — fill remaining
-    seen = {c.id for c in primary}
-    needed = limit - len(primary)
-    fallback = (
-        db.query(models.Car)
-        .filter(
-            models.Car.status == "active",
-            models.Car.make == make,
-            models.Car.model != model,
-            models.Car.id.notin_(seen) if seen else True,
-        )
-        .order_by(score_expr.asc())
-        .limit(needed)
-        .all()
-    )
+    # Pass 1: exact year + fuel + transmission
+    _fill([yr == year, *fuel_f, *trans_f])
+    # Pass 2: exact year + fuel
+    _fill([yr == year, *fuel_f])
+    # Pass 3: exact year, any fuel/transmission
+    _fill([yr == year])
+    # Pass 4: ±1 year
+    _fill([yr >= year - 1, yr <= year + 1])
+    # Pass 5: ±2 years
+    _fill([yr >= year - 2, yr <= year + 2])
+    # Pass 6: ±3 years (last resort, always same make+model)
+    _fill([yr >= year - 3, yr <= year + 3])
 
-    return primary + fallback
+    return results[:limit]
 
 
 # ── PREDICTIONS ──────────────────────────────────────────────────────────────
+
+import json as _json
 
 _PRED_FIELDS = {
     "make", "model", "year", "body_type", "mileage",
@@ -217,7 +196,12 @@ _PRED_FIELDS = {
 
 def create_prediction_record(db: Session, input_data: dict, predicted_price: float, user_id: Optional[int] = None):
     filtered = {k: v for k, v in input_data.items() if k in _PRED_FIELDS}
-    db_pred = models.Prediction(**filtered, predicted_price=round(predicted_price, 2), user_id=user_id)
+    db_pred = models.Prediction(
+        **filtered,
+        predicted_price=round(predicted_price, 2),
+        user_id=user_id,
+        payload_json=_json.dumps(input_data),
+    )
     db.add(db_pred)
     db.commit()
     db.refresh(db_pred)

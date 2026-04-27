@@ -89,4 +89,5 @@ class Prediction(Base):
     transmission = Column(String)
     pollution_standard = Column(String)
     predicted_price = Column(Float, nullable=False)
+    payload_json = Column(String, nullable=True)
     created_at = Column(DateTime, default=datetime.utcnow)

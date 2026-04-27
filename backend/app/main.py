@@ -44,6 +44,9 @@ def _run_migrations():
         if "user_id" not in pred_cols:
             conn.execute(text("ALTER TABLE predictions ADD COLUMN user_id INTEGER REFERENCES users(id)"))
             logger.info("Migration: added predictions.user_id")
+        if "payload_json" not in pred_cols:
+            conn.execute(text("ALTER TABLE predictions ADD COLUMN payload_json TEXT"))
+            logger.info("Migration: added predictions.payload_json")
 
         if "source_url" not in car_cols:
             conn.execute(text("ALTER TABLE cars ADD COLUMN source_url TEXT"))

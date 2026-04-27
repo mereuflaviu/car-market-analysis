@@ -104,6 +104,15 @@ const EQUIPMENT_GROUPS = [
   },
 ]
 
+function StalenessTag({ lastSeen }) {
+  if (!lastSeen) return null
+  const days = Math.floor((Date.now() - new Date(lastSeen).getTime()) / 86400000)
+  if (days <= 1) return <span className="text-[10px] text-emerald-600">today</span>
+  if (days <= 7) return <span className="text-[10px] text-as-muted">{days}d ago</span>
+  if (days <= 30) return <span className="text-[10px] text-orange-500">{days}d ago</span>
+  return <span className="text-[10px] text-red-500">{days}d ago</span>
+}
+
 const DEAL_STYLES = {
   'Great Deal':   { bg: 'bg-emerald-100', text: 'text-emerald-800', icon: '▼▼' },
   'Good Deal':    { bg: 'bg-green-100',   text: 'text-green-700',   icon: '▼' },
@@ -227,7 +236,10 @@ export default function Prediction() {
     carsApi.recommendations({
       make: result.input.make, model: result.input.model,
       year: result.input.year, mileage: result.input.mileage,
-      predicted_price: result.predicted_price, limit: 5,
+      predicted_price: result.predicted_price,
+      fuel_type: result.input.fuel_type,
+      transmission: result.input.transmission,
+      limit: 5,
     }).then((r) => setRecs(r.data)).catch(() => setRecs([]))
   }, [result])
 
@@ -298,6 +310,62 @@ export default function Prediction() {
   const deleteHistory = async (id) => {
     await predictionsApi.delete(id).catch(() => {})
     loadHistory()
+  }
+
+  const loadFromHistory = async (entry) => {
+    // Parse full payload if available, otherwise fall back to basic fields
+    let payload = null
+    try { payload = entry.payload_json ? JSON.parse(entry.payload_json) : null } catch {}
+
+    const src = payload || entry
+
+    const restoredForm = {
+      make: src.make || '', model: src.model || '',
+      year: String(src.year || ''), body_type: src.body_type || '',
+      mileage: String(src.mileage || ''), color: src.color || '',
+      fuel_type: src.fuel_type || '',
+      engine_capacity: String(src.engine_capacity || ''),
+      engine_power: String(src.engine_power || ''),
+      gearbox: src.gearbox || '', transmission: src.transmission || '',
+      pollution_standard: src.pollution_standard || '',
+    }
+    setForm(restoredForm)
+
+    // Restore equipment flags only when full payload is available
+    if (payload) {
+      const restoredEquip = { ...EMPTY_EQUIP }
+      for (const k of ALL_EQUIP_KEYS) {
+        if (payload[k] !== undefined) restoredEquip[k] = Boolean(payload[k])
+      }
+      setEquip(restoredEquip)
+    }
+
+    // Scroll form into view so user sees the filled specs
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+
+    setLoading(true)
+    setError('')
+    setResult(null)
+    setRecs(null)
+    try {
+      const predictPayload = payload || {
+        ...restoredForm,
+        year: parseInt(restoredForm.year),
+        mileage: parseFloat(restoredForm.mileage),
+        engine_capacity: parseFloat(restoredForm.engine_capacity),
+        engine_power: parseFloat(restoredForm.engine_power),
+        equipment_count: 0,
+        ...EMPTY_EQUIP,
+      }
+      const r = await predictionsApi.predict(predictPayload)
+      setResult(r.data)
+      loadHistory()
+      setTimeout(() => resultRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 300)
+    } catch (err) {
+      setError(err.message || 'Prediction failed.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   const fmt = (n) => Number(n).toLocaleString('de-DE')
@@ -506,7 +574,14 @@ export default function Prediction() {
 
             {/* Similar Listings — takes 2/3 */}
             <div className="lg:col-span-2 card p-5">
-              <h3 className="font-semibold text-black mb-3">Similar Listings on Market</h3>
+              <div className="flex items-start justify-between mb-3">
+                <h3 className="font-semibold text-black">Similar Listings on Market</h3>
+                {equipCount > 0 && (
+                  <span className="text-[11px] text-as-muted bg-[#f9f9f9] border border-[#e8e8e8] rounded px-2 py-1 leading-tight max-w-[200px] text-right">
+                    Your estimate includes {equipCount} equipment options. Listed cars may differ.
+                  </span>
+                )}
+              </div>
               {recs === null ? (
                 <div className="space-y-2 animate-pulse">
                   {[...Array(3)].map((_, i) => (
@@ -520,7 +595,7 @@ export default function Prediction() {
                   <table className="min-w-full text-sm">
                     <thead className="bg-[#f9f9f9] border-b border-[#e8e8e8]">
                       <tr>
-                        {['Car', 'Year', 'Fuel', 'Mileage', 'Power', 'Gearbox', 'Price', 'Deal Score', ''].map((h) => (
+                        {['Car', 'Year', 'Fuel', 'Mileage', 'Power', 'Gearbox', 'Price', 'Verified', 'Deal Score', ''].map((h) => (
                           <th key={h} className="px-3 py-2.5 text-left text-xs font-semibold text-as-muted uppercase tracking-wider whitespace-nowrap">
                             {h}
                           </th>
@@ -545,6 +620,9 @@ export default function Prediction() {
                           <td className="px-3 py-2.5 text-as-muted">{car.gearbox || '—'}</td>
                           <td className="px-3 py-2.5 font-semibold text-black whitespace-nowrap">
                             €{Number(car.price).toLocaleString('de-DE')}
+                          </td>
+                          <td className="px-3 py-2.5 whitespace-nowrap">
+                            <StalenessTag lastSeen={car.last_seen} />
                           </td>
                           <td className="px-3 py-2.5 whitespace-nowrap">
                             <DealBadge score={recScores[car.id]} />
@@ -644,7 +722,12 @@ export default function Prediction() {
               </thead>
               <tbody className="divide-y divide-[#f0f0f0]">
                 {history.map((p) => (
-                  <tr key={p.id} className="hover:bg-as-chip">
+                  <tr
+                    key={p.id}
+                    className="hover:bg-as-chip cursor-pointer group"
+                    onClick={() => loadFromHistory(p)}
+                    title="Click to re-predict with these specs"
+                  >
                     <td className="px-3 py-2">
                       <span className="font-medium">{p.make}</span>{' '}
                       <span className="text-as-body">{p.model}</span>
@@ -657,9 +740,16 @@ export default function Prediction() {
                     <td className="px-3 py-2 text-as-muted text-xs whitespace-nowrap">
                       {p.created_at ? new Date(p.created_at).toLocaleDateString() : '—'}
                     </td>
-                    <td className="px-3 py-2">
-                      <button className="text-as-muted hover:text-black text-lg leading-none transition-colors"
-                        onClick={() => deleteHistory(p.id)}>×</button>
+                    <td className="px-3 py-2 flex items-center gap-2">
+                      {p.payload_json && (
+                        <span className="text-[10px] text-blue-500 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                          ↩ Load
+                        </span>
+                      )}
+                      <button
+                        className="text-as-muted hover:text-black text-lg leading-none transition-colors"
+                        onClick={(e) => { e.stopPropagation(); deleteHistory(p.id) }}
+                      >×</button>
                     </td>
                   </tr>
                 ))}

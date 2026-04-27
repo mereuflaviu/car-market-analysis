@@ -49,6 +49,7 @@ class CarOut(CarBase):
     source_url: Optional[str] = None
     created_at: Optional[datetime] = None
     updated_at: Optional[datetime] = None
+    last_seen: Optional[datetime] = None
     model_config = {"from_attributes": True}
 
 
@@ -60,6 +61,8 @@ class CarListResponse(BaseModel):
 
 
 class PredictionInput(BaseModel):
+    model_config = {"extra": "allow"}
+
     make: str = Field(..., min_length=1, max_length=64)
     model: str = Field(..., min_length=1, max_length=64)
     year: int = Field(..., ge=1950, le=2030)
@@ -91,6 +94,7 @@ class PredictionOut(BaseModel):
     transmission: Optional[str] = None
     pollution_standard: Optional[str] = None
     predicted_price: float
+    payload_json: Optional[str] = None
     created_at: Optional[datetime] = None
     model_config = {"from_attributes": True}
 
