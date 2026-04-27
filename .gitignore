@@ -54,6 +54,9 @@ logs/
 # Claude Code memory
 .claude/
 
+# Dataset — not public
+model/data/*.csv
+
 # Debug / scratch files
 model/extraction/debug_next_data.json
 presentation-prompt.md

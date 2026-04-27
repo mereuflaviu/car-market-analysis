@@ -1,6 +1,7 @@
 import os
 import logging
 import traceback
+from datetime import datetime
 
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
@@ -10,6 +11,8 @@ from dotenv import load_dotenv
 from slowapi import _rate_limit_exceeded_handler
 from slowapi.errors import RateLimitExceeded
 from sqlalchemy import text
+from apscheduler.schedulers.background import BackgroundScheduler
+from apscheduler.triggers.cron import CronTrigger
 
 load_dotenv()
 
@@ -45,6 +48,29 @@ def _run_migrations():
         if "source_url" not in car_cols:
             conn.execute(text("ALTER TABLE cars ADD COLUMN source_url TEXT"))
             logger.info("Migration: added cars.source_url")
+
+        if "status" not in car_cols:
+            conn.execute(text("ALTER TABLE cars ADD COLUMN status TEXT NOT NULL DEFAULT 'active'"))
+            conn.execute(text("CREATE INDEX IF NOT EXISTS ix_cars_status ON cars(status)"))
+            logger.info("Migration: added cars.status")
+
+        if "days_missing" not in car_cols:
+            conn.execute(text("ALTER TABLE cars ADD COLUMN days_missing INTEGER NOT NULL DEFAULT 0"))
+            logger.info("Migration: added cars.days_missing")
+
+        if "first_seen" not in car_cols:
+            conn.execute(text("ALTER TABLE cars ADD COLUMN first_seen TIMESTAMP"))
+            conn.execute(text("UPDATE cars SET first_seen = created_at WHERE first_seen IS NULL"))
+            logger.info("Migration: added cars.first_seen")
+
+        if "last_seen" not in car_cols:
+            conn.execute(text("ALTER TABLE cars ADD COLUMN last_seen TIMESTAMP"))
+            conn.execute(text("UPDATE cars SET last_seen = updated_at WHERE last_seen IS NULL"))
+            logger.info("Migration: added cars.last_seen")
+
+        if "sold_at" not in car_cols:
+            conn.execute(text("ALTER TABLE cars ADD COLUMN sold_at TIMESTAMP"))
+            logger.info("Migration: added cars.sold_at")
 
         conn.commit()
 
@@ -101,6 +127,27 @@ async def global_exception_handler(request: Request, exc: Exception):
     return JSONResponse(status_code=500, content={"detail": "Internal server error."})
 
 
+_scheduler = BackgroundScheduler(timezone="Europe/Bucharest")
+_full_sweep_interval = int(os.getenv("PIPELINE_FULL_SWEEP_DAYS", "3"))
+
+
+def _run_daily():
+    """Scheduled daily pipeline: scrape new listings, sync DB, retrain if new data."""
+    # Every Nth day run a full sweep instead of daily
+    today = datetime.now().timetuple().tm_yday  # day-of-year 1..365
+    mode = "full_sweep" if today % _full_sweep_interval == 0 else "daily"
+    logger.info("Scheduled pipeline starting (mode=%s)", mode)
+    try:
+        from .pipeline.run import run_pipeline
+        report = run_pipeline(mode)
+        logger.info("Scheduled pipeline finished: status=%s new=%s retrained=%s",
+                    report["status"],
+                    report.get("steps", {}).get("sync", {}).get("new", "?"),
+                    report.get("steps", {}).get("retrain", {}).get("retrained", False))
+    except Exception as exc:
+        logger.error("Scheduled pipeline crashed: %s", exc, exc_info=True)
+
+
 @app.on_event("startup")
 def validate_config():
     if _IS_PROD:
@@ -114,6 +161,31 @@ def validate_config():
             )
             raise RuntimeError("JWT_SECRET must be set to a strong random value in production")
     logger.info("AutoScope API starting — env=%s", "production" if _IS_PROD else "development")
+
+
+@app.on_event("startup")
+def start_scheduler():
+    if os.getenv("DISABLE_SCHEDULER", "").lower() in ("1", "true", "yes"):
+        logger.info("Pipeline scheduler disabled via DISABLE_SCHEDULER env var")
+        return
+    _scheduler.add_job(
+        _run_daily,
+        CronTrigger(hour=3, minute=0, timezone="Europe/Bucharest"),
+        id="pipeline_daily",
+        replace_existing=True,
+    )
+    _scheduler.start()
+    logger.info(
+        "Pipeline scheduler started — daily at 03:00 Bucharest, "
+        "full sweep every %d days", _full_sweep_interval
+    )
+
+
+@app.on_event("shutdown")
+def stop_scheduler():
+    if _scheduler.running:
+        _scheduler.shutdown(wait=False)
+        logger.info("Pipeline scheduler stopped")
 
 
 @app.get("/")

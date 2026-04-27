@@ -155,9 +155,11 @@ html.dark .btn-ghost:hover {
   background-color: #252525 !important;
 }
 
-/* ── Equipment ROI ────────────────────────────────── */
+/* ── Equipment ROI & prediction form ───────────────── */
 html.dark .equip-value-total       { background-color: rgba(6,78,59,0.3) !important; color: #6ee7b7 !important; }
 html.dark .equip-roi-selected      { background-color: rgba(6,78,59,0.2) !important; border-color: rgba(6,78,59,0.4) !important; }
+html.dark .pred-equip-on           { background-color: rgba(255,255,255,0.08) !important; border-color: #888 !important; color: #fff !important; }
+html.dark .pred-equip-off          { background-color: #111 !important; border-color: #333 !important; }
 html.dark .text-emerald-600        { color: #6ee7b7 !important; }
 html.dark .text-emerald-700        { color: #6ee7b7 !important; }
 html.dark .text-emerald-300        { color: #a7f3d0 !important; }

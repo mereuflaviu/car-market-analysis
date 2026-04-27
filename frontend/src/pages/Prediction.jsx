@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react'
+import { useState, useEffect, useMemo, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { predictionsApi, makesApi, carsApi } from '../api/client'
 import { useAuth } from '../context/AuthContext'
@@ -104,6 +104,30 @@ const EQUIPMENT_GROUPS = [
   },
 ]
 
+const DEAL_STYLES = {
+  'Great Deal':   { bg: 'bg-emerald-100', text: 'text-emerald-800', icon: '▼▼' },
+  'Good Deal':    { bg: 'bg-green-100',   text: 'text-green-700',   icon: '▼' },
+  'Fair Price':   { bg: 'bg-gray-100',    text: 'text-gray-600',    icon: '—' },
+  'Above Market': { bg: 'bg-orange-100',  text: 'text-orange-700',  icon: '▲' },
+  'Overpriced':   { bg: 'bg-red-100',     text: 'text-red-700',     icon: '▲▲' },
+}
+
+function DealBadge({ score }) {
+  if (!score) return <span className="text-[10px] text-as-muted">...</span>
+  const style = DEAL_STYLES[score.deal_label] || DEAL_STYLES['Fair Price']
+  const sign = score.deal_pct > 0 ? '+' : ''
+  return (
+    <div className="flex flex-col items-start gap-0.5">
+      <span className={`deal-badge inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold ${style.bg} ${style.text}`}>
+        {style.icon} {score.deal_label}
+      </span>
+      <span className="text-[10px] text-as-muted leading-tight">
+        {sign}{score.deal_pct}% vs est. €{Number(score.predicted_price).toLocaleString()}
+      </span>
+    </div>
+  )
+}
+
 const ALL_EQUIP_KEYS = EQUIPMENT_GROUPS.flatMap(g => g.items.map(i => i.key))
 const EMPTY_EQUIP = Object.fromEntries(ALL_EQUIP_KEYS.map(k => [k, false]))
 
@@ -118,8 +142,8 @@ function SelectField({ label, name, opts, value, onChange, required }) {
   return (
     <div>
       <label className="block text-xs font-medium text-as-body mb-1">{label}</label>
-      <select className="select-field" value={value} onChange={(e) => onChange(name, e.target.value)} required={required}>
-        <option value="">Select…</option>
+      <select className="select-field text-sm" value={value} onChange={(e) => onChange(name, e.target.value)} required={required}>
+        <option value="">Select...</option>
         {(opts || []).map((o) => <option key={o} value={o}>{o}</option>)}
       </select>
     </div>
@@ -131,21 +155,12 @@ function NumberField({ label, name, placeholder, value, onChange, unit }) {
     <div>
       <label className="block text-xs font-medium text-as-body mb-1">{label}</label>
       <div className="relative">
-        <input type="number" className="input-field" value={value} placeholder={placeholder}
+        <input type="number" className="input-field text-sm" value={value} placeholder={placeholder}
           onChange={(e) => onChange(name, e.target.value)} required />
         {unit && (
           <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-as-muted pointer-events-none">{unit}</span>
         )}
       </div>
-    </div>
-  )
-}
-
-function SectionHeading({ children }) {
-  return (
-    <div className="col-span-2 flex items-center gap-2 pt-2">
-      <div className="text-xs font-semibold text-as-muted uppercase tracking-wider whitespace-nowrap">{children}</div>
-      <div className="flex-1 border-t border-[#f0f0f0]" />
     </div>
   )
 }
@@ -161,8 +176,11 @@ export default function Prediction() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const [recs, setRecs] = useState(null)
+  const [recScores, setRecScores] = useState({})
   const [equipValues, setEquipValues] = useState({})
+  const [showEquip, setShowEquip] = useState(false)
   const [showRoi, setShowRoi] = useState(false)
+  const resultRef = useRef(null)
 
   useEffect(() => {
     makesApi.options().then((r) => setOptions(r.data)).catch(() => {})
@@ -178,22 +196,17 @@ export default function Prediction() {
     }
   }, [form.make])
 
-  // Fetch constrained options when both make and model are selected
   useEffect(() => {
     if (form.make && form.model) {
       makesApi.modelOptions(form.make, form.model).then((r) => {
         const mo = r.data
         setModelOptions(mo)
-        // Reset form fields that are no longer valid for this make+model
         setForm((prev) => {
           const updated = { ...prev }
           const checks = [
-            ['body_type', 'body_types'],
-            ['fuel_type', 'fuel_types'],
-            ['gearbox', 'gearboxes'],
-            ['transmission', 'transmissions'],
-            ['pollution_standard', 'pollution_standards'],
-            ['color', 'colors'],
+            ['body_type', 'body_types'], ['fuel_type', 'fuel_types'],
+            ['gearbox', 'gearboxes'], ['transmission', 'transmissions'],
+            ['pollution_standard', 'pollution_standards'], ['color', 'colors'],
           ]
           for (const [field, key] of checks) {
             if (mo[key] && mo[key].length > 0 && !mo[key].includes(prev[field])) {
@@ -212,14 +225,22 @@ export default function Prediction() {
     if (!result) return
     setRecs(null)
     carsApi.recommendations({
-      make: result.input.make,
-      model: result.input.model,
-      year: result.input.year,
-      mileage: result.input.mileage,
-      predicted_price: result.predicted_price,
-      limit: 5,
+      make: result.input.make, model: result.input.model,
+      year: result.input.year, mileage: result.input.mileage,
+      predicted_price: result.predicted_price, limit: 5,
     }).then((r) => setRecs(r.data)).catch(() => setRecs([]))
   }, [result])
+
+  useEffect(() => {
+    if (!recs || recs.length === 0) { setRecScores({}); return }
+    carsApi.dealScores(recs.map((c) => c.id))
+      .then((res) => {
+        const map = {}
+        for (const s of res.data.scores) map[s.car_id] = s
+        setRecScores(map)
+      })
+      .catch(() => setRecScores({}))
+  }, [recs])
 
   const { user } = useAuth()
 
@@ -236,7 +257,7 @@ export default function Prediction() {
     [equip, equipValues],
   )
   const roiRanking = useMemo(() => {
-    const all = ALL_EQUIP_KEYS
+    return ALL_EQUIP_KEYS
       .map((k) => {
         const group = EQUIPMENT_GROUPS.find((g) => g.items.some((i) => i.key === k))
         const item = group?.items.find((i) => i.key === k)
@@ -244,7 +265,6 @@ export default function Prediction() {
       })
       .filter((x) => x.value > 0)
       .sort((a, b) => b.value - a.value)
-    return all
   }, [equipValues, equip])
 
   const handleSubmit = async (e) => {
@@ -267,6 +287,7 @@ export default function Prediction() {
       const r = await predictionsApi.predict(payload)
       setResult(r.data)
       loadHistory()
+      setTimeout(() => resultRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100)
     } catch (err) {
       setError(err.message || 'Prediction failed. Is the ML model trained?')
     } finally {
@@ -283,14 +304,13 @@ export default function Prediction() {
   const price = result?.predicted_price
   const tier = equipTier(equipCount)
 
-  return (
-    <div className="space-y-6">
-      <div>
-        <h1 className="text-[32px] font-bold text-black leading-tight">Price Prediction</h1>
-        <p className="text-sm text-as-body mt-1">Enter car specifications to get an AI-powered price estimate</p>
-      </div>
-
-      {!user ? (
+  if (!user) {
+    return (
+      <div className="space-y-6">
+        <div>
+          <h1 className="text-[32px] font-bold text-black leading-tight">Price Prediction</h1>
+          <p className="text-sm text-as-body mt-1">Enter car specifications to get an AI-powered price estimate</p>
+        </div>
         <div className="card flex flex-col items-center justify-center py-20 text-center max-w-sm mx-auto">
           <div className="text-5xl mb-4">🔒</div>
           <h2 className="text-xl font-bold text-black mb-2">Sign in to predict prices</h2>
@@ -302,200 +322,287 @@ export default function Prediction() {
             <Link to="/register" className="btn-secondary px-6">Create account</Link>
           </div>
         </div>
-      ) : (
-        <>
+      </div>
+    )
+  }
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {/* ── FORM ── */}
-        <div className="lg:col-span-2 space-y-5">
+  return (
+    <div className="space-y-6">
+      <div>
+        <h1 className="text-[32px] font-bold text-black leading-tight">Price Prediction</h1>
+        <p className="text-sm text-as-body mt-1">Enter car specifications to get an AI-powered price estimate</p>
+      </div>
 
-          {/* Basic specs card */}
-          <div className="card">
-            <h2 className="font-semibold text-black mb-5">Car Specifications</h2>
-            <div className="grid grid-cols-2 gap-4">
-
-              <SectionHeading>Identity</SectionHeading>
-
-              <div>
-                <label className="block text-xs font-medium text-as-body mb-1">Make *</label>
-                <select className="select-field" value={form.make} required
-                  onChange={(e) => {
-                    set('make', e.target.value); set('model', '')
-                    if (e.target.value) makesApi.models(e.target.value).then((r) => setModels(r.data.models || [])).catch(() => setModels([]))
-                    else setModels([])
-                  }}>
-                  <option value="">Select make…</option>
-                  {(options.makes || []).map((m) => <option key={m} value={m}>{m}</option>)}
-                </select>
-              </div>
-              <div>
-                <label className="block text-xs font-medium text-as-body mb-1">Model *</label>
-                {models.length > 0 ? (
-                  <select className="select-field" value={form.model} onChange={(e) => set('model', e.target.value)} required>
-                    <option value="">Select model…</option>
-                    {models.map((m) => <option key={m} value={m}>{m}</option>)}
-                  </select>
-                ) : (
-                  <input type="text" className="input-field" placeholder="Model name" value={form.model}
-                    onChange={(e) => set('model', e.target.value)} required />
-                )}
-              </div>
-
-              <NumberField label="Year *"    name="year"    placeholder="2019"  value={form.year}    onChange={set} />
-              <SelectField label="Body Type *" name="body_type" opts={modelOptions?.body_types || options.body_types} value={form.body_type} onChange={set} required />
-
-              <SectionHeading>Engine &amp; Performance</SectionHeading>
-
-              <NumberField label="Engine Capacity *" name="engine_capacity" placeholder="1995" value={form.engine_capacity} onChange={set} unit="cm³" />
-              <NumberField label="Engine Power *"    name="engine_power"    placeholder="150"  value={form.engine_power}    onChange={set} unit="HP" />
-              <SelectField label="Fuel Type *"       name="fuel_type"       opts={modelOptions?.fuel_types || options.fuel_types} value={form.fuel_type} onChange={set} required />
-              <SelectField label="Pollution Std *"   name="pollution_standard" opts={modelOptions?.pollution_standards || options.pollution_standards} value={form.pollution_standard} onChange={set} required />
-
-              <SectionHeading>Specs</SectionHeading>
-
-              <NumberField label="Mileage *" name="mileage" placeholder="80000" value={form.mileage} onChange={set} unit="km" />
-              <SelectField label="Color *"   name="color"   opts={modelOptions?.colors || options.colors} value={form.color} onChange={set} required />
-              <SelectField label="Gearbox *"      name="gearbox"      opts={modelOptions?.gearboxes || options.gearboxes}    value={form.gearbox}      onChange={set} required />
-              <SelectField label="Transmission *" name="transmission" opts={modelOptions?.transmissions || options.transmissions} value={form.transmission} onChange={set} required />
-            </div>
+      {/* ════════ CAR SPECS ════════ */}
+      <div className="card">
+        <h2 className="font-semibold text-black mb-4">Car Specifications</h2>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-3">
+          <div>
+            <label className="block text-xs font-medium text-as-body mb-1">Make *</label>
+            <select className="select-field text-sm" value={form.make} required
+              onChange={(e) => {
+                set('make', e.target.value); set('model', '')
+                if (e.target.value) makesApi.models(e.target.value).then((r) => setModels(r.data.models || [])).catch(() => setModels([]))
+                else setModels([])
+              }}>
+              <option value="">Select make...</option>
+              {(options.makes || []).map((m) => <option key={m} value={m}>{m}</option>)}
+            </select>
           </div>
-
-          {/* Equipment card */}
-          <div className="card">
-            <div className="flex items-center justify-between mb-4">
-              <h2 className="font-semibold text-black">Equipment &amp; Options</h2>
-              <div className="flex items-center gap-2">
-                <span className={`text-xs font-semibold px-2.5 py-1 rounded-full ${tier.color}`}>
-                  {tier.label}
-                </span>
-                <span className="text-xs text-as-muted">{equipCount} selected</span>
-                {equipTotalValue > 0 && (
-                  <span className="text-xs font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full equip-value-total">
-                    +€{equipTotalValue.toLocaleString()} value
-                  </span>
-                )}
-                {equipCount > 0 && (
-                  <button type="button" onClick={() => setEquip(EMPTY_EQUIP)}
-                    className="text-xs text-as-muted hover:text-black underline transition-colors">
-                    Clear all
-                  </button>
-                )}
-              </div>
-            </div>
-
-            <div className="space-y-5">
-              {EQUIPMENT_GROUPS.map((group) => (
-                <div key={group.label}>
-                  <div className="text-xs font-semibold text-as-muted uppercase tracking-wider mb-2">
-                    {group.label}
-                  </div>
-                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-y-2 gap-x-3">
-                    {group.items.map(({ key, label }) => {
-                      const val = equipValues[key]
-                      return (
-                        <label key={key}
-                          className={`flex items-center gap-2 text-xs cursor-pointer rounded-lg px-2.5 py-1.5 border transition-colors select-none
-                            ${equip[key]
-                              ? 'bg-black border-black text-white font-medium'
-                              : 'bg-white border-[#e0e0e0] text-as-body hover:border-black hover:bg-as-chip'}`}>
-                          <input
-                            type="checkbox"
-                            className="accent-black w-3.5 h-3.5 flex-shrink-0"
-                            checked={equip[key]}
-                            onChange={() => toggleEquip(key)}
-                          />
-                          <span className="flex-1">{label}</span>
-                          {val > 0 && (
-                            <span className={`text-[10px] font-medium flex-shrink-0 ${equip[key] ? 'text-emerald-300' : 'text-emerald-600'}`}>
-                              +€{val.toLocaleString()}
-                            </span>
-                          )}
-                        </label>
-                      )
-                    })}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Submit (outside the form tag – use a wrapping form) */}
-          <form onSubmit={handleSubmit}>
-            {error && (
-              <div className="mb-3 bg-red-50 border border-red-200 text-red-700 rounded-lg px-4 py-3 text-sm">{error}</div>
+          <div>
+            <label className="block text-xs font-medium text-as-body mb-1">Model *</label>
+            {models.length > 0 ? (
+              <select className="select-field text-sm" value={form.model} onChange={(e) => set('model', e.target.value)} required>
+                <option value="">Select model...</option>
+                {models.map((m) => <option key={m} value={m}>{m}</option>)}
+              </select>
+            ) : (
+              <input type="text" className="input-field text-sm" placeholder="Model name" value={form.model}
+                onChange={(e) => set('model', e.target.value)} required />
             )}
-            <button type="submit" className="btn-primary w-full py-3 text-base" disabled={loading}>
-              {loading ? '⏳ Predicting…' : '🤖 Predict Price'}
-            </button>
-          </form>
+          </div>
+          <NumberField label="Year *"             name="year"             placeholder="2019"  value={form.year}             onChange={set} />
+          <SelectField label="Body Type *"        name="body_type"        opts={modelOptions?.body_types || options.body_types}           value={form.body_type}        onChange={set} required />
+          <NumberField label="Engine Capacity *"   name="engine_capacity"  placeholder="1995"  value={form.engine_capacity}  onChange={set} unit="cm³" />
+          <NumberField label="Engine Power *"      name="engine_power"     placeholder="150"   value={form.engine_power}     onChange={set} unit="HP" />
+          <SelectField label="Fuel Type *"         name="fuel_type"        opts={modelOptions?.fuel_types || options.fuel_types}           value={form.fuel_type}        onChange={set} required />
+          <SelectField label="Pollution Std *"     name="pollution_standard" opts={modelOptions?.pollution_standards || options.pollution_standards} value={form.pollution_standard} onChange={set} required />
+          <NumberField label="Mileage *"           name="mileage"          placeholder="80000" value={form.mileage}          onChange={set} unit="km" />
+          <SelectField label="Color *"             name="color"            opts={modelOptions?.colors || options.colors}                   value={form.color}            onChange={set} required />
+          <SelectField label="Gearbox *"           name="gearbox"          opts={modelOptions?.gearboxes || options.gearboxes}             value={form.gearbox}          onChange={set} required />
+          <SelectField label="Transmission *"      name="transmission"     opts={modelOptions?.transmissions || options.transmissions}     value={form.transmission}     onChange={set} required />
         </div>
+      </div>
 
-        {/* ── RIGHT PANEL ── */}
-        <div className="space-y-4">
-          {result ? (
-            <div className="card">
-              <div className="text-xs text-as-muted font-semibold uppercase tracking-wider mb-2">
-                Predicted Market Price
-              </div>
-              <div className="text-5xl font-extrabold text-black mb-1">
-                €{fmt(Math.round(price))}
-              </div>
+      {/* ════════ EQUIPMENT (collapsible) ════════ */}
+      <div className="card">
+        <button
+          type="button"
+          className="w-full flex items-center justify-between"
+          onClick={() => setShowEquip((p) => !p)}
+        >
+          <div className="flex items-center gap-3">
+            <h2 className="font-semibold text-black">Equipment &amp; Options</h2>
+            <span className={`text-xs font-semibold px-2.5 py-1 rounded-full ${tier.color}`}>{tier.label}</span>
+            {equipCount > 0 && (
+              <span className="text-xs text-as-muted">{equipCount} selected</span>
+            )}
+            {equipTotalValue > 0 && (
+              <span className="text-xs font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full equip-value-total">
+                +€{equipTotalValue.toLocaleString()} value
+              </span>
+            )}
+          </div>
+          <span className="text-as-muted text-sm">{showEquip ? '▲' : '▼'}</span>
+        </button>
 
-              {/* Price range bar */}
-              <div className="mt-3 mb-3">
-                <div className="flex justify-between text-xs text-as-muted mb-1">
-                  <span>€{fmt(Math.round(price - 1986))}</span>
-                  <span className="text-black font-semibold">±€{fmt(1986)} MAE</span>
-                  <span>€{fmt(Math.round(price + 1986))}</span>
+        {showEquip && (
+          <div className="mt-4 space-y-4">
+            {equipCount > 0 && (
+              <div className="flex justify-end">
+                <button type="button" onClick={() => setEquip(EMPTY_EQUIP)}
+                  className="text-xs text-as-muted hover:text-black underline transition-colors">
+                  Clear all
+                </button>
+              </div>
+            )}
+            {EQUIPMENT_GROUPS.map((group) => (
+              <div key={group.label}>
+                <div className="text-[11px] font-semibold text-as-muted uppercase tracking-wider mb-1.5">
+                  {group.label}
                 </div>
-                <div className="relative h-2 bg-[#f0f0f0] rounded-full overflow-hidden">
-                  <div className="absolute inset-y-0 bg-black/15 rounded-full" style={{ left: '10%', right: '10%' }} />
-                  <div className="absolute inset-y-0 left-1/2 w-0.5 bg-black -translate-x-1/2" />
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-1.5">
+                  {group.items.map(({ key, label }) => {
+                    const val = equipValues[key]
+                    const on = equip[key]
+                    return (
+                      <label key={key}
+                        className={`flex items-center gap-2 text-xs cursor-pointer rounded-lg px-2.5 py-2 border transition-all select-none
+                          ${on
+                            ? 'pred-equip-on bg-black/5 border-black text-black font-medium'
+                            : 'pred-equip-off bg-white border-[#e8e8e8] text-as-body hover:border-black/40'}`}>
+                        <input
+                          type="checkbox"
+                          className="accent-black w-3.5 h-3.5 flex-shrink-0"
+                          checked={on}
+                          onChange={() => toggleEquip(key)}
+                        />
+                        <span className="flex-1 leading-tight">{label}</span>
+                        {val > 0 && (
+                          <span className={`text-[10px] font-medium flex-shrink-0 ${on ? 'text-emerald-700' : 'text-emerald-600'}`}>
+                            +€{val.toLocaleString()}
+                          </span>
+                        )}
+                      </label>
+                    )
+                  })}
                 </div>
-                <p className="text-xs text-as-muted mt-1 text-center">Likely range based on model MAE</p>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+
+      {/* ════════ SUBMIT ════════ */}
+      <form onSubmit={handleSubmit}>
+        {error && (
+          <div className="mb-3 bg-red-50 border border-red-200 text-red-700 rounded-lg px-4 py-3 text-sm">{error}</div>
+        )}
+        <button type="submit" className="btn-primary w-full py-3 text-base" disabled={loading}>
+          {loading ? 'Predicting...' : 'Predict Price'}
+        </button>
+      </form>
+
+      {/* ════════ RESULT SECTION (full-width, appears after prediction) ════════ */}
+      {result && (
+        <div ref={resultRef} className="space-y-5">
+
+          {/* Price hero card */}
+          <div className="card">
+            <div className="flex flex-col md:flex-row md:items-center gap-6">
+              {/* Left: big price */}
+              <div className="flex-1">
+                <div className="text-xs text-as-muted font-semibold uppercase tracking-wider mb-1">
+                  Predicted Market Price
+                </div>
+                <div className="text-5xl font-extrabold text-black">
+                  €{fmt(Math.round(price))}
+                </div>
+
+                {/* Confidence bar */}
+                <div className="mt-3 max-w-md">
+                  <div className="flex justify-between text-xs text-as-muted mb-1">
+                    <span>€{fmt(Math.round(price - 1986))}</span>
+                    <span className="text-black font-semibold">±€{fmt(1986)} MAE</span>
+                    <span>€{fmt(Math.round(price + 1986))}</span>
+                  </div>
+                  <div className="relative h-2 bg-[#f0f0f0] rounded-full overflow-hidden">
+                    <div className="absolute inset-y-0 bg-black/15 rounded-full" style={{ left: '10%', right: '10%' }} />
+                    <div className="absolute inset-y-0 left-1/2 w-0.5 bg-black -translate-x-1/2" />
+                  </div>
+                  <p className="text-[11px] text-as-muted mt-1">Likely range based on model accuracy (MAE)</p>
+                </div>
               </div>
 
-              <div className="text-xs text-as-body space-y-1 border-t border-[#f0f0f0] pt-3">
-                <div><strong className="text-black">{result.input.make} {result.input.model}</strong> · {result.input.year}</div>
-                <div>{fmt(result.input.mileage)} km · {result.input.engine_power} HP</div>
+              {/* Right: car summary */}
+              <div className="md:border-l md:border-[#f0f0f0] md:pl-6 text-sm text-as-body space-y-1">
+                <div className="font-semibold text-black text-base">{result.input.make} {result.input.model} · {result.input.year}</div>
+                <div>{fmt(result.input.mileage)} km · {result.input.engine_power} HP · {result.input.engine_capacity} cm³</div>
                 <div>{result.input.fuel_type} · {result.input.gearbox} · {result.input.body_type}</div>
-                <div>Equipment: <span className={`font-semibold px-1.5 py-0.5 rounded ${tier.color}`}>
-                  {tier.label} ({equipCount} options)
-                </span></div>
+                <div className="flex items-center gap-2 pt-1">
+                  <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${tier.color}`}>
+                    {tier.label} ({equipCount} options)
+                  </span>
+                  {equipTotalValue > 0 && (
+                    <span className="text-xs text-emerald-700 font-medium">+€{equipTotalValue.toLocaleString()} equipment value</span>
+                  )}
+                </div>
               </div>
             </div>
-          ) : (
-            <div className="card border-2 border-dashed border-[#e0e0e0] flex flex-col items-center justify-center py-14 text-center">
-              <div className="text-4xl mb-3">🤖</div>
-              <div className="text-as-muted text-sm">Fill in the form and click<br />Predict Price</div>
-            </div>
-          )}
+          </div>
 
-          {/* Equipment ROI Ranking */}
-          {roiRanking.length > 0 && (
-            <div className="card p-4">
+          {/* Similar listings + Equipment ROI side by side */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
+
+            {/* Similar Listings — takes 2/3 */}
+            <div className="lg:col-span-2 card p-5">
+              <h3 className="font-semibold text-black mb-3">Similar Listings on Market</h3>
+              {recs === null ? (
+                <div className="space-y-2 animate-pulse">
+                  {[...Array(3)].map((_, i) => (
+                    <div key={i} className="h-10 bg-[#f0f0f0] rounded" />
+                  ))}
+                </div>
+              ) : recs.length === 0 ? (
+                <p className="text-sm text-as-muted py-6 text-center">No similar listings found for this make/model.</p>
+              ) : (
+                <div className="overflow-x-auto -mx-5">
+                  <table className="min-w-full text-sm">
+                    <thead className="bg-[#f9f9f9] border-b border-[#e8e8e8]">
+                      <tr>
+                        {['Car', 'Year', 'Fuel', 'Mileage', 'Power', 'Gearbox', 'Price', 'Deal Score', ''].map((h) => (
+                          <th key={h} className="px-3 py-2.5 text-left text-xs font-semibold text-as-muted uppercase tracking-wider whitespace-nowrap">
+                            {h}
+                          </th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-[#f0f0f0]">
+                      {recs.map((car) => (
+                        <tr key={car.id} className="hover:bg-as-chip transition-colors">
+                          <td className="px-3 py-2.5 whitespace-nowrap">
+                            <span className="font-medium text-black">{car.make}</span>{' '}
+                            <span className="text-as-body">{car.model}</span>
+                          </td>
+                          <td className="px-3 py-2.5 text-as-body">{car.year}</td>
+                          <td className="px-3 py-2.5 text-as-muted">{car.fuel_type || '—'}</td>
+                          <td className="px-3 py-2.5 text-as-muted whitespace-nowrap">
+                            {car.mileage ? `${Number(car.mileage).toLocaleString('de-DE')} km` : '—'}
+                          </td>
+                          <td className="px-3 py-2.5 text-as-muted whitespace-nowrap">
+                            {car.engine_power ? `${car.engine_power} HP` : '—'}
+                          </td>
+                          <td className="px-3 py-2.5 text-as-muted">{car.gearbox || '—'}</td>
+                          <td className="px-3 py-2.5 font-semibold text-black whitespace-nowrap">
+                            €{Number(car.price).toLocaleString('de-DE')}
+                          </td>
+                          <td className="px-3 py-2.5 whitespace-nowrap">
+                            <DealBadge score={recScores[car.id]} />
+                          </td>
+                          <td className="px-3 py-2.5">
+                            {car.source_url ? (
+                              <HoverPeek
+                                url={car.source_url}
+                                isStatic={true}
+                                imageSrc={`${import.meta.env.VITE_API_URL || 'http://localhost:8001/api'}/cars/${car.id}/og-image`}
+                                peekWidth={220}
+                                peekHeight={138}
+                              >
+                                <a
+                                  href={car.source_url}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="text-xs text-blue-500 hover:text-blue-700 underline decoration-dotted whitespace-nowrap"
+                                >
+                                  View listing
+                                </a>
+                              </HoverPeek>
+                            ) : (
+                              <span className="text-as-muted text-xs">—</span>
+                            )}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              )}
+            </div>
+
+            {/* Equipment ROI — takes 1/3 */}
+            <div className="card p-5">
               <button
                 type="button"
                 className="w-full flex items-center justify-between"
                 onClick={() => setShowRoi((p) => !p)}
               >
-                <div className="text-xs font-semibold text-as-body">Equipment ROI Ranking</div>
+                <h3 className="font-semibold text-black text-sm">Equipment ROI</h3>
                 <span className="text-as-muted text-xs">{showRoi ? '▲ Hide' : '▼ Show'}</span>
               </button>
-              <p className="text-[10px] text-as-muted mt-1 mb-2">Which options add the most resale value</p>
-              {showRoi && (
-                <div className="space-y-1 max-h-72 overflow-y-auto">
+              <p className="text-[11px] text-as-muted mt-1">Which options add the most resale value</p>
+              {showRoi && roiRanking.length > 0 && (
+                <div className="mt-3 space-y-1 max-h-80 overflow-y-auto">
                   {roiRanking.map((item, i) => (
                     <div
                       key={item.key}
-                      className={`flex items-center gap-2 text-xs px-2 py-1.5 rounded-lg transition-colors cursor-pointer ${
+                      className={`flex items-center gap-2 text-xs px-2.5 py-2 rounded-lg transition-colors cursor-pointer ${
                         item.selected
                           ? 'bg-emerald-50 border border-emerald-200 equip-roi-selected'
                           : 'hover:bg-as-chip'
                       }`}
                       onClick={() => toggleEquip(item.key)}
                     >
-                      <span className="text-as-muted w-4 text-right flex-shrink-0">{i + 1}.</span>
+                      <span className="text-as-muted w-5 text-right flex-shrink-0 tabular-nums">{i + 1}.</span>
                       <span className={`flex-1 ${item.selected ? 'font-medium text-black' : 'text-as-body'}`}>
                         {item.label}
                       </span>
@@ -510,85 +617,19 @@ export default function Prediction() {
                 </div>
               )}
             </div>
-          )}
-
-          {/* Similar Listings */}
-          {result && (
-            <div className="card p-4">
-              <div className="text-xs font-semibold text-as-body mb-3">Similar Listings</div>
-              {recs === null ? (
-                <div className="space-y-2 animate-pulse">
-                  {[...Array(3)].map((_, i) => (
-                    <div key={i} className="h-8 bg-[#f0f0f0] rounded" />
-                  ))}
-                </div>
-              ) : recs.length === 0 ? (
-                <p className="text-xs text-as-muted">No listings found for this make/model.</p>
-              ) : (
-                <div className="overflow-x-auto">
-                  <table className="min-w-full text-xs">
-                    <thead className="bg-[#f9f9f9] border-b border-[#e8e8e8]">
-                      <tr>
-                        {['Make', 'Model', 'Year', 'Body', 'Fuel', 'Mileage', 'Power', 'Gearbox', 'Trans.', 'Price', 'Source'].map((h) => (
-                          <th key={h} className="px-2 py-2 text-left font-semibold text-as-muted uppercase tracking-wider whitespace-nowrap">
-                            {h}
-                          </th>
-                        ))}
-                      </tr>
-                    </thead>
-                    <tbody className="divide-y divide-[#f0f0f0]">
-                      {recs.map((car) => (
-                        <tr key={car.id} className="hover:bg-as-chip transition-colors">
-                          <td className="px-2 py-2 font-medium whitespace-nowrap">{car.make}</td>
-                          <td className="px-2 py-2 text-as-body whitespace-nowrap">{car.model}</td>
-                          <td className="px-2 py-2 text-as-body">{car.year}</td>
-                          <td className="px-2 py-2 text-as-muted whitespace-nowrap">{car.body_type || '—'}</td>
-                          <td className="px-2 py-2 text-as-muted whitespace-nowrap">{car.fuel_type || '—'}</td>
-                          <td className="px-2 py-2 text-as-muted whitespace-nowrap">
-                            {car.mileage ? `${Number(car.mileage).toLocaleString('de-DE')} km` : '—'}
-                          </td>
-                          <td className="px-2 py-2 text-as-muted whitespace-nowrap">
-                            {car.engine_power ? `${car.engine_power} HP` : '—'}
-                          </td>
-                          <td className="px-2 py-2 text-as-muted whitespace-nowrap">{car.gearbox || '—'}</td>
-                          <td className="px-2 py-2 text-as-muted whitespace-nowrap">{car.transmission || '—'}</td>
-                          <td className="px-2 py-2 font-semibold text-black whitespace-nowrap">
-                            €{Number(car.price).toLocaleString('de-DE')}
-                          </td>
-                          <td className="px-2 py-2">
-                            {car.source_url ? (
-                              <HoverPeek
-                                url={car.source_url}
-                                isStatic={true}
-                                imageSrc={`${import.meta.env.VITE_API_URL || 'http://localhost:8001/api'}/cars/${car.id}/og-image`}
-                                peekWidth={220}
-                                peekHeight={138}
-                              >
-                                <a
-                                  href={car.source_url}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className="text-blue-500 hover:text-blue-700 underline decoration-dotted whitespace-nowrap"
-                                >
-                                  Autovit →
-                                </a>
-                              </HoverPeek>
-                            ) : (
-                              <span className="text-as-muted">—</span>
-                            )}
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              )}
-            </div>
-          )}
+          </div>
         </div>
-      </div>
+      )}
 
-      {/* Prediction history */}
+      {/* Placeholder when no result yet */}
+      {!result && !loading && (
+        <div className="card border-2 border-dashed border-[#e0e0e0] flex flex-col items-center justify-center py-14 text-center">
+          <div className="text-4xl mb-3">🤖</div>
+          <div className="text-as-muted text-sm">Fill in the car specs above, select equipment, and click Predict Price</div>
+        </div>
+      )}
+
+      {/* ════════ PREDICTION HISTORY ════════ */}
       {history.length > 0 && (
         <div className="card">
           <h2 className="font-semibold text-black mb-4">Recent Predictions</h2>
@@ -596,7 +637,7 @@ export default function Prediction() {
             <table className="min-w-full text-sm">
               <thead className="bg-[#f9f9f9]">
                 <tr>
-                  {['Make', 'Model', 'Year', 'Mileage', 'Fuel', 'Gearbox', 'Predicted Price', 'Date', ''].map((h) => (
+                  {['Car', 'Year', 'Mileage', 'Fuel', 'Gearbox', 'Predicted Price', 'Date', ''].map((h) => (
                     <th key={h} className="px-3 py-2 text-left text-xs font-semibold text-as-muted uppercase whitespace-nowrap">{h}</th>
                   ))}
                 </tr>
@@ -604,8 +645,10 @@ export default function Prediction() {
               <tbody className="divide-y divide-[#f0f0f0]">
                 {history.map((p) => (
                   <tr key={p.id} className="hover:bg-as-chip">
-                    <td className="px-3 py-2 font-medium">{p.make}</td>
-                    <td className="px-3 py-2 text-as-body">{p.model}</td>
+                    <td className="px-3 py-2">
+                      <span className="font-medium">{p.make}</span>{' '}
+                      <span className="text-as-body">{p.model}</span>
+                    </td>
                     <td className="px-3 py-2 text-as-body">{p.year}</td>
                     <td className="px-3 py-2 text-as-muted">{p.mileage ? `${fmt(p.mileage)} km` : '—'}</td>
                     <td className="px-3 py-2 text-as-muted">{p.fuel_type}</td>
@@ -624,8 +667,6 @@ export default function Prediction() {
             </table>
           </div>
         </div>
-      )}
-        </>
       )}
     </div>
   )

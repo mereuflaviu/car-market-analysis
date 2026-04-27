@@ -28,7 +28,7 @@ def get_cars(
     sort_by: Optional[str] = None,
     sort_dir: str = "asc",
 ):
-    q = db.query(models.Car)
+    q = db.query(models.Car).filter(models.Car.status == "active")
     if owner_id is not None:
         q = q.filter(models.Car.user_id == owner_id)
     if make:
@@ -105,12 +105,13 @@ def delete_car(db: Session, car_id: int) -> bool:
 
 
 def get_car_stats(db: Session) -> dict:
-    total = db.query(func.count(models.Car.id)).scalar() or 0
-    avg_price = db.query(func.avg(models.Car.price)).scalar() or 0.0
-    min_price = db.query(func.min(models.Car.price)).scalar() or 0.0
-    max_price = db.query(func.max(models.Car.price)).scalar() or 0.0
-    avg_mileage = db.query(func.avg(models.Car.mileage)).scalar() or 0.0
-    total_makes = db.query(func.count(distinct(models.Car.make))).scalar() or 0
+    active_filter = models.Car.status == "active"
+    total = db.query(func.count(models.Car.id)).filter(active_filter).scalar() or 0
+    avg_price = db.query(func.avg(models.Car.price)).filter(active_filter).scalar() or 0.0
+    min_price = db.query(func.min(models.Car.price)).filter(active_filter).scalar() or 0.0
+    max_price = db.query(func.max(models.Car.price)).filter(active_filter).scalar() or 0.0
+    avg_mileage = db.query(func.avg(models.Car.mileage)).filter(active_filter).scalar() or 0.0
+    total_makes = db.query(func.count(distinct(models.Car.make))).filter(active_filter).scalar() or 0
     return {
         "total_cars": total,
         "avg_price": round(float(avg_price), 2),
@@ -157,7 +158,7 @@ def get_recommendations(
     # Pass 1: same make + model, tight filters
     primary = (
         db.query(models.Car)
-        .filter(models.Car.make == make, models.Car.model == model, *year_filter, *mileage_filter)
+        .filter(models.Car.status == "active", models.Car.make == make, models.Car.model == model, *year_filter, *mileage_filter)
         .order_by(score_expr.asc())
         .limit(limit)
         .all()
@@ -172,6 +173,7 @@ def get_recommendations(
     relaxed = (
         db.query(models.Car)
         .filter(
+            models.Car.status == "active",
             models.Car.make == make, models.Car.model == model,
             models.Car.id.notin_(seen) if seen else True,
             models.Car.year >= year - 2, models.Car.year <= year + 2,
@@ -191,6 +193,7 @@ def get_recommendations(
     fallback = (
         db.query(models.Car)
         .filter(
+            models.Car.status == "active",
             models.Car.make == make,
             models.Car.model != model,
             models.Car.id.notin_(seen) if seen else True,
@@ -244,14 +247,14 @@ def delete_prediction(db: Session, prediction_id: int) -> bool:
 # ── REFERENCE DATA ────────────────────────────────────────────────────────────
 
 def get_makes(db: Session):
-    rows = db.query(distinct(models.Car.make)).order_by(models.Car.make).all()
+    rows = db.query(distinct(models.Car.make)).filter(models.Car.status == "active").order_by(models.Car.make).all()
     return [r[0] for r in rows if r[0]]
 
 
 def get_models_for_make(db: Session, make: str):
     rows = (
         db.query(distinct(models.Car.model))
-        .filter(models.Car.make == make)
+        .filter(models.Car.make == make, models.Car.status == "active")
         .order_by(models.Car.model)
         .all()
     )
@@ -260,7 +263,7 @@ def get_models_for_make(db: Session, make: str):
 
 def get_field_options(db: Session) -> dict:
     def vals(col):
-        rows = db.query(distinct(col)).order_by(col).all()
+        rows = db.query(distinct(col)).filter(models.Car.status == "active").order_by(col).all()
         return sorted([r[0] for r in rows if r[0]])
 
     return {
@@ -279,6 +282,7 @@ def get_model_options(db: Session, make: str, model: str) -> dict:
     base = db.query(models.Car).filter(
         models.Car.make == make,
         models.Car.model == model,
+        models.Car.status == "active",
     )
 
     def vals(col):

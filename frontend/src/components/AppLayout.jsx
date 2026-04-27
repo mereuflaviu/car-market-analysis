@@ -76,16 +76,28 @@ export default function AppLayout({ children }) {
             {user ? (
               <>
                 {user.role === 'admin' && (
-                  <Link
-                    to="/admin/users"
-                    className={`px-3 py-1.5 rounded-pill text-xs font-semibold transition-colors ${
-                      pathname.startsWith('/admin')
-                        ? 'bg-black text-white nav-pill-active'
-                        : 'bg-as-chip text-black hover:bg-as-hover'
-                    }`}
-                  >
-                    Admin
-                  </Link>
+                  <>
+                    <Link
+                      to="/admin/users"
+                      className={`px-3 py-1.5 rounded-pill text-xs font-semibold transition-colors ${
+                        pathname === '/admin/users'
+                          ? 'bg-black text-white nav-pill-active'
+                          : 'bg-as-chip text-black hover:bg-as-hover'
+                      }`}
+                    >
+                      Users
+                    </Link>
+                    <Link
+                      to="/admin/pipeline"
+                      className={`px-3 py-1.5 rounded-pill text-xs font-semibold transition-colors ${
+                        pathname === '/admin/pipeline'
+                          ? 'bg-black text-white nav-pill-active'
+                          : 'bg-as-chip text-black hover:bg-as-hover'
+                      }`}
+                    >
+                      Pipeline
+                    </Link>
+                  </>
                 )}
                 <span className="text-sm text-as-body font-medium hidden sm:block">
                   {user.display_name}

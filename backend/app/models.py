@@ -40,6 +40,35 @@ class Car(Base):
     source_url = Column(String, nullable=True)
     created_at = Column(DateTime, default=datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+    status = Column(String, nullable=False, default="active", index=True)
+    days_missing = Column(Integer, nullable=False, default=0)
+    first_seen = Column(DateTime, default=datetime.utcnow)
+    last_seen = Column(DateTime, default=datetime.utcnow)
+    sold_at = Column(DateTime, nullable=True)
+
+
+class PriceHistory(Base):
+    __tablename__ = "price_history"
+
+    id = Column(Integer, primary_key=True, index=True)
+    car_id = Column(Integer, ForeignKey("cars.id", ondelete="CASCADE"), nullable=False, index=True)
+    old_price = Column(Float, nullable=False)
+    new_price = Column(Float, nullable=False)
+    changed_at = Column(DateTime, default=datetime.utcnow)
+
+
+class PipelineRun(Base):
+    __tablename__ = "pipeline_runs"
+
+    id = Column(Integer, primary_key=True, index=True)
+    mode = Column(String, nullable=False)  # "daily" or "full_sweep"
+    started_at = Column(DateTime, nullable=False, default=datetime.utcnow)
+    finished_at = Column(DateTime, nullable=True)
+    status = Column(String, nullable=False, default="running")  # running, success, partial, failed
+    summary = Column(String, nullable=True)  # JSON-serialized report
+    new_listings = Column(Integer, default=0)
+    retrained = Column(Boolean, default=False)
+    new_r2 = Column(Float, nullable=True)
 
 
 class Prediction(Base):

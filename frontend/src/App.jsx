@@ -13,8 +13,9 @@ const Prediction = lazy(() => import('./pages/Prediction'))
 const Analytics  = lazy(() => import('./pages/Analytics'))
 const Login      = lazy(() => import('./pages/Login'))
 const Register   = lazy(() => import('./pages/Register'))
-const AdminUsers = lazy(() => import('./pages/AdminUsers'))
-const NotFound   = lazy(() => import('./pages/NotFound'))
+const AdminUsers    = lazy(() => import('./pages/AdminUsers'))
+const AdminPipeline = lazy(() => import('./pages/AdminPipeline'))
+const NotFound      = lazy(() => import('./pages/NotFound'))
 
 function PageLoader() {
   return (
@@ -43,6 +44,9 @@ export default function App() {
 
               <Route path="/admin/users" element={
                 <RequireAdmin><AppLayout><AdminUsers /></AppLayout></RequireAdmin>
+              } />
+              <Route path="/admin/pipeline" element={
+                <RequireAdmin><AppLayout><AdminPipeline /></AppLayout></RequireAdmin>
               } />
 
               <Route path="*" element={<NotFound />} />

@@ -126,4 +126,9 @@ export const adminApi = {
   listUsers: (params = {}) => api.get('/admin/users', { params }),
   updateUser: (id, data) => api.patch(`/admin/users/${id}`, data),
   deleteUser: (id) => api.delete(`/admin/users/${id}`),
+
+  pipelineRun: (mode) => api.post('/admin/pipeline/run', { mode }),
+  pipelineStatus: () => api.get('/admin/pipeline/status'),
+  pipelineHistory: (limit = 20) => api.get('/admin/pipeline/history', { params: { limit } }),
+  pipelineRetrain: () => api.post('/admin/pipeline/retrain'),
 }

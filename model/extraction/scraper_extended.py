@@ -238,6 +238,9 @@ class AutovitExtendedScraper:
                 logger.error(f"Error loading existing data: {e}")
 
         self._scraped_urls: set[str] = {str(row.get("url", "")) for row in self.data}
+        # All URLs encountered on search result pages (including already-known ones).
+        # Used by the pipeline to detect which listings have disappeared from autovit.
+        self.seen_urls: set[str] = set()
         self.session = requests.Session()
 
     def _get_page(self, url: str, params: dict = None) -> BeautifulSoup | None:

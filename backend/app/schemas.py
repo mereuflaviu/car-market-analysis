@@ -143,3 +143,29 @@ class AdminUserListResponse(BaseModel):
     total: int
     page: int
     page_size: int
+
+
+class PipelineRunRequest(BaseModel):
+    mode: str = Field(..., pattern="^(daily|full_sweep)$")
+
+
+class PipelineRunOut(BaseModel):
+    id: int
+    mode: str
+    started_at: Optional[datetime] = None
+    finished_at: Optional[datetime] = None
+    status: str
+    summary: Optional[str] = None
+    new_listings: int = 0
+    retrained: bool = False
+    new_r2: Optional[float] = None
+    model_config = {"from_attributes": True}
+
+
+class PipelineStatusResponse(BaseModel):
+    last_run: Optional[PipelineRunOut] = None
+    total_active: int
+    total_sold: int
+    dataset_size: int
+    model_r2: Optional[float] = None
+    model_mae: Optional[float] = None

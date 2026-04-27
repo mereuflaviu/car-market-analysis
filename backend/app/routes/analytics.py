@@ -25,7 +25,7 @@ def _query_df(db, *cols, col_names):
 def price_distribution(response: Response, db: Session = Depends(get_db)):
     response.headers["Cache-Control"] = _CACHE_1H
     """Histogram bins for car prices (20 bins)."""
-    prices = [r[0] for r in db.query(Car.price).all() if r[0] is not None]
+    prices = [r[0] for r in db.query(Car.price).filter(Car.status == "active").all() if r[0] is not None]
     if not prices:
         return {"data": []}
     arr = np.array(prices)
@@ -47,7 +47,7 @@ def price_distribution(response: Response, db: Session = Depends(get_db)):
 def price_by_make(response: Response, db: Session = Depends(get_db)):
     response.headers["Cache-Control"] = _CACHE_1H
     """Average price per brand (top 15 by avg price, min 3 listings)."""
-    rows = db.query(Car.make, Car.price).all()
+    rows = db.query(Car.make, Car.price).filter(Car.status == "active").all()
     df = pd.DataFrame([(r[0], r[1]) for r in rows], columns=["make", "price"]).dropna()
     agg = (
         df.groupby("make")
@@ -67,7 +67,7 @@ def price_by_make(response: Response, db: Session = Depends(get_db)):
 def price_by_fuel(response: Response, db: Session = Depends(get_db)):
     response.headers["Cache-Control"] = _CACHE_1H
     """Average price per fuel type."""
-    rows = db.query(Car.fuel_type, Car.price).all()
+    rows = db.query(Car.fuel_type, Car.price).filter(Car.status == "active").all()
     df = pd.DataFrame([(r[0], r[1]) for r in rows], columns=["fuel_type", "price"]).dropna()
     agg = (
         df.groupby("fuel_type")
@@ -87,7 +87,7 @@ def price_by_fuel(response: Response, db: Session = Depends(get_db)):
 def price_by_body_type(response: Response, db: Session = Depends(get_db)):
     response.headers["Cache-Control"] = _CACHE_1H
     """Average price per body type."""
-    rows = db.query(Car.body_type, Car.price).all()
+    rows = db.query(Car.body_type, Car.price).filter(Car.status == "active").all()
     df = pd.DataFrame([(r[0], r[1]) for r in rows], columns=["body_type", "price"]).dropna()
     agg = (
         df.groupby("body_type")
@@ -107,7 +107,7 @@ def price_by_body_type(response: Response, db: Session = Depends(get_db)):
 def mileage_vs_price(response: Response, db: Session = Depends(get_db)):
     response.headers["Cache-Control"] = _CACHE_1H
     """Scatter data: mileage vs price (500 sampled points)."""
-    rows = db.query(Car.mileage, Car.price, Car.make, Car.fuel_type).all()
+    rows = db.query(Car.mileage, Car.price, Car.make, Car.fuel_type).filter(Car.status == "active").all()
     data = [
         {"mileage": r[0], "price": r[1], "make": r[2], "fuel_type": r[3]}
         for r in rows
@@ -123,7 +123,7 @@ def mileage_vs_price(response: Response, db: Session = Depends(get_db)):
 def year_vs_price(response: Response, db: Session = Depends(get_db)):
     response.headers["Cache-Control"] = _CACHE_1H
     """Average price by manufacturing year."""
-    rows = db.query(Car.year, Car.price).all()
+    rows = db.query(Car.year, Car.price).filter(Car.status == "active").all()
     df = pd.DataFrame([(r[0], r[1]) for r in rows], columns=["year", "price"]).dropna()
     agg = (
         df.groupby("year")
@@ -143,7 +143,7 @@ def year_vs_price(response: Response, db: Session = Depends(get_db)):
 def gearbox_distribution(response: Response, db: Session = Depends(get_db)):
     response.headers["Cache-Control"] = _CACHE_1H
     """Count per gearbox type."""
-    rows = db.query(Car.gearbox).all()
+    rows = db.query(Car.gearbox).filter(Car.status == "active").all()
     df = pd.DataFrame([r[0] for r in rows], columns=["gearbox"]).dropna()
     counts = df["gearbox"].value_counts().reset_index()
     counts.columns = ["gearbox", "count"]
@@ -156,7 +156,7 @@ def gearbox_distribution(response: Response, db: Session = Depends(get_db)):
 def transmission_distribution(response: Response, db: Session = Depends(get_db)):
     response.headers["Cache-Control"] = _CACHE_1H
     """Count per transmission type."""
-    rows = db.query(Car.transmission).all()
+    rows = db.query(Car.transmission).filter(Car.status == "active").all()
     df = pd.DataFrame([r[0] for r in rows], columns=["transmission"]).dropna()
     counts = df["transmission"].value_counts().reset_index()
     counts.columns = ["transmission", "count"]
